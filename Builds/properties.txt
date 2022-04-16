@@ -1,0 +1,7 @@
+# Match Settings
+Respawn Time = 3.0
+
+# Sound Settings
+Volume = 0.8
+Pitch = 1.0
+Attenuation = 1.0

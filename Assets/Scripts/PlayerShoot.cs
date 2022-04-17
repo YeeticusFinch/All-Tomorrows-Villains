@@ -16,19 +16,21 @@ public class PlayerShoot : NetworkBehaviour {
     public PlayerWeapon weapon;
 
     [SerializeField]
-    private Camera cam;
+    public Camera cam;
 
     [SerializeField]
     private LayerMask mask;
 
-    [SerializeField]
-    private GameObject emitter;
+    //[SerializeField]
+    //private GameObject emitter;
 
     [SerializeField]
     private GameObject player;
 
     [SerializeField]
     private Material glow;
+
+    private bool canShoot = true;
 
     private void Start()
     {
@@ -44,8 +46,9 @@ public class PlayerShoot : NetworkBehaviour {
         if (PauseGame.IsOn)
             return;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canShoot)
         {
+            StartCoroutine(ResetFire());
             Shoot();
         }
     }
@@ -53,6 +56,7 @@ public class PlayerShoot : NetworkBehaviour {
     [Client]
     private void Shoot()
     {
+        GameObject emitter = GetComponent<Player>().getPrimaryEmitter();
         RaycastHit hit;
         CmdSparky(emitter.transform.position, emitter.transform.position + 0.03f * (new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10))), false, false);
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask))
@@ -74,7 +78,7 @@ public class PlayerShoot : NetworkBehaviour {
     }
 
     [Command]
-    void CmdPlayerShot(string playerId, float damage)
+    public void CmdPlayerShot(string playerId, float damage)
     {
         Debug.Log(playerId + " has been shot.");
 
@@ -97,6 +101,13 @@ public class PlayerShoot : NetworkBehaviour {
         if (hitSound)
             GameManager.instance.sound.playAt(this.hitSound, pos2, 1f, 0.1f * Random.Range(5, 15), 150f);
         StartCoroutine(Sparky(pos1, pos2));
+    }
+
+    IEnumerator ResetFire()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(6/(GetComponent<Player>().chara.attackSpeed * GameManager.instance.matchSettings.speedMult));
+        canShoot = true;
     }
 
     IEnumerator Sparky(Vector3 pos1, Vector3 pos2)
@@ -165,6 +176,7 @@ public class PlayerShoot : NetworkBehaviour {
         yield return new WaitForSeconds(0.045f);
 
         GameObject.Destroy(lineRenderer.gameObject);
+        //yield break;
     }
 
 }

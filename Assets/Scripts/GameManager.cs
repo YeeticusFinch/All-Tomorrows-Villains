@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
 
         foreach (string playerId in players.Keys)
         {
-            GUILayout.Label(playerId + " = " + players[playerId].transform.name + " : " + players[playerId].health + " / " + players[playerId].maxHealth);
+            GUILayout.Label((players[playerId] != null && players[playerId].chara != null ? players[playerId].chara.title : "Unknown") + " " + players[playerId].transform.name + " : " + players[playerId].health + " / " + players[playerId].maxHealth);
         }
 
         GUILayout.EndVertical();
@@ -80,6 +80,17 @@ public class GameManager : MonoBehaviour {
                     Debug.Log("Imported Respawn Time from properties file");
                 else
                     Debug.Log("Failed to parse Respawn Time from properties file");
+            }
+            else if (s.IndexOf("Turn Time = ") != -1)
+            {
+                float x;
+                if (float.TryParse(s.Substring(12), out x))
+                {
+                    matchSettings.speedMult = 6 / x;
+                    Debug.Log("Imported Turn Time from properties file");
+                }
+                else
+                    Debug.Log("Failed to parse Turn Time from properties file");
             }
             else if (s.IndexOf("Volume = ") != -1)
             {

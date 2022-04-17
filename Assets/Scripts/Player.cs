@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Player : NetworkBehaviour {
 
+    public int charId = 1;
+
     [SerializeField]
     GameObject pauseMenu;
 
@@ -14,6 +16,9 @@ public class Player : NetworkBehaviour {
 
     [SerializeField]
     GameObject uiCanvas;
+
+    //[SerializeField]
+    public GameObject model;
 
     Vector3 pauseMenuScale;
 
@@ -26,7 +31,7 @@ public class Player : NetworkBehaviour {
     }
 
     [SerializeField]
-    private float maxHP = 100f;
+    private float maxHP;
     public float maxHealth
     {
         get { return maxHP; }
@@ -34,7 +39,7 @@ public class Player : NetworkBehaviour {
     }
 
     [SyncVar]
-    private float HP = 100f;
+    private float HP;
     public float health
     {
         get { return HP; }
@@ -47,9 +52,20 @@ public class Player : NetworkBehaviour {
 
     //public KeyCode activationKey;
     private GameObject flashView;
+    
+    public GameObject[] playables;
+
+    [SerializeField]
+    private Camera cam;
+
+    [SerializeField]
+    private Camera cam3;
+
+    public Character chara;
 
     public void Setup()
     {
+        loadModel();
 
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = spawnPoint.position;
@@ -72,6 +88,7 @@ public class Player : NetworkBehaviour {
         panel.transform.SetParent(myCanvas.transform, false);
         flashView.SetActive(false);
 
+        model.transform.name = transform.name;
 
         wasEnabled = new bool[disableOnDeath.Length];
         for (int i = 0; i < wasEnabled.Length; i++)
@@ -80,6 +97,76 @@ public class Player : NetworkBehaviour {
         }
 
         SetDefaults();
+    }
+
+    [Command]
+    public void CmdLoadModel()
+    {
+        RpcLoadModel();
+    }
+
+    [ClientRpc]
+    public void RpcLoadModel()
+    {
+        loadModel();
+    }
+
+    public void loadModel()
+    {
+        if (model == null)
+        {
+            Debug.Log("Instantiating Player Model");
+            model = Instantiate(playables[charId], transform.position, transform.rotation);
+            chara = model.GetComponent<Character>();
+            model.transform.localPosition += chara.offset;
+            model.transform.localEulerAngles += chara.rotate;
+            model.transform.parent = transform;
+            if (chara.camAttach != null)
+            {
+                chara.camAttach = Instantiate(chara.camAttach, cam.transform.position, cam.transform.rotation);
+                chara.camAttach.transform.parent = cam.transform;
+                chara.primaryEmitters = arrayCombine(chara.primaryEmitters, chara.camAttach.GetComponent<CamAttach>().primaryEmitters);
+            }
+            cam.fieldOfView = chara.fov;
+            GetComponent<Rigidbody>().useGravity = !chara.HOVER;
+            GetComponent<PlayerController>().Setup();
+        }
+        maxHP = chara.HP;
+        health = maxHP;
+    }
+
+    private GameObject[] arrayCombine(GameObject[] arr0, GameObject[] arr1)
+    {
+        GameObject[] result = new GameObject[arr0.Length + arr1.Length];
+
+        for (int i = 0; i < arr0.Length; i++)
+            result[i] = arr0[i];
+
+        for (int i = 0; i < arr1.Length; i++)
+            result[arr0.Length + i] = arr1[i];
+
+        return result;
+    }
+
+    public GameObject getPrimaryEmitter()
+    {
+        return chara.primaryEmitters[Random.Range(0, chara.primaryEmitters.Length)];
+    }
+
+    public GameObject getSecondaryEmitter()
+    {
+        return chara.secondaryEmitters[Random.Range(0, chara.secondaryEmitters.Length)];
+    }
+
+    public GameObject getTertiaryEmitter()
+    {
+        return chara.tertiaryEmitters[Random.Range(0, chara.tertiaryEmitters.Length)];
+    }
+
+    [Command]
+    public void CmdTakeDamage(float amount)
+    {
+        RpcTakeDamage(amount);
     }
 
     [ClientRpc]
@@ -205,12 +292,12 @@ public class Player : NetworkBehaviour {
 
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.K))
         {
-            RpcTakeDamage(99999999999f);
+            CmdTakeDamage(99999999999f);
         }
 
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.L))
         {
-            RpcTakeDamage(10f);
+            CmdTakeDamage(10f);
         }
     }
 

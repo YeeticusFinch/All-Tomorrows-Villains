@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
+    public int id;
+    public string title = "Monster";
     public int AC = 9;
     public int HP = 10;
     public int WALK_SPEED = 30;
@@ -11,6 +13,16 @@ public class Character : MonoBehaviour {
     public int FLY_SPEED = 0;
     public bool HOVER = false;
     public int CR = 0;
+    public float attackSpeed = 1f;
+    public int fov = 60;
+    public Vector3 rotate;
+    public Vector3 offset;
+    public GameObject[] primaryEmitters;
+    public GameObject[] secondaryEmitters;
+    public GameObject[] tertiaryEmitters;
+    public GameObject camAttach;
+    public bool rotateWithCamera = false;
+    public float distanceToGround = 0.5f;
 
 	// Use this for initialization
 	void Start () {

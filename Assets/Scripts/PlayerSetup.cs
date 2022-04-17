@@ -50,6 +50,11 @@ public class PlayerSetup : NetworkBehaviour {
     {
         //gameObject.layer = LayerMask.NameToLayer(remoteLayerName);
         gameObject.layer = 9;
+        if (GetComponent<Player>().model = null)
+        {
+            GetComponent<Player>().loadModel();
+        }
+        GetComponent<Player>().model.layer = 9;
     }
 
     private void DisableComponents()

@@ -4,7 +4,7 @@
 public class PlayerMotor : MonoBehaviour {
 
     [SerializeField]
-    private Camera cam;
+    public Camera cam;
 
     private Vector3 velocity = Vector3.zero;
     public Rigidbody rb;
@@ -72,13 +72,20 @@ public class PlayerMotor : MonoBehaviour {
             return;
 
         rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
+
         if (cam != null)
         {
+            float prevCamRotation = currentCameraRotation;
             currentCameraRotation -= camRotation;
             currentCameraRotation = Mathf.Clamp(currentCameraRotation, -cameraRotationLimit, cameraRotationLimit); // Clamp rotation
 
             cam.transform.localEulerAngles = new Vector3(currentCameraRotation, 0f, 0f); // Apply rotation to camera
+            if (GetComponent<Player>().chara.rotateWithCamera)
+            {
+                GetComponent<Player>().model.transform.eulerAngles += Vector3.Cross(new Vector3(currentCameraRotation - prevCamRotation, 0f, 0f), GetComponent<Player>().chara.rotate.normalized);
+            }
         }
+
     }
 
     public bool canJump()

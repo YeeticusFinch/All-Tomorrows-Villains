@@ -994,6 +994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matchSettings:
     respawnTime: 3
+    speedMult: 1
   sound:
     volume: 1
     pitch: 1

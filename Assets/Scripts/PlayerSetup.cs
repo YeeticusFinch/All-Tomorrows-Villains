@@ -18,6 +18,9 @@ public class PlayerSetup : NetworkBehaviour {
 
     private void Start()
     {
+
+        GetComponent<Player>().Setup();
+
         if (!isLocalPlayer)
         {
             DisableComponents();
@@ -35,7 +38,6 @@ public class PlayerSetup : NetworkBehaviour {
             playerUIInstance.name = playerUIPrefab.name;
         }
 
-        GetComponent<Player>().Setup();
 
     }
 
@@ -50,11 +52,12 @@ public class PlayerSetup : NetworkBehaviour {
     {
         //gameObject.layer = LayerMask.NameToLayer(remoteLayerName);
         gameObject.layer = 9;
-        if (GetComponent<Player>().model = null)
+        if (GetComponent<Player>().model == null)
         {
-            GetComponent<Player>().loadModel();
+            Debug.Log("1");
+            GetComponent<Player>().CmdLoadModel();
         }
-        GetComponent<Player>().model.layer = 9;
+        //GetComponent<Player>().model.layer = 9;
     }
 
     private void DisableComponents()

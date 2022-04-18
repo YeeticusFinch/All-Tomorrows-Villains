@@ -43,7 +43,7 @@ public class PlayerMotor : MonoBehaviour {
     {
         force = f;
     }
-
+    int fi = 0;
     // Runs every physics iteration
     void FixedUpdate () {
         PerformMovement();
@@ -52,7 +52,11 @@ public class PlayerMotor : MonoBehaviour {
         prevVel = rb.velocity;
         //print("vel = " + rb.velocity);
         //if (Input.GetButton("Jump")) print("acc = " + acceleration);
-	}
+        if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null && GetComponent<Player>().chara.rotateWithCamera)
+            GetComponent<Player>().CmdRotate(GetComponent<Player>().model.transform.eulerAngles);
+        fi++;
+        fi %= 10000;
+    }
 
     void PerformMovement()
     {
@@ -80,9 +84,11 @@ public class PlayerMotor : MonoBehaviour {
             currentCameraRotation = Mathf.Clamp(currentCameraRotation, -cameraRotationLimit, cameraRotationLimit); // Clamp rotation
 
             cam.transform.localEulerAngles = new Vector3(currentCameraRotation, 0f, 0f); // Apply rotation to camera
-            if (GetComponent<Player>().chara.rotateWithCamera)
+            if (GetComponent<Player>().chara != null && GetComponent<Player>().model != null && GetComponent<Player>().chara.rotateWithCamera)
             {
+                //GetComponent<Player>().CmdRotate(Vector3.Cross(new Vector3(currentCameraRotation - prevCamRotation, 0f, 0f), GetComponent<Player>().chara.rotate.normalized));
                 GetComponent<Player>().model.transform.eulerAngles += Vector3.Cross(new Vector3(currentCameraRotation - prevCamRotation, 0f, 0f), GetComponent<Player>().chara.rotate.normalized);
+                
             }
         }
 

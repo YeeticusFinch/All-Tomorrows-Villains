@@ -539,9 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de425cd3c22b3f4888c7859cbbe4f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   mouseSensitivity: 3
-  jumpForce: 100
 --- !u!124 &124132470548054870
 Behaviour:
   m_ObjectHideFlags: 1

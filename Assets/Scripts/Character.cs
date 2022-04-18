@@ -20,6 +20,8 @@ public class Character : MonoBehaviour {
     public GameObject[] primaryEmitters;
     public GameObject[] secondaryEmitters;
     public GameObject[] tertiaryEmitters;
+    public GameObject[] hideFirstPerson;
+    public GameObject[] hideThirdPerson;
     public GameObject camAttach;
     public bool rotateWithCamera = false;
     public float distanceToGround = 0.5f;

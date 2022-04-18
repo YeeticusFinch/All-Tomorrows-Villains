@@ -65,7 +65,7 @@ public class Player : NetworkBehaviour {
 
     public void Setup()
     {
-        loadModel();
+        CmdLoadModel();
 
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = spawnPoint.position;
@@ -88,7 +88,6 @@ public class Player : NetworkBehaviour {
         panel.transform.SetParent(myCanvas.transform, false);
         flashView.SetActive(false);
 
-        model.transform.name = transform.name;
 
         wasEnabled = new bool[disableOnDeath.Length];
         for (int i = 0; i < wasEnabled.Length; i++)
@@ -102,6 +101,7 @@ public class Player : NetworkBehaviour {
     [Command]
     public void CmdLoadModel()
     {
+        loadModel();
         RpcLoadModel();
     }
 
@@ -128,8 +128,23 @@ public class Player : NetworkBehaviour {
                 chara.primaryEmitters = arrayCombine(chara.primaryEmitters, chara.camAttach.GetComponent<CamAttach>().primaryEmitters);
             }
             cam.fieldOfView = chara.fov;
+            //GetComponents<NetworkTransformChild>()[1].target = model.transform;
+            if (isLocalPlayer)
+            {
+                foreach (GameObject e in chara.hideFirstPerson)
+                    e.layer = 11;
+                foreach (GameObject e in chara.hideThirdPerson)
+                    e.layer = 12;
+            } else
+            {
+                foreach (GameObject e in chara.hideFirstPerson)
+                    e.layer = 9;
+                foreach (GameObject e in chara.hideThirdPerson)
+                    e.layer = 10;
+            }
             GetComponent<Rigidbody>().useGravity = !chara.HOVER;
             GetComponent<PlayerController>().Setup();
+            model.transform.name = transform.name;
         }
         maxHP = chara.HP;
         health = maxHP;
@@ -161,6 +176,25 @@ public class Player : NetworkBehaviour {
     public GameObject getTertiaryEmitter()
     {
         return chara.tertiaryEmitters[Random.Range(0, chara.tertiaryEmitters.Length)];
+    }
+
+    [Command]
+    public void CmdRotate(Vector3 amount)
+    {
+        RpcRotate(amount);
+    }
+
+    [ClientRpc]
+    public void RpcRotate(Vector3 amount)
+    {
+        if (!isLocalPlayer)
+        {
+            if (model == null)
+            {
+                loadModel();
+            }
+            model.transform.eulerAngles = amount;
+        }
     }
 
     [Command]

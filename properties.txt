@@ -1,6 +1,6 @@
 # Match Settings
 Respawn Time = 3.0
-Turn Time = 2.0
+Turn Time = 1.0
 
 # Sound Settings
 Volume = 0.8

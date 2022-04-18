@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 135096541912623614}
   m_Layer: 0
   m_Name: Beholder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1055,6 +1055,12 @@ MonoBehaviour:
   secondaryEmitters:
   - {fileID: 1442175596515990}
   tertiaryEmitters: []
+  hideFirstPerson:
+  - {fileID: 1309506487569362}
+  - {fileID: 1442175596515990}
+  - {fileID: 1654132973259902}
+  hideThirdPerson:
+  - {fileID: 1331235031872604}
   camAttach: {fileID: 0}
   rotateWithCamera: 1
   distanceToGround: 1.109213

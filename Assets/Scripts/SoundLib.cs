@@ -12,11 +12,15 @@ public class SoundLib {
     public void init()
     {
         for (int i = 0; i < audioClips.Length; i++)
+        {
             clips.Add(audioClips[i].name, audioClips[i]);
+            Debug.Log("Added " + audioClips[i].name);
+        }
     }
 
     public void playAt(string clip, Vector3 pos, float vol = 1f, float pitch = 1f, float maxDistance = 50f)
     {
+        //Debug.Log("Searching for " + clip + " in " + clips);
         PlayClipAtPoint(clips[clip], pos, vol * volume, pitch*this.pitch, maxDistance*distMult);
     }
 

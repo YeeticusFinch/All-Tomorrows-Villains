@@ -296,9 +296,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4611387076730214}
   - component: {fileID: 95510275201328008}
-  - component: {fileID: 114336526879894212}
   - component: {fileID: 114476267521236896}
   - component: {fileID: 135096541912623614}
+  - component: {fileID: 114336964128795372}
   m_Layer: 0
   m_Name: Beholder
   m_TagString: Player
@@ -1007,7 +1007,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114336526879894212
+--- !u!114 &114336964128795372
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1015,9 +1015,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1480341622056540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59b5973b513c7f4ab54de40ad90028e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e24879f5d627804abe02b25345a7f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  weapon:
+    name: Gun
+    damage: 10
+    range: 100
+  cam: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &114476267521236896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1038,8 +1047,9 @@ MonoBehaviour:
   FLY_SPEED: 20
   HOVER: 1
   CR: 13
-  attackSpeed: 3
+  jumpHeight: 10
   fov: 90
+  creature: {fileID: 114336964128795372}
   rotate: {x: 0, y: 90, z: 0}
   offset: {x: 0, y: 0, z: 0}
   primaryEmitters:
@@ -1061,6 +1071,7 @@ MonoBehaviour:
   - {fileID: 1654132973259902}
   hideThirdPerson:
   - {fileID: 1331235031872604}
+  canJumpFrom: []
   camAttach: {fileID: 0}
   rotateWithCamera: 1
   distanceToGround: 1.109213

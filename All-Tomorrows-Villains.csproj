@@ -364,9 +364,12 @@
     <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
-    <Compile Include="Assets\Scripts\BeholderAnim.cs" />
     <Compile Include="Assets\Scripts\CamAttach.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
+    <Compile Include="Assets\Scripts\Creatures\Beholder.cs" />
+    <Compile Include="Assets\Scripts\Creatures\Creature.cs" />
+    <Compile Include="Assets\Scripts\Creatures\TestSphere.cs" />
+    <Compile Include="Assets\Scripts\Effects.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MatchSettings.cs" />
     <Compile Include="Assets\Scripts\PauseGame.cs" />

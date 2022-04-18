@@ -7,6 +7,7 @@ public class CamAttach : MonoBehaviour {
     public GameObject[] primaryEmitters;
     public GameObject[] secondaryEmitters;
     public GameObject[] tertiaryEmitters;
+    public GameObject[] canJumpFrom;
 
     // Use this for initialization
     void Start () {

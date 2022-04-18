@@ -300,9 +300,9 @@ MonoBehaviour:
   cam: {fileID: 20975337560291868}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967035
   player: {fileID: 1904784024208580}
-  glow: {fileID: 2100000, guid: 3cfce6f4c717ba74d907b24a15879cd8, type: 2}
+  creature: {fileID: 0}
 --- !u!114 &114151690404708966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,7 +333,6 @@ MonoBehaviour:
   - {fileID: 114833538903013524}
   - {fileID: 20975337560291868}
   - {fileID: 81362910576546582}
-  - {fileID: 114137781764436924}
   - {fileID: 20080517080298750}
   - {fileID: 81415574591061186}
   remoteLayerName: RemotePlayer
@@ -513,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497ec2f85ece4164eaf1efd41be441bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charId: 1
+  charId: 0
   pauseMenu: {fileID: 1659586531276154, guid: e71dd934b9d3609428185c14f76f3fb4, type: 2}
   crosshair: {fileID: 1601628609841538, guid: 953b3494c77b5bf43a80b7b637ac13b4, type: 2}
   uiCanvas: {fileID: 1009481503999516, guid: 953b3494c77b5bf43a80b7b637ac13b4, type: 2}
@@ -540,6 +539,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 3
+  jumpMask:
+    serializedVersion: 2
+    m_Bits: 4294967003
 --- !u!124 &124132470548054870
 Behaviour:
   m_ObjectHideFlags: 1

@@ -39,7 +39,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
-    descriptiveName: 
+    descriptiveName: Primary Attack / Ability
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -55,10 +55,10 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire2
-    descriptiveName: 
+    descriptiveName: Aim / Zoom
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: mouse 1
     gravity: 1000
@@ -71,10 +71,10 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire3
-    descriptiveName: 
+    descriptiveName: Alternative Attack / Ability
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left shift
+    positiveButton: v
     altNegativeButton: 
     altPositiveButton: mouse 2
     gravity: 1000
@@ -87,7 +87,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Jump
-    descriptiveName: 
+    descriptiveName: Jump / Fly Upwards
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: space
@@ -183,7 +183,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
-    descriptiveName: 
+    descriptiveName: Primary Attack / Ability
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 0
@@ -199,7 +199,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire2
-    descriptiveName: 
+    descriptiveName: Aim / Zoom
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 1
@@ -215,7 +215,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire3
-    descriptiveName: 
+    descriptiveName: Alternative Attack / Ability
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 2
@@ -231,7 +231,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Jump
-    descriptiveName: 
+    descriptiveName: Jump / Fly Upwards
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 3

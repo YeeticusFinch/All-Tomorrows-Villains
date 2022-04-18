@@ -201,6 +201,9 @@ MonoBehaviour:
   - {fileID: 1893115490043350}
   secondaryEmitters: []
   tertiaryEmitters: []
+  canJumpFrom:
+  - {fileID: 1893115490043350}
+  - {fileID: 1686234105492480}
 --- !u!135 &135141656556300330
 SphereCollider:
   m_ObjectHideFlags: 1

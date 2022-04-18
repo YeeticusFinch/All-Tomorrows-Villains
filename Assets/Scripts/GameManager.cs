@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 
     public MatchSettings matchSettings;
     public SoundLib sound = new SoundLib();
+    public int charId = 1;
 
     private void Start()
     {
@@ -91,6 +92,34 @@ public class GameManager : MonoBehaviour {
                 }
                 else
                     Debug.Log("Failed to parse Turn Time from properties file");
+            }
+            else if (s.IndexOf("Move Speed = ") != -1)
+            {
+                if (float.TryParse(s.Substring(13), out matchSettings.moveSpeedMult))
+                    Debug.Log("Imported Move Speed from properties file");
+                else
+                    Debug.Log("Failed to parse Move Speed from properties file");
+            }
+            else if (s.IndexOf("Scale = ") != -1)
+            {
+                if (float.TryParse(s.Substring(8), out matchSettings.scaleMult))
+                    Debug.Log("Imported Scale from properties file");
+                else
+                    Debug.Log("Failed to parse Scale from properties file");
+            }
+            else if (s.IndexOf("Damage = ") != -1)
+            {
+                if (float.TryParse(s.Substring(9), out matchSettings.damageMult))
+                    Debug.Log("Imported Damage from properties file");
+                else
+                    Debug.Log("Failed to parse Damage from properties file");
+            }
+            else if (s.IndexOf("Character = ") != -1)
+            {
+                if (int.TryParse(s.Substring(12), out charId))
+                    Debug.Log("Imported Character from properties file");
+                else
+                    Debug.Log("Failed to parse Character from properties file");
             }
             else if (s.IndexOf("Volume = ") != -1)
             {

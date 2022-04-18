@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Player : NetworkBehaviour {
 
+    [SyncVar]
     public int charId = 1;
 
     [SerializeField]
@@ -65,7 +66,14 @@ public class Player : NetworkBehaviour {
 
     public void Setup()
     {
-        CmdLoadModel();
+        charId = GameManager.instance.charId;
+        if (isLocalPlayer)
+        {
+            CmdLoadModel(charId);
+            //CmdBroadcastCharId(charId);
+        }
+        else
+            loadModel();
 
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = spawnPoint.position;
@@ -99,15 +107,28 @@ public class Player : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdLoadModel()
+    public void CmdBroadcastCharId(int id)
     {
-        loadModel();
-        RpcLoadModel();
+        RpcBroadcastCharId(id);
     }
 
     [ClientRpc]
-    public void RpcLoadModel()
+    public void RpcBroadcastCharId(int id)
     {
+        this.charId = id;
+    }
+
+    [Command]
+    public void CmdLoadModel(int id)
+    {
+        //loadModel();
+        RpcLoadModel(id);
+    }
+
+    [ClientRpc]
+    public void RpcLoadModel(int id)
+    {
+        charId = id;
         loadModel();
     }
 
@@ -126,6 +147,9 @@ public class Player : NetworkBehaviour {
                 chara.camAttach = Instantiate(chara.camAttach, cam.transform.position, cam.transform.rotation);
                 chara.camAttach.transform.parent = cam.transform;
                 chara.primaryEmitters = arrayCombine(chara.primaryEmitters, chara.camAttach.GetComponent<CamAttach>().primaryEmitters);
+                chara.secondaryEmitters = arrayCombine(chara.secondaryEmitters, chara.camAttach.GetComponent<CamAttach>().secondaryEmitters);
+                chara.tertiaryEmitters = arrayCombine(chara.tertiaryEmitters, chara.camAttach.GetComponent<CamAttach>().tertiaryEmitters);
+                chara.canJumpFrom = arrayCombine(chara.canJumpFrom, chara.camAttach.GetComponent<CamAttach>().canJumpFrom);
             }
             cam.fieldOfView = chara.fov;
             //GetComponents<NetworkTransformChild>()[1].target = model.transform;
@@ -145,6 +169,7 @@ public class Player : NetworkBehaviour {
             GetComponent<Rigidbody>().useGravity = !chara.HOVER;
             GetComponent<PlayerController>().Setup();
             model.transform.name = transform.name;
+            GetComponent<PlayerShoot>().Init(chara);
         }
         maxHP = chara.HP;
         health = maxHP;
@@ -212,9 +237,9 @@ public class Player : NetworkBehaviour {
         if (isLocalPlayer)
             StartCoroutine("PlayFlashAnimation");
 
-        HP -= amount;
+        HP -= amount * GameManager.instance.matchSettings.damageMult;
 
-        Debug.Log(transform.name + " now has " + HP + " HP");
+        //Debug.Log(transform.name + " now has " + HP + " HP");
 
         if (HP <= 0)
         {

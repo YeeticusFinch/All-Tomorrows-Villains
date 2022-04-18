@@ -12,25 +12,29 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float mouseSensitivity = 3f;
     //[SerializeField]
-    private float jumpForce = 5f;
+    private float jumpForce;
 
     //private bool canJump = true;
-    private bool canFly = false;
+    //private bool canFly = false;
 
     private PlayerMotor motor;
 
     private Character chara;
 
-	void Start () {
+    [SerializeField]
+    private LayerMask jumpMask;
+
+    void Start () {
         motor = GetComponent<PlayerMotor>();
 	}
 
     public void Setup()
     {
         chara = GetComponent<Player>().chara;
-        walkSpeed = (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult;
-        climbSpeed = (chara.CLIMB_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult;
-        flySpeed = (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult;
+        walkSpeed = (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f * 1.55f;
+        climbSpeed = (chara.CLIMB_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+        flySpeed = (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+        jumpForce = chara.jumpHeight * GameManager.instance.matchSettings.moveSpeedMult * 10f;
     }
 	
 	void Update () {
@@ -46,17 +50,18 @@ public class PlayerController : MonoBehaviour {
         float xMov = Input.GetAxisRaw("Horizontal");
         float zMov = Input.GetAxisRaw("Vertical");
         Vector3 velocity = Vector3.zero;
+        bool maxSpeed = false;
+        float speed = Mathf.Max(walkSpeed, flySpeed);
         if (Mathf.Abs(xMov) + Mathf.Abs(zMov) > 0) {
             //Final Movement vector
-            float speed = Mathf.Max(walkSpeed,flySpeed);
-            if (!IsGrounded()) speed = flySpeed == 0 ? walkSpeed/2 : flySpeed;
+            maxSpeed = true;
+            if (!IsGrounded()) speed = flySpeed == 0 ? walkSpeed/2f : flySpeed;
             if (speed == flySpeed)
                 velocity += (motor.cam.transform.right * xMov + motor.cam.transform.forward * zMov).normalized * speed;
             else
                 velocity += (transform.right * xMov + transform.forward * zMov).normalized * speed;
             //Debug.Log("Max Speed = " + speed + ", rb.velocity = " + motor.rb.velocity.magnitude + ", velocity = " + velocity.magnitude + ", combined = " + (motor.rb.velocity + velocity).magnitude);
 
-            velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
             /*
             if (motor.rb.velocity.x + velocity.x > speed) velocity.x = speed - motor.rb.velocity.x;
             if (motor.rb.velocity.x + velocity.x < -speed) velocity.x = -speed - motor.rb.velocity.x;
@@ -80,16 +85,35 @@ public class PlayerController : MonoBehaviour {
         //Apply rotation
         motor.CamRotate(camRotation);
 
-        if (Input.GetButton("Jump") && (canFly || motor.canJump()))
+        if (Input.GetButton("Jump") && (IsGrounded()))
         {
+            if (maxSpeed)
+                velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
             velocity.y = jumpForce;
+        } else if (Input.GetButton("Jump") && flySpeed > 0)
+        {
+            maxSpeed = true;
+            velocity += motor.cam.transform.up.normalized * flySpeed;
+            velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
         }
 
         motor.ApplyThruster(velocity*100);
     }
 
     bool IsGrounded() {
-        return Physics.Raycast(transform.position, -Vector3.up, chara.distanceToGround + 0.1f);
+        RaycastHit hit;
+        //int i = 0;
+        foreach (GameObject e in GetComponent<Player>().chara.canJumpFrom)
+            if (e.GetComponent<SphereCollider>() != null)
+            {
+                //Effects.instance.CmdSparky(e.transform.position+e.GetComponent<SphereCollider>().center, e.transform.position - Vector3.up*(e.GetComponent<SphereCollider>().radius + 0.1f), null, null);
+                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<SphereCollider>().center, -Vector3.up, out hit, e.GetComponent<SphereCollider>().radius*e.GetComponent<SphereCollider>().transform.localScale.magnitude + 0.1f, jumpMask);
+                if (yeet)
+                    return yeet;
+            }
+            //else if (e.GetComponent<SphereCollider>() != null)
+            //    return Physics.Raycast(e.GetComponent<SphereCollider>().center, -Vector3.up, e.GetComponent<SphereCollider>().radius + 0.1f);
+        return false;
     }
 
     private void OnCollisionStay(Collision collision)

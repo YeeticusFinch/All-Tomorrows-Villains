@@ -1,6 +1,15 @@
+## Global Settings ##
+
 # Match Settings
 Respawn Time = 3.0
 Turn Time = 1.0
+Move Speed = 1.0
+Scale = 1.0
+Damage = 1.0
+
+## Local Settings ##
+
+Character = 1
 
 # Sound Settings
 Volume = 0.8

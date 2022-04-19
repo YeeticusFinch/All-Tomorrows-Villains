@@ -30,6 +30,7 @@ public class PlayerSetup : NetworkBehaviour {
             sceneCamera = Camera.main;
             if (sceneCamera != null)
             {
+                sceneCamera.GetComponent<AudioListener>().enabled = false;
                 sceneCamera.gameObject.SetActive(false);
             }
 
@@ -57,7 +58,8 @@ public class PlayerSetup : NetworkBehaviour {
             Debug.Log("1");
             GetComponent<Player>().CmdLoadModel();
         }*/
-        GetComponent<Player>().model.layer = 9;
+        if (GetComponent<Player>().model != null)
+            GetComponent<Player>().model.layer = 9;
     }
 
     private void DisableComponents()

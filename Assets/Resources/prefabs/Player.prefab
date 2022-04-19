@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497ec2f85ece4164eaf1efd41be441bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charId: 0
+  charId: -1
   pauseMenu: {fileID: 1659586531276154, guid: e71dd934b9d3609428185c14f76f3fb4, type: 2}
   crosshair: {fileID: 1601628609841538, guid: 953b3494c77b5bf43a80b7b637ac13b4, type: 2}
   uiCanvas: {fileID: 1009481503999516, guid: 953b3494c77b5bf43a80b7b637ac13b4, type: 2}

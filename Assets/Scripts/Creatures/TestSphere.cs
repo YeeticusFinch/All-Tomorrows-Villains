@@ -29,6 +29,8 @@ public class TestSphere : Creature {
     [Client]
     void Shoot()
     {
+
+        //Debug.Log("6");
         GameObject emitter = player.GetComponent<Player>().getPrimaryEmitter();
         RaycastHit hit;
         Effects.instance.Sparky(emitter.transform.position, emitter.transform.position + 0.03f * (new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10))), null, null);
@@ -40,7 +42,7 @@ public class TestSphere : Creature {
             Effects.instance.Sparky(hit.point, hit.point + 0.32f * (new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10))), null, null);
             // We hit something
             //Debug.Log("We hit " + hit.collider.name);
-            if (hit.collider.tag == PLAYER_TAG)
+            if (hit.collider.tag == PLAYER_TAG && player.GetComponent<Player>().isLocalPlayer)
             {
                 player.GetComponent<PlayerShoot>().CmdPlayerShot(hit.collider.name, weapon.damage);
             }

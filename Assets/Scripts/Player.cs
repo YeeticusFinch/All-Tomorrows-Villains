@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Player : NetworkBehaviour {
 
     [SyncVar]
-    public int charId;
+    public int charId = -1;
 
     [SerializeField]
     GameObject pauseMenu;
@@ -47,6 +47,8 @@ public class Player : NetworkBehaviour {
         set { HP = value; }
     }
 
+    private bool deathTint = false;
+
     [SerializeField]
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabled;
@@ -72,8 +74,8 @@ public class Player : NetworkBehaviour {
             CmdLoadModel(charId);
             //CmdBroadcastCharId(charId);
         }
-        else
-            loadModel();
+        //else
+        //    loadModel();
 
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = spawnPoint.position;
@@ -122,6 +124,8 @@ public class Player : NetworkBehaviour {
     public void CmdLoadModel(int id)
     {
         //loadModel();
+        if (!isLocalPlayer)
+            charId = id;
         RpcLoadModel(id);
     }
 
@@ -134,7 +138,7 @@ public class Player : NetworkBehaviour {
 
     public void loadModel()
     {
-        if (model == null)
+        if (model == null && charId != -1)
         {
             Debug.Log("Instantiating Player Model");
             model = Instantiate(playables[charId], transform.position, transform.rotation);
@@ -165,14 +169,47 @@ public class Player : NetworkBehaviour {
                     e.layer = 9;
                 foreach (GameObject e in chara.hideThirdPerson)
                     e.layer = 10;
+                model.layer = 9;
             }
             GetComponent<Rigidbody>().useGravity = !chara.HOVER;
             GetComponent<PlayerController>().Setup();
             model.transform.name = transform.name;
             GetComponent<PlayerShoot>().Init(chara);
         }
-        maxHP = chara.HP;
-        health = maxHP;
+        //else if (charId == -1 && !isLocalPlayer)
+        //    CmdQueryId();
+        if (chara != null)
+        {
+
+            maxHP = chara.HP;
+            health = maxHP;
+        }
+    }
+
+    [Command]
+    private void CmdQueryId()
+    {
+        RpcQueryId();
+    }
+
+    [ClientRpc]
+    private void RpcQueryId()
+    {
+        if (charId != -1)
+            CmdSendId(charId);
+    }
+
+    [Command]
+    private void CmdSendId(int id)
+    {
+        RpcSendId(id);
+    }
+
+    [ClientRpc]
+    private void RpcSendId(int id)
+    {
+        charId = id;
+        loadModel();
     }
 
     private GameObject[] arrayCombine(GameObject[] arr0, GameObject[] arr1)
@@ -256,6 +293,7 @@ public class Player : NetworkBehaviour {
         yield return new WaitForSeconds(0.1f);
         foreach (GameObject e in chara.tintable)
             e.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
+        deathTint = false;
     }
 
     IEnumerator PlayFlashAnimation()
@@ -293,6 +331,9 @@ public class Player : NetworkBehaviour {
 
     private void Die()
     {
+        foreach (GameObject e in chara.tintable)
+            e.GetComponent<Renderer>().material.color = new Color(1f, 0f, 0f, 1f);
+
         dead = true;
 
         //DISABLE COMPONENTS
@@ -337,6 +378,10 @@ public class Player : NetworkBehaviour {
 
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
+        if (chara != null)
+            foreach (GameObject e in chara.tintable)
+                e.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
+
         /*
         Collider col = GetComponent<Collider>();
         if (col != null)
@@ -368,6 +413,20 @@ public class Player : NetworkBehaviour {
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.L))
         {
             CmdTakeDamage(10f);
+        }
+
+        if ((isDead || health < 0) && !deathTint)
+        {
+            deathTint = true;
+            if (chara != null)
+                foreach (GameObject e in chara.tintable)
+                    e.GetComponent<Renderer>().material.color = new Color(1f, 0f, 0f, 1f);
+        } else if (health > 0 && deathTint)
+        {
+            deathTint = false;
+            if (chara != null)
+                foreach (GameObject e in chara.tintable)
+                    e.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
         }
     }
 

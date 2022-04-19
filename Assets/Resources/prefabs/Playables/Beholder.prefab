@@ -1079,6 +1079,7 @@ MonoBehaviour:
   camAttach: {fileID: 0}
   rotateWithCamera: 1
   distanceToGround: 1.109213
+  cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &135096541912623614
 SphereCollider:
   m_ObjectHideFlags: 1

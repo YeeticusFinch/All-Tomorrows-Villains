@@ -30,14 +30,6 @@ public class Character : MonoBehaviour {
     public GameObject camAttach;
     public bool rotateWithCamera = false;
     public float distanceToGround = 0.5f;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Vector3 cameraOffset;
+    
 }

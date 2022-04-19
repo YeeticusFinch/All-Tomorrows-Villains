@@ -163,6 +163,7 @@ public class Player : NetworkBehaviour {
                     e.layer = 11;
                 foreach (GameObject e in chara.hideThirdPerson)
                     e.layer = 12;
+                cam.transform.localPosition = chara.cameraOffset;
             } else
             {
                 foreach (GameObject e in chara.hideFirstPerson)

@@ -381,6 +381,9 @@
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\SceneCameraRotate.cs" />
     <Compile Include="Assets\Scripts\SoundLib.cs" />
+    <Compile Include="Assets\Scripts\Tentacle.cs" />
+    <Compile Include="Assets\Scripts\Tentacle3D.cs" />
+    <Compile Include="Assets\Scripts\TubeRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FlexibleCelShader\Shaders\CelNoOutline.shader" />

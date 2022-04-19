@@ -18,7 +18,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 1feca1e8a7544231e3f5875e2f2c066d Assembly-CSharp.dll:DentedPixel.LTExamples.TestingUnitTests
 445f780139ebf5524f55eda007c74b5b Assembly-CSharp.dll:.PathBezier2d
-ab70d26bcbdf67a8940130cd77085878 Assembly-CSharp.dll:.Character
+d226227ac787771f8d99ea8484b0f004 Assembly-CSharp.dll:.Character
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.EventSystemChecker
 68308351d99f5c728ecea631e73eb9bc Assembly-CSharp.dll:.CamAttach
 445f780139ebf5524f55eda007c74b5b Assembly-CSharp.dll:.PathSpline2d
@@ -207,3 +207,6 @@ a379987060627e411116ca73e234d138 Assembly-CSharp.dll:.Beholder
 48ddff96f17b93c27762041529c640e1 Assembly-CSharp.dll:.OldGUIExamplesCS
 43993b62ac4ef5596dd499443ff12365 Assembly-CSharp.dll:MK.Glow.Resources
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
+0321d9f0a227aa4bdb160c12f4d77d92 Assembly-CSharp.dll:.Tentacle
+9ad76dd9438a7efda0f5e3ce402dae48 Assembly-CSharp.dll:.TubeRenderer
+921a3c58805f5d711dab0ce49dfdfb33 Assembly-CSharp.dll:.Tentacle3D

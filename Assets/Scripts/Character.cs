@@ -20,6 +20,7 @@ public class Character : MonoBehaviour {
     public Vector3 rotate;
     public Vector3 offset;
     //public GameObject[] canJumpFrom;
+    public GameObject[] tintable;
     public GameObject[] primaryEmitters;
     public GameObject[] secondaryEmitters;
     public GameObject[] tertiaryEmitters;

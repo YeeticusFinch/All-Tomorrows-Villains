@@ -130,6 +130,8 @@ MonoBehaviour:
   creature: {fileID: 114158884983244822}
   rotate: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
+  tintable:
+  - {fileID: 1551443506765740}
   primaryEmitters: []
   secondaryEmitters: []
   tertiaryEmitters: []

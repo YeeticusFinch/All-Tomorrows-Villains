@@ -55,6 +55,7 @@ public class PlayerShoot : NetworkBehaviour {
 
             if (Input.GetButton("Fire1") && canShoot)
             {
+                Debug.Log("1");
                 canShoot = false;
                 CmdPrimary();
                 //Shoot();
@@ -65,12 +66,14 @@ public class PlayerShoot : NetworkBehaviour {
     [Command]
     private void CmdPrimary()
     {
+        Debug.Log("3");
         RpcPrimary();
     }
 
     [ClientRpc]
     private void RpcPrimary()
     {
+        Debug.Log("4");
         float x = creature.primary();
         if (isLocalPlayer)
             StartCoroutine(ResetFire(x));
@@ -105,7 +108,7 @@ public class PlayerShoot : NetworkBehaviour {
     public void CmdPlayerShot(string playerId, float damage)
     {
         //Debug.Log(playerId + " has been shot.");
-
+        Debug.Log("5");
         Player player = GameManager.GetPlayer(playerId);
         player.RpcTakeDamage(damage);
     }

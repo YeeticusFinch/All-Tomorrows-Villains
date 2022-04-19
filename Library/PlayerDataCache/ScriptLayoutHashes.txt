@@ -18,7 +18,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 1feca1e8a7544231e3f5875e2f2c066d Assembly-CSharp.dll:DentedPixel.LTExamples.TestingUnitTests
 445f780139ebf5524f55eda007c74b5b Assembly-CSharp.dll:.PathBezier2d
-502fcb903706e81ef526165080762829 Assembly-CSharp.dll:.Character
+ab70d26bcbdf67a8940130cd77085878 Assembly-CSharp.dll:.Character
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.EventSystemChecker
 68308351d99f5c728ecea631e73eb9bc Assembly-CSharp.dll:.CamAttach
 445f780139ebf5524f55eda007c74b5b Assembly-CSharp.dll:.PathSpline2d
@@ -144,6 +144,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 4df86f437a61b08c14fd0adff88ddf71 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.ActivateTrigger
 a2efb0db652b8114d1ae7dd9a600d626 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.InputAxisScrollbar
 fe76270bd84ec3b6f2f6f92c69cf69da Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.AxisTouchButton
+2bbf9a81ba68a1e06f50762152fed37f Assembly-CSharp.dll:.Effects
 a7d3c6c6948d99dd4116e659ddcf5ac4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.ButtonHandler
 a90e94673f50d2237c1b971c138660c6 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMoveAndRotate
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LeanTween
@@ -194,16 +195,15 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 db3b233e35a88802fed1717d19c3d9ec Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FollowTarget
 a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
+a379987060627e411116ca73e234d138 Assembly-CSharp.dll:.TestSphere
 0ad469aca31264c6140b1e503c43ab6b Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectDestructor
 9f9f51898ad5dfdc0552b42983d808b2 Assembly-CSharp.dll:.PlayerController
+a379987060627e411116ca73e234d138 Assembly-CSharp.dll:.Creature
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
 1ea0c28c827862689dcc0bc0416f80c7 Assembly-CSharp.dll:.PathSplines
 6109f0847712adbfbd89c82a2c532560 Assembly-CSharp.dll:.GeneralUISpace
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GeneralEventsListeners
+a379987060627e411116ca73e234d138 Assembly-CSharp.dll:.Beholder
 48ddff96f17b93c27762041529c640e1 Assembly-CSharp.dll:.OldGUIExamplesCS
 43993b62ac4ef5596dd499443ff12365 Assembly-CSharp.dll:MK.Glow.Resources
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
-a379987060627e411116ca73e234d138 Assembly-CSharp.dll:.Beholder
-a379987060627e411116ca73e234d138 Assembly-CSharp.dll:.Creature
-a379987060627e411116ca73e234d138 Assembly-CSharp.dll:.TestSphere
-2bbf9a81ba68a1e06f50762152fed37f Assembly-CSharp.dll:.Effects

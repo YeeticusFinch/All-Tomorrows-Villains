@@ -236,6 +236,8 @@ public class Player : NetworkBehaviour {
 
         if (isLocalPlayer)
             StartCoroutine("PlayFlashAnimation");
+        else
+            StartCoroutine(DamageFlash());
 
         HP -= amount * GameManager.instance.matchSettings.damageMult;
 
@@ -245,6 +247,15 @@ public class Player : NetworkBehaviour {
         {
             Die();
         }
+    }
+
+    IEnumerator DamageFlash()
+    {
+        foreach (GameObject e in chara.tintable)
+            e.GetComponent<Renderer>().material.color = new Color(1f, 0f, 0f, 1f);
+        yield return new WaitForSeconds(0.1f);
+        foreach (GameObject e in chara.tintable)
+            e.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
     }
 
     IEnumerator PlayFlashAnimation()

@@ -344,6 +344,9 @@
     <Compile Include="Assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\FlexibleCelShader\Shaders\CelNoOutline.shader" />
+    <None Include="Assets\FlexibleCelShader\Shaders\CelOutline.shader" />
+    <None Include="Assets\FlexibleCelShader\Shaders\CelSilhouette.shader" />
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
     <None Include="Assets\LeanTween\License.txt" />
     <None Include="Assets\LeanTween\ReadMe.txt" />

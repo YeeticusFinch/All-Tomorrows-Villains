@@ -53,6 +53,8 @@ public class Effects : NetworkBehaviour {
     {
         int c = Random.Range(5, Mathf.Max(7, (int)(2 * Mathf.Abs((pos2 - pos1).magnitude))));
 
+        for (int j = 0; j < 2; j++) {
+
         LineRenderer lineRenderer = new GameObject("Line").AddComponent<LineRenderer>();
         lineRenderer.material = glow;
         lineRenderer.material.color = new Color(Random.Range(0, 100) / 7f, Random.Range(0, 100) / 7f, Random.Range(0, 100) / 7f);
@@ -112,10 +114,11 @@ public class Effects : NetworkBehaviour {
             lineRenderer.SetPosition(i, new Vector3(pos1.x - i * stepX + Random.Range(-100, 100) / 200f, pos1.y - i * stepY + Random.Range(-100, 100) / 200f, pos1.z - i * stepZ + Random.Range(-100, 100) / 200f));
         lineRenderer.SetPosition(c - 1, new Vector3(pos2.x, pos2.y, pos2.z));
 
-        yield return new WaitForSeconds(0.045f);
+        yield return new WaitForSeconds(0.075f);
 
         GameObject.Destroy(lineRenderer.gameObject);
         //yield break;
+        }
     }
 
 }

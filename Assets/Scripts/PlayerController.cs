@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour {
                 velocity += (motor.cam.transform.right * xMov + motor.cam.transform.forward * zMov).normalized * speed;
             else
                 velocity += (transform.right * xMov + transform.forward * zMov).normalized * speed;
+            
             //Debug.Log("Max Speed = " + speed + ", rb.velocity = " + motor.rb.velocity.magnitude + ", velocity = " + velocity.magnitude + ", combined = " + (motor.rb.velocity + velocity).magnitude);
 
             /*
@@ -90,13 +91,13 @@ public class PlayerController : MonoBehaviour {
             if (maxSpeed)
                 velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
             velocity.y = jumpForce;
-        } else if (Input.GetButton("Jump") && flySpeed > 0)
+        } else if ((Input.GetButton("Jump") || Input.GetButton("Crouch")) && flySpeed > 0)
         {
             maxSpeed = true;
-            velocity += motor.cam.transform.up.normalized * flySpeed;
+            velocity += (Input.GetButton("Crouch") ? -1 : 1) * motor.cam.transform.up.normalized * flySpeed;
             velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
         }
-
+        velocity *= Input.GetButton("Sprint") ? 2 : 1;
         motor.ApplyThruster(velocity*100);
     }
 

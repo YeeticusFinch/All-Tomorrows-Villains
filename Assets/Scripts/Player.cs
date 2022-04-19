@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Player : NetworkBehaviour {
 
     [SyncVar]
-    public int charId = 1;
+    public int charId;
 
     [SerializeField]
     GameObject pauseMenu;
@@ -66,9 +66,9 @@ public class Player : NetworkBehaviour {
 
     public void Setup()
     {
-        charId = GameManager.instance.charId;
         if (isLocalPlayer)
         {
+            charId = GameManager.instance.charId;
             CmdLoadModel(charId);
             //CmdBroadcastCharId(charId);
         }

@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: 0d517efbd5e2d2b419cdc5ff7d06849b
+timeCreated: 1650432998
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Armature.001
+    100004: Armature.002
+    100006: Base
+    100008: Base 1
+    100010: Base 2
+    100012: BezierCurve
+    100014: Body
+    100016: Central Eye
+    100018: Central Eye 1
+    100020: Central Eye 2
+    100022: Central Eye_end
+    100024: Central Eye_end 1
+    100026: Central Eye_end 2
+    100028: Circle
+    100030: Cube.001
+    100032: Cube.003
+    100034: Eye
+    100036: Jaw Bottom
+    100038: Jaw Bottom 1
+    100040: Jaw Bottom 2
+    100042: Jaw Bottom_end
+    100044: Jaw Bottom_end 1
+    100046: Jaw Bottom_end 2
+    100048: Jaw Top
+    100050: Jaw Top 1
+    100052: Jaw Top 2
+    100054: Small Eye 1
+    100056: Small Eye 1 1
+    100058: Small Eye 1 2
+    100060: Small Eye 1_end
+    100062: Small Eye 1_end 1
+    100064: Small Eye 1_end 2
+    100066: Small Eye 2
+    100068: Small Eye 2 1
+    100070: Small Eye 2 2
+    100072: Small Eye 2_end
+    100074: Small Eye 2_end 1
+    100076: Small Eye 2_end 2
+    100078: Small Eye 3
+    100080: Small Eye 3 1
+    100082: Small Eye 3 2
+    100084: Small Eye 3_end
+    100086: Small Eye 3_end 1
+    100088: Small Eye 3_end 2
+    100090: Small Eye 4
+    100092: Small Eye 4 1
+    100094: Small Eye 4 2
+    100096: Small Eye 4_end
+    100098: Small Eye 4_end 1
+    100100: Small Eye 4_end 2
+    100102: Small Eye 5
+    100104: Small Eye 5 1
+    100106: Small Eye 5 2
+    100108: Small Eye 5_end
+    100110: Small Eye 5_end 1
+    100112: Small Eye 5_end 2
+    100114: Small Eye 6
+    100116: Small Eye 6 1
+    100118: Small Eye 6 2
+    100120: Small Eye 6_end
+    100122: Small Eye 6_end 1
+    100124: Small Eye 6_end 2
+    100126: Small Eye 7
+    100128: Small Eye 7 1
+    100130: Small Eye 7 2
+    100132: Small Eye 7_end
+    100134: Small Eye 7_end 1
+    100136: Small Eye 7_end 2
+    100138: Small Eye 8
+    100140: Small Eye 8 1
+    100142: Small Eye 8 2
+    100144: Small Eye 8_end
+    100146: Small Eye 8_end 1
+    100148: Small Eye 8_end 2
+    100150: Small Eye 9
+    100152: Small Eye 9 1
+    100154: Small Eye 9 2
+    100156: Small Eye 9_end
+    100158: Small Eye 9_end 1
+    100160: Small Eye 9_end 2
+    100162: small-eye.002
+    100164: //RootNode
+    100166: Teeth
+    100168: Teeth.001
+    400000: Armature
+    400002: Armature.001
+    400004: Armature.002
+    400006: Base
+    400008: Base 1
+    400010: Base 2
+    400012: BezierCurve
+    400014: Body
+    400016: Central Eye
+    400018: Central Eye 1
+    400020: Central Eye 2
+    400022: Central Eye_end
+    400024: Central Eye_end 1
+    400026: Central Eye_end 2
+    400028: Circle
+    400030: Cube.001
+    400032: Cube.003
+    400034: Eye
+    400036: Jaw Bottom
+    400038: Jaw Bottom 1
+    400040: Jaw Bottom 2
+    400042: Jaw Bottom_end
+    400044: Jaw Bottom_end 1
+    400046: Jaw Bottom_end 2
+    400048: Jaw Top
+    400050: Jaw Top 1
+    400052: Jaw Top 2
+    400054: Small Eye 1
+    400056: Small Eye 1 1
+    400058: Small Eye 1 2
+    400060: Small Eye 1_end
+    400062: Small Eye 1_end 1
+    400064: Small Eye 1_end 2
+    400066: Small Eye 2
+    400068: Small Eye 2 1
+    400070: Small Eye 2 2
+    400072: Small Eye 2_end
+    400074: Small Eye 2_end 1
+    400076: Small Eye 2_end 2
+    400078: Small Eye 3
+    400080: Small Eye 3 1
+    400082: Small Eye 3 2
+    400084: Small Eye 3_end
+    400086: Small Eye 3_end 1
+    400088: Small Eye 3_end 2
+    400090: Small Eye 4
+    400092: Small Eye 4 1
+    400094: Small Eye 4 2
+    400096: Small Eye 4_end
+    400098: Small Eye 4_end 1
+    400100: Small Eye 4_end 2
+    400102: Small Eye 5
+    400104: Small Eye 5 1
+    400106: Small Eye 5 2
+    400108: Small Eye 5_end
+    400110: Small Eye 5_end 1
+    400112: Small Eye 5_end 2
+    400114: Small Eye 6
+    400116: Small Eye 6 1
+    400118: Small Eye 6 2
+    400120: Small Eye 6_end
+    400122: Small Eye 6_end 1
+    400124: Small Eye 6_end 2
+    400126: Small Eye 7
+    400128: Small Eye 7 1
+    400130: Small Eye 7 2
+    400132: Small Eye 7_end
+    400134: Small Eye 7_end 1
+    400136: Small Eye 7_end 2
+    400138: Small Eye 8
+    400140: Small Eye 8 1
+    400142: Small Eye 8 2
+    400144: Small Eye 8_end
+    400146: Small Eye 8_end 1
+    400148: Small Eye 8_end 2
+    400150: Small Eye 9
+    400152: Small Eye 9 1
+    400154: Small Eye 9 2
+    400156: Small Eye 9_end
+    400158: Small Eye 9_end 1
+    400160: Small Eye 9_end 2
+    400162: small-eye.002
+    400164: //RootNode
+    400166: Teeth
+    400168: Teeth.001
+    2100000: Hat Red
+    2100002: Hat Green
+    2100004: Hat Black
+    2100006: Hat Gold
+    2100008: Hat Dark Red
+    2100010: Material.000
+    2100012: Material.003
+    2100014: Tooth
+    2100016: Material.001
+    2100018: Material.002
+    2100020: Material.004
+    2100022: Material.010
+    2100024: Material.007
+    2100026: Material.006
+    2100028: Material.008
+    2100030: Material.009
+    2100032: Material.023
+    2100034: Eye
+    2100036: Beholder Skin
+    2100038: Beholder Mouth
+    2100040: BeholderTentacle
+    2100042: Tooth.001
+    2100044: Tooth.002
+    4300000: Circle
+    4300002: Cube.003
+    4300004: Cube.001
+    4300006: Teeth
+    4300008: small-eye.002
+    4300010: Eye
+    4300012: Body
+    4300014: BezierCurve
+    4300016: Teeth.001
+    7400000: Bite.001
+    7400002: Idle.002
+    7400004: Idle
+    7400006: Armature|CircleAction
+    7400008: Armature|Cube.001Action
+    7400010: Armature|CubeAction
+    7400012: Armature|CubeAction.001
+    7400014: Armature|Idle
+    7400016: Armature|Idle.001
+    7400018: Armature|Idle.002
+    7400020: Armature|Teeth.001Action
+    7400022: Armature|Teeth.001Action.001
+    7400024: Circle|CircleAction
+    7400026: Circle|Cube.001Action
+    7400028: Circle|CubeAction
+    7400030: Circle|CubeAction.001
+    7400032: Circle|Teeth.001Action
+    7400034: Circle|Teeth.001Action.001
+    7400036: Cube.003|CircleAction
+    7400038: Cube.003|Cube.001Action
+    7400040: Cube.003|CubeAction
+    7400042: Cube.003|CubeAction.001
+    7400044: Cube.003|Teeth.001Action
+    7400046: Cube.003|Teeth.001Action.001
+    7400048: Cube.001|CircleAction
+    7400050: Cube.001|Cube.001Action
+    7400052: Cube.001|CubeAction
+    7400054: Cube.001|CubeAction.001
+    7400056: Cube.001|Teeth.001Action
+    7400058: Cube.001|Teeth.001Action.001
+    7400060: small-eye.002|CircleAction
+    7400062: small-eye.002|Cube.001Action
+    7400064: small-eye.002|CubeAction
+    7400066: small-eye.002|CubeAction.001
+    7400068: small-eye.002|Teeth.001Action
+    7400070: small-eye.002|Teeth.001Action.001
+    7400072: Body|CircleAction
+    7400074: Body|Cube.001Action
+    7400076: Body|CubeAction
+    7400078: Body|CubeAction.001
+    7400080: Body|Teeth.001Action
+    7400082: Body|Teeth.001Action.001
+    7400084: BezierCurve|CircleAction
+    7400086: BezierCurve|Cube.001Action
+    7400088: BezierCurve|CubeAction
+    7400090: BezierCurve|CubeAction.001
+    7400092: BezierCurve|Teeth.001Action
+    7400094: BezierCurve|Teeth.001Action.001
+    7400096: Armature.001|CircleAction
+    7400098: Armature.001|Cube.001Action
+    7400100: Armature.001|CubeAction
+    7400102: Armature.001|CubeAction.001
+    7400104: Armature.001|Idle
+    7400106: Armature.001|Idle.001
+    7400108: Armature.001|Idle.002
+    7400110: Armature.001|Teeth.001Action
+    7400112: Armature.001|Teeth.001Action.001
+    7400114: Teeth.001|CircleAction
+    7400116: Teeth.001|Cube.001Action
+    7400118: Teeth.001|CubeAction
+    7400120: Teeth.001|CubeAction.001
+    7400122: Teeth.001|Teeth.001Action
+    7400124: Teeth.001|Teeth.001Action.001
+    7400126: Armature.002|CircleAction
+    7400128: Armature.002|Cube.001Action
+    7400130: Armature.002|CubeAction
+    7400132: Armature.002|CubeAction.001
+    7400134: Armature.002|Idle
+    7400136: Armature.002|Idle.001
+    7400138: Armature.002|Idle.002
+    7400140: Armature.002|Teeth.001Action
+    7400142: Armature.002|Teeth.001Action.001
+    9500000: //RootNode
+    13700000: BezierCurve
+    13700002: Body
+    13700004: Circle
+    13700006: Cube.001
+    13700008: Cube.003
+    13700010: Eye
+    13700012: small-eye.002
+    13700014: Teeth
+    13700016: Teeth.001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

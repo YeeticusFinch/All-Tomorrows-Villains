@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80224e313a5927d42b03a53f23d4bfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  id: 3
   title: Beholder
   AC: 18
   HP: 180

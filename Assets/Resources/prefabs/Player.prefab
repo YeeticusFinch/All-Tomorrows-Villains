@@ -525,6 +525,7 @@ MonoBehaviour:
   - {fileID: 1551443506765740, guid: cab48e4587f18d94695f416625dc344c, type: 2}
   - {fileID: 1480341622056540, guid: 2a1d02a58d48b0a4db241ffff43f08fe, type: 2}
   - {fileID: 1086304870359850, guid: 7d356ad44fa8db34e92b1f0903941589, type: 2}
+  - {fileID: 1843374586251200, guid: 54b28931bb8c1774d966bce1c951247a, type: 2}
   cam: {fileID: 20975337560291868}
   cam3: {fileID: 20080517080298750}
   chara: {fileID: 0}

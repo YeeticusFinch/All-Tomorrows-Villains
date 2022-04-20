@@ -28,7 +28,9 @@ public class Character : MonoBehaviour {
     public GameObject[] hideThirdPerson;
     public GameObject[] canJumpFrom;
     public GameObject camAttach;
+    public GameObject camAttachTo;
     public bool rotateWithCamera = false;
+    public bool rotateWithCameraWhenFlying = false;
     public float distanceToGround = 0.5f;
     public Vector3 cameraOffset;
     

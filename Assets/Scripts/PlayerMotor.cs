@@ -19,10 +19,17 @@ public class PlayerMotor : MonoBehaviour {
     private Vector3 acceleration = Vector3.zero;
     private Vector3 prevVel = Vector3.zero;
 
+    private Vector3 initialRot;
+    private Vector3 flyRot;
+
+    float roll = 0f;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-	}
+        initialRot = transform.eulerAngles;
+        flyRot = initialRot;
+    }
 
     public void Move(Vector3 vel)
     {
@@ -52,7 +59,7 @@ public class PlayerMotor : MonoBehaviour {
         prevVel = rb.velocity;
         //print("vel = " + rb.velocity);
         //if (Input.GetButton("Jump")) print("acc = " + acceleration);
-        if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null && GetComponent<Player>().chara.rotateWithCamera)
+        if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null && (GetComponent<Player>().chara.rotateWithCamera || (GetComponent<Player>().chara.rotateWithCameraWhenFlying && !GetComponent<Player>().IsGrounded())))
             GetComponent<Player>().CmdRotate(GetComponent<Player>().model.transform.eulerAngles);
         fi++;
         fi %= 10000;
@@ -72,6 +79,8 @@ public class PlayerMotor : MonoBehaviour {
 
     void PerformRotation()
     {
+        
+
         if (PauseGame.IsOn)
             return;
 
@@ -84,11 +93,18 @@ public class PlayerMotor : MonoBehaviour {
             currentCameraRotation = Mathf.Clamp(currentCameraRotation, -cameraRotationLimit, cameraRotationLimit); // Clamp rotation
 
             cam.transform.localEulerAngles = new Vector3(currentCameraRotation, 0f, 0f); // Apply rotation to camera
-            if (GetComponent<Player>().chara != null && GetComponent<Player>().model != null && GetComponent<Player>().chara.rotateWithCamera)
+            if (GetComponent<Player>().chara != null && GetComponent<Player>().charId >= 1 && GetComponent<Player>().charId <= 3)
+                flyRot += Vector3.Cross(new Vector3(currentCameraRotation - prevCamRotation, 0f, 0f), GetComponent<Player>().chara.rotate.normalized);
+            else
+                flyRot -= new Vector3(currentCameraRotation - prevCamRotation, 0f, roll);
+            if (GetComponent<Player>().chara != null && GetComponent<Player>().model != null && (GetComponent<Player>().chara.rotateWithCamera || (GetComponent<Player>().chara.rotateWithCameraWhenFlying && !GetComponent<Player>().IsGrounded())))
             {
                 //GetComponent<Player>().CmdRotate(Vector3.Cross(new Vector3(currentCameraRotation - prevCamRotation, 0f, 0f), GetComponent<Player>().chara.rotate.normalized));
-                GetComponent<Player>().model.transform.eulerAngles += Vector3.Cross(new Vector3(currentCameraRotation - prevCamRotation, 0f, 0f), GetComponent<Player>().chara.rotate.normalized);
-                
+                GetComponent<Player>().model.transform.eulerAngles = new Vector3(flyRot.x, GetComponent<Player>().model.transform.eulerAngles.y, flyRot.z);
+
+            } else if (GetComponent<Player>().chara != null && GetComponent<Player>().chara.rotateWithCameraWhenFlying && GetComponent<Player>().IsGrounded())
+            {
+                GetComponent<Player>().model.transform.eulerAngles = new Vector3(initialRot.x, GetComponent<Player>().model.transform.eulerAngles.y, initialRot.z);
             }
         }
 

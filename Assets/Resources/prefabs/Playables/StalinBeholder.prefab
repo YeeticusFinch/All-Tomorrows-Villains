@@ -1223,13 +1223,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   title: StalinBeholder
-  AC: 18
-  HP: 180
+  AC: 13
+  HP: 322
   WALK_SPEED: 10
   CLIMB_SPEED: 0
   FLY_SPEED: 20
   HOVER: 1
-  CR: 13
+  CR: 21
   jumpHeight: 10
   fov: 90
   creature: {fileID: 114328184818023606}

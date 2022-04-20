@@ -29,4 +29,19 @@ public class Creature : NetworkBehaviour {
     {
         return 0;
     }
+
+    public virtual void walkAnim(float speed)
+    {
+
+    }
+
+    public virtual void flyAnim(float speed)
+    {
+
+    }
+
+    public virtual void idleAnim()
+    {
+
+    }
 }

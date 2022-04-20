@@ -21,20 +21,27 @@ public class PlayerController : MonoBehaviour {
 
     private Character chara;
 
+    public Creature creature;
+
     [SerializeField]
     private LayerMask jumpMask;
 
     void Start () {
         motor = GetComponent<PlayerMotor>();
+        
 	}
 
-    public void Setup()
+    public void Setup(float ws, float cs, float fs, float jf)
     {
         chara = GetComponent<Player>().chara;
-        walkSpeed = (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f * 1.55f;
-        climbSpeed = (chara.CLIMB_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
-        flySpeed = (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
-        jumpForce = chara.jumpHeight * GameManager.instance.matchSettings.moveSpeedMult * 10f;
+        walkSpeed = ws;
+        climbSpeed = cs;
+        flySpeed = fs;
+        jumpForce = jf;
+        //walkSpeed = (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f * 1.55f;
+        //climbSpeed = (chara.CLIMB_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+        //flySpeed = (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+        //jumpForce = chara.jumpHeight * GameManager.instance.matchSettings.moveSpeedMult * 10f;
     }
 	
 	void Update () {
@@ -51,15 +58,21 @@ public class PlayerController : MonoBehaviour {
         float zMov = Input.GetAxisRaw("Vertical");
         Vector3 velocity = Vector3.zero;
         bool maxSpeed = false;
-        float speed = Mathf.Max(walkSpeed, flySpeed);
+        float speed = walkSpeed;
         if (Mathf.Abs(xMov) + Mathf.Abs(zMov) > 0) {
             //Final Movement vector
             maxSpeed = true;
             if (!IsGrounded()) speed = flySpeed == 0 ? walkSpeed/2f : flySpeed;
             if (speed == flySpeed)
+            {
                 velocity += (motor.cam.transform.right * xMov + motor.cam.transform.forward * zMov).normalized * speed;
+                //creature.flyAnim((Input.GetButton("Sprint") ? 2 : 1) * zMov / Mathf.Abs(zMov));
+            }
             else
+            {
                 velocity += (transform.right * xMov + transform.forward * zMov).normalized * speed;
+                //creature.walkAnim((Input.GetButton("Sprint") ? 2 : 1)*zMov/Mathf.Abs(zMov));
+            }
             
             //Debug.Log("Max Speed = " + speed + ", rb.velocity = " + motor.rb.velocity.magnitude + ", velocity = " + velocity.magnitude + ", combined = " + (motor.rb.velocity + velocity).magnitude);
 
@@ -68,6 +81,10 @@ public class PlayerController : MonoBehaviour {
             if (motor.rb.velocity.x + velocity.x < -speed) velocity.x = -speed - motor.rb.velocity.x;
             if (motor.rb.velocity.z + velocity.z > speed) velocity.z = speed - motor.rb.velocity.z;
             if (motor.rb.velocity.z + velocity.z < -speed) velocity.z = -speed - motor.rb.velocity.z;*/
+        } else
+        {
+            //if (creature != null)
+                //creature.idleAnim();
         }
         //Apply movement
         //motor.Move(velocity);
@@ -109,6 +126,17 @@ public class PlayerController : MonoBehaviour {
             {
                 //Effects.instance.CmdSparky(e.transform.position+e.GetComponent<SphereCollider>().center, e.transform.position - Vector3.up*(e.GetComponent<SphereCollider>().radius + 0.1f), null, null);
                 bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<SphereCollider>().center, -Vector3.up, out hit, e.GetComponent<SphereCollider>().radius*e.GetComponent<SphereCollider>().transform.localScale.magnitude + 0.1f, jumpMask);
+                //if (yeet)
+                //    Debug.Log("Touching Ground");
+                if (yeet)
+                    return yeet;
+            }
+            else if (e.GetComponent<CapsuleCollider>() != null)
+            {
+                //Effects.instance.CmdSparky(e.transform.position + e.GetComponent<CapsuleCollider>().center, e.transform.position - Vector3.up * (0.25f * e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f), null, null);
+                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<CapsuleCollider>().center, -Vector3.up, out hit, 0.25f*e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f, jumpMask);
+                //if (yeet)
+                //    Debug.Log("Touching Ground");
                 if (yeet)
                     return yeet;
             }

@@ -153,7 +153,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.15
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -518,6 +518,9 @@ MonoBehaviour:
   uiCanvas: {fileID: 1009481503999516, guid: 953b3494c77b5bf43a80b7b637ac13b4, type: 2}
   model: {fileID: 0}
   maxHP: 100
+  jumpMask:
+    serializedVersion: 2
+    m_Bits: 4294967001
   disableOnDeath:
   - {fileID: 114833538903013524}
   - {fileID: 114137781764436924}
@@ -526,6 +529,7 @@ MonoBehaviour:
   - {fileID: 1480341622056540, guid: 2a1d02a58d48b0a4db241ffff43f08fe, type: 2}
   - {fileID: 1086304870359850, guid: 7d356ad44fa8db34e92b1f0903941589, type: 2}
   - {fileID: 1843374586251200, guid: 54b28931bb8c1774d966bce1c951247a, type: 2}
+  - {fileID: 1404044278237922, guid: 9fe22cb071c21ac43b53f8bb697a8f64, type: 2}
   cam: {fileID: 20975337560291868}
   cam3: {fileID: 20080517080298750}
   chara: {fileID: 0}
@@ -541,6 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 3
+  creature: {fileID: 0}
   jumpMask:
     serializedVersion: 2
     m_Bits: 4294967003

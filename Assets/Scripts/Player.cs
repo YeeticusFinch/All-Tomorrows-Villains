@@ -33,6 +33,10 @@ public class Player : NetworkBehaviour {
 
     [SerializeField]
     private float maxHP;
+
+    [SerializeField]
+    private LayerMask jumpMask;
+
     public float maxHealth
     {
         get { return maxHP; }
@@ -66,8 +70,15 @@ public class Player : NetworkBehaviour {
 
     public Character chara;
 
+    float walkSpeed;
+    float climbSpeed;
+    float flySpeed;
+    float jumpForce;
+
     public void Setup()
     {
+
+
         if (isLocalPlayer)
         {
             charId = GameManager.instance.charId;
@@ -173,9 +184,20 @@ public class Player : NetworkBehaviour {
                 model.layer = 9;
             }
             GetComponent<Rigidbody>().useGravity = !chara.HOVER;
-            GetComponent<PlayerController>().Setup();
+
+            walkSpeed = (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f * 1.55f;
+            climbSpeed = (chara.CLIMB_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+            flySpeed = (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+            jumpForce = chara.jumpHeight * GameManager.instance.matchSettings.moveSpeedMult * 10f;
+
+            GetComponent<PlayerController>().Setup(walkSpeed, climbSpeed, flySpeed, jumpForce);
             model.transform.name = transform.name;
             GetComponent<PlayerShoot>().Init(chara);
+
+            //if (isLocalPlayer && chara.camAttachTo != null)
+            //{
+            //    cam.transform.SetParent(chara.camAttachTo.transform);
+            //}
         }
         //else if (charId == -1 && !isLocalPlayer)
         //    CmdQueryId();
@@ -399,8 +421,32 @@ public class Player : NetworkBehaviour {
         Debug.Log("Starting");
     }
 
+    private Vector3 MaxV(Vector3 a, Vector3 b)
+    {
+        if (a.magnitude > b.magnitude)
+            return a;
+        else return b;
+        //return new Vector3(Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y), Mathf.Max(a.z, b.z));
+    }
+
+    private Vector3 MinV(Vector3 a, Vector3 b)
+    {
+        if (a.magnitude > b.magnitude)
+            return b;
+        else return a;
+        //return new Vector3(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y), Mathf.Min(a.z, b.z));
+    }
+
     public void Update()
     {
+        if (isLocalPlayer && chara != null && chara.camAttachTo != null)
+        {
+            //cam.transform.position = RotatePointAroundPivot(chara.camAttachTo.transform.position, transform.position, chara.rotate);
+            cam.transform.position += MinV(chara.camAttachTo.transform.position - cam.transform.position, 0.1f*(chara.camAttachTo.transform.position - cam.transform.position).normalized);
+            if (Mathf.Abs(chara.camAttachTo.transform.eulerAngles.z - cam.transform.eulerAngles.z) < 60f)
+                cam.transform.eulerAngles = new Vector3(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, chara.camAttachTo.transform.eulerAngles.z);
+            //cam.transform.SetParent(chara.camAttachTo.transform);
+        }
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
@@ -429,6 +475,28 @@ public class Player : NetworkBehaviour {
                 foreach (GameObject e in chara.tintable)
                     e.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
         }
+        if (chara != null && GetComponent<Rigidbody>().velocity.magnitude > 0.1f)
+        {
+            float vel = GetComponent<Rigidbody>().velocity.magnitude;
+            if (IsGrounded() && chara.WALK_SPEED > 0)
+            {
+                chara.creature.walkAnim(Mathf.Clamp(2*vel / walkSpeed, 0.1f, 3f));
+                if (!chara.HOVER)
+                    GetComponent<Rigidbody>().useGravity = true;
+            } else if (chara.FLY_SPEED > 0)
+            {
+                chara.creature.flyAnim(Mathf.Clamp(vel / flySpeed, 0.8f, 3f));
+                if (!chara.HOVER)
+                    GetComponent<Rigidbody>().useGravity = Mathf.Sqrt(Mathf.Pow(GetComponent<Rigidbody>().velocity.x,2) + Mathf.Pow(GetComponent<Rigidbody>().velocity.z, 2)) / flySpeed < 0.8f;
+                //Debug.Log(GetComponent<Rigidbody>().velocity);
+                //Debug.Log(Mathf.Abs(GetComponent<Rigidbody>().velocity.z) / flySpeed > 0.8f);
+            }
+        } else if (chara != null)
+        {
+            chara.creature.idleAnim();
+            if (!chara.HOVER)
+                GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 
     GameObject pauseMenuInstance;
@@ -453,5 +521,38 @@ public class Player : NetworkBehaviour {
                 Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
+
+    public bool IsGrounded()
+    {
+        RaycastHit hit;
+        //int i = 0;
+        foreach (GameObject e in chara.canJumpFrom)
+            if (e.GetComponent<SphereCollider>() != null)
+            {
+                //Effects.instance.CmdSparky(e.transform.position+e.GetComponent<SphereCollider>().center, e.transform.position - Vector3.up*(e.GetComponent<SphereCollider>().radius + 0.1f), null, null);
+                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<SphereCollider>().center, -Vector3.up, out hit, e.GetComponent<SphereCollider>().radius * e.GetComponent<SphereCollider>().transform.localScale.magnitude + 0.1f, jumpMask);
+                //if (yeet)
+                //    Debug.Log("Touching Ground");
+                if (yeet)
+                    return yeet;
+            }
+            else if (e.GetComponent<CapsuleCollider>() != null)
+            {
+                //Effects.instance.CmdSparky(e.transform.position + e.GetComponent<CapsuleCollider>().center, e.transform.position - Vector3.up * (0.25f * e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f), null, null);
+                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<CapsuleCollider>().center, -Vector3.up, out hit, 0.25f * e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f, jumpMask);
+                //if (yeet)
+                //    Debug.Log("Touching Ground");
+                if (yeet)
+                    return yeet;
+            }
+        //else if (e.GetComponent<SphereCollider>() != null)
+        //    return Physics.Raycast(e.GetComponent<SphereCollider>().center, -Vector3.up, e.GetComponent<SphereCollider>().radius + 0.1f);
+        return false;
+    }
+
+    public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
+    {
+        return Quaternion.Euler(angles) * (point - pivot) + pivot;
     }
 }

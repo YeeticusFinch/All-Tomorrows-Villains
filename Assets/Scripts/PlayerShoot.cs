@@ -44,6 +44,8 @@ public class PlayerShoot : NetworkBehaviour {
         creature.cam = cam;
         creature.weapon = weapon;
         creature.player = player;
+        if (GetComponent<PlayerController>())
+            GetComponent<PlayerController>().creature = creature;
     }
 
     private void Update()

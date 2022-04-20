@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 980e376fb54b2b14ea7849360a90cf34
+timeCreated: 1650476747
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BezierCircle
+    100002: breast_L
+    100004: breast_L_end
+    100006: breast_R
+    100008: breast_R_end
+    100010: calf_L
+    100012: calf_R
+    100014: calf_twist_L
+    100016: calf_twist_L_end
+    100018: calf_twist_R
+    100020: calf_twist_R_end
+    100022: clavicle_L
+    100024: clavicle_R
+    100026: Cube
+    100028: Cube.001
+    100030: Cube.002
+    100032: f_an03_skeleton.001
+    100034: foot_L
+    100036: foot_R
+    100038: hand_L
+    100040: hand_R
+    100042: //RootNode
+    100044: head
+    100046: head_end
+    100048: index00_L
+    100050: index00_R
+    100052: index01_L
+    100054: index01_R
+    100056: index02_L
+    100058: index02_R
+    100060: index03_L
+    100062: index03_L_end
+    100064: index03_R
+    100066: index03_R_end
+    100068: lowerarm_L
+    100070: lowerarm_R
+    100072: lowerarm_twist_L
+    100074: lowerarm_twist_L_end
+    100076: lowerarm_twist_R
+    100078: lowerarm_twist_R_end
+    100080: MBlab_bd1634093356.524649
+    100082: middle00_L
+    100084: middle00_R
+    100086: middle01_L
+    100088: middle01_R
+    100090: middle02_L
+    100092: middle02_R
+    100094: middle03_L
+    100096: middle03_L_end
+    100098: middle03_R
+    100100: middle03_R_end
+    100102: neck
+    100104: pelvis
+    100106: pinky00_L
+    100108: pinky00_R
+    100110: pinky01_L
+    100112: pinky01_R
+    100114: pinky02_L
+    100116: pinky02_R
+    100118: pinky03_L
+    100120: pinky03_L_end
+    100122: pinky03_R
+    100124: pinky03_R_end
+    100126: Plane.001
+    100128: ring00_L
+    100130: ring00_R
+    100132: ring01_L
+    100134: ring01_R
+    100136: ring02_L
+    100138: ring02_R
+    100140: ring03_L
+    100142: ring03_L_end
+    100144: ring03_R
+    100146: ring03_R_end
+    100148: root
+    100150: spine01
+    100152: spine02
+    100154: spine03
+    100156: spine03.001
+    100158: spine03.002
+    100160: spine03.003
+    100162: spine03.003_end
+    100164: spine03.004
+    100166: spine03.004_end
+    100168: thigh_L
+    100170: thigh_R
+    100172: thigh_twist_L
+    100174: thigh_twist_L_end
+    100176: thigh_twist_R
+    100178: thigh_twist_R_end
+    100180: thumb01_L
+    100182: thumb01_R
+    100184: thumb02_L
+    100186: thumb02_R
+    100188: thumb03_L
+    100190: thumb03_L_end
+    100192: thumb03_R
+    100194: thumb03_R_end
+    100196: toes_L
+    100198: toes_L_end
+    100200: toes_R
+    100202: toes_R_end
+    100204: upperarm_L
+    100206: upperarm_R
+    100208: upperarm_twist_L
+    100210: upperarm_twist_L_end
+    100212: upperarm_twist_R
+    100214: upperarm_twist_R_end
+    100216: Wing
+    100218: Wing.001
+    100220: breast_L 1
+    100222: breast_L_end 1
+    100224: breast_R 1
+    100226: breast_R_end 1
+    100228: calf_L 1
+    100230: calf_R 1
+    100232: calf_twist_L 1
+    100234: calf_twist_L_end 1
+    100236: calf_twist_R 1
+    100238: calf_twist_R_end 1
+    100240: clavicle_L 1
+    100242: clavicle_R 1
+    100244: f_an03_skeleton.000
+    100246: foot_L 1
+    100248: foot_R 1
+    100250: hand_L 1
+    100252: hand_R 1
+    100254: head 1
+    100256: head_end 1
+    100258: index00_L 1
+    100260: index00_R 1
+    100262: index01_L 1
+    100264: index01_R 1
+    100266: index02_L 1
+    100268: index02_R 1
+    100270: index03_L 1
+    100272: index03_L_end 1
+    100274: index03_R 1
+    100276: index03_R_end 1
+    100278: lowerarm_L 1
+    100280: lowerarm_R 1
+    100282: lowerarm_twist_L 1
+    100284: lowerarm_twist_L_end 1
+    100286: lowerarm_twist_R 1
+    100288: lowerarm_twist_R_end 1
+    100290: MBlab_bd1634093356.000
+    100292: middle00_L 1
+    100294: middle00_R 1
+    100296: middle01_L 1
+    100298: middle01_R 1
+    100300: middle02_L 1
+    100302: middle02_R 1
+    100304: middle03_L 1
+    100306: middle03_L_end 1
+    100308: middle03_R 1
+    100310: middle03_R_end 1
+    100312: neck 1
+    100314: pelvis 1
+    100316: pinky00_L 1
+    100318: pinky00_R 1
+    100320: pinky01_L 1
+    100322: pinky01_R 1
+    100324: pinky02_L 1
+    100326: pinky02_R 1
+    100328: pinky03_L 1
+    100330: pinky03_L_end 1
+    100332: pinky03_R 1
+    100334: pinky03_R_end 1
+    100336: ring00_L 1
+    100338: ring00_R 1
+    100340: ring01_L 1
+    100342: ring01_R 1
+    100344: ring02_L 1
+    100346: ring02_R 1
+    100348: ring03_L 1
+    100350: ring03_L_end 1
+    100352: ring03_R 1
+    100354: ring03_R_end 1
+    100356: root 1
+    100358: spine01 1
+    100360: spine02 1
+    100362: spine03 1
+    100364: spine03.001 1
+    100366: spine03.002 1
+    100368: spine03.003 1
+    100370: spine03.003_end 1
+    100372: spine03.004 1
+    100374: spine03.004_end 1
+    100376: thigh_L 1
+    100378: thigh_R 1
+    100380: thigh_twist_L 1
+    100382: thigh_twist_L_end 1
+    100384: thigh_twist_R 1
+    100386: thigh_twist_R_end 1
+    100388: thumb01_L 1
+    100390: thumb01_R 1
+    100392: thumb02_L 1
+    100394: thumb02_R 1
+    100396: thumb03_L 1
+    100398: thumb03_L_end 1
+    100400: thumb03_R 1
+    100402: thumb03_R_end 1
+    100404: toes_L 1
+    100406: toes_L_end 1
+    100408: toes_R 1
+    100410: toes_R_end 1
+    100412: upperarm_L 1
+    100414: upperarm_R 1
+    100416: upperarm_twist_L 1
+    100418: upperarm_twist_L_end 1
+    100420: upperarm_twist_R 1
+    100422: upperarm_twist_R_end 1
+    400000: BezierCircle
+    400002: breast_L
+    400004: breast_L_end
+    400006: breast_R
+    400008: breast_R_end
+    400010: calf_L
+    400012: calf_R
+    400014: calf_twist_L
+    400016: calf_twist_L_end
+    400018: calf_twist_R
+    400020: calf_twist_R_end
+    400022: clavicle_L
+    400024: clavicle_R
+    400026: Cube
+    400028: Cube.001
+    400030: Cube.002
+    400032: f_an03_skeleton.001
+    400034: foot_L
+    400036: foot_R
+    400038: hand_L
+    400040: hand_R
+    400042: //RootNode
+    400044: head
+    400046: head_end
+    400048: index00_L
+    400050: index00_R
+    400052: index01_L
+    400054: index01_R
+    400056: index02_L
+    400058: index02_R
+    400060: index03_L
+    400062: index03_L_end
+    400064: index03_R
+    400066: index03_R_end
+    400068: lowerarm_L
+    400070: lowerarm_R
+    400072: lowerarm_twist_L
+    400074: lowerarm_twist_L_end
+    400076: lowerarm_twist_R
+    400078: lowerarm_twist_R_end
+    400080: MBlab_bd1634093356.524649
+    400082: middle00_L
+    400084: middle00_R
+    400086: middle01_L
+    400088: middle01_R
+    400090: middle02_L
+    400092: middle02_R
+    400094: middle03_L
+    400096: middle03_L_end
+    400098: middle03_R
+    400100: middle03_R_end
+    400102: neck
+    400104: pelvis
+    400106: pinky00_L
+    400108: pinky00_R
+    400110: pinky01_L
+    400112: pinky01_R
+    400114: pinky02_L
+    400116: pinky02_R
+    400118: pinky03_L
+    400120: pinky03_L_end
+    400122: pinky03_R
+    400124: pinky03_R_end
+    400126: Plane.001
+    400128: ring00_L
+    400130: ring00_R
+    400132: ring01_L
+    400134: ring01_R
+    400136: ring02_L
+    400138: ring02_R
+    400140: ring03_L
+    400142: ring03_L_end
+    400144: ring03_R
+    400146: ring03_R_end
+    400148: root
+    400150: spine01
+    400152: spine02
+    400154: spine03
+    400156: spine03.001
+    400158: spine03.002
+    400160: spine03.003
+    400162: spine03.003_end
+    400164: spine03.004
+    400166: spine03.004_end
+    400168: thigh_L
+    400170: thigh_R
+    400172: thigh_twist_L
+    400174: thigh_twist_L_end
+    400176: thigh_twist_R
+    400178: thigh_twist_R_end
+    400180: thumb01_L
+    400182: thumb01_R
+    400184: thumb02_L
+    400186: thumb02_R
+    400188: thumb03_L
+    400190: thumb03_L_end
+    400192: thumb03_R
+    400194: thumb03_R_end
+    400196: toes_L
+    400198: toes_L_end
+    400200: toes_R
+    400202: toes_R_end
+    400204: upperarm_L
+    400206: upperarm_R
+    400208: upperarm_twist_L
+    400210: upperarm_twist_L_end
+    400212: upperarm_twist_R
+    400214: upperarm_twist_R_end
+    400216: Wing
+    400218: Wing.001
+    400220: breast_L 1
+    400222: breast_L_end 1
+    400224: breast_R 1
+    400226: breast_R_end 1
+    400228: calf_L 1
+    400230: calf_R 1
+    400232: calf_twist_L 1
+    400234: calf_twist_L_end 1
+    400236: calf_twist_R 1
+    400238: calf_twist_R_end 1
+    400240: clavicle_L 1
+    400242: clavicle_R 1
+    400244: f_an03_skeleton.000
+    400246: foot_L 1
+    400248: foot_R 1
+    400250: hand_L 1
+    400252: hand_R 1
+    400254: head 1
+    400256: head_end 1
+    400258: index00_L 1
+    400260: index00_R 1
+    400262: index01_L 1
+    400264: index01_R 1
+    400266: index02_L 1
+    400268: index02_R 1
+    400270: index03_L 1
+    400272: index03_L_end 1
+    400274: index03_R 1
+    400276: index03_R_end 1
+    400278: lowerarm_L 1
+    400280: lowerarm_R 1
+    400282: lowerarm_twist_L 1
+    400284: lowerarm_twist_L_end 1
+    400286: lowerarm_twist_R 1
+    400288: lowerarm_twist_R_end 1
+    400290: MBlab_bd1634093356.000
+    400292: middle00_L 1
+    400294: middle00_R 1
+    400296: middle01_L 1
+    400298: middle01_R 1
+    400300: middle02_L 1
+    400302: middle02_R 1
+    400304: middle03_L 1
+    400306: middle03_L_end 1
+    400308: middle03_R 1
+    400310: middle03_R_end 1
+    400312: neck 1
+    400314: pelvis 1
+    400316: pinky00_L 1
+    400318: pinky00_R 1
+    400320: pinky01_L 1
+    400322: pinky01_R 1
+    400324: pinky02_L 1
+    400326: pinky02_R 1
+    400328: pinky03_L 1
+    400330: pinky03_L_end 1
+    400332: pinky03_R 1
+    400334: pinky03_R_end 1
+    400336: ring00_L 1
+    400338: ring00_R 1
+    400340: ring01_L 1
+    400342: ring01_R 1
+    400344: ring02_L 1
+    400346: ring02_R 1
+    400348: ring03_L 1
+    400350: ring03_L_end 1
+    400352: ring03_R 1
+    400354: ring03_R_end 1
+    400356: root 1
+    400358: spine01 1
+    400360: spine02 1
+    400362: spine03 1
+    400364: spine03.001 1
+    400366: spine03.002 1
+    400368: spine03.003 1
+    400370: spine03.003_end 1
+    400372: spine03.004 1
+    400374: spine03.004_end 1
+    400376: thigh_L 1
+    400378: thigh_R 1
+    400380: thigh_twist_L 1
+    400382: thigh_twist_L_end 1
+    400384: thigh_twist_R 1
+    400386: thigh_twist_R_end 1
+    400388: thumb01_L 1
+    400390: thumb01_R 1
+    400392: thumb02_L 1
+    400394: thumb02_R 1
+    400396: thumb03_L 1
+    400398: thumb03_L_end 1
+    400400: thumb03_R 1
+    400402: thumb03_R_end 1
+    400404: toes_L 1
+    400406: toes_L_end 1
+    400408: toes_R 1
+    400410: toes_R_end 1
+    400412: upperarm_L 1
+    400414: upperarm_R 1
+    400416: upperarm_twist_L 1
+    400418: upperarm_twist_L_end 1
+    400420: upperarm_twist_R 1
+    400422: upperarm_twist_R_end 1
+    2100000: Material.006
+    2100002: Material.007
+    2100004: Material.005
+    2100006: Material.002
+    2100008: Material.021
+    2100010: Material
+    2100012: Material.004
+    2100014: MBlab_human_eyes1634093356.4983988
+    2100016: MBlab_pupil1634093356.4983988
+    2100018: MBlab_cornea1634093356.4983988
+    2100020: MBlab_human_skin1634093356.4983988
+    2100022: Nails
+    2100024: MBlab_human_teeth1634093356.4983988
+    2100026: Material.003
+    2100028: Material.001
+    2100030: Material.011
+    2100032: MBlab_human_eyes1634093356.000
+    2100034: MBlab_pupil1634093356.000
+    2100036: MBlab_cornea1634093356.000
+    2100038: MBlab_human_skin1634093356.000
+    2100040: Nails.001
+    2100042: MBlab_human_teeth1634093356.000
+    2300000: BezierCircle
+    3300000: BezierCircle
+    4300000: BezierCircle
+    4300002: Wing
+    4300004: Plane.001
+    4300006: Cube
+    4300008: Cube.001
+    4300010: MBlab_bd1634093356.524649
+    4300012: Cube.002
+    4300014: Wing.001
+    4300016: MBlab_bd1634093356.000
+    7400000: f_an03_skeleton.001|Claw
+    7400002: f_an03_skeleton.001|Claw.001
+    7400004: f_an03_skeleton.001|Claw.002
+    7400006: f_an03_skeleton.001|Claw.003
+    7400008: f_an03_skeleton.001|Claw.004
+    7400010: f_an03_skeleton.001|Claw.005
+    7400012: f_an03_skeleton.001|Cube.003Action
+    7400014: f_an03_skeleton.001|f_an03_skeleton.001Action
+    7400016: f_an03_skeleton.001|f_an03_skeleton.001Action.001
+    7400018: f_an03_skeleton.001|f_an03_skeleton.001Action.002
+    7400020: f_an03_skeleton.001|Fly
+    7400022: f_an03_skeleton.001|Fly.001
+    7400024: f_an03_skeleton.001|Fly.002
+    7400026: f_an03_skeleton.001|Plane.001Action
+    7400028: f_an03_skeleton.001|PlaneAction
+    7400030: f_an03_skeleton.001|PlaneAction.001
+    7400032: f_an03_skeleton.001|PlaneAction.002
+    7400034: f_an03_skeleton.001|PlaneAction.003
+    7400036: f_an03_skeleton.001|Swing
+    7400038: f_an03_skeleton.001|Swing.001
+    7400040: f_an03_skeleton.001|Swing.002
+    7400042: f_an03_skeleton.001|T-Pose
+    7400044: f_an03_skeleton.001|T-Pose.001
+    7400046: f_an03_skeleton.001|T-Pose.002
+    7400048: f_an03_skeleton.001|walk
+    7400050: f_an03_skeleton.001|Walk
+    7400052: f_an03_skeleton.001|Walk.001
+    7400054: f_an03_skeleton.001|walk.001
+    7400056: f_an03_skeleton.001|Walk.002
+    7400058: f_an03_skeleton.001|walk.002
+    7400060: f_an03_skeleton.001|WalkF
+    7400062: f_an03_skeleton.001|ClawF
+    7400064: f_an03_skeleton.001|SwingF
+    7400066: f_an03_skeleton.001|FlyF
+    7400068: f_an03_skeleton.001|IdleF
+    9500000: //RootNode
+    13700000: Cube
+    13700002: Cube.001
+    13700004: Cube.002
+    13700006: MBlab_bd1634093356.524649
+    13700008: Plane.001
+    13700010: Wing
+    13700012: Wing.001
+    13700014: MBlab_bd1634093356.000
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: f_an03_skeleton.001|WalkF
+      takeName: f_an03_skeleton.001|WalkF
+      firstFrame: 0
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: f_an03_skeleton.001|ClawF
+      takeName: f_an03_skeleton.001|ClawF
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: f_an03_skeleton.001|SwingF
+      takeName: f_an03_skeleton.001|SwingF
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: f_an03_skeleton.001|FlyF
+      takeName: f_an03_skeleton.001|FlyF
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: f_an03_skeleton.001|IdleF
+      takeName: f_an03_skeleton.001|IdleF
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -44,4 +44,9 @@ public class Creature : NetworkBehaviour {
     {
 
     }
+
+    public virtual void damage(float amount = 0f)
+    {
+
+    }
 }

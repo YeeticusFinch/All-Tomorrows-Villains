@@ -300,7 +300,7 @@ public class Player : NetworkBehaviour {
             StartCoroutine(DamageFlash());
 
         HP -= amount * GameManager.instance.matchSettings.damageMult;
-
+        chara.creature.damage(amount);
         //Debug.Log(transform.name + " now has " + HP + " HP");
 
         if (HP <= 0)
@@ -373,7 +373,7 @@ public class Player : NetworkBehaviour {
         if (col != null)
             col.enabled = false;*/
 
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        if (chara.camAttachTo == null) GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         StartCoroutine(Respawn());
     }
@@ -390,6 +390,10 @@ public class Player : NetworkBehaviour {
 
     public void SetDefaults()
     {
+        newEulers = 0f;
+        if (chara != null)
+            cam.transform.eulerAngles =chara.camAttachTo.transform.eulerAngles;
+
         dead = false;
 
         HP = maxHP;
@@ -437,14 +441,21 @@ public class Player : NetworkBehaviour {
         //return new Vector3(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y), Mathf.Min(a.z, b.z));
     }
 
+    float newEulers = 0f;
+    //float targetEulers;
+
     public void Update()
     {
         if (isLocalPlayer && chara != null && chara.camAttachTo != null)
         {
             //cam.transform.position = RotatePointAroundPivot(chara.camAttachTo.transform.position, transform.position, chara.rotate);
-            cam.transform.position += MinV(chara.camAttachTo.transform.position - cam.transform.position, 0.1f*(chara.camAttachTo.transform.position - cam.transform.position).normalized);
-            if (Mathf.Abs(chara.camAttachTo.transform.eulerAngles.z - cam.transform.eulerAngles.z) < 60f)
+            cam.transform.position += MinV(chara.camAttachTo.transform.position + chara.cameraOffset.z * chara.camAttachTo.transform.forward + chara.cameraOffset.x*chara.camAttachTo.transform.right + chara.cameraOffset.y * chara.camAttachTo.transform.up - cam.transform.position, 0.1f*(chara.camAttachTo.transform.position + chara.cameraOffset.z * chara.camAttachTo.transform.forward + chara.cameraOffset.x * chara.camAttachTo.transform.right + chara.cameraOffset.y * chara.camAttachTo.transform.up - cam.transform.position).normalized);
+            if (Mathf.Abs(chara.camAttachTo.transform.eulerAngles.z - cam.transform.eulerAngles.z) < 60f) {
                 cam.transform.eulerAngles = new Vector3(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, chara.camAttachTo.transform.eulerAngles.z);
+                ////targetEulers = chara.camAttachTo.transform.eulerAngles.z;
+                //newEulers += Mathf.Min(chara.camAttachTo.transform.eulerAngles.z - newEulers, 0.05f);
+                //cam.transform.eulerAngles = new Vector3(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, newEulers);
+            }
             //cam.transform.SetParent(chara.camAttachTo.transform);
         }
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.Escape))

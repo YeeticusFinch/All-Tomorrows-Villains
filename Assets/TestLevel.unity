@@ -1047,6 +1047,31 @@ MonoBehaviour:
     audioClips:
     - {fileID: 8300000, guid: 9dd0aef2502ba2d4f9ba0a20ef07de52, type: 3}
     - {fileID: 8300000, guid: 3828559503a184241ad71a5b6bf1ff39, type: 3}
+    - {fileID: 8300000, guid: d7b78c76f0cf28d44982d78a6f245eb4, type: 3}
+    - {fileID: 8300000, guid: b8ad3023460b82645861e7c96dd4de33, type: 3}
+    - {fileID: 8300000, guid: a44825ec102b0274197dab9ad4cc2263, type: 3}
+    - {fileID: 8300000, guid: 399fffc7bce75564eb04421d55bbbde6, type: 3}
+    - {fileID: 8300000, guid: 195905ccdc9a27743871310ebdd9c1c8, type: 3}
+    - {fileID: 8300000, guid: 495656d73b5343c4c92019c887e06df1, type: 3}
+    - {fileID: 8300000, guid: 37a5001a7c4e7b94bbebd55089f2765a, type: 3}
+    - {fileID: 8300000, guid: cb7f6bfea3fd56c459618fd3514414f3, type: 3}
+    - {fileID: 8300000, guid: 81b91790e359b44459f5dc8fa4c66e6a, type: 3}
+    - {fileID: 8300000, guid: 432e987e835db364d877bd05cde542a0, type: 3}
+    - {fileID: 8300000, guid: 8d6b45656a9e60041ad880a315851692, type: 3}
+    - {fileID: 8300000, guid: 6d0f8a23e5d52d0458f64cba1182d49f, type: 3}
+    - {fileID: 8300000, guid: 9e91f6543ee4fec4d977847fa8b087e8, type: 3}
+    - {fileID: 8300000, guid: f7d7901f91f359c49b1af182e9563fab, type: 3}
+    - {fileID: 8300000, guid: 1062f2d68eb8b8a438cf1f7c394ef743, type: 3}
+    - {fileID: 8300000, guid: 831dc474bbd586b4485a2a3b75110f0d, type: 3}
+    - {fileID: 8300000, guid: 89f9f69fb7211bc41944c76efdaac9c3, type: 3}
+    - {fileID: 8300000, guid: 70106fb08cf0690428d133f297ef1067, type: 3}
+    - {fileID: 8300000, guid: 8817358ce3563ba45bd6ee22b7779069, type: 3}
+    - {fileID: 8300000, guid: 98b28f1ed01c92240aee7a06b1b032cb, type: 3}
+    - {fileID: 8300000, guid: d0e7e3c6a1bd2c24f8f1e12a857f1eaa, type: 3}
+    - {fileID: 8300000, guid: 744e8bd02c0a70843acc599d970094d1, type: 3}
+    - {fileID: 8300000, guid: d8aaf76d55054d44196bfd7da88266c6, type: 3}
+    - {fileID: 8300000, guid: 0217f8ee7ae4aee429db34896c317de0, type: 3}
+    - {fileID: 8300000, guid: 1c13c87856a6e9441a99434e2ef44370, type: 3}
   charId: 1
 --- !u!114 &1654401085
 MonoBehaviour:

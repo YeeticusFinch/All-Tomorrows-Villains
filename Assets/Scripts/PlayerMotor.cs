@@ -58,8 +58,13 @@ public class PlayerMotor : MonoBehaviour {
         acceleration = (rb.velocity - prevVel) * Time.fixedDeltaTime;
         prevVel = rb.velocity;
         //print("vel = " + rb.velocity);
-        //if (Input.GetButton("Jump")) print("acc = " + acceleration);
-        if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null && (GetComponent<Player>().chara.rotateWithCamera || (GetComponent<Player>().chara.rotateWithCameraWhenFlying && !GetComponent<Player>().IsGrounded())))
+        if (acceleration.magnitude > 0.15)
+        {
+            //Debug.Log("acc = " + acceleration.magnitude);
+            GetComponent<Player>().CmdTakeDamage(acceleration.magnitude*60f/(GameManager.instance.matchSettings.speedMult* GameManager.instance.matchSettings.moveSpeedMult));
+        }
+        //if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null && (GetComponent<Player>().chara.rotateWithCamera || (GetComponent<Player>().chara.rotateWithCameraWhenFlying && !GetComponent<Player>().IsGrounded())))
+        if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null)
             GetComponent<Player>().CmdRotate(GetComponent<Player>().model.transform.eulerAngles);
         fi++;
         fi %= 10000;

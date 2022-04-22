@@ -3424,7 +3424,7 @@ MonoBehaviour:
   rotateWithCamera: 0
   rotateWithCameraWhenFlying: 1
   distanceToGround: 3.5
-  cameraOffset: {x: 0, y: 0, z: 0}
+  cameraOffset: {x: 0, y: 0, z: 0.09}
 --- !u!114 &114584395859453714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3467,8 +3467,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.0015
-  m_Center: {x: 0, y: 0.0005, z: 0}
+  m_Radius: 0.0016
+  m_Center: {x: 0, y: 0.0005, z: 0.0001}
 --- !u!136 &136379103945154372
 CapsuleCollider:
   m_ObjectHideFlags: 1

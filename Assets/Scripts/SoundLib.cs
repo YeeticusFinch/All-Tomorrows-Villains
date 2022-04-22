@@ -39,4 +39,16 @@ public class SoundLib {
         return obj;
     }
 
+    public void PlayAtObject(string clip, GameObject obj, float vol = 1f, float pitch = 1f, float maxDistance = 50f)
+    {
+        AudioSource yeet = obj.AddComponent<AudioSource>();
+        yeet.rolloffMode = AudioRolloffMode.Linear;
+        yeet.minDistance = 1;
+        yeet.maxDistance = maxDistance*distMult;
+        yeet.spatialBlend = 1f;
+        yeet.pitch = pitch*this.pitch;
+        yeet.PlayOneShot(clips[clip], vol*volume);
+        AudioSource.Destroy(yeet, clip.Length / (pitch*this.pitch));
+    }
+
 }

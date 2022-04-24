@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour {
             //Final Movement vector
             maxSpeed = true;
             if (!IsGrounded()) speed = flySpeed == 0 ? walkSpeed/2f : flySpeed;
+            //speed *= Input.GetButton("Sprint") ? 2 : 1;
             if (speed == flySpeed)
             {
                 velocity += (motor.cam.transform.right * xMov + motor.cam.transform.forward * zMov).normalized * speed;
@@ -103,20 +104,32 @@ public class PlayerController : MonoBehaviour {
         //Apply rotation
         motor.CamRotate(camRotation);
 
-        if (Input.GetButton("Jump") && (IsGrounded()))
+        if (Input.GetButton("Jump") && IsGrounded())
         {
-            if (maxSpeed)
-                velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
-            velocity.y = jumpForce;
+            //if (maxSpeed)
+            //    velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
+            //velocity.y = jumpForce*10000000*3.15f;
+            motor.ApplyThruster(Vector3.up*jumpForce*100);
         } else if ((Input.GetButton("Jump") || Input.GetButton("Crouch")) && flySpeed > 0)
         {
             maxSpeed = true;
             velocity += (Input.GetButton("Crouch") ? -1 : 1) * motor.cam.transform.up.normalized * flySpeed;
             velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
         }
+        if (motor.getThruster().magnitude > 0 && !(Input.GetButton("Jump") && grounded))
+        {
+            motor.ApplyThruster(Vector3.zero);
+        }
         velocity *= Input.GetButton("Sprint") ? 2 : 1;
-        motor.ApplyThruster(velocity*100);
+        //motor.ApplyThruster(velocity*100);
+        if (grounded) motor.Move(velocity);
+        else
+        {
+            motor.ApplyThruster(velocity * 100);
+        }
     }
+
+    bool grounded = false;
 
     bool IsGrounded() {
         RaycastHit hit;
@@ -126,8 +139,26 @@ public class PlayerController : MonoBehaviour {
             {
                 //Effects.instance.CmdSparky(e.transform.position+e.GetComponent<SphereCollider>().center, e.transform.position - Vector3.up*(e.GetComponent<SphereCollider>().radius + 0.1f), null, null);
                 bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<SphereCollider>().center, -Vector3.up, out hit, e.GetComponent<SphereCollider>().radius*e.GetComponent<SphereCollider>().transform.localScale.magnitude + 0.1f, jumpMask);
+                if (yeet)
+                {
+                    GameObject t = hit.collider.gameObject;
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (t.layer == 8)
+                        {
+                            yeet = false;
+                            i = 20;
+                        }
+                        else if (t.transform.parent != null) t = t.transform.parent.gameObject;
+
+                    }
+                }
+                // if (yeet && (hit.collider.gameObject.layer == 8 && (hit.collider.transform.parent != null && (hit.collider.transform.parent.gameObject.layer == 8 || hit.collider.transform.parent.parent != null && (hit.collider.transform.parent.parent.gameObject.layer == 8 || hit.collider.transform.parent.parent.parent != null && hit.collider.transform.parent.parent.parent.gameObject.layer == 8)))))
+                //     yeet = false;
                 //if (yeet)
-                //    Debug.Log("Touching Ground");
+                //    Debug.Log("Touching Ground " + hit.collider);
+
+                grounded = yeet;
                 if (yeet)
                     return yeet;
             }
@@ -135,13 +166,33 @@ public class PlayerController : MonoBehaviour {
             {
                 //Effects.instance.CmdSparky(e.transform.position + e.GetComponent<CapsuleCollider>().center, e.transform.position - Vector3.up * (0.25f * e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f), null, null);
                 bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<CapsuleCollider>().center, -Vector3.up, out hit, 0.25f*e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f, jumpMask);
+                if (yeet)
+                {
+                    GameObject t = hit.collider.gameObject;
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (t.layer == 8)
+                        {
+                            yeet = false;
+                            i = 20;
+                        }
+                        else if (t.transform.parent != null) t = t.transform.parent.gameObject;
+
+                    }
+                }
+                //if (yeet && (gameObject.layer == 8 && (transform.parent != null && (transform.parent.gameObject.layer == 8 || transform.parent.parent != null && (transform.parent.parent.gameObject.layer == 8 || transform.parent.parent.parent != null && transform.parent.parent.parent.gameObject.layer == 8)))))
+                //    yeet = false;
                 //if (yeet)
                 //    Debug.Log("Touching Ground");
+                //if (yeet)
+                //    Debug.Log("Touching Ground " + hit.collider);
+                grounded = yeet;
                 if (yeet)
                     return yeet;
             }
-            //else if (e.GetComponent<SphereCollider>() != null)
-            //    return Physics.Raycast(e.GetComponent<SphereCollider>().center, -Vector3.up, e.GetComponent<SphereCollider>().radius + 0.1f);
+        //else if (e.GetComponent<SphereCollider>() != null)
+        //    return Physics.Raycast(e.GetComponent<SphereCollider>().center, -Vector3.up, e.GetComponent<SphereCollider>().radius + 0.1f);
+        grounded = false;
         return false;
     }
 

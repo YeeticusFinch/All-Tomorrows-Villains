@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class harpy : Creature
 {
@@ -9,6 +10,24 @@ public class harpy : Creature
 
     int sd = 0;
     int td = 0;
+
+    [Client]
+    void Shoot(float damage)
+    {
+        //Debug.Log("2");
+        //GameObject emitter = player.GetComponent<Player>().getPrimaryEmitter();
+        //GameObject emitter = cam.gameObject;
+        RaycastHit hit;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 2, mask))
+        {
+            // We hit something
+            //Debug.Log("We hit " + hit.collider.name);
+            if (hit.collider.tag == PLAYER_TAG && player.GetComponent<Player>().isLocalPlayer)
+            {
+                player.GetComponent<PlayerShoot>().CmdPlayerShot(hit.collider.name, damage);
+            }
+        }
+    }
 
     private void Start()
     {
@@ -26,6 +45,7 @@ public class harpy : Creature
             anim.Play("Swing");
             anim.SetBool("isSwinging", true);
             StartCoroutine(CancelAnim("isSwinging",0.5f));
+            Shoot(3);
         }
         else
         {
@@ -34,6 +54,7 @@ public class harpy : Creature
             anim.Play("Claw");
             anim.SetBool("isClawing", true);
             StartCoroutine(CancelAnim("isClawing", 0.5f));
+            Shoot(6);
         }
         swing = !swing;
         return 2;
@@ -98,7 +119,7 @@ public class harpy : Creature
             }
             else if (Mathf.Abs(anim.GetCurrentAnimatorStateInfo(0).normalizedTime - (int)anim.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.1f) < 0.1f)
                 flapped = false;
-            Debug.Log(anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            //Debug.Log(anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
         }
         if (speed > 1.3f)
         {

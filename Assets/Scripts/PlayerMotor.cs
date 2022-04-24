@@ -33,6 +33,7 @@ public class PlayerMotor : MonoBehaviour {
 
     public void Move(Vector3 vel)
     {
+        vel.y += rb.velocity.y;
         velocity = vel;
     }
 
@@ -50,6 +51,10 @@ public class PlayerMotor : MonoBehaviour {
     {
         force = f;
     }
+    public Vector3 getThruster()
+    {
+        return force;
+    }
     int fi = 0;
     // Runs every physics iteration
     void FixedUpdate () {
@@ -61,25 +66,48 @@ public class PlayerMotor : MonoBehaviour {
         if (acceleration.magnitude > 0.15)
         {
             //Debug.Log("acc = " + acceleration.magnitude);
-            GetComponent<Player>().CmdTakeDamage(acceleration.magnitude*60f/(GameManager.instance.matchSettings.speedMult* GameManager.instance.matchSettings.moveSpeedMult));
+            GetComponent<Player>().CmdTakeDamage(acceleration.magnitude*60f/(GameManager.instance.matchSettings.moveSpeedMult));
         }
         //if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null && (GetComponent<Player>().chara.rotateWithCamera || (GetComponent<Player>().chara.rotateWithCameraWhenFlying && !GetComponent<Player>().IsGrounded())))
         if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null)
             GetComponent<Player>().CmdRotate(GetComponent<Player>().model.transform.eulerAngles);
         fi++;
         fi %= 10000;
-    }
+    }    
 
     void PerformMovement()
     {
         if (velocity != Vector3.zero)
         {
-            rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+            //rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+            rb.velocity += MinV(velocity - rb.velocity, 0.2f*(velocity - rb.velocity).normalized);
+            //rb.velocity = velocity;
+            //Debug.Log("Velocity = " + rb.velocity + " Target Velocity = " + velocity);
+            velocity = MaxV(velocity - 0.1f * velocity.normalized, Vector3.zero);
+            if (velocity.magnitude < 0.1f)
+                velocity = Vector3.zero;
         }
         if (force != Vector3.zero)
         {
             rb.AddForce(force*Time.fixedDeltaTime, ForceMode.Acceleration);
+            force = MaxV(force - 0.1f * force.normalized, Vector3.zero);
         }
+    }
+
+    private Vector3 MaxV(Vector3 a, Vector3 b)
+    {
+        if (a.magnitude > b.magnitude)
+            return a;
+        else return b;
+        //return new Vector3(Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y), Mathf.Max(a.z, b.z));
+    }
+
+    private Vector3 MinV(Vector3 a, Vector3 b)
+    {
+        if (a.magnitude > b.magnitude)
+            return b;
+        else return a;
+        //return new Vector3(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y), Mathf.Min(a.z, b.z));
     }
 
     void PerformRotation()

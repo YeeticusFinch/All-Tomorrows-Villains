@@ -331,7 +331,6 @@
     <Compile Include="Assets\_MK\MKGlow\Scripts\RenderTargetContext.cs" />
     <Compile Include="Assets\_MK\MKGlow\Scripts\Resources.cs" />
     <Compile Include="Assets\_MK\MKGlow\Scripts\Settings.cs" />
-    <Compile Include="Assets\harpy.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
@@ -369,6 +368,7 @@
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Creatures\Beholder.cs" />
     <Compile Include="Assets\Scripts\Creatures\Creature.cs" />
+    <Compile Include="Assets\Scripts\Creatures\harpy.cs" />
     <Compile Include="Assets\Scripts\Creatures\TestSphere.cs" />
     <Compile Include="Assets\Scripts\Effects.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

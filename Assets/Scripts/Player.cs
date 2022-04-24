@@ -75,6 +75,8 @@ public class Player : NetworkBehaviour {
     float flySpeed;
     float jumpForce;
 
+    private const float speedMult = 3.15f;
+
     public void Setup()
     {
 
@@ -185,9 +187,9 @@ public class Player : NetworkBehaviour {
             }
             GetComponent<Rigidbody>().useGravity = !chara.HOVER;
 
-            walkSpeed = (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f * 1.55f;
-            climbSpeed = (chara.CLIMB_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
-            flySpeed = (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+            walkSpeed = speedMult * (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f * 1.55f;
+            climbSpeed = speedMult * (chara.CLIMB_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+            flySpeed = 1.383f*speedMult * (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
             jumpForce = chara.jumpHeight * GameManager.instance.matchSettings.moveSpeedMult * 10f;
 
             GetComponent<PlayerController>().Setup(walkSpeed, climbSpeed, flySpeed, jumpForce);
@@ -496,6 +498,7 @@ public class Player : NetworkBehaviour {
                     GetComponent<Rigidbody>().useGravity = true;
             } else if (chara.FLY_SPEED > 0)
             {
+                //Debug.Log("gliding");
                 chara.creature.flyAnim(Mathf.Clamp(vel / flySpeed, 0.8f, 3f));
                 if (!chara.HOVER)
                     GetComponent<Rigidbody>().useGravity = Mathf.Sqrt(Mathf.Pow(GetComponent<Rigidbody>().velocity.x,2) + Mathf.Pow(GetComponent<Rigidbody>().velocity.z, 2)) / flySpeed < 0.8f;

@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 114328184818023606}
   m_Layer: 0
   m_Name: StalinBeholder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1268,7 +1268,9 @@ MonoBehaviour:
   - {fileID: 1210826089229826}
   canJumpFrom: []
   camAttach: {fileID: 0}
+  camAttachTo: {fileID: 0}
   rotateWithCamera: 1
+  rotateWithCameraWhenFlying: 0
   distanceToGround: 1.109213
   cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &135610299380124380

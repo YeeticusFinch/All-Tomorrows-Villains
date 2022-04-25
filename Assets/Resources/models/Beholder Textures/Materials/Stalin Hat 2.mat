@@ -91,10 +91,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.80689657, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HighColor: {r: 1, g: 0.9724139, b: 0, a: 1}
-    - _LowColor: {r: 0.6179006, g: 0.625, b: 0.11029411, a: 1}
+    - _HighColor: {r: 1, g: 0.80784315, b: 0, a: 1}
+    - _LowColor: {r: 0.6544118, g: 0.5453055, b: 0.08661333, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 0.93103445, b: 0, a: 1}

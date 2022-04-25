@@ -314,10 +314,12 @@ public class Player : NetworkBehaviour {
     IEnumerator DamageFlash()
     {
         foreach (GameObject e in chara.tintable)
-            e.GetComponent<Renderer>().material.color = new Color(1f, 0f, 0f, 1f);
+            foreach (Material m in e.GetComponent<Renderer>().materials)
+                m.color = new Color(1f, 0f, 0f, 1f);
         yield return new WaitForSeconds(0.1f);
         foreach (GameObject e in chara.tintable)
-            e.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
+            foreach (Material m in e.GetComponent<Renderer>().materials)
+                m.color = new Color(1f, 1f, 1f, 1f);
         deathTint = false;
     }
 
@@ -357,7 +359,8 @@ public class Player : NetworkBehaviour {
     private void Die()
     {
         foreach (GameObject e in chara.tintable)
-            e.GetComponent<Renderer>().material.color = new Color(1f, 0f, 0f, 1f);
+            foreach (Material m in e.GetComponent<Renderer>().materials)
+                m.color = new Color(1f, 0f, 0f, 1f);
 
         dead = true;
 
@@ -409,7 +412,8 @@ public class Player : NetworkBehaviour {
 
         if (chara != null)
             foreach (GameObject e in chara.tintable)
-                e.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
+                foreach (Material m in e.GetComponent<Renderer>().materials)
+                    m.color = new Color(1f, 1f, 1f, 1f);
 
         /*
         Collider col = GetComponent<Collider>();
@@ -460,6 +464,13 @@ public class Player : NetworkBehaviour {
             }
             //cam.transform.SetParent(chara.camAttachTo.transform);
         }
+        if (chara.spinWithCamera.Length > 0)
+        {
+            foreach(GameObject e in chara.spinWithCamera)
+            {
+                e.transform.eulerAngles = cam.transform.eulerAngles;
+            }
+        }
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
@@ -480,13 +491,15 @@ public class Player : NetworkBehaviour {
             deathTint = true;
             if (chara != null)
                 foreach (GameObject e in chara.tintable)
-                    e.GetComponent<Renderer>().material.color = new Color(1f, 0f, 0f, 1f);
+                    foreach (Material m in e.GetComponent<Renderer>().materials)
+                        m.color = new Color(1f, 0f, 0f, 1f);
         } else if (health > 0 && deathTint)
         {
             deathTint = false;
             if (chara != null)
                 foreach (GameObject e in chara.tintable)
-                    e.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 1f);
+                    foreach (Material m in e.GetComponent<Renderer>().materials)
+                        m.color = new Color(1f, 1f, 1f, 1f);
         }
         if (chara != null && GetComponent<Rigidbody>().velocity.magnitude > 0.1f)
         {

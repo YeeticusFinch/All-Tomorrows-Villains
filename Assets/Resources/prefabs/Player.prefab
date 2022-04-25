@@ -530,6 +530,8 @@ MonoBehaviour:
   - {fileID: 1086304870359850, guid: 7d356ad44fa8db34e92b1f0903941589, type: 2}
   - {fileID: 1843374586251200, guid: 54b28931bb8c1774d966bce1c951247a, type: 2}
   - {fileID: 1404044278237922, guid: 9fe22cb071c21ac43b53f8bb697a8f64, type: 2}
+  - {fileID: 1129148672104586, guid: fdbea39a01f8f0d4ab342700ce77a0d4, type: 2}
+  - {fileID: 1822168076903830, guid: bd609137691464243a1cb8cb4e26e901, type: 2}
   cam: {fileID: 20975337560291868}
   cam3: {fileID: 20080517080298750}
   chara: {fileID: 0}

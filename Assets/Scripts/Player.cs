@@ -79,7 +79,7 @@ public class Player : NetworkBehaviour {
 
     public void Setup()
     {
-
+        playables = GameManager.instance.playables;
 
         if (isLocalPlayer)
         {

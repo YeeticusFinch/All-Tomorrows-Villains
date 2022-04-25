@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public MatchSettings matchSettings;
     public SoundLib sound = new SoundLib();
     public int charId = 1;
+    public GameObject[] playables;
 
     private void Start()
     {
@@ -116,10 +117,10 @@ public class GameManager : MonoBehaviour {
             }
             else if (s.IndexOf("Character = ") != -1)
             {
-                if (int.TryParse(s.Substring(12), out charId))
+                /*if (int.TryParse(s.Substring(12), out charId))
                     Debug.Log("Imported Character from properties file");
                 else
-                    Debug.Log("Failed to parse Character from properties file");
+                    Debug.Log("Failed to parse Character from properties file");*/
             }
             else if (s.IndexOf("Volume = ") != -1)
             {

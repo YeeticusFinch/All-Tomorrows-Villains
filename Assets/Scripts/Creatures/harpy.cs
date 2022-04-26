@@ -112,7 +112,7 @@ public class harpy : Creature
         {
             anim.Play("Fly");
             //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime
-            if (!flapped && Mathf.Abs(anim.GetCurrentAnimatorStateInfo(0).normalizedTime - (int)anim.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.3f) < 0.1f)
+            if (GameManager.instance != null && !flapped && Mathf.Abs(anim.GetCurrentAnimatorStateInfo(0).normalizedTime - (int)anim.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.3f) < 0.1f)
             {
                 GameManager.instance.sound.PlayAtObject("harpy_flap", this.gameObject, 1.3f, 0.3f + 0.1f * Random.Range(1, 4) * Mathf.Min(4, speed), 20f);
                 flapped = true;

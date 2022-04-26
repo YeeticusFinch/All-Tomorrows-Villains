@@ -77,8 +77,16 @@ public class Player : NetworkBehaviour {
 
     private const float speedMult = 3.15f;
 
+    //[SerializeField]
+    //private GameObject healthBar;
+
     public void Setup()
     {
+        if (!isLocalPlayer)
+        {
+            healthBarPlzWork.enabled = false;
+            healthBarPlzWork2.enabled = false;
+        }
         playables = GameManager.instance.playables;
 
         if (isLocalPlayer)
@@ -152,7 +160,8 @@ public class Player : NetworkBehaviour {
     public void loadModel()
     {
         if (model == null && charId != -1)
-        {
+        { 
+            transform.localScale = (new Vector3(1, 1, 1)) * GameManager.instance.matchSettings.scaleMult;
             Debug.Log("Instantiating Player Model");
             model = Instantiate(playables[charId], transform.position, transform.rotation);
             chara = model.GetComponent<Character>();
@@ -396,7 +405,7 @@ public class Player : NetworkBehaviour {
     public void SetDefaults()
     {
         newEulers = 0f;
-        if (chara != null)
+        if (chara != null && chara.camAttachTo != null)
             cam.transform.eulerAngles =chara.camAttachTo.transform.eulerAngles;
 
         dead = false;
@@ -524,8 +533,18 @@ public class Player : NetworkBehaviour {
             if (!chara.HOVER)
                 GetComponent<Rigidbody>().useGravity = true;
         }
-    }
+        if (isLocalPlayer)
+        {
+            //healthBar.GetComponent<bar>().setPos(health / maxHealth);
+            healthBarPlzWork.SetPosition(0, cam.transform.position + cam.transform.forward*0.2f + cam.transform.up * 0.1f * cam.fieldOfView/60 - cam.transform.right * 0.1f *(maxHP/150)* Mathf.Max(0, HP)/maxHP);
+            healthBarPlzWork.SetPosition(1, cam.transform.position + cam.transform.forward*0.2f + cam.transform.up * 0.1f * cam.fieldOfView / 60 + cam.transform.right * 0.1f * (maxHP / 150) * Mathf.Max(0, HP)/maxHP);
+            healthBarPlzWork2.SetPosition(0, cam.transform.position + cam.transform.forward * 0.21f + cam.transform.up * 0.105f * cam.fieldOfView / 60 - cam.transform.right * (maxHP / 150) * 0.105f);
+            healthBarPlzWork2.SetPosition(1, cam.transform.position + cam.transform.forward * 0.21f + cam.transform.up * 0.105f * cam.fieldOfView / 60 + cam.transform.right * (maxHP / 150) * 0.105f);
 
+        }
+    }
+    public LineRenderer healthBarPlzWork;
+    public LineRenderer healthBarPlzWork2;
     GameObject pauseMenuInstance;
 
     public void TogglePauseMenu()

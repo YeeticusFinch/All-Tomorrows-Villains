@@ -331,6 +331,7 @@
     <Compile Include="Assets\_MK\MKGlow\Scripts\RenderTargetContext.cs" />
     <Compile Include="Assets\_MK\MKGlow\Scripts\Resources.cs" />
     <Compile Include="Assets\_MK\MKGlow\Scripts\Settings.cs" />
+    <Compile Include="Assets\bar.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
@@ -382,6 +383,7 @@
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\SceneCameraRotate.cs" />
+    <Compile Include="Assets\Scripts\selecter.cs" />
     <Compile Include="Assets\Scripts\SoundLib.cs" />
     <Compile Include="Assets\Scripts\Tentacle.cs" />
     <Compile Include="Assets\Scripts\Tentacle3D.cs" />

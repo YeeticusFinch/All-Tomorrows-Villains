@@ -17,7 +17,15 @@ public class GameManager : MonoBehaviour {
     {
         playables = sceneCamera.GetComponent<SceneCameraRotate>().playables;
         charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
-        ReadFile();
+        //ReadFile();
+        matchSettings.respawnTime = sceneCamera.GetComponent<SceneCameraRotate>().shit[1];
+        matchSettings.speedMult = 6/sceneCamera.GetComponent<SceneCameraRotate>().shit[2];
+        matchSettings.moveSpeedMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[3];
+        matchSettings.scaleMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[4];
+        matchSettings.damageMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[5];
+        sound.volume = sceneCamera.GetComponent<SceneCameraRotate>().shit[6];
+        sound.pitch = sceneCamera.GetComponent<SceneCameraRotate>().shit[7];
+        sound.distMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[8];
         sound.init();
     }
 

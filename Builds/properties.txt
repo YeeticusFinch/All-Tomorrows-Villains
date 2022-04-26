@@ -9,8 +9,6 @@ Damage = 1.0
 
 ## Local Settings ##
 
-Character = 5
-
 # Sound Settings
 Volume = 0.8
 Pitch = 1.0

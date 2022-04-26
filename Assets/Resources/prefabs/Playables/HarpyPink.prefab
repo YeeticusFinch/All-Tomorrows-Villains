@@ -3606,6 +3606,7 @@ MonoBehaviour:
   - {fileID: 1642526760743496}
   camAttach: {fileID: 0}
   camAttachTo: {fileID: 1402148737161738}
+  spinWithCamera: []
   rotateWithCamera: 0
   rotateWithCameraWhenFlying: 1
   distanceToGround: 3.5

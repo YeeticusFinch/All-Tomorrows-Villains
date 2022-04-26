@@ -2619,7 +2619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  title: BeholderSmooth
+  title: Beholder Smooth
   AC: 18
   HP: 180
   WALK_SPEED: 10
@@ -2656,7 +2656,10 @@ MonoBehaviour:
   - {fileID: 1462557986457682}
   canJumpFrom: []
   camAttach: {fileID: 0}
+  camAttachTo: {fileID: 0}
+  spinWithCamera: []
   rotateWithCamera: 1
+  rotateWithCameraWhenFlying: 0
   distanceToGround: 1.109213
   cameraOffset: {x: 0, y: 0, z: -0.8}
 --- !u!114 &114212258514687572

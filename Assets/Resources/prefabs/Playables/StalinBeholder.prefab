@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  title: StalinBeholder
+  title: Stalin Beholder
   AC: 13
   HP: 322
   WALK_SPEED: 10
@@ -1269,6 +1269,7 @@ MonoBehaviour:
   canJumpFrom: []
   camAttach: {fileID: 0}
   camAttachTo: {fileID: 0}
+  spinWithCamera: []
   rotateWithCamera: 1
   rotateWithCameraWhenFlying: 0
   distanceToGround: 1.109213

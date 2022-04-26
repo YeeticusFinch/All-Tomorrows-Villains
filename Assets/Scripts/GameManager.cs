@@ -11,9 +11,12 @@ public class GameManager : MonoBehaviour {
     public SoundLib sound = new SoundLib();
     public int charId = 1;
     public GameObject[] playables;
+    public GameObject sceneCamera;
 
     private void Start()
     {
+        playables = sceneCamera.GetComponent<SceneCameraRotate>().playables;
+        charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
         ReadFile();
         sound.init();
     }
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour {
         } else {
             instance = this;
         }
+        charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
     }
 
     #region Player tracking

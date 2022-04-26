@@ -464,7 +464,7 @@ public class Player : NetworkBehaviour {
             }
             //cam.transform.SetParent(chara.camAttachTo.transform);
         }
-        if (chara.spinWithCamera.Length > 0)
+        if (chara != null && chara.spinWithCamera != null && chara.spinWithCamera.Length > 0)
         {
             foreach(GameObject e in chara.spinWithCamera)
             {

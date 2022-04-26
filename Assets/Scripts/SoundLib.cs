@@ -21,34 +21,42 @@ public class SoundLib {
     public void playAt(string clip, Vector3 pos, float vol = 1f, float pitch = 1f, float maxDistance = 50f)
     {
         //Debug.Log("Searching for " + clip + " in " + clips);
-        PlayClipAtPoint(clips[clip], pos, vol * volume, pitch*this.pitch, maxDistance*distMult);
+        if (clips.ContainsKey(clip))
+            PlayClipAtPoint(clips[clip], pos, vol * volume, pitch*this.pitch, maxDistance*distMult);
     }
 
     GameObject PlayClipAtPoint(AudioClip clip, Vector3 position, float volume, float pitch, float maxDistance)
     {
-        GameObject obj = new GameObject();
-        obj.transform.position = position;
-        obj.AddComponent<AudioSource>();
-        obj.GetComponent<AudioSource>().rolloffMode = AudioRolloffMode.Linear;
-        obj.GetComponent<AudioSource>().minDistance = 1;
-        obj.GetComponent<AudioSource>().maxDistance = maxDistance;
-        obj.GetComponent<AudioSource>().spatialBlend = 1f;
-        obj.GetComponent<AudioSource>().pitch = pitch;
-        obj.GetComponent<AudioSource>().PlayOneShot(clip, volume);
-        GameObject.Destroy(obj, clip.length / pitch);
-        return obj;
+        if (clip != null)
+        {
+            GameObject obj = new GameObject();
+            obj.transform.position = position;
+            obj.AddComponent<AudioSource>();
+            obj.GetComponent<AudioSource>().rolloffMode = AudioRolloffMode.Linear;
+            obj.GetComponent<AudioSource>().minDistance = 1;
+            obj.GetComponent<AudioSource>().maxDistance = maxDistance;
+            obj.GetComponent<AudioSource>().spatialBlend = 1f;
+            obj.GetComponent<AudioSource>().pitch = pitch;
+            obj.GetComponent<AudioSource>().PlayOneShot(clip, volume);
+            GameObject.Destroy(obj, clip.length / pitch);
+            return obj;
+        }
+        return null;
     }
 
     public void PlayAtObject(string clip, GameObject obj, float vol = 1f, float pitch = 1f, float maxDistance = 50f)
     {
-        AudioSource yeet = obj.AddComponent<AudioSource>();
-        yeet.rolloffMode = AudioRolloffMode.Linear;
-        yeet.minDistance = 1;
-        yeet.maxDistance = maxDistance*distMult;
-        yeet.spatialBlend = 1f;
-        yeet.pitch = pitch*this.pitch;
-        yeet.PlayOneShot(clips[clip], vol*volume);
-        AudioSource.Destroy(yeet, clip.Length / (pitch*this.pitch));
+        if (clips.ContainsKey(clip))
+        {
+            AudioSource yeet = obj.AddComponent<AudioSource>();
+            yeet.rolloffMode = AudioRolloffMode.Linear;
+            yeet.minDistance = 1;
+            yeet.maxDistance = maxDistance * distMult;
+            yeet.spatialBlend = 1f;
+            yeet.pitch = pitch * this.pitch;
+            yeet.PlayOneShot(clips[clip], vol * volume);
+            AudioSource.Destroy(yeet, clip.Length / (pitch * this.pitch));
+        }
     }
 
 }

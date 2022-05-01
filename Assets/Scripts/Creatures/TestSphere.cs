@@ -34,7 +34,7 @@ public class TestSphere : Creature {
         GameObject emitter = player.GetComponent<Player>().getPrimaryEmitter();
         RaycastHit hit;
         Effects.instance.Sparky(emitter.transform.position, emitter.transform.position + 0.03f * (new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10))), null, null);
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 200, mask))
         {
             Effects.instance.Sparky(emitter.transform.position, hit.point, shootSound, hitSound);
             Effects.instance.Sparky(hit.point, hit.point + 0.32f * (new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10))), null, null);
@@ -44,12 +44,12 @@ public class TestSphere : Creature {
             //Debug.Log("We hit " + hit.collider.name);
             if (hit.collider.tag == PLAYER_TAG && player.GetComponent<Player>().isLocalPlayer)
             {
-                player.GetComponent<PlayerShoot>().CmdPlayerShot(hit.collider.name, weapon.damage, "force", 20, null);
+                player.GetComponent<PlayerShoot>().CmdPlayerShot(hit.collider.name, 10, "force", 20, null);
             }
         }
         else
         {
-            Effects.instance.Sparky(emitter.transform.position, emitter.transform.position + cam.transform.forward * weapon.range, shootSound, null);
+            Effects.instance.Sparky(emitter.transform.position, emitter.transform.position + cam.transform.forward * 200, shootSound, null);
         }
     }
 

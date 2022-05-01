@@ -9,7 +9,7 @@ public class Creature : NetworkBehaviour {
 
     public GameObject player;
 
-    public PlayerWeapon weapon;
+    //public PlayerWeapon weapon;
 
     public Camera cam;
 

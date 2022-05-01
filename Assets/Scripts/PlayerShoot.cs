@@ -10,7 +10,7 @@ public class PlayerShoot : NetworkBehaviour {
 
     private const string PLAYER_TAG = "Player";
 
-    public PlayerWeapon weapon;
+    //public PlayerWeapon weapon;
 
     [SerializeField]
     public Camera cam;
@@ -35,11 +35,14 @@ public class PlayerShoot : NetworkBehaviour {
             Debug.LogError("PlayerShoot: No camera referenced!");
             this.enabled = false;
         }
-        camMode = 2;
-        GetComponent<Player>().cam3.enabled = false;
-        cam.enabled = true;
-        GameManager.instance.thirdPerson = false;
-        GameManager.instance.freeCam = false;
+        if (isLocalPlayer)
+        {
+            camMode = 2;
+            GetComponent<Player>().cam3.enabled = false;
+            cam.enabled = true;
+            GameManager.instance.thirdPerson = false;
+            GameManager.instance.freeCam = false;
+        }
     }
 
     public void Init(Character chara)
@@ -47,7 +50,7 @@ public class PlayerShoot : NetworkBehaviour {
         creature = chara.creature;
         creature.mask = mask;
         creature.cam = cam;
-        creature.weapon = weapon;
+        //creature.weapon = weapon;
         creature.player = player;
         if (GetComponent<PlayerController>())
             GetComponent<PlayerController>().creature = creature;

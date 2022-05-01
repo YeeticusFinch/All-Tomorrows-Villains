@@ -43,7 +43,7 @@ public class Beholder : Creature {
             //Debug.Log("We hit " + hit.collider.name);
             if (hit.collider.tag == PLAYER_TAG && player.GetComponent<Player>().isLocalPlayer)
             {
-                player.GetComponent<PlayerShoot>().CmdPlayerShot(hit.collider.name, weapon.damage);
+                player.GetComponent<PlayerShoot>().CmdPlayerShot(hit.collider.name, weapon.damage, "force", 20, null);
             }
         }
         else

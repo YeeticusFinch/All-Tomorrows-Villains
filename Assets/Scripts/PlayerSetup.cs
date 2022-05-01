@@ -47,6 +47,7 @@ public class PlayerSetup : NetworkBehaviour {
         base.OnStartClient();
 
         GameManager.RegisterPlayer(GetComponent<NetworkIdentity>().netId.ToString(), GetComponent<Player>());
+        if (GetComponent<Player>().isLocalPlayer) GameManager.SetLocalPlayer(GetComponent<Player>());
     }
 
     void AssignRemoteLayer()

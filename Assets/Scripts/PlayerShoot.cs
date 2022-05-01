@@ -16,7 +16,7 @@ public class PlayerShoot : NetworkBehaviour {
     public Camera cam;
 
     [SerializeField]
-    private LayerMask mask;
+    public LayerMask mask;
 
     //[SerializeField]
     //private GameObject emitter;
@@ -35,6 +35,11 @@ public class PlayerShoot : NetworkBehaviour {
             Debug.LogError("PlayerShoot: No camera referenced!");
             this.enabled = false;
         }
+        camMode = 2;
+        GetComponent<Player>().cam3.enabled = false;
+        cam.enabled = true;
+        GameManager.instance.thirdPerson = false;
+        GameManager.instance.freeCam = false;
     }
 
     public void Init(Character chara)
@@ -47,11 +52,38 @@ public class PlayerShoot : NetworkBehaviour {
         if (GetComponent<PlayerController>())
             GetComponent<PlayerController>().creature = creature;
     }
-
+    int camMode = 2;
     private void Update()
     {
         if (isLocalPlayer)
         {
+            if (Input.GetButtonDown("3rd Person"))
+            {
+                camMode = (camMode + 1) % 3;
+                if (camMode == 0)
+                {
+                    cam.enabled = false;
+                    GetComponent<Player>().cam3.enabled = true;
+                    GameManager.instance.thirdPerson = true;
+                    GameManager.instance.freeCam = false;
+                    //GetComponent<Player>().crosshair.GetComponent<Sprite>().active = false;
+                } else if (camMode == 1)
+                {
+                    cam.enabled = false;
+                    GetComponent<Player>().cam3.enabled = true;
+                    GameManager.instance.thirdPerson = true;
+                    GameManager.instance.freeCam = true;
+                    //GameObject.Destroy(GetComponent<Player>().crosshair);
+                } else
+                {
+                    GetComponent<Player>().cam3.enabled = false;
+                    cam.enabled = true;
+                    GameManager.instance.thirdPerson = false;
+                    GameManager.instance.freeCam = false;
+                    //GetComponent<Player>().crosshair.GetComponent<RectTransform>().SetPositionAndRotation(new Vector2(0, 0), GetComponent<Player>().crosshair.GetComponent<RectTransform>().rotation);
+                }
+            }
+
             if (PauseGame.IsOn)
                 return;
 
@@ -61,6 +93,22 @@ public class PlayerShoot : NetworkBehaviour {
                 canShoot = false;
                 CmdPrimary();
                 //Shoot();
+            }
+            if (Input.GetButton("Ability1"))
+            {
+                CmdAbility(canShoot, 0);
+            }
+            if (Input.GetButton("Ability2"))
+            {
+                CmdAbility(canShoot, 1);
+            }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                creature.aim(1/3f);
+            }
+            else if (Input.GetButtonUp("Fire2"))
+            {
+                creature.aim(3);
             }
         }
     }
@@ -79,6 +127,22 @@ public class PlayerShoot : NetworkBehaviour {
         float x = creature.primary();
         if (isLocalPlayer)
             StartCoroutine(ResetFire(x));
+    }
+
+    [Command]
+    private void CmdAbility(bool canShoot, int n)
+    {
+        RpcAbility(canShoot, n);
+    }
+
+    [ClientRpc]
+    private void RpcAbility(bool canShoot, int n)
+    {
+        float x = creature.ability(canShoot, n);
+        if (isLocalPlayer && x > 0)
+        {
+            StartCoroutine(ResetFire(x));
+        }
     }
 
     /*
@@ -107,12 +171,12 @@ public class PlayerShoot : NetworkBehaviour {
     }
     */
     [Command]
-    public void CmdPlayerShot(string playerId, float damage)
+    public void CmdPlayerShot(string playerId, float damage, string dmgType, int num, string save)
     {
         //Debug.Log(playerId + " has been shot.");
         //Debug.Log("5");
         Player player = GameManager.GetPlayer(playerId);
-        player.RpcTakeDamage(damage);
+        player.RpcTakeDamage(damage, dmgType, num, save);
     }
 
     

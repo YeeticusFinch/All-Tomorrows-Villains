@@ -1288,7 +1288,7 @@ GameObject:
   - component: {fileID: 114321952951914410}
   - component: {fileID: 114217119660752258}
   - component: {fileID: 136391838002345766}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Tolivunt
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1471,7 +1471,7 @@ GameObject:
   - component: {fileID: 33442804763078968}
   - component: {fileID: 23722618111960232}
   - component: {fileID: 135079030278647976}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: model.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2991,12 +2991,15 @@ MonoBehaviour:
   id: 6
   title: Wide Putin
   AC: 19
+  ACMagicBonus: 0
   HP: 110
   WALK_SPEED: 45
-  CLIMB_SPEED: 0
+  CLIMB_SPEED: 45
   FLY_SPEED: 0
   HOVER: 0
   CR: 10
+  damageEffectsStruct: []
+  savingModifiersStruct: []
   jumpHeight: 3
   fov: 60
   creature: {fileID: 114321952951914410}
@@ -3019,10 +3022,14 @@ MonoBehaviour:
   - {fileID: 1822168076903830}
   camAttach: {fileID: 0}
   camAttachTo: {fileID: 1968134750142456}
+  camAttachToRotate: 1
   spinWithCamera:
   - {fileID: 1214835649233596}
+  spinWithCameraScalar: 1
   rotateWithCamera: 0
   rotateWithCameraWhenFlying: 0
+  rotateWithCamScalars: {x: 1, y: 1, z: 1}
+  lerpRotate: 0
   distanceToGround: 0.5
   cameraOffset: {x: 0, y: 0.16, z: 0.3}
 --- !u!114 &114321952951914410

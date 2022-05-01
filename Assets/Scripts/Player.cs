@@ -13,10 +13,13 @@ public class Player : NetworkBehaviour {
     GameObject pauseMenu;
 
     [SerializeField]
-    GameObject crosshair;
+    public GameObject crosshair;
 
     [SerializeField]
-    GameObject uiCanvas;
+    public GameObject uiCanvas;
+
+    [SerializeField]
+    public GameObject healthText;
 
     //[SerializeField]
     public GameObject model;
@@ -66,7 +69,7 @@ public class Player : NetworkBehaviour {
     private Camera cam;
 
     [SerializeField]
-    private Camera cam3;
+    public Camera cam3;
 
     public Character chara;
 
@@ -94,6 +97,7 @@ public class Player : NetworkBehaviour {
             charId = GameManager.instance.charId;
             CmdLoadModel(charId);
             //CmdBroadcastCharId(charId);
+            GameManager.localPlayer = this;
         }
         //else
         //    loadModel();
@@ -160,7 +164,8 @@ public class Player : NetworkBehaviour {
     public void loadModel()
     {
         if (model == null && charId != -1)
-        { 
+        {
+            //Debug.Log("CharID: " + charId);
             transform.localScale = (new Vector3(1, 1, 1)) * GameManager.instance.matchSettings.scaleMult;
             Debug.Log("Instantiating Player Model");
             model = Instantiate(playables[charId], transform.position, transform.rotation);
@@ -172,12 +177,17 @@ public class Player : NetworkBehaviour {
             {
                 chara.camAttach = Instantiate(chara.camAttach, cam.transform.position, cam.transform.rotation);
                 chara.camAttach.transform.parent = cam.transform;
-                chara.primaryEmitters = arrayCombine(chara.primaryEmitters, chara.camAttach.GetComponent<CamAttach>().primaryEmitters);
-                chara.secondaryEmitters = arrayCombine(chara.secondaryEmitters, chara.camAttach.GetComponent<CamAttach>().secondaryEmitters);
-                chara.tertiaryEmitters = arrayCombine(chara.tertiaryEmitters, chara.camAttach.GetComponent<CamAttach>().tertiaryEmitters);
-                chara.canJumpFrom = arrayCombine(chara.canJumpFrom, chara.camAttach.GetComponent<CamAttach>().canJumpFrom);
+                chara.primaryEmitters = CarlMath.arrayCombine(chara.primaryEmitters, chara.camAttach.GetComponent<CamAttach>().primaryEmitters);
+                chara.secondaryEmitters = CarlMath.arrayCombine(chara.secondaryEmitters, chara.camAttach.GetComponent<CamAttach>().secondaryEmitters);
+                chara.tertiaryEmitters = CarlMath.arrayCombine(chara.tertiaryEmitters, chara.camAttach.GetComponent<CamAttach>().tertiaryEmitters);
+                chara.canJumpFrom = CarlMath.arrayCombine(chara.canJumpFrom, chara.camAttach.GetComponent<CamAttach>().canJumpFrom);
             }
             cam.fieldOfView = chara.fov;
+            cam3.fieldOfView = chara.fov;
+            float distOff = 0.2f;
+            if (isLocalPlayer)
+                healthText.transform.localPosition = cam.transform.forward * 0.2f * distOff + cam.transform.up * 0.1f * distOff * cam.fieldOfView / 60;
+                    
             //GetComponents<NetworkTransformChild>()[1].target = model.transform;
             if (isLocalPlayer)
             {
@@ -196,9 +206,9 @@ public class Player : NetworkBehaviour {
             }
             GetComponent<Rigidbody>().useGravity = !chara.HOVER;
 
-            walkSpeed = speedMult * (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f * 1.55f;
+            walkSpeed = speedMult * (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f/* * 1.55f * 0.682f*/*1.055f;
             climbSpeed = speedMult * (chara.CLIMB_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
-            flySpeed = 1.383f*speedMult * (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
+            flySpeed = /*1.383f**/speedMult * (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult*0.74f;
             jumpForce = chara.jumpHeight * GameManager.instance.matchSettings.moveSpeedMult * 10f;
 
             GetComponent<PlayerController>().Setup(walkSpeed, climbSpeed, flySpeed, jumpForce);
@@ -246,19 +256,6 @@ public class Player : NetworkBehaviour {
         loadModel();
     }
 
-    private GameObject[] arrayCombine(GameObject[] arr0, GameObject[] arr1)
-    {
-        GameObject[] result = new GameObject[arr0.Length + arr1.Length];
-
-        for (int i = 0; i < arr0.Length; i++)
-            result[i] = arr0[i];
-
-        for (int i = 0; i < arr1.Length; i++)
-            result[arr0.Length + i] = arr1[i];
-
-        return result;
-    }
-
     public GameObject getPrimaryEmitter()
     {
         return chara.primaryEmitters[Random.Range(0, chara.primaryEmitters.Length)];
@@ -272,6 +269,13 @@ public class Player : NetworkBehaviour {
     public GameObject getTertiaryEmitter()
     {
         return chara.tertiaryEmitters[Random.Range(0, chara.tertiaryEmitters.Length)];
+    }
+
+    public float GetSpeed()
+    {
+        return GetComponent<PlayerMotor>().rb.velocity.magnitude * 81f * 1.221f / (/*2.4533f * */speedMult * GameManager.instance.matchSettings.speedMult * 1.17f * 1.55f);
+        //return GetComponent<PlayerMotor>().rb.velocity.magnitude * speedMult * (chara.WALK_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult * 1.17f * 1.55f;
+        //return 0;
     }
 
     [Command]
@@ -294,13 +298,13 @@ public class Player : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdTakeDamage(float amount)
+    public void CmdTakeDamage(float amount, string dmgType, int num, string save)
     {
-        RpcTakeDamage(amount);
+        RpcTakeDamage(amount, dmgType, num, save);
     }
 
     [ClientRpc]
-    public void RpcTakeDamage(float amount)
+    public void RpcTakeDamage(float amount, string dmgType, int num, string save)
     {
         if (dead)
             return;
@@ -309,8 +313,11 @@ public class Player : NetworkBehaviour {
             StartCoroutine("PlayFlashAnimation");
         else
             StartCoroutine(DamageFlash());
-
-        HP -= amount * GameManager.instance.matchSettings.damageMult;
+        if (save == null && chara != null)
+            amount *= Mathf.Clamp((19 - chara.AC + num) / 20f, 0.001f, 1); // Average damage taking 'to hit' and 'AC' into account
+        else if (chara != null)
+            amount *= Mathf.Clamp(0.5f + 0.5f * (num - chara.GetSave(save)) / 20f, 0.5f, 1); // Average damage for saving throws
+        HP -= amount * chara.GetDamageMod(dmgType) * GameManager.instance.matchSettings.damageMult;
         chara.creature.damage(amount);
         //Debug.Log(transform.name + " now has " + HP + " HP");
 
@@ -405,8 +412,8 @@ public class Player : NetworkBehaviour {
     public void SetDefaults()
     {
         newEulers = 0f;
-        if (chara != null && chara.camAttachTo != null)
-            cam.transform.eulerAngles =chara.camAttachTo.transform.eulerAngles;
+        if (chara != null && chara.camAttachTo != null && chara.camAttachToRotate)
+            cam.transform.eulerAngles = chara.camAttachTo.transform.eulerAngles;
 
         dead = false;
 
@@ -438,35 +445,22 @@ public class Player : NetworkBehaviour {
         //pauseMenuScale = pauseMenu.transform.localScale;
         //GameObject.Destroy(pauseMenu);
         Debug.Log("Starting");
-    }
-
-    private Vector3 MaxV(Vector3 a, Vector3 b)
-    {
-        if (a.magnitude > b.magnitude)
-            return a;
-        else return b;
-        //return new Vector3(Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y), Mathf.Max(a.z, b.z));
-    }
-
-    private Vector3 MinV(Vector3 a, Vector3 b)
-    {
-        if (a.magnitude > b.magnitude)
-            return b;
-        else return a;
-        //return new Vector3(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y), Mathf.Min(a.z, b.z));
+        GameManager.instance.isServer = isServer;
     }
 
     float newEulers = 0f;
     //float targetEulers;
-
+    private int bloodied = -1;
     public void Update()
     {
         if (isLocalPlayer && chara != null && chara.camAttachTo != null)
         {
             //cam.transform.position = RotatePointAroundPivot(chara.camAttachTo.transform.position, transform.position, chara.rotate);
-            cam.transform.position += MinV(chara.camAttachTo.transform.position + chara.cameraOffset.z * chara.camAttachTo.transform.forward + chara.cameraOffset.x*chara.camAttachTo.transform.right + chara.cameraOffset.y * chara.camAttachTo.transform.up - cam.transform.position, 0.1f*(chara.camAttachTo.transform.position + chara.cameraOffset.z * chara.camAttachTo.transform.forward + chara.cameraOffset.x * chara.camAttachTo.transform.right + chara.cameraOffset.y * chara.camAttachTo.transform.up - cam.transform.position).normalized);
-            if (Mathf.Abs(chara.camAttachTo.transform.eulerAngles.z - cam.transform.eulerAngles.z) < 60f) {
-                cam.transform.eulerAngles = new Vector3(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, chara.camAttachTo.transform.eulerAngles.z);
+            cam.transform.position += CarlMath.MinV(chara.camAttachTo.transform.position + chara.cameraOffset.z * chara.camAttachTo.transform.forward + chara.cameraOffset.x*chara.camAttachTo.transform.right + chara.cameraOffset.y * chara.camAttachTo.transform.up - cam.transform.position, 0.1f*(chara.camAttachTo.transform.position + chara.cameraOffset.z * chara.camAttachTo.transform.forward + chara.cameraOffset.x * chara.camAttachTo.transform.right + chara.cameraOffset.y * chara.camAttachTo.transform.up - cam.transform.position).normalized);
+            if (chara.camAttachToRotate && Mathf.Abs(chara.camAttachTo.transform.eulerAngles.z - cam.transform.eulerAngles.z) < 60f) {
+                //cam.transform.eulerAngles = new Vector3(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, (Mathf.Abs(chara.camAttachTo.transform.eulerAngles.z-180-GetComponent<PlayerMotor>().roll) < 10  ? 180 : 0)+chara.camAttachTo.transform.eulerAngles.z);
+                cam.transform.eulerAngles = new Vector3(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, chara.camAttachTo.transform.eulerAngles.z + GetComponent<PlayerMotor>().roll);
+                //Debug.Log("rot = " + chara.camAttachTo.transform.eulerAngles + " roll = " + GetComponent<PlayerMotor>().roll);
                 ////targetEulers = chara.camAttachTo.transform.eulerAngles.z;
                 //newEulers += Mathf.Min(chara.camAttachTo.transform.eulerAngles.z - newEulers, 0.05f);
                 //cam.transform.eulerAngles = new Vector3(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, newEulers);
@@ -477,6 +471,7 @@ public class Player : NetworkBehaviour {
         {
             foreach(GameObject e in chara.spinWithCamera)
             {
+                //e.transform.localEulerAngles = (cam.transform.localEulerAngles - e.transform.localEulerAngles) * chara.spinWithCameraScalar;
                 e.transform.eulerAngles = cam.transform.eulerAngles;
             }
         }
@@ -487,12 +482,12 @@ public class Player : NetworkBehaviour {
 
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.K))
         {
-            CmdTakeDamage(99999999999f);
+            CmdTakeDamage(99999999999f, "force", 20, null);
         }
 
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.L))
         {
-            CmdTakeDamage(10f);
+            CmdTakeDamage(10f, "force", 20, null);
         }
 
         if ((isDead || health < 0) && !deathTint)
@@ -522,8 +517,10 @@ public class Player : NetworkBehaviour {
             {
                 //Debug.Log("gliding");
                 chara.creature.flyAnim(Mathf.Clamp(vel / flySpeed, 0.8f, 3f));
-                if (!chara.HOVER)
-                    GetComponent<Rigidbody>().useGravity = Mathf.Sqrt(Mathf.Pow(GetComponent<Rigidbody>().velocity.x,2) + Mathf.Pow(GetComponent<Rigidbody>().velocity.z, 2)) / flySpeed < 0.8f;
+                if (!chara.HOVER) {
+                    Vector3 v = GetComponent<Rigidbody>().velocity;
+                    GetComponent<Rigidbody>().useGravity = Mathf.Sqrt(Mathf.Pow(v.x, 2) + (v.y > 0 ? v.y*0.4f : 0) + Mathf.Pow(v.z, 2)) / flySpeed < 0.6f;
+                }
                 //Debug.Log(GetComponent<Rigidbody>().velocity);
                 //Debug.Log(Mathf.Abs(GetComponent<Rigidbody>().velocity.z) / flySpeed > 0.8f);
             }
@@ -536,11 +533,37 @@ public class Player : NetworkBehaviour {
         if (isLocalPlayer)
         {
             //healthBar.GetComponent<bar>().setPos(health / maxHealth);
-            healthBarPlzWork.SetPosition(0, cam.transform.position + cam.transform.forward*0.2f + cam.transform.up * 0.1f * cam.fieldOfView/60 - cam.transform.right * 0.1f *(maxHP/150)* Mathf.Max(0, HP)/maxHP);
-            healthBarPlzWork.SetPosition(1, cam.transform.position + cam.transform.forward*0.2f + cam.transform.up * 0.1f * cam.fieldOfView / 60 + cam.transform.right * 0.1f * (maxHP / 150) * Mathf.Max(0, HP)/maxHP);
-            healthBarPlzWork2.SetPosition(0, cam.transform.position + cam.transform.forward * 0.21f + cam.transform.up * 0.105f * cam.fieldOfView / 60 - cam.transform.right * (maxHP / 150) * 0.105f);
-            healthBarPlzWork2.SetPosition(1, cam.transform.position + cam.transform.forward * 0.21f + cam.transform.up * 0.105f * cam.fieldOfView / 60 + cam.transform.right * (maxHP / 150) * 0.105f);
-
+            float distOff = 0.2f;
+            healthBarPlzWork.SetPosition(0, cam.transform.position + cam.transform.forward*0.2f* distOff + cam.transform.up * 0.1f* distOff * cam.fieldOfView/60 - cam.transform.right * 0.1f* distOff * (maxHP/150)* Mathf.Max(0, HP)/maxHP);
+            healthBarPlzWork.SetPosition(1, cam.transform.position + cam.transform.forward*0.2f* distOff + cam.transform.up * 0.1f* distOff * cam.fieldOfView / 60 + cam.transform.right * 0.1f* distOff * (maxHP / 150) * Mathf.Max(0, HP)/maxHP);
+            healthBarPlzWork2.SetPosition(0, cam.transform.position + cam.transform.forward * 0.21f* distOff + cam.transform.up * 0.105f* distOff * cam.fieldOfView / 60 - cam.transform.right* distOff * (maxHP / 150) * 0.105f);
+            healthBarPlzWork2.SetPosition(1, cam.transform.position + cam.transform.forward * 0.21f* distOff + cam.transform.up * 0.105f* distOff * cam.fieldOfView / 60 + cam.transform.right* distOff * (maxHP / 150) * 0.105f);
+            healthText.GetComponent<TextMesh>().text = Mathf.RoundToInt(HP) + " / " + maxHP;
+            //healthText.transform.position 
+            if (HP > maxHP / 2 && bloodied != 0)
+            {
+                healthBarPlzWork.startColor = Color.green;
+                healthBarPlzWork.endColor = Color.green;
+                healthBarPlzWork.material.color = Color.green;
+                //healthBarPlzWork.material. = Color.green;
+                healthBarPlzWork.numCapVertices = 1;
+                bloodied = 0;
+            } else if (HP > maxHP/4 && HP < maxHP/2 && bloodied != 1)
+            {
+                healthBarPlzWork.startColor = Color.yellow;
+                healthBarPlzWork.endColor = Color.yellow;
+                healthBarPlzWork.material.color = Color.yellow;
+                healthBarPlzWork.numCapVertices = 0;
+                bloodied = 1;
+            }
+            else if (HP < maxHP/4 && bloodied != 2)
+            {
+                healthBarPlzWork.startColor = Color.red;
+                healthBarPlzWork.endColor = Color.red;
+                healthBarPlzWork.material.color = Color.red;
+                healthBarPlzWork.numCapVertices = 0;
+                bloodied = 2;
+            }
         }
     }
     public LineRenderer healthBarPlzWork;
@@ -577,7 +600,7 @@ public class Player : NetworkBehaviour {
             if (e.GetComponent<SphereCollider>() != null)
             {
                 //Effects.instance.CmdSparky(e.transform.position+e.GetComponent<SphereCollider>().center, e.transform.position - Vector3.up*(e.GetComponent<SphereCollider>().radius + 0.1f), null, null);
-                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<SphereCollider>().center, -Vector3.up, out hit, e.GetComponent<SphereCollider>().radius * e.GetComponent<SphereCollider>().transform.localScale.magnitude + 0.1f, jumpMask);
+                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<SphereCollider>().center, -Vector3.up, out hit, e.GetComponent<SphereCollider>().radius * e.GetComponent<SphereCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.01f, jumpMask);
                 //if (yeet)
                 //    Debug.Log("Touching Ground");
                 if (yeet)
@@ -586,7 +609,7 @@ public class Player : NetworkBehaviour {
             else if (e.GetComponent<CapsuleCollider>() != null)
             {
                 //Effects.instance.CmdSparky(e.transform.position + e.GetComponent<CapsuleCollider>().center, e.transform.position - Vector3.up * (0.25f * e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f), null, null);
-                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<CapsuleCollider>().center, -Vector3.up, out hit, 0.25f * e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f, jumpMask);
+                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<CapsuleCollider>().center, -Vector3.up, out hit, 0.25f * e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.01f, jumpMask);
                 //if (yeet)
                 //    Debug.Log("Touching Ground");
                 if (yeet)

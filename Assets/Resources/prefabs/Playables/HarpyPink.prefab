@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 114271213177394982}
   - component: {fileID: 114559621454834354}
   - component: {fileID: 136374180360683232}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: HarpyPink
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3552,6 +3552,15 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 0
+  dmgWeapon: 12
+  dmgWeaponType: psychic
+  weaponToHit: 5
+  dmgClaw: 7
+  dmgClawType: slashing
+  clawToHit: 6
+  shockingGrasp: 1
+  dmgShock: 4.5
+  shockToHit: 6
 --- !u!114 &114559621454834354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3564,14 +3573,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 5
-  title: Pink Harpy
-  AC: 11
-  HP: 38
+  title: Harpy Matriarch
+  AC: 12
+  ACMagicBonus: 2
+  HP: 88
   WALK_SPEED: 20
   CLIMB_SPEED: 0
   FLY_SPEED: 40
   HOVER: 0
-  CR: 1
+  CR: 5
+  damageEffectsStruct: []
+  savingModifiersStruct: []
   jumpHeight: 2
   fov: 70
   creature: {fileID: 114271213177394982}
@@ -3583,8 +3595,9 @@ MonoBehaviour:
   - {fileID: 1642526760743496}
   - {fileID: 1278979976755154}
   primaryEmitters:
-  - {fileID: 1098845490221966}
-  secondaryEmitters: []
+  - {fileID: 1871172066058896}
+  secondaryEmitters:
+  - {fileID: 1343193196160406}
   tertiaryEmitters: []
   hideFirstPerson:
   - {fileID: 1278979976755154}
@@ -3606,9 +3619,13 @@ MonoBehaviour:
   - {fileID: 1642526760743496}
   camAttach: {fileID: 0}
   camAttachTo: {fileID: 1402148737161738}
+  camAttachToRotate: 1
   spinWithCamera: []
+  spinWithCameraScalar: 1
   rotateWithCamera: 0
   rotateWithCameraWhenFlying: 1
+  rotateWithCamScalars: {x: 1, y: 1, z: 1}
+  lerpRotate: 0
   distanceToGround: 3.5
   cameraOffset: {x: 0, y: 0, z: 0.09}
 --- !u!114 &114606658693438256

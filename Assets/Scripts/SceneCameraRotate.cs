@@ -45,24 +45,40 @@ public class SceneCameraRotate : MonoBehaviour {
     int[][] selArr = new int[][] { 
         new int[] { 0 }, 
         new int[] { 1, 2, 3 },
-        new int[] { 4, 5 },
-        new int[] { 6 }
+        new int[] { 4, 5, 7 },
+        new int[] { 6 },
+        new int[] { 8 },
+        new int[] { 9 },
     };
 
+    float[] scalers = new float[]
+    {
+        1.8f, 0.8f, 0.8f, 0.8f, 1.7f, 1.7f, 1.3f, 1.7f, 1.8f, 2
+    };
+
+    float[] translaters = new float[]
+    {
+        0, 0, 0, 0, -0.7f, -0.7f, -1.3f, -0.7f, -1.3f, -1.3f
+    };
+    /*
     float[][] scalers = new float[][] {
         new float[] { 1.8f },
-        new float[] { 0.8f, 0.8f,  0.8f},
-        new float[] { 1.7f, 1.7f },
-        new float[] { 1.3f }
+        new float[] { 0.8f, 0.8f, 0.8f },
+        new float[] { 1.7f, 1.7f, 1.7f },
+        new float[] { 1.3f },
+        new float[] { 1.8f },
+        new float[] { 1.8f },
     };
 
     float[][] translaters = new float[][]
     {
         new float[] { 0 },
         new float[] { 0, 0, 0 },
-        new float[] { -0.7f, -0.7f },
+        new float[] { -0.7f, -0.7f, -0.7f },
+        new float[] { -1.3f },
+        new float[] { -1.3f },
         new float[] { -1.3f }
-    };
+    };*/
 
     int ii = 0;
     int jj = 0;
@@ -77,18 +93,11 @@ public class SceneCameraRotate : MonoBehaviour {
         updateText();
     }
 	
-    int modClamp(int a, int b)
-    {
-        a %= b;
-        while (a < 0)
-            a += b;
-        return a;
-    }
 
     void updateChar()
     {
-        ii = modClamp(ii, selArr.Length);
-        jj = modClamp(jj, selArr[ii].Length);
+        ii = CarlMath.modClamp(ii, selArr.Length);
+        jj = CarlMath.modClamp(jj, selArr[ii].Length);
         charId = selArr[ii][jj];
         GameObject.Destroy(tempModel);
         tempModel = Instantiate(playables[charId], charDisplay.transform.position, charDisplay.transform.rotation);
@@ -98,13 +107,18 @@ public class SceneCameraRotate : MonoBehaviour {
             tempGun = Instantiate(tempModel.GetComponent<Character>().camAttach, tempModel.transform.position, tempModel.transform.rotation);
             tempGun.transform.SetParent(tempModel.transform);
         }
-        charText.GetComponent<Text>().text = tempModel.GetComponent<Character>().title + "\n\nHP: " + tempModel.GetComponent<Character>().HP + "\nAC: " + tempModel.GetComponent<Character>().AC + "\nWalk Speed: " + tempModel.GetComponent<Character>().WALK_SPEED + "\nClimb Speed: " + tempModel.GetComponent<Character>().CLIMB_SPEED + "\nFly Speed: " + tempModel.GetComponent<Character>().FLY_SPEED + "\nHover: " + tempModel.GetComponent<Character>().HOVER;
+        charText.GetComponent<Text>().text = tempModel.GetComponent<Character>().title + "\n\nHP: " + tempModel.GetComponent<Character>().HP + "\nAC: " + (tempModel.GetComponent<Character>().AC + tempModel.GetComponent<Character>().ACMagicBonus) + "\nWalk Speed: " + tempModel.GetComponent<Character>().WALK_SPEED + "\nClimb Speed: " + tempModel.GetComponent<Character>().CLIMB_SPEED + "\nFly Speed: " + tempModel.GetComponent<Character>().FLY_SPEED + "\nHover: " + tempModel.GetComponent<Character>().HOVER;
         if (GameManager.instance != null)
             GameManager.instance.charId = charId;
-        if (ii < scalers.Length && jj < scalers[ii].Length)
-            tempModel.transform.localScale *= scalers[ii][jj];
-        if (ii < translaters.Length && jj < translaters[ii].Length)
-            tempModel.transform.position += Vector3.up * translaters[ii][jj];
+        if (charId < scalers.Length)
+            tempModel.transform.localScale *= scalers[charId];
+        if (charId < translaters.Length)
+            tempModel.transform.position += Vector3.up * translaters[charId];
+        //Debug.Log(charId);
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.importShit();
+        }
     }
 
     void updateText()
@@ -122,13 +136,17 @@ public class SceneCameraRotate : MonoBehaviour {
         {
             textItems[i].GetComponent<Text>().text = shit[i] + " " + textItems[i].GetComponent<Text>().text.Substring(textItems[i].GetComponent<Text>().text.IndexOf('-'));
         }
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.importShit();
+        }
     }
 
     //public LayerMask clickMask;
 
     // Update is called once per frame
     void Update () {
-        
+
         /*if (Input.GetButton("Fire1"))
         {
             //Effects.instance.Sparky(transform.position, Input.mousePosition, null, null);
@@ -149,6 +167,8 @@ public class SceneCameraRotate : MonoBehaviour {
             }
         }*/
 
+        if (tempModel.GetComponent<Character>().id == 8)
+            tempModel.GetComponent<Character>().creature.specialAnim(1f);
         if (tempModel.GetComponent<Character>().FLY_SPEED > 0)
             tempModel.GetComponent<Character>().creature.flyAnim(0.5f);
         else

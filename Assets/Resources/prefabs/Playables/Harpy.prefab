@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 114319578745698754}
   - component: {fileID: 114379517277446778}
   - component: {fileID: 136379103945154372}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Harpy
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3372,6 +3372,15 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 0
+  dmgWeapon: 3
+  dmgWeaponType: bludgeoning
+  weaponToHit: 3
+  dmgClaw: 6
+  dmgClawType: slashing
+  clawToHit: 3
+  shockingGrasp: 0
+  dmgShock: 0
+  shockToHit: 0
 --- !u!114 &114379517277446778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3386,12 +3395,15 @@ MonoBehaviour:
   id: 4
   title: Harpy
   AC: 11
+  ACMagicBonus: 0
   HP: 38
   WALK_SPEED: 20
   CLIMB_SPEED: 0
   FLY_SPEED: 40
   HOVER: 0
   CR: 1
+  damageEffectsStruct: []
+  savingModifiersStruct: []
   jumpHeight: 2
   fov: 70
   creature: {fileID: 114319578745698754}
@@ -3421,8 +3433,13 @@ MonoBehaviour:
   - {fileID: 1938415370878810}
   camAttach: {fileID: 0}
   camAttachTo: {fileID: 1809417133470490}
+  camAttachToRotate: 1
+  spinWithCamera: []
+  spinWithCameraScalar: 1
   rotateWithCamera: 0
   rotateWithCameraWhenFlying: 1
+  rotateWithCamScalars: {x: 1, y: 1, z: 1}
+  lerpRotate: 0
   distanceToGround: 3.5
   cameraOffset: {x: 0, y: 0, z: 0.09}
 --- !u!114 &114584395859453714

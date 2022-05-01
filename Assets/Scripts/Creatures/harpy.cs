@@ -7,12 +7,24 @@ public class harpy : Creature
 {
     Animator anim;
     bool swing = false;
+    bool shock = false;
 
     int sd = 0;
     int td = 0;
 
+    public float dmgWeapon = 3;
+    public string dmgWeaponType = "bludgeoning";
+    public int weaponToHit = 3;
+    public float dmgClaw = 6;
+    public string dmgClawType = "slashing";
+    public int clawToHit = 3;
+
+    public bool shockingGrasp = false;
+    public float dmgShock;
+    public int shockToHit;
+
     [Client]
-    void Shoot(float damage)
+    void Shoot(int toHit, float damage, string dmgType)
     {
         //Debug.Log("2");
         //GameObject emitter = player.GetComponent<Player>().getPrimaryEmitter();
@@ -24,7 +36,7 @@ public class harpy : Creature
             //Debug.Log("We hit " + hit.collider.name);
             if (hit.collider.tag == PLAYER_TAG && player.GetComponent<Player>().isLocalPlayer)
             {
-                player.GetComponent<PlayerShoot>().CmdPlayerShot(hit.collider.name, damage);
+                player.GetComponent<PlayerShoot>().CmdPlayerShot(hit.collider.name, damage, dmgType, toHit, null);
             }
         }
     }
@@ -45,19 +57,31 @@ public class harpy : Creature
             anim.Play("Swing");
             anim.SetBool("isSwinging", true);
             StartCoroutine(CancelAnim("isSwinging",0.5f));
-            Shoot(3);
-        }
-        else
+            Shoot(weaponToHit, dmgWeapon, dmgWeaponType);
+            swing = false;
+            if (shockingGrasp)
+                shock = true;
+        } else if (shock)
+        {
+            //GameManager.instance.sound.PlayAtObject("blast", this.gameObject, 0.8f, 1 + 0.1f * Random.Range(-4, 4), 80f);
+            Effects.instance.Sparky(player.GetComponent<Player>().getPrimaryEmitter().transform.position - player.GetComponent<Player>().getPrimaryEmitter().transform.right*0.8f, cam.transform.position + cam.transform.forward * 2, "lazer-high-pitch", "blast", new Color(1.2f, 1.8f, 3f));
+            anim.Play("Swing");
+            anim.SetBool("isSwinging", true);
+            StartCoroutine(CancelAnim("isSwinging", 0.5f));
+            Shoot(shockToHit, dmgShock, "lightning");
+            shock = false;
+        } else
         {
             //int j = Random.Range(1, 3);
             GameManager.instance.sound.PlayAtObject("sword_swing", this.gameObject, 0.3f, 1 + 0.1f * Random.Range(-1, 1), 20f);
             anim.Play("Claw");
             anim.SetBool("isClawing", true);
             StartCoroutine(CancelAnim("isClawing", 0.5f));
-            Shoot(6);
+            Shoot(clawToHit, dmgClaw, dmgClawType);
+            swing = true;
         }
-        swing = !swing;
-        return 2;
+        //swing = !swing;
+        return shockingGrasp ? 3 : 2;
         //return base.primary();
     }
 

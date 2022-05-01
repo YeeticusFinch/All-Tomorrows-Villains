@@ -13,6 +13,12 @@ public class PlayerController : MonoBehaviour {
     private float mouseSensitivity = 3f;
     //[SerializeField]
     private float jumpForce;
+    private float zoom3 = 1f;
+    [SerializeField]
+    private GameObject orienter;
+
+    [SerializeField]
+    private LayerMask maskCam3p;
 
     //private bool canJump = true;
     //private bool canFly = false;
@@ -43,7 +49,8 @@ public class PlayerController : MonoBehaviour {
         //flySpeed = (chara.FLY_SPEED * 2.4533f / 81f) * GameManager.instance.matchSettings.speedMult * GameManager.instance.matchSettings.moveSpeedMult;
         //jumpForce = chara.jumpHeight * GameManager.instance.matchSettings.moveSpeedMult * 10f;
     }
-	
+    private float currCam3Rot = 0f;
+    private Vector3 cam3Dir = Vector3.zero;
 	void Update () {
 
         // If paused, return
@@ -55,23 +62,30 @@ public class PlayerController : MonoBehaviour {
 
         // Calculate movement velocity as a 3D vector
         float xMov = Input.GetAxisRaw("Horizontal");
+        float yMov = (Input.GetButton("Jump") ? 1 : 0) - (Input.GetButton("Crouch") ? 1 : 0);
+        //Debug.Log("yMov = " + yMov);
         float zMov = Input.GetAxisRaw("Vertical");
         Vector3 velocity = Vector3.zero;
         bool maxSpeed = false;
         float speed = walkSpeed;
-        if (Mathf.Abs(xMov) + Mathf.Abs(zMov) > 0) {
+        if (Mathf.Abs(xMov) + Mathf.Abs(yMov) + Mathf.Abs(zMov) > 0) {
             //Final Movement vector
             maxSpeed = true;
             if (!IsGrounded()) speed = flySpeed == 0 ? walkSpeed/2f : flySpeed;
-            //speed *= Input.GetButton("Sprint") ? 2 : 1;
-            if (speed == flySpeed)
+            speed *= Input.GetButton("Sprint") ? 2 : 1;
+            if (speed == flySpeed * (Input.GetButton("Sprint") ? 2 : 1))
             {
-                velocity += (motor.cam.transform.right * xMov + motor.cam.transform.forward * zMov).normalized * speed;
+                Vector3 movDir = ((Quaternion.AngleAxis(-motor.roll, motor.cam.transform.forward) * motor.cam.transform.right) * xMov + motor.cam.transform.up * yMov + motor.cam.transform.forward * zMov).normalized;
+                //float tempSpeed = Mathf.Min((movDir*speed - motor.rb.velocity).magnitude, speed);
+                //velocity += movDir * tempSpeed;
+                velocity += CarlMath.MinV(movDir * speed - motor.rb.velocity, speed * (movDir * speed - motor.rb.velocity).normalized);
                 //creature.flyAnim((Input.GetButton("Sprint") ? 2 : 1) * zMov / Mathf.Abs(zMov));
             }
             else
             {
-                velocity += (transform.right * xMov + transform.forward * zMov).normalized * speed;
+                float tempSpeed = Mathf.Min(speed - motor.rb.velocity.magnitude, speed*4);
+                velocity += (transform.right * xMov + transform.forward * zMov).normalized * tempSpeed;
+                //velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
                 //creature.walkAnim((Input.GetButton("Sprint") ? 2 : 1)*zMov/Mathf.Abs(zMov));
             }
             
@@ -95,14 +109,35 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 rotation = new Vector3(0f, yRot, 0f) * mouseSensitivity;
         //Apply rotation
-        motor.Rotate(rotation);
+        if (!GameManager.instance.freeCam)
+            motor.Rotate(rotation);
 
         //Calculate camera rotation as a 3D vector (turning the camera)
         float xRot = Input.GetAxisRaw("Mouse Y");
+        //float zRot = Input.GetAxisRaw("Mouse Z");
 
         float camRotation = xRot * mouseSensitivity;
         //Apply rotation
-        motor.CamRotate(camRotation);
+        if (!GameManager.instance.freeCam)
+            motor.CamRotate(camRotation);
+        else
+        {//motor.CamRotate3(camRotation);
+            //orienter.transform.eulerAngles += rotation;
+            currCam3Rot = Mathf.Clamp(currCam3Rot - camRotation, -motor.cameraRotationLimit, motor.cameraRotationLimit);
+            orienter.transform.localEulerAngles = Vector3.right * currCam3Rot + Vector3.up * (yRot * mouseSensitivity + orienter.transform.localEulerAngles.y);
+            //cam3Dir = new Vector3(cam3Dir.x + yRot*mouseSensitivity, Mathf.Clamp(cam3Dir.y + xRot * mouseSensitivity, -motor.cameraRotationLimit, motor.cameraRotationLimit), 0);
+            RaycastHit hit;
+            //Effects.instance.Sparky(motor.cam.transform.position, motor.cam.transform.position + orienter.transform.forward * zoom3 * 3f, null, null);
+            if (Physics.Raycast(motor.cam.transform.position, orienter.transform.forward, out hit, zoom3*3f, maskCam3p))
+            {
+                GetComponent<Player>().cam3.transform.position = hit.point;
+            } else
+            {
+                GetComponent<Player>().cam3.transform.position = motor.cam.transform.position + orienter.transform.forward * zoom3 * 3f;
+            }
+            //GetComponent<Player>().cam3.transform.eulerAngles = orienter.transform.eulerAngles;
+            GetComponent<Player>().cam3.transform.localEulerAngles = -Vector3.right * currCam3Rot + (180 + orienter.transform.localEulerAngles.y) * Vector3.up;
+        }
 
         if (Input.GetButton("Jump") && IsGrounded())
         {
@@ -110,17 +145,17 @@ public class PlayerController : MonoBehaviour {
             //    velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
             //velocity.y = jumpForce*10000000*3.15f;
             motor.ApplyThruster(Vector3.up*jumpForce*100);
-        } else if ((Input.GetButton("Jump") || Input.GetButton("Crouch")) && flySpeed > 0)
+        } /*else if ((Input.GetButton("Jump") || Input.GetButton("Crouch")) && flySpeed > 0)
         {
             maxSpeed = true;
             velocity += (Input.GetButton("Crouch") ? -1 : 1) * motor.cam.transform.up.normalized * flySpeed;
             velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
-        }
+        }*/
         if (motor.getThruster().magnitude > 0 && !(Input.GetButton("Jump") && grounded))
         {
             motor.ApplyThruster(Vector3.zero);
         }
-        velocity *= Input.GetButton("Sprint") ? 2 : 1;
+        //velocity *= Input.GetButton("Sprint") ? 2 : 1;
         //motor.ApplyThruster(velocity*100);
         if (grounded) motor.Move(velocity);
         else
@@ -138,7 +173,7 @@ public class PlayerController : MonoBehaviour {
             if (e.GetComponent<SphereCollider>() != null)
             {
                 //Effects.instance.CmdSparky(e.transform.position+e.GetComponent<SphereCollider>().center, e.transform.position - Vector3.up*(e.GetComponent<SphereCollider>().radius + 0.1f), null, null);
-                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<SphereCollider>().center, -Vector3.up, out hit, e.GetComponent<SphereCollider>().radius*e.GetComponent<SphereCollider>().transform.localScale.magnitude + 0.1f, jumpMask);
+                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<SphereCollider>().center, -Vector3.up, out hit, e.GetComponent<SphereCollider>().radius*e.GetComponent<SphereCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.01f, jumpMask);
                 if (yeet)
                 {
                     GameObject t = hit.collider.gameObject;
@@ -165,7 +200,7 @@ public class PlayerController : MonoBehaviour {
             else if (e.GetComponent<CapsuleCollider>() != null)
             {
                 //Effects.instance.CmdSparky(e.transform.position + e.GetComponent<CapsuleCollider>().center, e.transform.position - Vector3.up * (0.25f * e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f), null, null);
-                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<CapsuleCollider>().center, -Vector3.up, out hit, 0.25f*e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.1f, jumpMask);
+                bool yeet = Physics.Raycast(e.transform.position + e.GetComponent<CapsuleCollider>().center, -Vector3.up, out hit, 0.25f*e.GetComponent<CapsuleCollider>().height * e.GetComponent<CapsuleCollider>().transform.localScale.magnitude * chara.transform.localScale.magnitude + 0.01f, jumpMask);
                 if (yeet)
                 {
                     GameObject t = hit.collider.gameObject;

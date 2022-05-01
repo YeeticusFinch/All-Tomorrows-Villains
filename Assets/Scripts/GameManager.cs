@@ -12,21 +12,40 @@ public class GameManager : MonoBehaviour {
     public int charId = 1;
     public GameObject[] playables;
     public GameObject sceneCamera;
+    public static Player localPlayer;
+    public bool thirdPerson = false;
+    public bool freeCam = false;
+
+    public bool isServer = false;
 
     private void Start()
     {
-        playables = sceneCamera.GetComponent<SceneCameraRotate>().playables;
-        charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
         //ReadFile();
-        matchSettings.respawnTime = sceneCamera.GetComponent<SceneCameraRotate>().shit[1];
-        matchSettings.speedMult = 6/sceneCamera.GetComponent<SceneCameraRotate>().shit[2];
-        matchSettings.moveSpeedMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[3];
-        matchSettings.scaleMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[4];
-        matchSettings.damageMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[5];
-        sound.volume = sceneCamera.GetComponent<SceneCameraRotate>().shit[6];
-        sound.pitch = sceneCamera.GetComponent<SceneCameraRotate>().shit[7];
-        sound.distMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[8];
+        importShit();
         sound.init();
+
+        if (sceneCamera != null)
+        {
+            playables = sceneCamera.GetComponent<SceneCameraRotate>().playables;
+            charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
+        }
+    }
+
+    public void importShit()
+    {
+        if (sceneCamera)
+        {
+            matchSettings.respawnTime = sceneCamera.GetComponent<SceneCameraRotate>().shit[1];
+            matchSettings.speedMult = 6 / sceneCamera.GetComponent<SceneCameraRotate>().shit[2];
+            matchSettings.moveSpeedMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[3];
+            matchSettings.scaleMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[4];
+            matchSettings.damageMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[5];
+            sound.volume = sceneCamera.GetComponent<SceneCameraRotate>().shit[6];
+            sound.pitch = sceneCamera.GetComponent<SceneCameraRotate>().shit[7];
+            sound.distMult = sceneCamera.GetComponent<SceneCameraRotate>().shit[8]; playables = sceneCamera.GetComponent<SceneCameraRotate>().playables;
+            charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
+            Debug.Log("Successfully completed important shit!");
+        }
     }
 
     private void Awake()
@@ -37,7 +56,8 @@ public class GameManager : MonoBehaviour {
         } else {
             instance = this;
         }
-        charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
+        if (sceneCamera != null && sceneCamera.GetComponent<SceneCameraRotate>() != null)
+            charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
     }
 
     #region Player tracking
@@ -51,6 +71,11 @@ public class GameManager : MonoBehaviour {
         string playerId = PLAYER_ID_PREFIX + netId;
         players.Add(playerId, player);
         player.transform.name = playerId;
+    }
+
+    public static void SetLocalPlayer(Player player)
+    {
+        localPlayer = player;
     }
 
     public static void UnregisterPlayer(string playerId)
@@ -67,11 +92,15 @@ public class GameManager : MonoBehaviour {
     {
         GUILayout.BeginArea(new Rect(200, 200, 200, 500));
         GUILayout.BeginVertical();
-
-        foreach (string playerId in players.Keys)
+        if (isServer)
         {
-            GUILayout.Label((players[playerId] != null && players[playerId].chara != null ? players[playerId].chara.title : "Unknown") + " " + players[playerId].transform.name + " : " + players[playerId].health + " / " + players[playerId].maxHealth);
+            foreach (string playerId in players.Keys)
+            {
+                GUILayout.Label((players[playerId] != null && players[playerId].chara != null ? players[playerId].chara.title : "Unknown") + " " + players[playerId].transform.name/* + " : " + players[playerId].health + " / " + players[playerId].maxHealth*/);
+            }
         }
+        if (localPlayer != null)
+            GUILayout.Label(Mathf.Round(localPlayer.GetSpeed()) + " feet / turn");
 
         GUILayout.EndVertical();
         GUILayout.EndArea();

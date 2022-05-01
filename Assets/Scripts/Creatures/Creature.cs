@@ -20,14 +20,27 @@ public class Creature : NetworkBehaviour {
         return 0;
     }
 
-    public virtual void aim()
+    public virtual void aim(float amount)
     {
-
+        cam.fieldOfView *= amount;
+        //float distOff = 0.2f;
+        //if (isLocalPlayer)
+        //    GetComponent<Player>().healthText.transform.localPosition = cam.transform.forward * 0.2f * distOff + cam.transform.up * 0.1f * distOff * cam.fieldOfView / 60;
     }
 
     public virtual float alternative()
     {
         return 0;
+    }
+
+    public virtual float ability(bool canShoot, int n)
+    {
+        return -1;
+    }
+
+    public virtual float ability2(bool canShoot)
+    {
+        return -1;
     }
 
     public virtual void walkAnim(float speed)
@@ -41,6 +54,11 @@ public class Creature : NetworkBehaviour {
     }
 
     public virtual void idleAnim()
+    {
+
+    }
+
+    public virtual void specialAnim(float speed)
     {
 
     }

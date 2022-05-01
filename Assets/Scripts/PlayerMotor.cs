@@ -13,7 +13,7 @@ public class PlayerMotor : MonoBehaviour {
     private Vector3 force = Vector3.zero;
 
     [SerializeField]
-    private float cameraRotationLimit = 85f;
+    public float cameraRotationLimit = 85f;
     private float currentCameraRotation = 0f;
 
     private Vector3 acceleration = Vector3.zero;
@@ -22,7 +22,12 @@ public class PlayerMotor : MonoBehaviour {
     private Vector3 initialRot;
     private Vector3 flyRot;
 
-    float roll = 0f;
+    [SerializeField] GameObject player;
+
+    public float roll = 0f;
+    public float rollTarget = 0f;
+
+    private bool flying;
 
     // Use this for initialization
     void Start () {
@@ -50,6 +55,9 @@ public class PlayerMotor : MonoBehaviour {
     public void ApplyThruster(Vector3 f)
     {
         force = f;
+        rollTarget = -Mathf.Clamp(Vector3.Dot(f, cam.transform.right)/20f,-90f, 90f);
+        //if (rollTarget > 0)
+        //    Debug.Log("rollTarget = " + rollTarget);
     }
     public Vector3 getThruster()
     {
@@ -66,7 +74,7 @@ public class PlayerMotor : MonoBehaviour {
         if (acceleration.magnitude > 0.15)
         {
             //Debug.Log("acc = " + acceleration.magnitude);
-            GetComponent<Player>().CmdTakeDamage(acceleration.magnitude*60f/(GameManager.instance.matchSettings.moveSpeedMult));
+            GetComponent<Player>().CmdTakeDamage(acceleration.magnitude*60f/(GameManager.instance.matchSettings.moveSpeedMult), "bludgeoning", 12, "dexterity");
         }
         //if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null && (GetComponent<Player>().chara.rotateWithCamera || (GetComponent<Player>().chara.rotateWithCameraWhenFlying && !GetComponent<Player>().IsGrounded())))
         if (fi % 5 == 0 && GetComponent<Player>().chara != null && GetComponent<Player>().model != null)
@@ -77,6 +85,16 @@ public class PlayerMotor : MonoBehaviour {
 
     void PerformMovement()
     {
+        if (roll < rollTarget)
+            roll += Mathf.Min(rollTarget - roll, 1.5f);
+        if (roll > rollTarget)
+            roll += Mathf.Max(rollTarget - roll, -1.5f);
+
+        /*if (cam.transform.eulerAngles.z < rollTarget)
+            cam.transform.eulerAngles += cam.transform.forward * Mathf.Min(rollTarget - cam.transform.eulerAngles.z, 0.2f);
+        if (cam.transform.eulerAngles.z > rollTarget)
+            cam.transform.eulerAngles += cam.transform.forward * Mathf.Max(rollTarget - cam.transform.eulerAngles.z, -0.2f);
+*/
         if (velocity != Vector3.zero)
         {
             //rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
@@ -118,6 +136,7 @@ public class PlayerMotor : MonoBehaviour {
             return;
 
         rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
+        //player.transform.localRotation = Quaternion.Euler(player.transform.rotation.eulerAngles.x, player.transform.rotation.eulerAngles.y, roll);
 
         if (cam != null)
         {
@@ -125,24 +144,50 @@ public class PlayerMotor : MonoBehaviour {
             currentCameraRotation -= camRotation;
             currentCameraRotation = Mathf.Clamp(currentCameraRotation, -cameraRotationLimit, cameraRotationLimit); // Clamp rotation
 
-            cam.transform.localEulerAngles = new Vector3(currentCameraRotation, 0f, 0f); // Apply rotation to camera
-            if (GetComponent<Player>().chara != null && GetComponent<Player>().charId >= 1 && GetComponent<Player>().charId <= 3)
-                flyRot += Vector3.Cross(new Vector3(currentCameraRotation - prevCamRotation, 0f, 0f), GetComponent<Player>().chara.rotate.normalized);
-            else
-                flyRot -= new Vector3(currentCameraRotation - prevCamRotation, 0f, roll);
+            //bool doubleRoll = GetComponent<Player>().chara != null && GetComponent<Player>().chara.camAttachTo != null;
+
+            cam.transform.localEulerAngles = new Vector3(currentCameraRotation, 0, roll); // Apply rotation to camera
+
+            if (GetComponent<Player>().chara != null)
+            {
+                bool crossRotate = GetComponent<Player>().charId >= 1 && GetComponent<Player>().charId <= 3;
+                if (crossRotate)
+                    flyRot += Vector3.Cross(new Vector3((currentCameraRotation - prevCamRotation) * GetComponent<Player>().chara.rotateWithCamScalars.x, 0f, 0f), GetComponent<Player>().chara.rotate.normalized);
+                else
+                    flyRot -= new Vector3((currentCameraRotation - prevCamRotation) * GetComponent<Player>().chara.rotateWithCamScalars.x, 0, 0);
+            }
             if (GetComponent<Player>().chara != null && GetComponent<Player>().model != null && (GetComponent<Player>().chara.rotateWithCamera || (GetComponent<Player>().chara.rotateWithCameraWhenFlying && !GetComponent<Player>().IsGrounded())))
             {
                 //GetComponent<Player>().CmdRotate(Vector3.Cross(new Vector3(currentCameraRotation - prevCamRotation, 0f, 0f), GetComponent<Player>().chara.rotate.normalized));
-                GetComponent<Player>().model.transform.eulerAngles = new Vector3(flyRot.x, GetComponent<Player>().model.transform.eulerAngles.y, flyRot.z);
+                
+                if (GetComponent<Player>().chara.lerpRotate)
+                {
+                    float rotX = CarlMath.angleFix(GetComponent<Player>().model.transform.eulerAngles.x);
+                    float rotZ = CarlMath.angleFix(GetComponent<Player>().model.transform.eulerAngles.z);
+                    GetComponent<Player>().model.transform.eulerAngles = new Vector3(rotX + CarlMath.MinMag((flyRot.x - rotX), 2 * Mathf.Sign(flyRot.x - rotX)/* / Mathf.Abs(flyRot.x - rotX)*/), GetComponent<Player>().model.transform.eulerAngles.y, flyRot.z)/* + (crossRotate ? Vector3.Cross(Vector3.forward*roll, GetComponent<Player>().chara.rotate.normalized) : -Vector3.forward*roll)*/;
+                }
+                else
+                    GetComponent<Player>().model.transform.eulerAngles = new Vector3(flyRot.x, GetComponent<Player>().model.transform.eulerAngles.y, flyRot.z)/* + (crossRotate ? Vector3.Cross(Vector3.forward*roll, GetComponent<Player>().chara.rotate.normalized) : -Vector3.forward*roll)*/;
+                flying = true;
 
             } else if (GetComponent<Player>().chara != null && GetComponent<Player>().chara.rotateWithCameraWhenFlying && GetComponent<Player>().IsGrounded())
             {
-                GetComponent<Player>().model.transform.eulerAngles = new Vector3(initialRot.x, GetComponent<Player>().model.transform.eulerAngles.y, initialRot.z);
+                //Debug.Log("rot shit: " + Mathf.Round(initialRot.x) + " - " + Mathf.Round(GetComponent<Player>().model.transform.eulerAngles.x));
+                
+                if (GetComponent<Player>().chara.lerpRotate)
+                {
+                    float rotX = CarlMath.angleFix(GetComponent<Player>().model.transform.eulerAngles.x);
+                    float rotZ = CarlMath.angleFix(GetComponent<Player>().model.transform.eulerAngles.z);
+                    GetComponent<Player>().model.transform.eulerAngles += new Vector3(CarlMath.MinMag((initialRot.x - rotX), 2 * Mathf.Sign(initialRot.x - rotX)), 0/*GetComponent<Player>().model.transform.eulerAngles.y*/, CarlMath.MinMag(initialRot.z - rotZ, 2 * (initialRot.z - rotZ) / Mathf.Abs(initialRot.z - rotZ)))/* + (crossRotate ? Vector3.Cross(Vector3.forward * roll, GetComponent<Player>().chara.rotate.normalized) : -Vector3.forward * roll)*/;
+                }
+                else
+                    GetComponent<Player>().model.transform.eulerAngles = new Vector3(initialRot.x, GetComponent<Player>().model.transform.eulerAngles.y, initialRot.z)/* + (crossRotate ? Vector3.Cross(Vector3.forward * roll, GetComponent<Player>().chara.rotate.normalized) : -Vector3.forward * roll)*/;
+                flying = false;
             }
         }
-
+        
     }
-
+        
     public bool canJump()
     {
         if (Mathf.Abs(acceleration.y) > 0.001)

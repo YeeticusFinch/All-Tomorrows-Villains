@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 114476267521236896}
   - component: {fileID: 135096541912623614}
   - component: {fileID: 114336964128795372}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Beholder
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1041,12 +1041,15 @@ MonoBehaviour:
   id: 3
   title: Beholder
   AC: 18
+  ACMagicBonus: 0
   HP: 180
   WALK_SPEED: 10
   CLIMB_SPEED: 0
   FLY_SPEED: 20
   HOVER: 1
   CR: 13
+  damageEffectsStruct: []
+  savingModifiersStruct: []
   jumpHeight: 10
   fov: 90
   creature: {fileID: 114336964128795372}
@@ -1077,7 +1080,14 @@ MonoBehaviour:
   - {fileID: 1331235031872604}
   canJumpFrom: []
   camAttach: {fileID: 0}
+  camAttachTo: {fileID: 0}
+  camAttachToRotate: 1
+  spinWithCamera: []
+  spinWithCameraScalar: 1
   rotateWithCamera: 1
+  rotateWithCameraWhenFlying: 0
+  rotateWithCamScalars: {x: 1, y: 1, z: 1}
+  lerpRotate: 0
   distanceToGround: 1.109213
   cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &135096541912623614

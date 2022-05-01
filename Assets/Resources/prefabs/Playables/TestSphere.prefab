@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114561070358363802}
   - component: {fileID: 135770944021672626}
   - component: {fileID: 114158884983244822}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TestSphere
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -191,12 +191,15 @@ MonoBehaviour:
   id: 0
   title: Test Sphere
   AC: 10
+  ACMagicBonus: 0
   HP: 100
   WALK_SPEED: 30
   CLIMB_SPEED: 0
   FLY_SPEED: 0
   HOVER: 0
   CR: 5
+  damageEffectsStruct: []
+  savingModifiersStruct: []
   jumpHeight: 3
   fov: 60
   creature: {fileID: 114158884983244822}
@@ -214,9 +217,13 @@ MonoBehaviour:
   - {fileID: 1551443506765740}
   camAttach: {fileID: 1999487094945898, guid: 009e2d9040d18b2499d6f862e661d624, type: 2}
   camAttachTo: {fileID: 0}
+  camAttachToRotate: 1
   spinWithCamera: []
+  spinWithCameraScalar: 1
   rotateWithCamera: 0
   rotateWithCameraWhenFlying: 0
+  rotateWithCamScalars: {x: 1, y: 1, z: 1}
+  lerpRotate: 0
   distanceToGround: 0.5
   cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &135770944021672626

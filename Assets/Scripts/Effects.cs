@@ -34,6 +34,12 @@ public class Effects : NetworkBehaviour {
         RpcSparky(pos1, pos2, sound, hitSound);
     }
 
+    [Command]
+    public void CmdSparky2(Vector3 pos1, Vector3 pos2, int randomness, string sound, string hitSound)
+    {
+        RpcSparky2(pos1, pos2, randomness, sound, hitSound);
+    }
+
     [ClientRpc]
     public void RpcSparkyColor(Vector3 pos1, Vector3 pos2, string sound, string hitSound, Color color)
     {
@@ -56,6 +62,17 @@ public class Effects : NetworkBehaviour {
         StartCoroutine(SparkyIE(pos1, pos2, new Color(0.069420f, 0, 0)));
     }
 
+    [ClientRpc]
+    public void RpcSparky2(Vector3 pos1, Vector3 pos2, int randomness, string sound, string hitSound)
+    {
+        //shoot.Play();
+        if (sound != null && sound.Length > 0)
+            GameManager.instance.sound.playAt(sound, pos1, 0.5f, 0.1f * Random.Range(7, 13), 100f);
+        if (hitSound != null && hitSound.Length > 0)
+            GameManager.instance.sound.playAt(hitSound, pos2, 1f, 0.1f * Random.Range(5, 15), 150f);
+        StartCoroutine(SparkyIE(pos1, pos2, new Color(0.069420f, 0, 0), 2, 0));
+    }
+
     public void Sparky(Vector3 pos1, Vector3 pos2, string sound, string hitSound, Color color, float soundVolume = 0.5f, float hitVolume = 1)
     {
         //CmdSparky(pos1, pos2, sound, hitSound);
@@ -76,7 +93,7 @@ public class Effects : NetworkBehaviour {
         StartCoroutine(SparkyIE(pos1, pos2, new Color(0.069420f, 0, 0)));
     }
 
-    IEnumerator SparkyIE(Vector3 pos1, Vector3 pos2, Color color, int iterations = 2)
+    IEnumerator SparkyIE(Vector3 pos1, Vector3 pos2, Color color, int iterations = 2, int randomness = 1)
     {
         int c = Random.Range(5, Mathf.Max(7, (int)(2 * Mathf.Abs((pos2 - pos1).magnitude))));
 
@@ -144,9 +161,11 @@ public class Effects : NetworkBehaviour {
             float stepY = (pos1.y - pos2.y) / c;
             float stepZ = (pos1.z - pos2.z) / c;
 
-            lineRenderer.SetPosition(0, new Vector3(pos1.x + Random.Range(-5, 5) / 200f, pos1.y + Random.Range(-5, 5) / 200f, pos1.z + Random.Range(-5, 5) / 200f));
+            int r = randomness;
+
+            lineRenderer.SetPosition(0, new Vector3(pos1.x + r*Random.Range(-5, 5) / 200f, pos1.y + r*Random.Range(-5, 5) / 200f, pos1.z + r*Random.Range(-5, 5) / 200f));
             for (int i = 1; i < c - 1; i++)
-                lineRenderer.SetPosition(i, new Vector3(pos1.x - i * stepX + Random.Range(-100, 100) / 200f, pos1.y - i * stepY + Random.Range(-100, 100) / 200f, pos1.z - i * stepZ + Random.Range(-100, 100) / 200f));
+                lineRenderer.SetPosition(i, new Vector3(pos1.x - i * stepX + r*Random.Range(-100, 100) / 200f, pos1.y - i * stepY + r*Random.Range(-100, 100) / 200f, pos1.z - i * stepZ + r*Random.Range(-100, 100) / 200f));
             lineRenderer.SetPosition(c - 1, new Vector3(pos2.x, pos2.y, pos2.z));
 
             yield return new WaitForSeconds(0.075f);
@@ -155,5 +174,6 @@ public class Effects : NetworkBehaviour {
             //yield break;
         }
     }
+
 
 }

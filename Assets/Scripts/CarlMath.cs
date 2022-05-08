@@ -10,6 +10,16 @@ public class CarlMath
         return result;
     }*/
 
+    public static float cosLawAngle(float a, float b, float c)
+    {
+        return Mathf.Acos((a*a + b*b - c*c)/(2*a*b));
+    }
+
+    public static float cosLawDist(float a, float b, float t)
+    {
+        return Mathf.Sqrt(a * a + b * b - 2 * a * b * Mathf.Cos(t));
+    }
+
     public static float MaxMag(float a, float b)
     {
         return Mathf.Abs(a) > Mathf.Abs(b) ? a : b;

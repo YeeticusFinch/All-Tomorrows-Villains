@@ -3364,14 +3364,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  weapon:
-    name: Gun
-    damage: 10
-    range: 100
   cam: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 0
+  attacks:
+  - name: Flurry of Attacks
+    action: multiattack
+    num: 0
+    save: 
+    range: 0
+    damage: 0
+    damageType: 
+    description: 
+  - name: Club
+    action: action
+    num: 3
+    save: 
+    range: 5
+    damage: 3
+    damageType: bludgeoning
+    description: Swings your club
+  - name: Claws
+    action: action
+    num: 3
+    save: 
+    range: 5
+    damage: 6
+    damageType: slashing
+    description: Swings your claws
+  abilities:
+  - name: Luring Song
+    action: bonus action
+    description: Sing a magical melody to seduce your enemies
   dmgWeapon: 3
   dmgWeaponType: bludgeoning
   weaponToHit: 3

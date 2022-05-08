@@ -178,7 +178,7 @@ public class PlayerMotor : MonoBehaviour {
                 {
                     float rotX = CarlMath.angleFix(GetComponent<Player>().model.transform.eulerAngles.x);
                     float rotZ = CarlMath.angleFix(GetComponent<Player>().model.transform.eulerAngles.z);
-                    GetComponent<Player>().model.transform.eulerAngles += new Vector3(CarlMath.MinMag((initialRot.x - rotX), 2 * Mathf.Sign(initialRot.x - rotX)), 0/*GetComponent<Player>().model.transform.eulerAngles.y*/, CarlMath.MinMag(initialRot.z - rotZ, 2 * (initialRot.z - rotZ) / Mathf.Abs(initialRot.z - rotZ)))/* + (crossRotate ? Vector3.Cross(Vector3.forward * roll, GetComponent<Player>().chara.rotate.normalized) : -Vector3.forward * roll)*/;
+                    GetComponent<Player>().model.transform.eulerAngles += new Vector3(CarlMath.MinMag((initialRot.x - rotX), 2 * Mathf.Sign(initialRot.x - rotX)), 0/*GetComponent<Player>().model.transform.eulerAngles.y*/, CarlMath.MinMag(initialRot.z - rotZ, 2 * Mathf.Sign(initialRot.z - rotZ)))/* + (crossRotate ? Vector3.Cross(Vector3.forward * roll, GetComponent<Player>().chara.rotate.normalized) : -Vector3.forward * roll)*/;
                 }
                 else
                     GetComponent<Player>().model.transform.eulerAngles = new Vector3(initialRot.x, GetComponent<Player>().model.transform.eulerAngles.y, initialRot.z)/* + (crossRotate ? Vector3.Cross(Vector3.forward * roll, GetComponent<Player>().chara.rotate.normalized) : -Vector3.forward * roll)*/;

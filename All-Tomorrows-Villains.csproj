@@ -389,12 +389,15 @@
     <Compile Include="Assets\Scripts\Creatures\Beholder.cs" />
     <Compile Include="Assets\Scripts\Creatures\Carl.cs" />
     <Compile Include="Assets\Scripts\Creatures\Creature.cs" />
+    <Compile Include="Assets\Scripts\Creatures\Elizabeth.cs" />
     <Compile Include="Assets\Scripts\Creatures\harpy.cs" />
     <Compile Include="Assets\Scripts\Creatures\Rasputin.cs" />
+    <Compile Include="Assets\Scripts\Creatures\Swoletariat.cs" />
     <Compile Include="Assets\Scripts\Creatures\TestSphere.cs" />
     <Compile Include="Assets\Scripts\Creatures\Tolivunt.cs" />
     <Compile Include="Assets\Scripts\Effects.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GroundControl.cs" />
     <Compile Include="Assets\Scripts\MatchSettings.cs" />
     <Compile Include="Assets\Scripts\PauseGame.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />

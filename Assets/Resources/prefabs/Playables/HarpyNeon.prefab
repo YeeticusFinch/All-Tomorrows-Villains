@@ -3546,14 +3546,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  weapon:
-    name: Gun
-    damage: 10
-    range: 100
   cam: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 0
+  attacks:
+  - name: Flurry of Attacks
+    action: multiattack
+    num: 6
+    save: 
+    range: 5
+    damage: 31
+    damageType: varies
+    description: Alternates between melee attacks
+  - name: Sword
+    action: action
+    num: 6
+    save: 
+    range: 5
+    damage: 21
+    damageType: necrotic
+    description: Swings your necrotic sword
+  - name: Claw
+    action: action
+    num: 6
+    save: 
+    range: 5
+    damage: 10
+    damageType: slashing
+    description: Swings your claws
+  abilities:
+  - name: Luring Song
+    action: bonus action
+    description: Sing a melody to seduce your enemies
   dmgWeapon: 21
   dmgWeaponType: necrotic
   weaponToHit: 3

@@ -20,6 +20,13 @@ public class Player : NetworkBehaviour {
 
     [SerializeField]
     public GameObject healthText;
+    [SerializeField]
+    public GameObject infoText;
+
+    [SerializeField]
+    public GameObject healthText3;
+    [SerializeField]
+    public GameObject infoText3;
 
     //[SerializeField]
     public GameObject model;
@@ -39,6 +46,21 @@ public class Player : NetworkBehaviour {
 
     [SerializeField]
     private LayerMask jumpMask;
+
+    /*private struct Jumpable
+    {
+        public GameObject obj;
+        public bool grounded;
+        public Jumpable(GameObject obj)
+        {
+            this.obj = obj;
+            grounded = false;
+        }
+    }
+
+    private Jumpable[] jumpables; */
+
+    //private List<GameObject> jumpables = new List<GameObject>();
 
     public float maxHealth
     {
@@ -85,14 +107,13 @@ public class Player : NetworkBehaviour {
 
     public void Setup()
     {
+
+        playables = GameManager.instance.playables;
         if (!isLocalPlayer)
         {
             healthBarPlzWork.enabled = false;
             healthBarPlzWork2.enabled = false;
-        }
-        playables = GameManager.instance.playables;
-
-        if (isLocalPlayer)
+        } else
         {
             charId = GameManager.instance.charId;
             CmdLoadModel(charId);
@@ -161,6 +182,64 @@ public class Player : NetworkBehaviour {
         loadModel();
     }
 
+    public bool IsGrounded()
+    {
+        return grounded;
+        foreach (GameObject e in chara.canJumpFrom)
+            if (e.GetComponent<GroundControl>().IsGrounded())
+                return true;
+        return false;
+    }
+
+    public bool grounded = false;
+    const float GROUND_THRESHOLD = 0.5f;
+    public Vector3 groundContactPos;
+
+    private void OnCollisionStay(Collision collision)
+    {
+        Debug.Log("GroundControl touching collider");
+        if (!grounded)
+            foreach (ContactPoint c in collision.contacts)
+                if (Vector3.Dot(c.normal, Vector3.up) > GROUND_THRESHOLD)
+                {
+                    grounded = true;
+                    groundContactPos = c.point;
+                }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("GroundControl hit collider");
+        if (!grounded)
+        {
+            foreach (ContactPoint c in collision.contacts)
+            {
+                Debug.Log("c.normal enter = " + c.normal);
+                if (Vector3.Dot(c.normal, Vector3.up) > GROUND_THRESHOLD)
+                {
+                    grounded = true;
+                    groundContactPos = c.point;
+                }
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("GroundControl left collider");
+        grounded = false;
+        if (grounded)
+        {
+            Debug.Log("Still grounded reee");
+            foreach (ContactPoint c in collision.contacts)
+            {
+                Debug.Log("c.normal exit = " + c.normal);
+                if (Vector3.Dot(c.normal, Vector3.up) > GROUND_THRESHOLD)
+                    grounded = false;
+            }
+        }
+    }
+
     public void loadModel()
     {
         if (model == null && charId != -1)
@@ -182,12 +261,26 @@ public class Player : NetworkBehaviour {
                 chara.tertiaryEmitters = CarlMath.arrayCombine(chara.tertiaryEmitters, chara.camAttach.GetComponent<CamAttach>().tertiaryEmitters);
                 chara.canJumpFrom = CarlMath.arrayCombine(chara.canJumpFrom, chara.camAttach.GetComponent<CamAttach>().canJumpFrom);
             }
+            /*foreach (GameObject e in chara.canJumpFrom)
+            {
+                //jumpables.Add(GameObject.Instantiate(new GameObject()));
+                //jumpables[jumpables.Count - 1].AddComponent<GroundControl>();
+                //jumpables[jumpables.Count - 1].AddComponent<Collider>();
+                //jumpables[jumpables.Count - 1].GetComponent<Collider>(). = e.GetComponent<Collider>();
+                //e.AddComponent<GroundControl>();
+                //e.GetComponent<GroundControl>().player = this;
+            }*/
             cam.fieldOfView = chara.fov;
             cam3.fieldOfView = chara.fov;
             float distOff = 0.2f;
             if (isLocalPlayer)
+            {
                 healthText.transform.localPosition = cam.transform.forward * 0.2f * distOff + cam.transform.up * 0.1f * distOff * cam.fieldOfView / 60;
-                    
+                infoText.transform.localPosition = cam.transform.forward * 0.2f * distOff + (cam.transform.up*1.1f + cam.transform.right) * 0.1f * distOff * cam.fieldOfView / 60;
+
+                healthText3.transform.localPosition = cam3.transform.forward * 0.2f * distOff + cam3.transform.up * 0.1f * distOff * cam3.fieldOfView / 60;
+                infoText3.transform.localPosition = cam3.transform.forward * 0.2f * distOff + (cam3.transform.up * 1.1f + cam3.transform.right) * 0.1f * distOff * cam3.fieldOfView / 60;
+            }
             //GetComponents<NetworkTransformChild>()[1].target = model.transform;
             if (isLocalPlayer)
             {
@@ -403,6 +496,7 @@ public class Player : NetworkBehaviour {
     {
         yield return new WaitForSeconds(GameManager.instance.matchSettings.respawnTime);
 
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
         SetDefaults();
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = spawnPoint.position;
@@ -510,7 +604,7 @@ public class Player : NetworkBehaviour {
             float vel = GetComponent<Rigidbody>().velocity.magnitude;
             if (IsGrounded() && chara.WALK_SPEED > 0)
             {
-                chara.creature.walkAnim(Mathf.Clamp(2*vel / walkSpeed, 0.1f, 3f));
+                chara.creature.walkAnim(Mathf.Clamp(2*vel / walkSpeed, 0.1f, 3f), GetComponent<Rigidbody>().velocity.normalized);
                 if (!chara.HOVER)
                     GetComponent<Rigidbody>().useGravity = true;
             } else if (chara.FLY_SPEED > 0)
@@ -523,6 +617,9 @@ public class Player : NetworkBehaviour {
                 }
                 //Debug.Log(GetComponent<Rigidbody>().velocity);
                 //Debug.Log(Mathf.Abs(GetComponent<Rigidbody>().velocity.z) / flySpeed > 0.8f);
+            } else
+            {
+                chara.creature.fallAnim(Mathf.Clamp(2 * vel / walkSpeed, 0.1f, 3f), GetComponent<Rigidbody>().velocity.normalized);
             }
         } else if (chara != null)
         {
@@ -533,12 +630,25 @@ public class Player : NetworkBehaviour {
         if (isLocalPlayer)
         {
             //healthBar.GetComponent<bar>().setPos(health / maxHealth);
-            float distOff = 0.2f;
-            healthBarPlzWork.SetPosition(0, cam.transform.position + cam.transform.forward*0.2f* distOff + cam.transform.up * 0.1f* distOff * cam.fieldOfView/60 - cam.transform.right * 0.1f* distOff * (maxHP/150)* Mathf.Max(0, HP)/maxHP);
-            healthBarPlzWork.SetPosition(1, cam.transform.position + cam.transform.forward*0.2f* distOff + cam.transform.up * 0.1f* distOff * cam.fieldOfView / 60 + cam.transform.right * 0.1f* distOff * (maxHP / 150) * Mathf.Max(0, HP)/maxHP);
-            healthBarPlzWork2.SetPosition(0, cam.transform.position + cam.transform.forward * 0.21f* distOff + cam.transform.up * 0.105f* distOff * cam.fieldOfView / 60 - cam.transform.right* distOff * (maxHP / 150) * 0.105f);
-            healthBarPlzWork2.SetPosition(1, cam.transform.position + cam.transform.forward * 0.21f* distOff + cam.transform.up * 0.105f* distOff * cam.fieldOfView / 60 + cam.transform.right* distOff * (maxHP / 150) * 0.105f);
-            healthText.GetComponent<TextMesh>().text = Mathf.RoundToInt(HP) + " / " + maxHP;
+            Camera currCam = cam.enabled ? cam : cam3;
+            float distOff = 0.2f * 60 / currCam.fieldOfView;
+            healthBarPlzWork.SetPosition(0, currCam.transform.position + currCam.transform.forward*0.2f* distOff + currCam.transform.up * 0.1f* distOff * currCam.fieldOfView/60 - currCam.transform.right * 0.1f* distOff * currCam.fieldOfView / 60 * (maxHP/150)* Mathf.Max(0, HP)/maxHP);
+            healthBarPlzWork.SetPosition(1, currCam.transform.position + currCam.transform.forward*0.2f* distOff + currCam.transform.up * 0.1f* distOff * currCam.fieldOfView / 60 + currCam.transform.right * 0.1f* distOff * currCam.fieldOfView / 60 * (maxHP / 150) * Mathf.Max(0, HP)/maxHP);
+            healthBarPlzWork2.SetPosition(0, currCam.transform.position + currCam.transform.forward * 0.21f* distOff + currCam.transform.up * 0.105f* distOff * currCam.fieldOfView / 60 - currCam.transform.right* distOff * currCam.fieldOfView / 60 * (maxHP / 150) * 0.105f);
+            healthBarPlzWork2.SetPosition(1, currCam.transform.position + currCam.transform.forward * 0.21f* distOff + currCam.transform.up * 0.105f* distOff * currCam.fieldOfView / 60 + currCam.transform.right* distOff * currCam.fieldOfView / 60 * (maxHP / 150) * 0.105f);
+
+            //distOff *= currCam.fieldOfView / 60;
+            if (cam.enabled)
+            {
+                healthText.transform.localPosition = Vector3.forward * 0.2f * distOff + Vector3.up * 0.1f * distOff * cam.fieldOfView / 60;
+                infoText.transform.localPosition = Vector3.forward * 0.2f * distOff + (Vector3.up * 1.1f + Vector3.right) * 0.1f * distOff * cam.fieldOfView / 60;
+                healthText.GetComponent<TextMesh>().text = Mathf.RoundToInt(HP) + " / " + maxHP;
+            } else
+            {
+                healthText3.transform.localPosition = Vector3.forward * 0.2f * distOff + Vector3.up * 0.1f * distOff * cam3.fieldOfView / 60;
+                infoText3.transform.localPosition = Vector3.forward * 0.2f * distOff + (Vector3.up * 1.1f + Vector3.right) * 0.1f * distOff * cam3.fieldOfView / 60;
+                healthText3.GetComponent<TextMesh>().text = Mathf.RoundToInt(HP) + " / " + maxHP;
+            }
             //healthText.transform.position 
             if (HP > maxHP / 2 && bloodied != 0)
             {
@@ -592,7 +702,7 @@ public class Player : NetworkBehaviour {
         }
     }
 
-    public bool IsGrounded()
+    /*public bool IsGrounded()
     {
         RaycastHit hit;
         //int i = 0;
@@ -618,7 +728,7 @@ public class Player : NetworkBehaviour {
         //else if (e.GetComponent<SphereCollider>() != null)
         //    return Physics.Raycast(e.GetComponent<SphereCollider>().center, -Vector3.up, e.GetComponent<SphereCollider>().radius + 0.1f);
         return false;
-    }
+    }*/
 
     public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
     {

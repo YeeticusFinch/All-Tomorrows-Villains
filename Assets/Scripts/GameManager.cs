@@ -23,11 +23,48 @@ public class GameManager : MonoBehaviour {
         //ReadFile();
         importShit();
         sound.init();
+        readInputs();
 
         if (sceneCamera != null)
         {
             playables = sceneCamera.GetComponent<SceneCameraRotate>().playables;
             charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
+        }
+    }
+
+    private Dictionary<string, string> controls = new Dictionary<string, string>();
+
+    public string getControlMapping(string ctrl)
+    {
+        if (controls.ContainsKey(ctrl))
+            return controls[ctrl];
+        return "Missing keybind you fucking idiot";
+    }
+
+    public void readInputs()
+    {
+        var inputManager = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset")[0];
+        UnityEditor.SerializedObject obj = new UnityEditor.SerializedObject(inputManager);
+        UnityEditor.SerializedProperty axisArray = obj.FindProperty("m_Axes");
+        if (axisArray.arraySize == 0)
+            Debug.Log("No Axes, is Input Manager empty?");
+
+        for (int i = 0; i < axisArray.arraySize; ++i)
+        {
+            var axis = axisArray.GetArrayElementAtIndex(i);
+            var name = axis.displayName;  //axis.displayName  "Horizontal"	string
+            axis.Next(true);        //axis.displayName	    "Name"	string
+            axis.Next(false);   //axis.displayName	"Descriptive Name"	string
+            axis.Next(false);   //axis.displayName	"Descriptive Negative Name"	string
+            axis.Next(false);   //axis.displayName	"Negative Button"	string
+            axis.Next(false);   //axis.displayName	"Positive Button"	string
+            var value = axis.stringValue;  //"right"
+
+            //Debug.Log(name + " | " + value);
+            if (controls.ContainsKey(name.ToString()) && (controls[name.ToString()] == null || controls[name.ToString()].Length < 1))
+                controls[name.ToString()] = value.ToString();
+            else if (!controls.ContainsKey(name.ToString()))
+                controls.Add(name.ToString(), value.ToString());
         }
     }
 

@@ -10,6 +10,9 @@ public class PlayerShoot : NetworkBehaviour {
 
     private const string PLAYER_TAG = "Player";
 
+    // Weapon selected
+    public int selectedWeapon = 0;
+
     //public PlayerWeapon weapon;
 
     [SerializeField]
@@ -28,6 +31,9 @@ public class PlayerShoot : NetworkBehaviour {
 
     public Creature creature;
 
+    public TextMesh infoText;
+    public TextMesh infoText3;
+
     private void Start()
     {
         if (cam == null)
@@ -42,6 +48,8 @@ public class PlayerShoot : NetworkBehaviour {
             cam.enabled = true;
             GameManager.instance.thirdPerson = false;
             GameManager.instance.freeCam = false;
+            infoText = GetComponent<Player>().infoText.GetComponent<TextMesh>();
+            infoText3 = GetComponent<Player>().infoText3.GetComponent<TextMesh>();
         }
     }
 
@@ -52,14 +60,29 @@ public class PlayerShoot : NetworkBehaviour {
         creature.cam = cam;
         //creature.weapon = weapon;
         creature.player = player;
+        infoText.text = "Initializing loadout...";
         if (GetComponent<PlayerController>())
             GetComponent<PlayerController>().creature = creature;
     }
     int camMode = 2;
+    bool swapped = false;
     private void Update()
     {
         if (isLocalPlayer)
         {
+            float deltaSelect = Input.GetAxisRaw("Swap Weapon");
+            deltaSelect += Input.GetAxisRaw("Mouse ScrollWheel");
+            if (deltaSelect != 0 && !swapped)
+            {
+                swapped = true;
+                selectedWeapon += (int)Mathf.Sign(deltaSelect);
+                selectedWeapon %= creature.attacks.Length;
+                if (selectedWeapon < 0)
+                    selectedWeapon += creature.attacks.Length;
+                SetInfoText();
+            } else if (deltaSelect == 0)
+                swapped = false;
+
             if (Input.GetButtonDown("3rd Person"))
             {
                 camMode = (camMode + 1) % 3;
@@ -94,7 +117,7 @@ public class PlayerShoot : NetworkBehaviour {
             {
                 //Debug.Log("1");
                 canShoot = false;
-                CmdPrimary();
+                CmdPrimary(selectedWeapon);
                 //Shoot();
             }
             if (Input.GetButton("Ability1"))
@@ -117,17 +140,17 @@ public class PlayerShoot : NetworkBehaviour {
     }
 
     [Command]
-    private void CmdPrimary()
+    private void CmdPrimary(int selected)
     {
         //Debug.Log("3");
-        RpcPrimary();
+        RpcPrimary(selected);
     }
 
     [ClientRpc]
-    private void RpcPrimary()
+    private void RpcPrimary(int selected)
     {
         //Debug.Log("4");
-        float x = creature.primary();
+        float x = creature.primary(selected);
         if (isLocalPlayer)
             StartCoroutine(ResetFire(x));
     }
@@ -182,12 +205,37 @@ public class PlayerShoot : NetworkBehaviour {
         player.RpcTakeDamage(damage, dmgType, num, save);
     }
 
-    
+    public void SetInfoText()
+    {
+        Creature.Attack a = creature.attacks[selectedWeapon];
+        float cooldownTime = a.cooldown;
+        if (a.action.ToLower() != "free action" && a.action.ToLower() != "special")
+            cooldownTime = Mathf.Max(a.cooldown, resetFireCooldown);
+        if (cooldownTime > 0)
+            infoText.color = Color.red;
+        else
+            infoText.color = Color.white;
+        cooldownTime = Mathf.Round(cooldownTime * 10) / 10f;
+        infoText.text = (cooldownTime > 0 ? cooldownTime.ToString() : GameManager.instance.getControlMapping("Fire1")) + "\n" + a.name + "\n" + a.action + "\n" + (a.save != null && a.save.Length > 0 ? "DC " + a.num + " " + a.save + " save" : "+" + a.num + " to hit") + (a.damageType != null && a.damageType.Length > 0 ? "\n" + a.damage + " " + a.damageType : "") + (a.description != null && a.description.Length > 0 ? "\n" + a.description : "");
+        infoText3.color = infoText.color;
+        infoText3.text = infoText.text;
+
+    }
+
+    float resetFireCooldown;
 
     IEnumerator ResetFire(float timesPerTurn)
     {
         canShoot = false;
-        yield return new WaitForSeconds(6/(timesPerTurn * GameManager.instance.matchSettings.speedMult));
+        float waitTime = timesPerTurn > 0 ? 6 / (timesPerTurn * GameManager.instance.matchSettings.speedMult) : 0;
+        resetFireCooldown = waitTime;
+        if (waitTime > 0.1f)
+            while (resetFireCooldown > 0)
+            {
+                yield return new WaitForSeconds(0.1f);
+                resetFireCooldown -= 0.1f;
+                SetInfoText();
+            }
         canShoot = true;
     }
 

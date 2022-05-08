@@ -3544,14 +3544,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  weapon:
-    name: Gun
-    damage: 10
-    range: 100
   cam: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 0
+  attacks:
+  - name: Flurry of Attacks
+    action: multiattack
+    num: 5
+    save: 
+    range: 5
+    damage: 23
+    damageType: multiple
+    description: Alternates between 3 melee attacks
+  - name: Mace
+    action: action
+    num: 5
+    save: 
+    range: 5
+    damage: 12
+    damageType: psychic
+    description: Swings your enchanted mace
+  - name: Claws
+    action: multiattack
+    num: 5
+    save: 
+    range: 5
+    damage: 7
+    damageType: slashing
+    description: Swings your claws
+  - name: Shocking Grasp
+    action: action
+    num: 6
+    save: 
+    range: 5
+    damage: 4
+    damageType: lightning
+    description: Shoot sparks from your mace
+  - name: Fire Bolt
+    action: action
+    num: 6
+    save: 
+    range: 120
+    damage: 5
+    damageType: fire
+    description: Launches a bolt of fire
+  - name: Scorching Ray
+    action: action (1 round recharge)
+    num: 6
+    save: 
+    range: 120
+    damage: 7
+    damageType: fire
+    description: Launches 3 rays of fire
+  - name: Claws
+    action: attack (2 round recharge)
+    num: 5
+    save: 
+    range: 5
+    damage: 10
+    damageType: necrotic
+    description: Steels health from your target
+  - name: Vitriolic Sphere
+    action: action (2 round recharge)
+    num: 14
+    save: dex
+    range: 150
+    damage: 25
+    damageType: acid
+    description: Launch an explosive ball of acid
+  abilities:
+  - name: Luring Song
+    action: bonus action
+    description: Sing a melody to seduce your enemies
   dmgWeapon: 12
   dmgWeaponType: psychic
   weaponToHit: 5

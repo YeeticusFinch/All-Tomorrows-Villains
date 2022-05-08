@@ -2750,14 +2750,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  weapon:
-    name: Gun
-    damage: 10
-    range: 100
   cam: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 0
+  attacks:
+  - name: Unarmed Strike
+    action: multiattack
+    num: 7
+    save: 
+    range: 5
+    damage: 7
+    damageType: bludgeoning
+    description: Throws a punch
+  - name: Holy Healing
+    action: multiattack
+    num: 9
+    save: 
+    range: 120
+    damage: 32
+    damageType: bludgeoning
+    description: Shoots a powerful jet of Vodka that heals Russians and damages everyone
+      else
+  - name: Reign of Winter
+    action: action (6 turn recharge)
+    num: 0
+    save: 
+    range: 150
+    damage: 0
+    damageType: 
+    description: Creates a sleet storm, inhibiting vision and movement
+  abilities:
+  - name: Kazachok
+    action: free action
+    description: Prevents movement from being restricted
+  - name: Russia's Greatest Love Machine
+    action: action
+    description: Charm your enemies with your wunderbar body
 --- !u!114 &114780698115435362
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2748,14 +2748,111 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  weapon:
-    name: Gun
-    damage: 10
-    range: 100
   cam: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 0
+  attacks:
+  - name: Eye Ray
+    action: multiattack
+    num: 16
+    save: Any
+    range: 120
+    damage: 0
+    damageType: Any
+    description: Fires a random eye ray
+  - name: Bite
+    action: action
+    num: 5
+    save: 
+    range: 5
+    damage: 14
+    damageType: piercing
+    description: Bites with your big mouth
+  - name: Charm Ray
+    action: action
+    num: 16
+    save: wis
+    range: 120
+    damage: 0
+    damageType: 
+    description: Charms target
+  - name: Paralyzing Ray
+    action: action
+    num: 16
+    save: con
+    range: 120
+    damage: 0
+    damageType: 
+    description: Paralyzes target
+  - name: Fear Ray
+    action: action
+    num: 16
+    save: wis
+    range: 120
+    damage: 0
+    damageType: 
+    description: Frightens target
+  - name: Slowing Ray
+    action: action
+    num: 16
+    save: dex
+    range: 120
+    damage: 0
+    damageType: 
+    description: Slows target
+  - name: Enervation Ray
+    action: action
+    num: 16
+    save: con
+    range: 120
+    damage: 36
+    damageType: necrotic
+    description: Withers the target
+  - name: Telekinetic Ray
+    action: action
+    num: 16
+    save: str
+    range: 120
+    damage: 0
+    damageType: 
+    description: Telekinetically moves a target 30 feet in any direction
+  - name: Sleep Ray
+    action: action
+    num: 16
+    save: wis
+    range: 120
+    damage: 0
+    damageType: 
+    description: Puts the target to sleep
+  - name: Petrification Ray
+    action: action
+    num: 16
+    save: dex
+    range: 120
+    damage: 0
+    damageType: 
+    description: Turns the target to stone
+  - name: Disintegration Ray
+    action: action
+    num: 16
+    save: dex
+    range: 120
+    damage: 45
+    damageType: force
+    description: Disintegrates the target
+  - name: Death Ray
+    action: action
+    num: 16
+    save: dex
+    range: 120
+    damage: 55
+    damageType: necrotic
+    description: Kills the target
+  abilities:
+  - name: Antimagic Cone
+    action: free action
+    description: Hold for antimagic cone
 --- !u!114 &114376843557950344
 MonoBehaviour:
   m_ObjectHideFlags: 1

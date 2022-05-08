@@ -48,17 +48,18 @@ public class SceneCameraRotate : MonoBehaviour {
         new int[] { 4, 5, 7 },
         new int[] { 6 },
         new int[] { 8 },
-        new int[] { 9 },
+        new int[] { 9, 10 },
+        new int[] { 11 },
     };
 
     float[] scalers = new float[]
     {
-        1.8f, 0.8f, 0.8f, 0.8f, 1.7f, 1.7f, 1.3f, 1.7f, 1.8f, 2
+        1.8f, 0.8f, 0.8f, 0.8f, 1.7f, 1.7f, 1.3f, 1.7f, 1.8f, 2, 2, 1.4f
     };
 
     float[] translaters = new float[]
     {
-        0, 0, 0, 0, -0.7f, -0.7f, -1.3f, -0.7f, -1.3f, -1.3f
+        0, 0, 0, 0, -0.7f, -0.7f, -1.3f, -0.7f, -1.3f, -1.3f, -1.3f, -1.4f
     };
     /*
     float[][] scalers = new float[][] {

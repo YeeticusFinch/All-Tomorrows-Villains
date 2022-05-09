@@ -117,6 +117,7 @@ public class Player : NetworkBehaviour {
         {
             charId = GameManager.instance.charId;
             CmdLoadModel(charId);
+            StartCoroutine(BroadcastCreatureData());
             //CmdBroadcastCharId(charId);
             GameManager.localPlayer = this;
         }
@@ -152,6 +153,20 @@ public class Player : NetworkBehaviour {
         }
 
         SetDefaults();
+    }
+
+    [Command]
+    public void CmdBroadcastCreatureData(float[] floats, int[] ints)
+    {
+        if (!isLocalPlayer)
+            chara.creature.syncCreatureData(floats, ints);
+        RpcBroadcastCreatureData(floats, ints);
+    }
+
+    [ClientRpc]
+    public void RpcBroadcastCreatureData(float[] floats, int[] ints)
+    {
+        chara.creature.syncCreatureData(floats, ints);
     }
 
     [Command]
@@ -285,7 +300,8 @@ public class Player : NetworkBehaviour {
             if (isLocalPlayer)
             {
                 foreach (GameObject e in chara.hideFirstPerson)
-                    e.layer = 11;
+                    //e.layer = 11;
+                    e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
                 foreach (GameObject e in chara.hideThirdPerson)
                     e.layer = 12;
                 cam.transform.localPosition = chara.cameraOffset;
@@ -511,7 +527,7 @@ public class Player : NetworkBehaviour {
 
         dead = false;
 
-        HP = maxHP;
+        StartCoroutine(SetMaxHP());
 
         for (int i = 0; i < disableOnDeath.Length; i++)
         {
@@ -641,12 +657,12 @@ public class Player : NetworkBehaviour {
             if (cam.enabled)
             {
                 healthText.transform.localPosition = Vector3.forward * 0.2f * distOff + Vector3.up * 0.1f * distOff * cam.fieldOfView / 60;
-                infoText.transform.localPosition = Vector3.forward * 0.2f * distOff + (Vector3.up * 1.1f + Vector3.right) * 0.1f * distOff * cam.fieldOfView / 60;
+                infoText.transform.localPosition = Vector3.forward * 0.2f * distOff + (Vector3.up * -1.1f + Vector3.right) * 0.1f * distOff * cam.fieldOfView / 60;
                 healthText.GetComponent<TextMesh>().text = Mathf.RoundToInt(HP) + " / " + maxHP;
             } else
             {
                 healthText3.transform.localPosition = Vector3.forward * 0.2f * distOff + Vector3.up * 0.1f * distOff * cam3.fieldOfView / 60;
-                infoText3.transform.localPosition = Vector3.forward * 0.2f * distOff + (Vector3.up * 1.1f + Vector3.right) * 0.1f * distOff * cam3.fieldOfView / 60;
+                infoText3.transform.localPosition = Vector3.forward * 0.2f * distOff + (Vector3.up * -1.1f + Vector3.right) * 0.1f * distOff * cam3.fieldOfView / 60;
                 healthText3.GetComponent<TextMesh>().text = Mathf.RoundToInt(HP) + " / " + maxHP;
             }
             //healthText.transform.position 
@@ -733,5 +749,20 @@ public class Player : NetworkBehaviour {
     public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
     {
         return Quaternion.Euler(angles) * (point - pivot) + pivot;
+    }
+
+    IEnumerator BroadcastCreatureData()
+    {
+        while (chara == null)
+            yield return new WaitForSeconds(1f);
+        CmdBroadcastCreatureData(chara.creature.getCreatureDataFloats(), chara.creature.getCreatureDataInts());
+    }
+
+    IEnumerator SetMaxHP()
+    {
+        while (chara == null)
+            yield return new WaitForSeconds(1f);
+        maxHP = chara.HP;
+        HP = maxHP;
     }
 }

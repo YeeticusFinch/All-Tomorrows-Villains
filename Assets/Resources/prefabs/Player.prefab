@@ -470,7 +470,7 @@ TextMesh:
   m_OffsetZ: 0
   m_CharacterSize: 0.8
   m_LineSpacing: 1
-  m_Anchor: 0
+  m_Anchor: 6
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
@@ -491,7 +491,7 @@ TextMesh:
   m_OffsetZ: 0
   m_CharacterSize: 0.8
   m_LineSpacing: 1
-  m_Anchor: 0
+  m_Anchor: 6
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
@@ -600,6 +600,7 @@ MonoBehaviour:
   player: {fileID: 1904784024208580}
   creature: {fileID: 0}
   infoText: {fileID: 0}
+  infoText3: {fileID: 0}
 --- !u!114 &114151690404708966
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -26,6 +26,28 @@ public class Swoletariat : Creature {
 
     public Limb[] limbs;
 
+    public override void syncCreatureInstance(Creature c)
+    {
+        brusilov = ((Swoletariat)c).brusilov;
+    }
+
+    public override float[] getCreatureDataFloats()
+    {
+        return base.getCreatureDataFloats();
+    }
+
+    public override int[] getCreatureDataInts()
+    {
+        return new int[] { brusilov };
+        //return base.getCreatureDataInts();
+    }
+
+    public override void syncCreatureData(float[] floats, int[] ints)
+    {
+        brusilov = ints[0];
+        base.syncCreatureData(floats, ints);
+    }
+
     // Use this for initialization
     void Start () {
         for (int i = 0; i < limbs.Length; i++)

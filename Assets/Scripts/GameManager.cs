@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour {
 
     public void readInputs()
     {
+        /*
         var inputManager = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset")[0];
         UnityEditor.SerializedObject obj = new UnityEditor.SerializedObject(inputManager);
         UnityEditor.SerializedProperty axisArray = obj.FindProperty("m_Axes");
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour {
                 controls[name.ToString()] = value.ToString();
             else if (!controls.ContainsKey(name.ToString()))
                 controls.Add(name.ToString(), value.ToString());
-        }
+        }*/
     }
 
     public void importShit()

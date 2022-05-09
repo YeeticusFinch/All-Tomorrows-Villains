@@ -50,6 +50,10 @@ public class PlayerShoot : NetworkBehaviour {
             GameManager.instance.freeCam = false;
             infoText = GetComponent<Player>().infoText.GetComponent<TextMesh>();
             infoText3 = GetComponent<Player>().infoText3.GetComponent<TextMesh>();
+            if (GetComponent<Player>().chara != null)
+                foreach (GameObject e in GetComponent<Player>().chara.hideFirstPerson)
+                    e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            //SetInfoText();
         }
     }
 
@@ -60,9 +64,12 @@ public class PlayerShoot : NetworkBehaviour {
         creature.cam = cam;
         //creature.weapon = weapon;
         creature.player = player;
-        infoText.text = "Initializing loadout...";
+        if (isLocalPlayer && infoText != null)
+            infoText.text = "Initializing loadout...";
         if (GetComponent<PlayerController>())
             GetComponent<PlayerController>().creature = creature;
+        if (isLocalPlayer && infoText != null)
+            SetInfoText();
     }
     int camMode = 2;
     bool swapped = false;
@@ -92,6 +99,9 @@ public class PlayerShoot : NetworkBehaviour {
                     GetComponent<Player>().cam3.enabled = true;
                     GameManager.instance.thirdPerson = true;
                     GameManager.instance.freeCam = false;
+                    if (GetComponent<Player>().chara != null)
+                        foreach (GameObject e in GetComponent<Player>().chara.hideFirstPerson)
+                            e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
                     //GetComponent<Player>().crosshair.GetComponent<Sprite>().active = false;
                 } else if (camMode == 1)
                 {
@@ -99,6 +109,9 @@ public class PlayerShoot : NetworkBehaviour {
                     GetComponent<Player>().cam3.enabled = true;
                     GameManager.instance.thirdPerson = true;
                     GameManager.instance.freeCam = true;
+                    if (GetComponent<Player>().chara != null)
+                        foreach (GameObject e in GetComponent<Player>().chara.hideFirstPerson)
+                            e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
                     //GameObject.Destroy(GetComponent<Player>().crosshair);
                 } else
                 {
@@ -106,6 +119,9 @@ public class PlayerShoot : NetworkBehaviour {
                     cam.enabled = true;
                     GameManager.instance.thirdPerson = false;
                     GameManager.instance.freeCam = false;
+                    if (GetComponent<Player>().chara != null)
+                        foreach (GameObject e in GetComponent<Player>().chara.hideFirstPerson)
+                            e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
                     //GetComponent<Player>().crosshair.GetComponent<RectTransform>().SetPositionAndRotation(new Vector2(0, 0), GetComponent<Player>().crosshair.GetComponent<RectTransform>().rotation);
                 }
             }
@@ -216,7 +232,7 @@ public class PlayerShoot : NetworkBehaviour {
         else
             infoText.color = Color.white;
         cooldownTime = Mathf.Round(cooldownTime * 10) / 10f;
-        infoText.text = (cooldownTime > 0 ? cooldownTime.ToString() : GameManager.instance.getControlMapping("Fire1")) + "\n" + a.name + "\n" + a.action + "\n" + (a.save != null && a.save.Length > 0 ? "DC " + a.num + " " + a.save + " save" : "+" + a.num + " to hit") + (a.damageType != null && a.damageType.Length > 0 ? "\n" + a.damage + " " + a.damageType : "") + (a.description != null && a.description.Length > 0 ? "\n" + a.description : "");
+        infoText.text = (cooldownTime > 0 ? cooldownTime.ToString() : /*GameManager.instance.getControlMapping("Fire1")*/"") + "\n" + a.name + "\n" + a.action + "\n" + (a.save != null && a.save.Length > 0 ? "DC " + a.num + " " + a.save + " save" : "+" + a.num + " to hit") + (a.damageType != null && a.damageType.Length > 0 ? "\n" + a.damage + " " + a.damageType : "") + (a.description != null && a.description.Length > 0 ? "\n" + a.description : "");
         infoText3.color = infoText.color;
         infoText3.text = infoText.text;
 

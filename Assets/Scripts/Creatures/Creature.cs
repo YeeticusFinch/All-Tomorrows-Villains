@@ -41,6 +41,37 @@ public class Creature : NetworkBehaviour {
     public Attack[] attacks;
     public Ability[] abilities;
 
+    public virtual Creature getCreatureInstance()
+    {
+        return this;
+    }
+
+    public virtual float[] getCreatureDataFloats()
+    {
+        return null;
+    }
+
+    public virtual int[] getCreatureDataInts()
+    {
+        return null;
+    }
+
+    public virtual void syncCreatureData(float[] floats, int[] ints)
+    {
+
+    }
+
+    public virtual void syncCreatureInstance(Creature c)
+    {
+
+    }
+
+    /*
+    public virtual void syncShit(float[] floats, int[] ints, bool[] bools, Vector3[] vectors)
+    {
+
+    }*/
+
     public virtual float primary()
     {
         return 0;
@@ -55,8 +86,8 @@ public class Creature : NetworkBehaviour {
     {
         if (cam != null)
             cam.fieldOfView *= amount;
-        if (GetComponent<Player>() != null && GetComponent<Player>().cam3 != null)
-            GetComponent<Player>().cam3.fieldOfView *= amount;
+        if (player.GetComponent<Player>() != null && player.GetComponent<Player>().cam3 != null)
+            player.GetComponent<Player>().cam3.fieldOfView *= amount;
         //float distOff = 0.2f;
         //if (isLocalPlayer)
         //    GetComponent<Player>().healthText.transform.localPosition = cam.transform.forward * 0.2f * distOff + cam.transform.up * 0.1f * distOff * cam.fieldOfView / 60;

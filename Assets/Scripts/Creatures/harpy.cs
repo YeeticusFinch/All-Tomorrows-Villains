@@ -6,8 +6,8 @@ using UnityEngine.Networking;
 public class harpy : Creature
 {
     Animator anim;
-    bool swing = false;
-    bool shock = false;
+    public bool swing = false;
+    public bool shock = false;
 
     int sd = 0;
     int td = 0;
@@ -22,6 +22,31 @@ public class harpy : Creature
     public bool shockingGrasp = false;
     public float dmgShock;
     public int shockToHit;
+
+    public override void syncCreatureInstance(Creature c)
+    {
+        harpy h = (harpy)c;
+        swing = h.swing;
+        shock = h.shock;
+    }
+    
+    public override float[] getCreatureDataFloats()
+    {
+        return base.getCreatureDataFloats();
+    }
+
+    public override int[] getCreatureDataInts()
+    {
+        return new int[] { swing ? 1 : 0, shock ? 1 : 0 };
+        //return base.getCreatureDataInts();
+    }
+
+    public override void syncCreatureData(float[] floats, int[] ints)
+    {
+        swing = ints[0] == 1;
+        shock = ints[1] == 1;
+        base.syncCreatureData(floats, ints);
+    }
 
     [Client]
     void Shoot(int toHit, float damage, string dmgType)

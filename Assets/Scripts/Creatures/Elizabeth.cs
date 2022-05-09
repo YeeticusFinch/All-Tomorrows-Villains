@@ -6,6 +6,27 @@ public class Elizabeth : Creature {
 
     Animator anim;
     bool flapped = false;
+
+    public override void syncCreatureInstance(Creature c)
+    {
+
+    }
+
+    public override float[] getCreatureDataFloats()
+    {
+        return base.getCreatureDataFloats();
+    }
+
+    public override int[] getCreatureDataInts()
+    {
+        return base.getCreatureDataInts();
+    }
+
+    public override void syncCreatureData(float[] floats, int[] ints)
+    {
+        base.syncCreatureData(floats, ints);
+    }
+
     [UnityEngine.Networking.Client]
     void Shoot(float damage, string dmgType, int num, string save, int range)
     {

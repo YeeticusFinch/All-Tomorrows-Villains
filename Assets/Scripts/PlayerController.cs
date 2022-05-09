@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour {
             //Effects.instance.Sparky(motor.cam.transform.position, motor.cam.transform.position + orienter.transform.forward * zoom3 * 3f, null, null);
             if (Physics.Raycast(transform.position+0.6f*(motor.cam.transform.position-transform.position) + 0.2f*Vector3.up, orienter.transform.forward, out hit, zoom3*3f, maskCam3p))
             {
-                GetComponent<Player>().cam3.transform.position = hit.point;
+                GetComponent<Player>().cam3.transform.position = hit.point + 0.1f* GetComponent<Player>().cam3.transform.forward;
             } else
             {
                 GetComponent<Player>().cam3.transform.position = transform.position + 0.6f * (motor.cam.transform.position - transform.position) + 0.2f * Vector3.up + orienter.transform.forward * zoom3 * 3f;

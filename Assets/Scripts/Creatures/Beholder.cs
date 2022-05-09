@@ -8,6 +8,31 @@ public class Beholder : Creature {
     string shootSound = "lazer-high-pitch";
     string hitSound = "blast";
 
+    public int laserNum = 0;
+
+    public override void syncCreatureInstance(Creature c)
+    {
+        laserNum = ((Beholder)c).laserNum;
+    }
+
+
+    public override float[] getCreatureDataFloats()
+    {
+        return base.getCreatureDataFloats();
+    }
+
+    public override int[] getCreatureDataInts()
+    {
+        return new int[]{ laserNum };
+        //return base.getCreatureDataInts();
+    }
+
+    public override void syncCreatureData(float[] floats, int[] ints)
+    {
+        laserNum = ints[0];
+        base.syncCreatureData(floats, ints);
+    }
+
     public override float primary()
     {
         Shoot();

@@ -7484,7 +7484,7 @@ GameObject:
   - component: {fileID: 114947010051354014}
   m_Layer: 0
   m_Name: Swoletariat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41060,7 +41060,7 @@ GameObject:
   - component: {fileID: 4862502723676094}
   - component: {fileID: 137015791354416440}
   - component: {fileID: 135031930093549024}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: lenin-swoletariat_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62274,7 +62274,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948016532959180}
-  m_LocalRotation: {x: -0.12326551, y: 0.8458205, z: -0.5165958, w: -0.050222624}
+  m_LocalRotation: {x: -0.1232655, y: 0.84582037, z: -0.5165957, w: -0.050222617}
   m_LocalPosition: {x: 0.0004729042, y: 0.000014030363, z: 0.0016250722}
   m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 0.99999994}
   m_Children:
@@ -66849,7 +66849,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1544490581214916}
-  m_LocalRotation: {x: -0.29494533, y: -0.6143963, z: 0.66586787, w: -0.303553}
+  m_LocalRotation: {x: -0.29494536, y: -0.61439633, z: 0.6658679, w: -0.30355301}
   m_LocalPosition: {x: 0.0023895819, y: 0.000516084, z: 0.0150608905}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_Children:
@@ -67673,7 +67673,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1540349560782192}
-  m_LocalRotation: {x: -0.29494533, y: -0.6143963, z: 0.66586787, w: -0.303553}
+  m_LocalRotation: {x: -0.29494536, y: -0.61439633, z: 0.6658679, w: -0.30355301}
   m_LocalPosition: {x: 0.0023895819, y: 0.000516084, z: 0.0150608905}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_Children:
@@ -81066,7 +81066,15 @@ MonoBehaviour:
   - {fileID: 1621987653815212}
   tertiaryEmitters:
   - {fileID: 1567930241063878}
-  hideFirstPerson: []
+  hideFirstPerson:
+  - {fileID: 1409272692053208}
+  - {fileID: 1972032270223438}
+  - {fileID: 1854968051448554}
+  - {fileID: 1855425103309898}
+  - {fileID: 1557934908070270}
+  - {fileID: 1641326948919816}
+  - {fileID: 1316048996206810}
+  - {fileID: 1984064983839918}
   hideThirdPerson: []
   canJumpFrom:
   - {fileID: 1103369356539500}
@@ -81191,6 +81199,7 @@ MonoBehaviour:
     - {fileID: 1913930863611344}
     state: 0
     ogRot: []
+    ogPos: []
   - name: arm_main
     seg:
     - {fileID: 1187298956104938}
@@ -81198,6 +81207,7 @@ MonoBehaviour:
     - {fileID: 1334415908520940}
     state: 0
     ogRot: []
+    ogPos: []
   - name: arm_main
     seg:
     - {fileID: 1343355539782436}
@@ -81205,6 +81215,7 @@ MonoBehaviour:
     - {fileID: 1049155363881682}
     state: 0
     ogRot: []
+    ogPos: []
   - name: leg
     seg:
     - {fileID: 1383483667043590}
@@ -81212,6 +81223,7 @@ MonoBehaviour:
     - {fileID: 1103369356539500}
     state: 0
     ogRot: []
+    ogPos: []
   - name: arm
     seg:
     - {fileID: 1544490581214916}
@@ -81219,6 +81231,7 @@ MonoBehaviour:
     - {fileID: 1301168312550674}
     state: 0
     ogRot: []
+    ogPos: []
   - name: leg
     seg:
     - {fileID: 1609878771922338}
@@ -81226,6 +81239,7 @@ MonoBehaviour:
     - {fileID: 1581863326527092}
     state: 0
     ogRot: []
+    ogPos: []
   - name: arm
     seg:
     - {fileID: 1540349560782192}
@@ -81233,6 +81247,7 @@ MonoBehaviour:
     - {fileID: 1437143863678158}
     state: 0
     ogRot: []
+    ogPos: []
   - name: leg
     seg:
     - {fileID: 1504604881406488}
@@ -81240,6 +81255,7 @@ MonoBehaviour:
     - {fileID: 1694330729264610}
     state: 0
     ogRot: []
+    ogPos: []
   - name: arm
     seg:
     - {fileID: 1641728838272752}
@@ -81247,6 +81263,7 @@ MonoBehaviour:
     - {fileID: 1094325176076272}
     state: 0
     ogRot: []
+    ogPos: []
   - name: leg
     seg:
     - {fileID: 1325684672669266}
@@ -81254,6 +81271,7 @@ MonoBehaviour:
     - {fileID: 1425509016107178}
     state: 0
     ogRot: []
+    ogPos: []
   - name: arm
     seg:
     - {fileID: 1020355510754174}
@@ -81261,6 +81279,7 @@ MonoBehaviour:
     - {fileID: 1360626694357236}
     state: 0
     ogRot: []
+    ogPos: []
   - name: leg
     seg:
     - {fileID: 1617923228252520}
@@ -81268,6 +81287,7 @@ MonoBehaviour:
     - {fileID: 1817355546764650}
     state: 0
     ogRot: []
+    ogPos: []
   - name: leg
     seg:
     - {fileID: 1929927190016726}
@@ -81275,6 +81295,7 @@ MonoBehaviour:
     - {fileID: 1268247741511340}
     state: 0
     ogRot: []
+    ogPos: []
   - name: leg
     seg:
     - {fileID: 1484915704527578}
@@ -81282,6 +81303,7 @@ MonoBehaviour:
     - {fileID: 1153107902320036}
     state: 0
     ogRot: []
+    ogPos: []
   - name: spine
     seg:
     - {fileID: 1085779621517302}
@@ -81290,12 +81312,14 @@ MonoBehaviour:
     - {fileID: 1579430367655648}
     state: 0
     ogRot: []
+    ogPos: []
   - name: head
     seg:
     - {fileID: 1855819151767912}
     - {fileID: 1811074078125842}
     state: 0
     ogRot: []
+    ogPos: []
 --- !u!135 &135031930093549024
 SphereCollider:
   m_ObjectHideFlags: 1

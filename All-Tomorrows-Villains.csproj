@@ -335,6 +335,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Creatures\KonsRilae.cs" />
+    <Compile Include="Assets\Scripts\Creatures\SavWav.cs" />
     <Compile Include="Assets\_MK\MKGlow\Components\Legacy\CameraDataLegacy.cs" />
     <Compile Include="Assets\_MK\MKGlow\Components\Legacy\MKGlow.cs" />
     <Compile Include="Assets\_MK\MKGlow\Components\Legacy\SettingsLegacy.cs" />

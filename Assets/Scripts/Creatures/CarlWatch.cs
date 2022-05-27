@@ -361,6 +361,420 @@ public class CarlWatch : MonoBehaviour {
         //yield return new WaitForSeconds(d/1000f);
     }
 
+    public bool SaveTrack(int songNumber)
+    {
+
+        List<float> saveSamplesTreble = new List<float>();
+        List<float> saveSamplesBase = new List<float>();
+
+        //okn++;
+
+
+        bool playing = true;
+        playingSong++;
+
+        float[] tempInitShit = tmodPlusYeetDur(songNumber);
+
+        int tfreq1 = 0; //Frequency to be played
+        int tdur1 = 0; //Duration to be played
+        int bfreq1 = 0; //Frequency to be played
+        int bdur1 = 0; //Duration to be played
+        int trepFreq1 = -1;
+        int trepDur1 = -1;
+        int brepFreq1 = -1;
+        int brepDur1 = -1;
+        int tfin = 0; // frequency index
+        int tdin = 0; // duration index
+        int bfin = 0; // frequency index
+        int bdin = 0; // duration index
+        float ttmod = tempInitShit[0];
+        float btmod = tempInitShit[0];
+        float yeetDur = tempInitShit[1];
+        int bfmod = (int)tempInitShit[2];
+        float trebleMod = tempInitShit[3];
+        float baseMod = tempInitShit[4];
+        int freqModTreble = (int)tempInitShit[5];
+        int freqModBase = (int)tempInitShit[6];
+        bool tdecoded = false;
+        bool bdecoded = false;
+        int tfancySize = -1;
+        int bfancySize = -1;
+
+        ttmod *= trebleMod;
+        btmod *= baseMod;
+        //tmod = 0.2f;
+        int tfreqMod = freqModTreble;
+        int bfreqMod = freqModBase * bfmod;
+        //freqMod = 1;
+
+        char[][] yeetT = { new char[16384], new char[16384] };
+
+        char[][] yeetB = { new char[16384], new char[16384] };
+
+        Debug.Log("Loading Song " + songNames[songNumber]);
+        #region read file
+        string text = songs[songNumber].text;
+        int tfsi = 0; // Get start indices in the text
+        int tdsi = text.IndexOf("\n", tfsi) + 1;
+        int bfsi = text.IndexOf("\n", tdsi) + 1;
+        int bdsi = text.IndexOf("\n", bfsi) + 1;
+        //int fsi = treble ? tfsi : bfsi;
+        //int dsi = treble ? tdsi : bdsi;
+        int tfsiMax = tdsi - 1;
+        int tdsiMax = bfsi - 1;
+        int bfsiMax = bdsi - 1;
+        int bdsiMax = text.Length;
+
+        //Debug.Log("tdsi = " + tdsi);
+        //Debug.Log("bfsi = " + bfsi);
+        //Debug.Log("bdsi = " + bdsi);
+
+        int i = 0;
+        while (tfsi < tfsiMax)
+        { // 38, 0, 1, 38, 39
+            //int nextIndex = Math.Min(Math.Min(text.IndexOf(",", fsi), text.IndexOf("\n", fsi)), text.IndexOf("}", fsi));
+            if (tfsi >= text.Length)
+                break;
+            int nextIndex = text.IndexOfAny(new char[] { ',', '\n', '}' }, tfsi);
+            //Debug.Log("fsi = " + fsi);
+            //int nextIndex = text.IndexOf(",", fsi);
+            if (nextIndex == -1) break;
+            //Debug.Log("nextIndex = " + nextIndex);
+            //Debug.Log(text.Substring(fsi, nextIndex-fsi));
+            yeetT[0][i] = (char)int.Parse(text.Substring(tfsi, nextIndex - tfsi));
+            tfsi = text.IndexOf(" ", nextIndex);
+            if (tfsi == -1) break;
+            tfsi++;
+            i++;
+        }
+        Debug.Log("Freq count = " + i);
+        tfancySize = i;
+
+        i = 0;
+        while (bfsi < bfsiMax)
+        { // 38, 0, 1, 38, 39
+            //int nextIndex = Math.Min(Math.Min(text.IndexOf(",", fsi), text.IndexOf("\n", fsi)), text.IndexOf("}", fsi));
+            if (bfsi >= text.Length)
+                break;
+            int nextIndex = text.IndexOfAny(new char[] { ',', '\n', '}' }, bfsi);
+            //Debug.Log("fsi = " + fsi);
+            //int nextIndex = text.IndexOf(",", fsi);
+            if (nextIndex == -1) break;
+            //Debug.Log("nextIndex = " + nextIndex);
+            //Debug.Log(text.Substring(fsi, nextIndex-fsi));
+            yeetB[0][i] = (char)int.Parse(text.Substring(bfsi, nextIndex - bfsi));
+            bfsi = text.IndexOf(" ", nextIndex);
+            if (bfsi == -1) break;
+            bfsi++;
+            i++;
+        }
+        Debug.Log("Freq count = " + i);
+        bfancySize = i;
+
+        i = 0;
+        while (tdsi < tdsiMax)
+        {
+            //int nextIndex = Math.Min(Math.Min(text.IndexOf(",", fsi), text.IndexOf("\n", fsi)), text.IndexOf("}", fsi));
+            if (tdsi >= text.Length)
+            {
+                //Debug.Log("dsi is too big");
+                break;
+            }
+            int nextIndex = text.IndexOfAny(new char[] { ',', '\n', '}' }, tdsi);
+            //Debug.Log("dsi = " + dsi);
+            //Debug.Log("nextIndex = " + nextIndex);
+            if (nextIndex == -1)
+            {
+                //Debug.Log(text.Substring(dsi));
+                yeetT[1][i] = (char)int.Parse(text.Substring(tdsi));
+                i++;
+                break;
+            }
+            //Debug.Log(text.Substring(dsi, nextIndex-dsi));
+            yeetT[1][i] = (char)int.Parse(text.Substring(tdsi, nextIndex - tdsi));
+            tdsi = text.IndexOf(" ", nextIndex);
+            if (tdsi == -1) break;
+            tdsi++;
+            i++;
+        }
+        Debug.Log("Dur count = " + i);
+
+        i = 0;
+        while (bdsi < bdsiMax)
+        {
+            //int nextIndex = Math.Min(Math.Min(text.IndexOf(",", fsi), text.IndexOf("\n", fsi)), text.IndexOf("}", fsi));
+            if (bdsi >= text.Length)
+            {
+                //Debug.Log("dsi is too big");
+                break;
+            }
+            int nextIndex = text.IndexOfAny(new char[] { ',', '\n', '}' }, bdsi);
+            //Debug.Log("dsi = " + dsi);
+            //Debug.Log("nextIndex = " + nextIndex);
+            if (nextIndex == -1)
+            {
+                //Debug.Log(text.Substring(dsi));
+                yeetB[1][i] = (char)int.Parse(text.Substring(bdsi));
+                i++;
+                break;
+            }
+            //Debug.Log(text.Substring(dsi, nextIndex-dsi));
+            yeetB[1][i] = (char)int.Parse(text.Substring(bdsi, nextIndex - bdsi));
+            bdsi = text.IndexOf(" ", nextIndex);
+            if (bdsi == -1) break;
+            bdsi++;
+            i++;
+        }
+        Debug.Log("Dur count = " + i);
+        //fancySize = Math.Min(fancySize, i);
+
+        #endregion
+
+        Debug.Log("Finished loading song, tfancySize = " + tfancySize);
+        Debug.Log("Finished loading song, bfancySize = " + bfancySize);
+
+        //okn--;
+
+
+        if (startSeconds == 0)
+            startSeconds = Time.time;
+        float timeIndex = startSeconds;
+
+        while (playing)
+        {
+            #region decomPlay
+            int ttemp;
+            int btemp;
+
+            if (tfin >= tfancySize || stopSongs)
+            {
+                //Debug.Log("Fin is too big!!!");
+                playing = false;
+            }
+
+            if (bfin >= bfancySize || stopSongs)
+            {
+                //Debug.Log("Fin is too big!!!");
+                playing = false;
+            }
+
+            if (tdecoded == false && tfin < tfancySize)
+            {
+                //Debug.Log("Decoding");
+                if (trepFreq1 == 0) // Stopped repeating
+                {
+                    trepFreq1 = -1;
+                    tfin++;
+                }
+
+                if (trepFreq1 < 1)
+                {
+                    ttemp = tableValue(yeetT[0][tfin], songNumber); // get the frequency
+
+                    if (ttemp >= 0) // if the number is negative, then you gotta repeat
+                    {
+                        tfreq1 = ttemp;
+                        tfin++;
+                    }
+                    else
+                    {
+                        trepFreq1 = Mathf.Abs(ttemp) - 1;
+                    }
+                }
+                if (trepDur1 == 0)
+                {
+                    trepDur1 = -1;
+                    tdin++;
+                }
+                if (trepDur1 < 1)
+                {
+                    ttemp = 0;
+                    ttemp = tableValue(yeetT[1][tdin], songNumber);
+
+                    if (ttemp >= 0)
+                    {
+                        tdur1 = ttemp;
+                        tdin++;
+                    }
+                    else
+                    {
+                        trepDur1 = Mathf.Abs(ttemp) - 1;
+                    }
+                }
+                tdecoded = true;
+                //Debug.Log("Finished Decoding");
+            }
+            if (bdecoded == false && bfin < bfancySize)
+            {
+                //Debug.Log("Decoding");
+                if (brepFreq1 == 0) // Stopped repeating
+                {
+                    brepFreq1 = -1;
+                    bfin++;
+                }
+
+                if (trepFreq1 < 1)
+                {
+                    btemp = tableValue(yeetB[0][bfin], songNumber); // get the frequency
+
+                    if (btemp >= 0) // if the number is negative, then you gotta repeat
+                    {
+                        bfreq1 = btemp;
+                        bfin++;
+                    }
+                    else
+                    {
+                        brepFreq1 = Mathf.Abs(btemp) - 1;
+                    }
+                }
+                if (brepDur1 == 0)
+                {
+                    brepDur1 = -1;
+                    bdin++;
+                }
+                if (brepDur1 < 1)
+                {
+                    btemp = 0;
+                    btemp = tableValue(yeetB[1][bdin], songNumber);
+
+                    if (btemp >= 0)
+                    {
+                        bdur1 = btemp;
+                        bdin++;
+                    }
+                    else
+                    {
+                        brepDur1 = Mathf.Abs(btemp) - 1;
+                    }
+                }
+                bdecoded = true;
+                //Debug.Log("Finished Decoding");
+            }
+            if (tfin < tfancySize)
+            {
+                //Debug.Log("Yeet Note");
+                //Debug.Log(dur1 + " * " + tmod + " = " + Math.Max((int)(dur1 * tmod + 0.5f), 1));
+                //dur1 = Math.Max((int)(dur1 * tmod + 0.5f), 1);
+                #region yeet note
+                tdecoded = false;
+                if (tfreq1 > 0)
+                {
+                    //tone(buzzer1, freq, max((int)(dur * yeetDur), 1), 0, 0);
+                    int numSamples = (int)(sampleRate * Mathf.Max(tdur1 * yeetDur * ttmod, 1) / 1000f);
+                    int numSamplesRest = (int)(sampleRate * Mathf.Max(tdur1 * (1 - yeetDur) * ttmod, 1) / 1000f);
+                    float[] samples = new float[numSamples];
+                    //Debug.Log("Generating wave");
+                    for (int ii = 0; ii < numSamples; ii++)
+                        saveSamplesTreble.Add(CreateSharktooth(ii, tfreq1 * tfreqMod, sampleRate));
+                    for (int ii = 0; ii < numSamplesRest; ii++)
+                        saveSamplesTreble.Add(0);
+                    //Debug.Log("Playing Tone " + freq1 * freqMod + " for " + Mathf.Max(dur1 * yeetDur * tmod, 1));
+                    //AudioClip ac = AudioClip.Create("tone", samples.Length, 1, sampleRate, false);
+                    //ac.SetData(samples, 0);
+                    //audioSource.PlayOneShot(ac, 0.1f);
+                    //yield return new WaitForSeconds(dur1 * yeetDur / 1000f);
+                    //audioSource.Stop();
+                    //yield return new WaitForSeconds(dur1 * (1 - yeetDur) / 1000f);
+                    //yield return new WaitForSeconds(dur1 * tmod/* * yeetDur*/ / 1000f);
+                    //timeIndex += tdur1 * ttmod / 1000f;
+                    //yield return new WaitForSeconds(Mathf.Max(timeIndex - Time.time));
+                }
+                else
+                {
+                    //yield return new WaitForSeconds(dur1 * tmod/* * yeetDur*/ / 1000f);
+                    //timeIndex += tdur1 * ttmod / 1000f;
+                    //yield return new WaitForSeconds(Mathf.Max(0, timeIndex - Time.time));
+                    int numSamplesRest = (int)(sampleRate * tdur1 * ttmod / 1000f);
+                    for (int ii = 0; ii < numSamplesRest; ii++)
+                        saveSamplesTreble.Add(0);
+                }
+                //tin++;
+                if (trepFreq1 > 0)
+                {
+                    trepFreq1--;
+                }
+                if (trepDur1 > 0)
+                {
+                    trepDur1--;
+                }
+
+                #endregion
+                //yeetNoteTreble(freq1, max((int)(dur1 * tmod), 1));
+            }
+            if (bfin < bfancySize)
+            {
+                //Debug.Log("Yeet Note");
+                //Debug.Log(dur1 + " * " + tmod + " = " + Math.Max((int)(dur1 * tmod + 0.5f), 1));
+                //dur1 = Math.Max((int)(dur1 * tmod + 0.5f), 1);
+                #region yeet note base
+                bdecoded = false;
+                if (bfreq1 > 0)
+                {
+                    //tone(buzzer1, freq, max((int)(dur * yeetDur), 1), 0, 0);
+                    int numSamples = (int)(sampleRate * Mathf.Max(bdur1 * yeetDur * btmod, 1) / 1000f);
+                    int numSamplesRest = (int)(sampleRate * Mathf.Max(bdur1 * (1 - yeetDur) * btmod, 1) / 1000f);
+                    float[] samples = new float[numSamples];
+                    //Debug.Log("Generating wave");
+                    for (int ii = 0; ii < numSamples; ii++)
+                        saveSamplesBase.Add(CreateSharktooth(ii, bfreq1 * bfreqMod, sampleRate));
+                    for (int ii = 0; ii < numSamplesRest; ii++)
+                        saveSamplesBase.Add(0);
+                    //Debug.Log("Playing Tone " + freq1 * freqMod + " for " + Mathf.Max(dur1 * yeetDur * tmod, 1));
+                    //AudioClip ac = AudioClip.Create("tone", samples.Length, 1, sampleRate, false);
+                    //ac.SetData(samples, 0);
+                    //audioSource.PlayOneShot(ac, 0.1f);
+                    //yield return new WaitForSeconds(dur1 * yeetDur / 1000f);
+                    //audioSource.Stop();
+                    //yield return new WaitForSeconds(dur1 * (1 - yeetDur) / 1000f);
+                    //yield return new WaitForSeconds(dur1 * tmod/* * yeetDur*/ / 1000f);
+                    //timeIndex += tdur1 * ttmod / 1000f;
+                    //yield return new WaitForSeconds(Mathf.Max(timeIndex - Time.time));
+                }
+                else
+                {
+                    //yield return new WaitForSeconds(dur1 * tmod/* * yeetDur*/ / 1000f);
+                    //timeIndex += tdur1 * ttmod / 1000f;
+                    //yield return new WaitForSeconds(Mathf.Max(0, timeIndex - Time.time));
+                    int numSamplesRest = (int)(sampleRate * bdur1 * btmod / 1000f);
+                    for (int ii = 0; ii < numSamplesRest; ii++)
+                        saveSamplesBase.Add(0);
+                }
+                //tin++;
+                if (trepFreq1 > 0)
+                {
+                    trepFreq1--;
+                }
+                if (trepDur1 > 0)
+                {
+                    trepDur1--;
+                }
+                if (brepFreq1 > 0)
+                {
+                    brepFreq1--;
+                }
+                if (brepDur1 > 0)
+                {
+                    brepDur1--;
+                }
+
+                #endregion
+                //yeetNoteTreble(freq1, max((int)(dur1 * tmod), 1));
+            }
+            #endregion
+
+        }
+
+        float[] finalSamples = new float[Mathf.Max(saveSamplesTreble.Count, saveSamplesBase.Count)];
+        for (int ii = 0; ii < finalSamples.Length; ii++)
+            finalSamples[ii] = (saveSamplesTreble.Count > ii ? saveSamplesTreble[ii] : 0) + (saveSamplesBase.Count > ii ? saveSamplesBase[ii] : 0);
+        AudioClip finalClip = AudioClip.Create(songNames[songNumber], finalSamples.Length, 1, sampleRate, false);
+        finalClip.SetData(finalSamples, 0);
+        SavWav.Save(songNames[songNumber], finalClip);
+
+        //playingSong--;
+        //Debug.Log("Finished playing song");
+    }
+
     private int tableValue(char fancyChar, int songNumber)
     {
         if (songNumber < 21)

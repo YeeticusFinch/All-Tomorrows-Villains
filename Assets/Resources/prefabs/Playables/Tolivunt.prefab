@@ -2990,6 +2990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   title: Wide Putin
+  size: large
   AC: 19
   ACMagicBonus: 0
   HP: 110
@@ -3044,14 +3045,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  weapon:
-    name: Gun
-    damage: 10
-    range: 100
   cam: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 0
+  attacks: []
+  abilities: []
 --- !u!135 &135079030278647976
 SphereCollider:
   m_ObjectHideFlags: 1

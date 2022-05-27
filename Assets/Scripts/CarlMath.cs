@@ -10,6 +10,22 @@ public class CarlMath
         return result;
     }*/
 
+    /*public static int IndexOf(string s, string[] a)
+    {
+        int r = 10000000;
+        int i = 0;
+        foreach (string e in a)
+        {
+            i = s.IndexOf
+        }
+        return r;
+    }*/
+
+    public static Vector3 compMult(Vector3 v, float x, float y, float z)
+    {
+        return new Vector3(v.x * x, v.y * y, v.z * z);
+    }
+
     public static float cosLawAngle(float a, float b, float c)
     {
         return Mathf.Acos((a*a + b*b - c*c)/(2*a*b));
@@ -40,6 +56,19 @@ public class CarlMath
     public static GameObject[] arrayCombine(GameObject[] arr0, GameObject[] arr1)
     {
         GameObject[] result = new GameObject[arr0.Length + arr1.Length];
+
+        for (int i = 0; i < arr0.Length; i++)
+            result[i] = arr0[i];
+
+        for (int i = 0; i < arr1.Length; i++)
+            result[arr0.Length + i] = arr1[i];
+
+        return result;
+    }
+
+    public static Material[] arrayCombine(Material[] arr0, Material[] arr1)
+    {
+        Material[] result = new Material[arr0.Length + arr1.Length];
 
         for (int i = 0; i < arr0.Length; i++)
             result[i] = arr0[i];

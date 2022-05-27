@@ -1,0 +1,1506 @@
+fileFormatVersion: 2
+guid: a7f8052175dc7d248b2c348a0c98aa84
+timeCreated: 1653516784
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: abd_muscle_01_H_L
+    100002: abd_muscle_01_H_R
+    100004: abd_muscle_01_L
+    100006: abd_muscle_01_L_end
+    100008: abd_muscle_01_R
+    100010: abd_muscle_01_R_end
+    100012: abd_muscle_01_T_L
+    100014: abd_muscle_01_T_L_end
+    100016: abd_muscle_01_T_R
+    100018: abd_muscle_01_T_R_end
+    100020: armor
+    100022: bcs_muscle_01_H_L
+    100024: bcs_muscle_01_H_R
+    100026: bcs_muscle_01_L
+    100028: bcs_muscle_01_L_end
+    100030: bcs_muscle_01_R
+    100032: bcs_muscle_01_R_end
+    100034: bcs_muscle_01_T_L
+    100036: bcs_muscle_01_T_L_end
+    100038: bcs_muscle_01_T_R
+    100040: bcs_muscle_01_T_R_end
+    100042: Big Rings
+    100044: bk_muscle_02_H_L
+    100046: bk_muscle_02_H_R
+    100048: bk_muscle_02_L
+    100050: bk_muscle_02_L_end
+    100052: bk_muscle_02_R
+    100054: bk_muscle_02_R_end
+    100056: bk_muscle_02_T_L
+    100058: bk_muscle_02_T_L_end
+    100060: bk_muscle_02_T_R
+    100062: bk_muscle_02_T_R_end
+    100064: body inside
+    100066: breast_L
+    100068: breast_L_end
+    100070: breast_R
+    100072: breast_R_end
+    100074: calf_L
+    100076: calf_R
+    100078: clavicle_L
+    100080: clavicle_R
+    100082: Cloak
+    100084: Face.001
+    100086: Flower
+    100088: foot_L
+    100090: foot_R
+    100092: Gear
+    100094: Gear-Big
+    100096: Gear-Big.001
+    100098: Gear-Big.002
+    100100: Gear-Big.003
+    100102: Gear-Big.004
+    100104: Gear-Big.005
+    100106: Gear-Big.006
+    100108: Gear-Big.007
+    100110: Gear-Big.008
+    100112: Gear-Big.009
+    100114: Gear-Big.010
+    100116: Gear-Big.011
+    100118: Gear.001
+    100120: Gear.002
+    100122: Gear.003
+    100124: Gear.005
+    100126: Gear.007
+    100128: Gear.008
+    100130: Gear.009
+    100132: Gear.010
+    100134: Gear.011
+    100136: glt_muscle_02_H_L
+    100138: glt_muscle_02_H_R
+    100140: glt_muscle_02_L
+    100142: glt_muscle_02_L_end
+    100144: glt_muscle_02_R
+    100146: glt_muscle_02_R_end
+    100148: glt_muscle_02_T_L
+    100150: glt_muscle_02_T_L_end
+    100152: glt_muscle_02_T_R
+    100154: glt_muscle_02_T_R_end
+    100156: hand_L
+    100158: hand_R
+    100160: head
+    100162: index00_L
+    100164: index00_R
+    100166: index01_L
+    100168: index01_R
+    100170: index02_L
+    100172: index02_R
+    100174: index03_L
+    100176: index03_L_end
+    100178: index03_R
+    100180: index03_R_end
+    100182: //RootNode
+    100184: lgs_muscle_01_H_L
+    100186: lgs_muscle_01_H_R
+    100188: lgs_muscle_01_L
+    100190: lgs_muscle_01_L_end
+    100192: lgs_muscle_01_R
+    100194: lgs_muscle_01_R_end
+    100196: lgs_muscle_01_T_L
+    100198: lgs_muscle_01_T_L_end
+    100200: lgs_muscle_01_T_R
+    100202: lgs_muscle_01_T_R_end
+    100204: lgs_muscle_02_H_L
+    100206: lgs_muscle_02_H_R
+    100208: lgs_muscle_02_L
+    100210: lgs_muscle_02_L_end
+    100212: lgs_muscle_02_R
+    100214: lgs_muscle_02_R_end
+    100216: lgs_muscle_02_T_L
+    100218: lgs_muscle_02_T_L_end
+    100220: lgs_muscle_02_T_R
+    100222: lgs_muscle_02_T_R_end
+    100224: lgs_muscle_03_H_L
+    100226: lgs_muscle_03_H_R
+    100228: lgs_muscle_03_L
+    100230: lgs_muscle_03_L_end
+    100232: lgs_muscle_03_R
+    100234: lgs_muscle_03_R_end
+    100236: lgs_muscle_03_T_L
+    100238: lgs_muscle_03_T_L_end
+    100240: lgs_muscle_03_T_R
+    100242: lgs_muscle_03_T_R_end
+    100244: lgs_muscle_04_H_L
+    100246: lgs_muscle_04_H_R
+    100248: lgs_muscle_04_L
+    100250: lgs_muscle_04_L_end
+    100252: lgs_muscle_04_R
+    100254: lgs_muscle_04_R_end
+    100256: lgs_muscle_04_T_L
+    100258: lgs_muscle_04_T_L_end
+    100260: lgs_muscle_04_T_R
+    100262: lgs_muscle_04_T_R_end
+    100264: lgs_muscle_05_H_L
+    100266: lgs_muscle_05_H_R
+    100268: lgs_muscle_05_L
+    100270: lgs_muscle_05_L_end
+    100272: lgs_muscle_05_R
+    100274: lgs_muscle_05_R_end
+    100276: lgs_muscle_05_T_L
+    100278: lgs_muscle_05_T_L_end
+    100280: lgs_muscle_05_T_R
+    100282: lgs_muscle_05_T_R_end
+    100284: lowerarm_L
+    100286: lowerarm_R
+    100288: lwrl_muscle_01_H_L
+    100290: lwrl_muscle_01_H_R
+    100292: lwrl_muscle_01_L
+    100294: lwrl_muscle_01_L_end
+    100296: lwrl_muscle_01_R
+    100298: lwrl_muscle_01_R_end
+    100300: lwrl_muscle_01_T_L
+    100302: lwrl_muscle_01_T_L_end
+    100304: lwrl_muscle_01_T_R
+    100306: lwrl_muscle_01_T_R_end
+    100308: lwrl_muscle_02_H_L
+    100310: lwrl_muscle_02_H_R
+    100312: lwrl_muscle_02_L
+    100314: lwrl_muscle_02_L_end
+    100316: lwrl_muscle_02_R
+    100318: lwrl_muscle_02_R_end
+    100320: lwrl_muscle_02_T_L
+    100322: lwrl_muscle_02_T_L_end
+    100324: lwrl_muscle_02_T_R
+    100326: lwrl_muscle_02_T_R_end
+    100328: lwrl_muscle_03_H_L
+    100330: lwrl_muscle_03_H_R
+    100332: lwrl_muscle_03_L
+    100334: lwrl_muscle_03_L_end
+    100336: lwrl_muscle_03_R
+    100338: lwrl_muscle_03_R_end
+    100340: lwrl_muscle_03_T_L
+    100342: lwrl_muscle_03_T_L_end
+    100344: lwrl_muscle_03_T_R
+    100346: lwrl_muscle_03_T_R_end
+    100348: lwrl_muscle_04_H_L
+    100350: lwrl_muscle_04_H_R
+    100352: lwrl_muscle_04_L
+    100354: lwrl_muscle_04_L_end
+    100356: lwrl_muscle_04_R
+    100358: lwrl_muscle_04_R_end
+    100360: lwrl_muscle_04_T_L
+    100362: lwrl_muscle_04_T_L_end
+    100364: lwrl_muscle_04_T_R
+    100366: lwrl_muscle_04_T_R_end
+    100368: lwrm_muscle_01_H_L
+    100370: lwrm_muscle_01_H_R
+    100372: lwrm_muscle_01_L
+    100374: lwrm_muscle_01_L_end
+    100376: lwrm_muscle_01_R
+    100378: lwrm_muscle_01_R_end
+    100380: lwrm_muscle_01_T_L
+    100382: lwrm_muscle_01_T_L_end
+    100384: lwrm_muscle_01_T_R
+    100386: lwrm_muscle_01_T_R_end
+    100388: lwrm_muscle_02_H_L
+    100390: lwrm_muscle_02_H_R
+    100392: lwrm_muscle_02_L
+    100394: lwrm_muscle_02_L_end
+    100396: lwrm_muscle_02_R
+    100398: lwrm_muscle_02_R_end
+    100400: lwrm_muscle_02_T_L
+    100402: lwrm_muscle_02_T_L_end
+    100404: lwrm_muscle_02_T_R
+    100406: lwrm_muscle_02_T_R_end
+    100408: lwrm_muscle_03_H_L
+    100410: lwrm_muscle_03_H_R
+    100412: lwrm_muscle_03_L
+    100414: lwrm_muscle_03_L_end
+    100416: lwrm_muscle_03_R
+    100418: lwrm_muscle_03_R_end
+    100420: lwrm_muscle_03_T_L
+    100422: lwrm_muscle_03_T_L_end
+    100424: lwrm_muscle_03_T_R
+    100426: lwrm_muscle_03_T_R_end
+    100428: lwrm_muscle_04_H_L
+    100430: lwrm_muscle_04_H_R
+    100432: lwrm_muscle_04_L
+    100434: lwrm_muscle_04_L_end
+    100436: lwrm_muscle_04_R
+    100438: lwrm_muscle_04_R_end
+    100440: lwrm_muscle_04_T_L
+    100442: lwrm_muscle_04_T_L_end
+    100444: lwrm_muscle_04_T_R
+    100446: lwrm_muscle_04_T_R_end
+    100448: mask
+    100450: mask_end
+    100452: MBlab_sk1653329162.566434
+    100454: middle00_L
+    100456: middle00_R
+    100458: middle01_L
+    100460: middle01_R
+    100462: middle02_L
+    100464: middle02_R
+    100466: middle03_L
+    100468: middle03_L_end
+    100470: middle03_R
+    100472: middle03_R_end
+    100474: neck
+    100476: nk_muscle_01_H_L
+    100478: nk_muscle_01_H_R
+    100480: nk_muscle_01_L
+    100482: nk_muscle_01_L_end
+    100484: nk_muscle_01_R
+    100486: nk_muscle_01_R_end
+    100488: nk_muscle_01_T_L
+    100490: nk_muscle_01_T_L_end
+    100492: nk_muscle_01_T_R
+    100494: nk_muscle_01_T_R_end
+    100496: nk_muscle_02_H_L
+    100498: nk_muscle_02_H_R
+    100500: nk_muscle_02_L
+    100502: nk_muscle_02_L_end
+    100504: nk_muscle_02_R
+    100506: nk_muscle_02_R_end
+    100508: nk_muscle_02_T_L
+    100510: nk_muscle_02_T_L_end
+    100512: nk_muscle_02_T_R
+    100514: nk_muscle_02_T_R_end
+    100516: nk_muscle_03
+    100518: nk_muscle_03_end
+    100520: nk_muscle_03_H
+    100522: nk_muscle_03_T
+    100524: nk_muscle_03_T_end
+    100526: nk_muscle_04
+    100528: nk_muscle_04_end
+    100530: nk_muscle_04_H
+    100532: nk_muscle_04_T
+    100534: nk_muscle_04_T_end
+    100536: pct_muscle_01_H_L
+    100538: pct_muscle_01_H_R
+    100540: pct_muscle_01_L
+    100542: pct_muscle_01_L_end
+    100544: pct_muscle_01_R
+    100546: pct_muscle_01_R_end
+    100548: pct_muscle_01_T_L
+    100550: pct_muscle_01_T_L_end
+    100552: pct_muscle_01_T_R
+    100554: pct_muscle_01_T_R_end
+    100556: pelvis
+    100558: pinky00_L
+    100560: pinky00_R
+    100562: pinky01_L
+    100564: pinky01_R
+    100566: pinky02_L
+    100568: pinky02_R
+    100570: pinky03_L
+    100572: pinky03_L_end
+    100574: pinky03_R
+    100576: pinky03_R_end
+    100578: ring00_L
+    100580: ring00_R
+    100582: ring01_L
+    100584: ring01_R
+    100586: ring02_L
+    100588: ring02_R
+    100590: ring03_L
+    100592: ring03_L_end
+    100594: ring03_R
+    100596: ring03_R_end
+    100598: root
+    100600: rose.dxf_0
+    100602: rose.dxf_0.001
+    100604: rose.dxf_0.002
+    100606: rose.dxf_0.003
+    100608: rot_helper01_L
+    100610: rot_helper01_R
+    100612: rot_helper02_L
+    100614: rot_helper02_R
+    100616: rot_helper03_L
+    100618: rot_helper03_R
+    100620: rot_helper04_L
+    100622: rot_helper04_R
+    100624: rot_helper06_L
+    100626: rot_helper06_R
+    100628: shld_muscle01_H_L
+    100630: shld_muscle01_H_R
+    100632: shld_muscle01_L
+    100634: shld_muscle01_L_end
+    100636: shld_muscle01_R
+    100638: shld_muscle01_R_end
+    100640: shld_muscle01_T_L
+    100642: shld_muscle01_T_L_end
+    100644: shld_muscle01_T_R
+    100646: shld_muscle01_T_R_end
+    100648: shld_muscle02_H_L
+    100650: shld_muscle02_H_R
+    100652: shld_muscle02_L
+    100654: shld_muscle02_L_end
+    100656: shld_muscle02_R
+    100658: shld_muscle02_R_end
+    100660: shld_muscle02_T_L
+    100662: shld_muscle02_T_L_end
+    100664: shld_muscle02_T_R
+    100666: shld_muscle02_T_R_end
+    100668: skull
+    100670: spine01
+    100672: spine02
+    100674: spine03
+    100676: spn_muscle_01
+    100678: spn_muscle_01_end
+    100680: spn_muscle_01_H
+    100682: spn_muscle_01_T
+    100684: spn_muscle_01_T_end
+    100686: tcs_muscle_01_H_L
+    100688: tcs_muscle_01_H_R
+    100690: tcs_muscle_01_L
+    100692: tcs_muscle_01_L_end
+    100694: tcs_muscle_01_R
+    100696: tcs_muscle_01_R_end
+    100698: tcs_muscle_01_T_L
+    100700: tcs_muscle_01_T_L_end
+    100702: tcs_muscle_01_T_R
+    100704: tcs_muscle_01_T_R_end
+    100706: thigh_L
+    100708: thigh_R
+    100710: thumb01_L
+    100712: thumb01_R
+    100714: thumb02_L
+    100716: thumb02_R
+    100718: thumb03_L
+    100720: thumb03_L_end
+    100722: thumb03_R
+    100724: thumb03_R_end
+    100726: toes_L
+    100728: toes_L_end
+    100730: toes_R
+    100732: toes_R_end
+    100734: upperarm_L
+    100736: upperarm_R
+    100738: Dress
+    100740: Sleeve L
+    100742: Sleeve R
+    100744: Cube
+    100746: Cube.001
+    100748: Cube.002
+    100750: KonsRilaeSkeleton
+    100752: Plants
+    100754: Cube.003
+    400000: abd_muscle_01_H_L
+    400002: abd_muscle_01_H_R
+    400004: abd_muscle_01_L
+    400006: abd_muscle_01_L_end
+    400008: abd_muscle_01_R
+    400010: abd_muscle_01_R_end
+    400012: abd_muscle_01_T_L
+    400014: abd_muscle_01_T_L_end
+    400016: abd_muscle_01_T_R
+    400018: abd_muscle_01_T_R_end
+    400020: armor
+    400022: bcs_muscle_01_H_L
+    400024: bcs_muscle_01_H_R
+    400026: bcs_muscle_01_L
+    400028: bcs_muscle_01_L_end
+    400030: bcs_muscle_01_R
+    400032: bcs_muscle_01_R_end
+    400034: bcs_muscle_01_T_L
+    400036: bcs_muscle_01_T_L_end
+    400038: bcs_muscle_01_T_R
+    400040: bcs_muscle_01_T_R_end
+    400042: Big Rings
+    400044: bk_muscle_02_H_L
+    400046: bk_muscle_02_H_R
+    400048: bk_muscle_02_L
+    400050: bk_muscle_02_L_end
+    400052: bk_muscle_02_R
+    400054: bk_muscle_02_R_end
+    400056: bk_muscle_02_T_L
+    400058: bk_muscle_02_T_L_end
+    400060: bk_muscle_02_T_R
+    400062: bk_muscle_02_T_R_end
+    400064: body inside
+    400066: breast_L
+    400068: breast_L_end
+    400070: breast_R
+    400072: breast_R_end
+    400074: calf_L
+    400076: calf_R
+    400078: clavicle_L
+    400080: clavicle_R
+    400082: Cloak
+    400084: Face.001
+    400086: Flower
+    400088: foot_L
+    400090: foot_R
+    400092: Gear
+    400094: Gear-Big
+    400096: Gear-Big.001
+    400098: Gear-Big.002
+    400100: Gear-Big.003
+    400102: Gear-Big.004
+    400104: Gear-Big.005
+    400106: Gear-Big.006
+    400108: Gear-Big.007
+    400110: Gear-Big.008
+    400112: Gear-Big.009
+    400114: Gear-Big.010
+    400116: Gear-Big.011
+    400118: Gear.001
+    400120: Gear.002
+    400122: Gear.003
+    400124: Gear.005
+    400126: Gear.007
+    400128: Gear.008
+    400130: Gear.009
+    400132: Gear.010
+    400134: Gear.011
+    400136: glt_muscle_02_H_L
+    400138: glt_muscle_02_H_R
+    400140: glt_muscle_02_L
+    400142: glt_muscle_02_L_end
+    400144: glt_muscle_02_R
+    400146: glt_muscle_02_R_end
+    400148: glt_muscle_02_T_L
+    400150: glt_muscle_02_T_L_end
+    400152: glt_muscle_02_T_R
+    400154: glt_muscle_02_T_R_end
+    400156: hand_L
+    400158: hand_R
+    400160: head
+    400162: index00_L
+    400164: index00_R
+    400166: index01_L
+    400168: index01_R
+    400170: index02_L
+    400172: index02_R
+    400174: index03_L
+    400176: index03_L_end
+    400178: index03_R
+    400180: index03_R_end
+    400182: //RootNode
+    400184: lgs_muscle_01_H_L
+    400186: lgs_muscle_01_H_R
+    400188: lgs_muscle_01_L
+    400190: lgs_muscle_01_L_end
+    400192: lgs_muscle_01_R
+    400194: lgs_muscle_01_R_end
+    400196: lgs_muscle_01_T_L
+    400198: lgs_muscle_01_T_L_end
+    400200: lgs_muscle_01_T_R
+    400202: lgs_muscle_01_T_R_end
+    400204: lgs_muscle_02_H_L
+    400206: lgs_muscle_02_H_R
+    400208: lgs_muscle_02_L
+    400210: lgs_muscle_02_L_end
+    400212: lgs_muscle_02_R
+    400214: lgs_muscle_02_R_end
+    400216: lgs_muscle_02_T_L
+    400218: lgs_muscle_02_T_L_end
+    400220: lgs_muscle_02_T_R
+    400222: lgs_muscle_02_T_R_end
+    400224: lgs_muscle_03_H_L
+    400226: lgs_muscle_03_H_R
+    400228: lgs_muscle_03_L
+    400230: lgs_muscle_03_L_end
+    400232: lgs_muscle_03_R
+    400234: lgs_muscle_03_R_end
+    400236: lgs_muscle_03_T_L
+    400238: lgs_muscle_03_T_L_end
+    400240: lgs_muscle_03_T_R
+    400242: lgs_muscle_03_T_R_end
+    400244: lgs_muscle_04_H_L
+    400246: lgs_muscle_04_H_R
+    400248: lgs_muscle_04_L
+    400250: lgs_muscle_04_L_end
+    400252: lgs_muscle_04_R
+    400254: lgs_muscle_04_R_end
+    400256: lgs_muscle_04_T_L
+    400258: lgs_muscle_04_T_L_end
+    400260: lgs_muscle_04_T_R
+    400262: lgs_muscle_04_T_R_end
+    400264: lgs_muscle_05_H_L
+    400266: lgs_muscle_05_H_R
+    400268: lgs_muscle_05_L
+    400270: lgs_muscle_05_L_end
+    400272: lgs_muscle_05_R
+    400274: lgs_muscle_05_R_end
+    400276: lgs_muscle_05_T_L
+    400278: lgs_muscle_05_T_L_end
+    400280: lgs_muscle_05_T_R
+    400282: lgs_muscle_05_T_R_end
+    400284: lowerarm_L
+    400286: lowerarm_R
+    400288: lwrl_muscle_01_H_L
+    400290: lwrl_muscle_01_H_R
+    400292: lwrl_muscle_01_L
+    400294: lwrl_muscle_01_L_end
+    400296: lwrl_muscle_01_R
+    400298: lwrl_muscle_01_R_end
+    400300: lwrl_muscle_01_T_L
+    400302: lwrl_muscle_01_T_L_end
+    400304: lwrl_muscle_01_T_R
+    400306: lwrl_muscle_01_T_R_end
+    400308: lwrl_muscle_02_H_L
+    400310: lwrl_muscle_02_H_R
+    400312: lwrl_muscle_02_L
+    400314: lwrl_muscle_02_L_end
+    400316: lwrl_muscle_02_R
+    400318: lwrl_muscle_02_R_end
+    400320: lwrl_muscle_02_T_L
+    400322: lwrl_muscle_02_T_L_end
+    400324: lwrl_muscle_02_T_R
+    400326: lwrl_muscle_02_T_R_end
+    400328: lwrl_muscle_03_H_L
+    400330: lwrl_muscle_03_H_R
+    400332: lwrl_muscle_03_L
+    400334: lwrl_muscle_03_L_end
+    400336: lwrl_muscle_03_R
+    400338: lwrl_muscle_03_R_end
+    400340: lwrl_muscle_03_T_L
+    400342: lwrl_muscle_03_T_L_end
+    400344: lwrl_muscle_03_T_R
+    400346: lwrl_muscle_03_T_R_end
+    400348: lwrl_muscle_04_H_L
+    400350: lwrl_muscle_04_H_R
+    400352: lwrl_muscle_04_L
+    400354: lwrl_muscle_04_L_end
+    400356: lwrl_muscle_04_R
+    400358: lwrl_muscle_04_R_end
+    400360: lwrl_muscle_04_T_L
+    400362: lwrl_muscle_04_T_L_end
+    400364: lwrl_muscle_04_T_R
+    400366: lwrl_muscle_04_T_R_end
+    400368: lwrm_muscle_01_H_L
+    400370: lwrm_muscle_01_H_R
+    400372: lwrm_muscle_01_L
+    400374: lwrm_muscle_01_L_end
+    400376: lwrm_muscle_01_R
+    400378: lwrm_muscle_01_R_end
+    400380: lwrm_muscle_01_T_L
+    400382: lwrm_muscle_01_T_L_end
+    400384: lwrm_muscle_01_T_R
+    400386: lwrm_muscle_01_T_R_end
+    400388: lwrm_muscle_02_H_L
+    400390: lwrm_muscle_02_H_R
+    400392: lwrm_muscle_02_L
+    400394: lwrm_muscle_02_L_end
+    400396: lwrm_muscle_02_R
+    400398: lwrm_muscle_02_R_end
+    400400: lwrm_muscle_02_T_L
+    400402: lwrm_muscle_02_T_L_end
+    400404: lwrm_muscle_02_T_R
+    400406: lwrm_muscle_02_T_R_end
+    400408: lwrm_muscle_03_H_L
+    400410: lwrm_muscle_03_H_R
+    400412: lwrm_muscle_03_L
+    400414: lwrm_muscle_03_L_end
+    400416: lwrm_muscle_03_R
+    400418: lwrm_muscle_03_R_end
+    400420: lwrm_muscle_03_T_L
+    400422: lwrm_muscle_03_T_L_end
+    400424: lwrm_muscle_03_T_R
+    400426: lwrm_muscle_03_T_R_end
+    400428: lwrm_muscle_04_H_L
+    400430: lwrm_muscle_04_H_R
+    400432: lwrm_muscle_04_L
+    400434: lwrm_muscle_04_L_end
+    400436: lwrm_muscle_04_R
+    400438: lwrm_muscle_04_R_end
+    400440: lwrm_muscle_04_T_L
+    400442: lwrm_muscle_04_T_L_end
+    400444: lwrm_muscle_04_T_R
+    400446: lwrm_muscle_04_T_R_end
+    400448: mask
+    400450: mask_end
+    400452: MBlab_sk1653329162.566434
+    400454: middle00_L
+    400456: middle00_R
+    400458: middle01_L
+    400460: middle01_R
+    400462: middle02_L
+    400464: middle02_R
+    400466: middle03_L
+    400468: middle03_L_end
+    400470: middle03_R
+    400472: middle03_R_end
+    400474: neck
+    400476: nk_muscle_01_H_L
+    400478: nk_muscle_01_H_R
+    400480: nk_muscle_01_L
+    400482: nk_muscle_01_L_end
+    400484: nk_muscle_01_R
+    400486: nk_muscle_01_R_end
+    400488: nk_muscle_01_T_L
+    400490: nk_muscle_01_T_L_end
+    400492: nk_muscle_01_T_R
+    400494: nk_muscle_01_T_R_end
+    400496: nk_muscle_02_H_L
+    400498: nk_muscle_02_H_R
+    400500: nk_muscle_02_L
+    400502: nk_muscle_02_L_end
+    400504: nk_muscle_02_R
+    400506: nk_muscle_02_R_end
+    400508: nk_muscle_02_T_L
+    400510: nk_muscle_02_T_L_end
+    400512: nk_muscle_02_T_R
+    400514: nk_muscle_02_T_R_end
+    400516: nk_muscle_03
+    400518: nk_muscle_03_end
+    400520: nk_muscle_03_H
+    400522: nk_muscle_03_T
+    400524: nk_muscle_03_T_end
+    400526: nk_muscle_04
+    400528: nk_muscle_04_end
+    400530: nk_muscle_04_H
+    400532: nk_muscle_04_T
+    400534: nk_muscle_04_T_end
+    400536: pct_muscle_01_H_L
+    400538: pct_muscle_01_H_R
+    400540: pct_muscle_01_L
+    400542: pct_muscle_01_L_end
+    400544: pct_muscle_01_R
+    400546: pct_muscle_01_R_end
+    400548: pct_muscle_01_T_L
+    400550: pct_muscle_01_T_L_end
+    400552: pct_muscle_01_T_R
+    400554: pct_muscle_01_T_R_end
+    400556: pelvis
+    400558: pinky00_L
+    400560: pinky00_R
+    400562: pinky01_L
+    400564: pinky01_R
+    400566: pinky02_L
+    400568: pinky02_R
+    400570: pinky03_L
+    400572: pinky03_L_end
+    400574: pinky03_R
+    400576: pinky03_R_end
+    400578: ring00_L
+    400580: ring00_R
+    400582: ring01_L
+    400584: ring01_R
+    400586: ring02_L
+    400588: ring02_R
+    400590: ring03_L
+    400592: ring03_L_end
+    400594: ring03_R
+    400596: ring03_R_end
+    400598: root
+    400600: rose.dxf_0
+    400602: rose.dxf_0.001
+    400604: rose.dxf_0.002
+    400606: rose.dxf_0.003
+    400608: rot_helper01_L
+    400610: rot_helper01_R
+    400612: rot_helper02_L
+    400614: rot_helper02_R
+    400616: rot_helper03_L
+    400618: rot_helper03_R
+    400620: rot_helper04_L
+    400622: rot_helper04_R
+    400624: rot_helper06_L
+    400626: rot_helper06_R
+    400628: shld_muscle01_H_L
+    400630: shld_muscle01_H_R
+    400632: shld_muscle01_L
+    400634: shld_muscle01_L_end
+    400636: shld_muscle01_R
+    400638: shld_muscle01_R_end
+    400640: shld_muscle01_T_L
+    400642: shld_muscle01_T_L_end
+    400644: shld_muscle01_T_R
+    400646: shld_muscle01_T_R_end
+    400648: shld_muscle02_H_L
+    400650: shld_muscle02_H_R
+    400652: shld_muscle02_L
+    400654: shld_muscle02_L_end
+    400656: shld_muscle02_R
+    400658: shld_muscle02_R_end
+    400660: shld_muscle02_T_L
+    400662: shld_muscle02_T_L_end
+    400664: shld_muscle02_T_R
+    400666: shld_muscle02_T_R_end
+    400668: skull
+    400670: spine01
+    400672: spine02
+    400674: spine03
+    400676: spn_muscle_01
+    400678: spn_muscle_01_end
+    400680: spn_muscle_01_H
+    400682: spn_muscle_01_T
+    400684: spn_muscle_01_T_end
+    400686: tcs_muscle_01_H_L
+    400688: tcs_muscle_01_H_R
+    400690: tcs_muscle_01_L
+    400692: tcs_muscle_01_L_end
+    400694: tcs_muscle_01_R
+    400696: tcs_muscle_01_R_end
+    400698: tcs_muscle_01_T_L
+    400700: tcs_muscle_01_T_L_end
+    400702: tcs_muscle_01_T_R
+    400704: tcs_muscle_01_T_R_end
+    400706: thigh_L
+    400708: thigh_R
+    400710: thumb01_L
+    400712: thumb01_R
+    400714: thumb02_L
+    400716: thumb02_R
+    400718: thumb03_L
+    400720: thumb03_L_end
+    400722: thumb03_R
+    400724: thumb03_R_end
+    400726: toes_L
+    400728: toes_L_end
+    400730: toes_R
+    400732: toes_R_end
+    400734: upperarm_L
+    400736: upperarm_R
+    400738: Dress
+    400740: Sleeve L
+    400742: Sleeve R
+    400744: Cube
+    400746: Cube.001
+    400748: Cube.002
+    400750: KonsRilaeSkeleton
+    400752: Plants
+    400754: Cube.003
+    2100000: dbl_rose.dxf_001
+    2100002: dbl_rose.dxf_003
+    2100004: Flower Inner
+    2100006: Flower Middle
+    2100008: Flower Outer
+    2100010: gear
+    2100012: Material
+    2100014: Gold
+    2100016: Face
+    2100018: Rotten Organic
+    2100020: Muscle
+    2100022: Ivory
+    2100024: Rotten Organic.001
+    2100026: Torso Inner
+    2100028: ivory
+    2100030: black
+    2100032: vermaloc
+    2100034: grey
+    2100036: emission
+    2100038: vermaloc bark
+    2100040: Material.012
+    2100042: No Name
+    2100044: Material.001
+    2100046: Material.002
+    2100048: gear.002
+    2100050: gear.003
+    2100052: gear.004
+    2100054: gear.005
+    2100056: gear.006
+    2100058: Material.003
+    2100060: Material.005
+    2100062: Material.007
+    2100064: Material.006
+    2100066: Material.009
+    2100068: Material.008
+    2100070: gear.007
+    2100072: gear.008
+    2100074: gear.010
+    2100076: gear.012
+    2100078: gear.013
+    2100080: Material.010
+    2100082: Material.011
+    2100084: dbl_rose.dxf_001.001
+    2100086: dbl_rose.dxf_003.001
+    2100088: dbl_rose.dxf_001.002
+    2100090: dbl_rose.dxf_001.003
+    2100092: dbl_rose.dxf_001.004
+    2100094: Flower Inner.001
+    2100096: Flower Middle.001
+    2100098: Flower Outer.001
+    2100100: Kryn Dress
+    2100102: Kryn Dress Inbetween
+    2100104: Kryn Sleeves
+    2300000: Cloak
+    2300002: Flower
+    2300004: Gear
+    2300006: Gear-Big
+    2300008: Gear-Big.001
+    2300010: Gear-Big.002
+    2300012: Gear-Big.003
+    2300014: Gear-Big.004
+    2300016: Gear-Big.005
+    2300018: Gear-Big.006
+    2300020: Gear-Big.007
+    2300022: Gear-Big.008
+    2300024: Gear-Big.009
+    2300026: Gear-Big.010
+    2300028: Gear-Big.011
+    2300030: Gear.001
+    2300032: Gear.002
+    2300034: Gear.003
+    2300036: Gear.005
+    2300038: Gear.007
+    2300040: Gear.008
+    2300042: Gear.009
+    2300044: Gear.010
+    2300046: Gear.011
+    2300048: rose.dxf_0
+    2300050: rose.dxf_0.001
+    2300052: rose.dxf_0.002
+    2300054: rose.dxf_0.003
+    2300056: Dress
+    2300058: Sleeve L
+    2300060: Sleeve R
+    3300000: Cloak
+    3300002: Flower
+    3300004: Gear
+    3300006: Gear-Big
+    3300008: Gear-Big.001
+    3300010: Gear-Big.002
+    3300012: Gear-Big.003
+    3300014: Gear-Big.004
+    3300016: Gear-Big.005
+    3300018: Gear-Big.006
+    3300020: Gear-Big.007
+    3300022: Gear-Big.008
+    3300024: Gear-Big.009
+    3300026: Gear-Big.010
+    3300028: Gear-Big.011
+    3300030: Gear.001
+    3300032: Gear.002
+    3300034: Gear.003
+    3300036: Gear.005
+    3300038: Gear.007
+    3300040: Gear.008
+    3300042: Gear.009
+    3300044: Gear.010
+    3300046: Gear.011
+    3300048: rose.dxf_0
+    3300050: rose.dxf_0.001
+    3300052: rose.dxf_0.002
+    3300054: rose.dxf_0.003
+    3300056: Dress
+    3300058: Sleeve L
+    3300060: Sleeve R
+    4300000: rose.dxf_0.003
+    4300002: rose.dxf_0.002
+    4300004: rose.dxf_0.001
+    4300006: rose.dxf_0
+    4300008: Flower
+    4300010: Gear-Big
+    4300012: Gear
+    4300014: Big Rings
+    4300016: Face.001
+    4300018: skull
+    4300020: body inside
+    4300022: armor
+    4300024: Cloak
+    4300026: Gear-Big.001
+    4300028: Gear.001
+    4300030: Gear.002
+    4300032: Gear-Big.002
+    4300034: Gear-Big.003
+    4300036: Gear-Big.004
+    4300038: Gear-Big.005
+    4300040: Gear-Big.006
+    4300042: Gear.003
+    4300044: Gear.005
+    4300046: Gear.007
+    4300048: Gear.009
+    4300050: Gear.008
+    4300052: Gear-Big.007
+    4300054: Gear-Big.008
+    4300056: Gear-Big.009
+    4300058: Gear-Big.010
+    4300060: Gear-Big.011
+    4300062: Gear.010
+    4300064: Gear.011
+    4300066: Dress
+    4300068: Sleeve R
+    4300070: Sleeve L
+    4300072: Cube.002
+    4300074: Cube.001
+    4300076: Cube
+    4300078: Plants
+    4300080: Cube.003
+    7400000: MBlab_sk1653329162.566434|Idle
+    7400002: MBlab_sk1653329162.566434|MBlab_sk1653329162.566434Action
+    7400004: MBlab_sk1653329162.566434|Walk
+    7400006: KonsRilaeSkeleton|Idle
+    7400008: KonsRilaeSkeleton|Pulse Wave
+    7400010: KonsRilaeSkeleton|Walk
+    7400012: KonsRilaeSkeleton|Gravity Fissure
+    7400014: KonsRilaeSkeleton|Gravity Sinkhole
+    7400016: KonsRilaeSkeleton|Spell Prepare
+    7400018: KonsRilaeSkeleton|Fly
+    7400020: KonsRilaeSkeleton|Slap
+    9500000: //RootNode
+    13700000: armor
+    13700002: Big Rings
+    13700004: body inside
+    13700006: Face.001
+    13700008: skull
+    13700010: Cube
+    13700012: Cube.001
+    13700014: Cube.002
+    13700016: Gear-Big.005
+    13700018: Plants
+    13700020: Cube.003
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: c4f6daf6c121e304eae061985ac46be9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower Inner
+    second: {fileID: 2100000, guid: 9bf85535be593704b926cbf3efc82fc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower Inner.001
+    second: {fileID: 2100000, guid: 9bf85535be593704b926cbf3efc82fc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower Middle
+    second: {fileID: 2100000, guid: cba68a30657d094459c6f16c114f7201, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower Middle.001
+    second: {fileID: 2100000, guid: cba68a30657d094459c6f16c114f7201, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower Outer
+    second: {fileID: 2100000, guid: 8eb9d252c7d54b6499ecfc47dd8a10fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower Outer.001
+    second: {fileID: 2100000, guid: 8eb9d252c7d54b6499ecfc47dd8a10fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold
+    second: {fileID: 2100000, guid: 68077feeb1169d54f82950563e9df997, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ivory
+    second: {fileID: 2100000, guid: b7016b10a504fb44a9c29dab341e4604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kryn Dress
+    second: {fileID: 2100000, guid: 5b051c2f839308c43b4844970fa93d85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kryn Dress Inbetween
+    second: {fileID: 2100000, guid: a28de41f9462ca84487dd404db3accc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kryn Sleeves
+    second: {fileID: 2100000, guid: e4e841919a4d173418d62e8ed9575287, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: 3d7f96e684e86aa42b504359e9ac3c49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscle
+    second: {fileID: 2100000, guid: 6ae2d9a4d5d38ed48a3e17c59de9b230, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotten Organic
+    second: {fileID: 2100000, guid: 0c96075ea05d86c4590a3330497397b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotten Organic.001
+    second: {fileID: 2100000, guid: 83eb410c43100e945a9fecf21e775f61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Torso Inner
+    second: {fileID: 2100000, guid: c03cc235c5fbb1446a8b59dfb1a8ec66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: b51a389af83e1be4f951706821c6fca5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dbl_rose.dxf_001
+    second: {fileID: 2100000, guid: 3a06aa69d8b757f49aadb7dab8bfd8c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dbl_rose.dxf_001.001
+    second: {fileID: 2100000, guid: 48c75576b04841e498f90c83099aa4ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dbl_rose.dxf_001.002
+    second: {fileID: 2100000, guid: e439a58bebb37ac40bc23e106ea9fe99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dbl_rose.dxf_001.003
+    second: {fileID: 2100000, guid: e3d355041a9a5144c820129e8c1e3aa6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dbl_rose.dxf_001.004
+    second: {fileID: 2100000, guid: 86d1af28570edc34fb2f58dbd03fbfb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dbl_rose.dxf_003
+    second: {fileID: 2100000, guid: 8eb770d36f7bc1e419dea421c42cbe99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dbl_rose.dxf_003.001
+    second: {fileID: 2100000, guid: 8eb770d36f7bc1e419dea421c42cbe99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emission
+    second: {fileID: 2100000, guid: fd28c9fefe52a3c4493fa4829c0eaba4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.002
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.003
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.004
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.005
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.006
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.007
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.008
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.010
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.012
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear.013
+    second: {fileID: 2100000, guid: 1a95d2b864278d64ea8a19fd3e04cbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey
+    second: {fileID: 2100000, guid: 96f47772b6458fd44a900e00e8e6d87e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ivory
+    second: {fileID: 2100000, guid: b7016b10a504fb44a9c29dab341e4604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vermaloc
+    second: {fileID: 2100000, guid: 506b78804e1611e409b206ac22293383, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vermaloc bark
+    second: {fileID: 2100000, guid: b7d9d9682ce5aea4cbc4d205b395c64e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: KonsRilaeSkeleton|Idle
+      takeName: KonsRilaeSkeleton|Idle
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KonsRilaeSkeleton|Pulse Wave
+      takeName: KonsRilaeSkeleton|Pulse Wave
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KonsRilaeSkeleton|Walk
+      takeName: KonsRilaeSkeleton|Walk
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KonsRilaeSkeleton|Gravity Fissure
+      takeName: KonsRilaeSkeleton|Gravity Fissure
+      firstFrame: 0
+      lastFrame: 67
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KonsRilaeSkeleton|Gravity Sinkhole
+      takeName: KonsRilaeSkeleton|Gravity Sinkhole
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KonsRilaeSkeleton|Spell Prepare
+      takeName: KonsRilaeSkeleton|Spell Prepare
+      firstFrame: 20
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KonsRilaeSkeleton|Fly
+      takeName: KonsRilaeSkeleton|Fly
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KonsRilaeSkeleton|Slap
+      takeName: KonsRilaeSkeleton|Slap
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

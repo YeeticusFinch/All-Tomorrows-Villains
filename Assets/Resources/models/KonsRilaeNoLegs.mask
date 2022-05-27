@@ -1,0 +1,702 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: KonsRilaeNoLegs
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: armor
+    m_Weight: 1
+  - m_Path: Big Rings
+    m_Weight: 1
+  - m_Path: body inside
+    m_Weight: 1
+  - m_Path: Cube.001
+    m_Weight: 1
+  - m_Path: Cube.002
+    m_Weight: 1
+  - m_Path: Cube.003
+    m_Weight: 1
+  - m_Path: Face.001
+    m_Weight: 1
+  - m_Path: Gear-Big.005
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/abd_muscle_01_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/abd_muscle_01_H_L/abd_muscle_01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/abd_muscle_01_H_L/abd_muscle_01_L/abd_muscle_01_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/abd_muscle_01_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/abd_muscle_01_H_R/abd_muscle_01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/abd_muscle_01_H_R/abd_muscle_01_R/abd_muscle_01_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/bk_muscle_02_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/bk_muscle_02_H_L/bk_muscle_02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/bk_muscle_02_H_L/bk_muscle_02_L/bk_muscle_02_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/bk_muscle_02_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/bk_muscle_02_H_R/bk_muscle_02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/bk_muscle_02_H_R/bk_muscle_02_R/bk_muscle_02_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/glt_muscle_02_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/glt_muscle_02_T_L/glt_muscle_02_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_01_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_01_H_L/lgs_muscle_01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_01_H_L/lgs_muscle_01_L/lgs_muscle_01_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_02_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_02_H_L/lgs_muscle_02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_02_H_L/lgs_muscle_02_L/lgs_muscle_02_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_04_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_04_H_L/lgs_muscle_04_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_L/lgs_muscle_04_H_L/lgs_muscle_04_L/lgs_muscle_04_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/glt_muscle_02_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/glt_muscle_02_T_R/glt_muscle_02_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_01_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_01_H_R/lgs_muscle_01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_01_H_R/lgs_muscle_01_R/lgs_muscle_01_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_02_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_02_H_R/lgs_muscle_02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_02_H_R/lgs_muscle_02_R/lgs_muscle_02_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_04_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_04_H_R/lgs_muscle_04_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper03_R/lgs_muscle_04_H_R/lgs_muscle_04_R/lgs_muscle_04_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/glt_muscle_02_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/glt_muscle_02_H_L/glt_muscle_02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/glt_muscle_02_H_L/glt_muscle_02_L/glt_muscle_02_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/lgs_muscle_03_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/lgs_muscle_03_H_L/lgs_muscle_03_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/lgs_muscle_03_H_L/lgs_muscle_03_L/lgs_muscle_03_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/lgs_muscle_05_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/lgs_muscle_05_H_L/lgs_muscle_05_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_L/lgs_muscle_05_H_L/lgs_muscle_05_L/lgs_muscle_05_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/glt_muscle_02_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/glt_muscle_02_H_R/glt_muscle_02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/glt_muscle_02_H_R/glt_muscle_02_R/glt_muscle_02_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/lgs_muscle_03_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/lgs_muscle_03_H_R/lgs_muscle_03_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/lgs_muscle_03_H_R/lgs_muscle_03_R/lgs_muscle_03_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/lgs_muscle_05_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/lgs_muscle_05_H_R/lgs_muscle_05_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/rot_helper06_R/lgs_muscle_05_H_R/lgs_muscle_05_R/lgs_muscle_05_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/abd_muscle_01_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/abd_muscle_01_T_L/abd_muscle_01_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/abd_muscle_01_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/abd_muscle_01_T_R/abd_muscle_01_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/breast_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/breast_L/breast_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/breast_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/breast_R/breast_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/bk_muscle_02_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/bk_muscle_02_T_L/bk_muscle_02_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/nk_muscle_02_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/nk_muscle_02_H_L/nk_muscle_02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/nk_muscle_02_H_L/nk_muscle_02_L/nk_muscle_02_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/shld_muscle01_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/shld_muscle01_H_L/shld_muscle01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/shld_muscle01_H_L/shld_muscle01_L/shld_muscle01_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/shld_muscle02_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/shld_muscle02_H_L/shld_muscle02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/shld_muscle02_H_L/shld_muscle02_L/shld_muscle02_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/tcs_muscle_01_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/tcs_muscle_01_H_L/tcs_muscle_01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/tcs_muscle_01_H_L/tcs_muscle_01_L/tcs_muscle_01_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/bcs_muscle_01_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/bcs_muscle_01_H_L/bcs_muscle_01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/bcs_muscle_01_H_L/bcs_muscle_01_L/bcs_muscle_01_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/index00_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/index00_L/index01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/index00_L/index01_L/index02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/index00_L/index01_L/index02_L/index03_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/index00_L/index01_L/index02_L/index03_L/index03_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/lwrm_muscle_01_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/lwrm_muscle_01_T_L/lwrm_muscle_01_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/lwrm_muscle_02_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/lwrm_muscle_02_T_L/lwrm_muscle_02_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/lwrm_muscle_03_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/lwrm_muscle_03_T_L/lwrm_muscle_03_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/lwrm_muscle_04_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/lwrm_muscle_04_T_L/lwrm_muscle_04_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/middle00_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/middle00_L/middle01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/middle00_L/middle01_L/middle02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/middle00_L/middle01_L/middle02_L/middle03_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/middle00_L/middle01_L/middle02_L/middle03_L/middle03_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/pinky00_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/pinky00_L/pinky01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/pinky00_L/pinky01_L/pinky02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/pinky00_L/pinky01_L/pinky02_L/pinky03_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/pinky00_L/pinky01_L/pinky02_L/pinky03_L/pinky03_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/ring00_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/ring00_L/ring01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/ring00_L/ring01_L/ring02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/ring00_L/ring01_L/ring02_L/ring03_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/ring00_L/ring01_L/ring02_L/ring03_L/ring03_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/thumb01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/thumb01_L/thumb02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/thumb01_L/thumb02_L/thumb03_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/hand_L/thumb01_L/thumb02_L/thumb03_L/thumb03_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/tcs_muscle_01_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lowerarm_L/tcs_muscle_01_T_L/tcs_muscle_01_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_01_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_01_H_L/lwrm_muscle_01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_01_H_L/lwrm_muscle_01_L/lwrm_muscle_01_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_02_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_02_H_L/lwrm_muscle_02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_02_H_L/lwrm_muscle_02_L/lwrm_muscle_02_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_03_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_03_H_L/lwrm_muscle_03_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_03_H_L/lwrm_muscle_03_L/lwrm_muscle_03_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_04_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_04_H_L/lwrm_muscle_04_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/lwrm_muscle_04_H_L/lwrm_muscle_04_L/lwrm_muscle_04_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/pct_muscle_01_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/pct_muscle_01_T_L/pct_muscle_01_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/rot_helper02_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/rot_helper02_L/bcs_muscle_01_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/rot_helper02_L/bcs_muscle_01_T_L/bcs_muscle_01_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/shld_muscle01_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/shld_muscle01_T_L/shld_muscle01_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/shld_muscle02_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_L/upperarm_L/shld_muscle02_T_L/shld_muscle02_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/bk_muscle_02_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/bk_muscle_02_T_R/bk_muscle_02_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/nk_muscle_02_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/nk_muscle_02_H_R/nk_muscle_02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/nk_muscle_02_H_R/nk_muscle_02_R/nk_muscle_02_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/shld_muscle01_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/shld_muscle01_H_R/shld_muscle01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/shld_muscle01_H_R/shld_muscle01_R/shld_muscle01_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/shld_muscle02_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/shld_muscle02_H_R/shld_muscle02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/shld_muscle02_H_R/shld_muscle02_R/shld_muscle02_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/tcs_muscle_01_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/tcs_muscle_01_H_R/tcs_muscle_01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/tcs_muscle_01_H_R/tcs_muscle_01_R/tcs_muscle_01_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/bcs_muscle_01_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/bcs_muscle_01_H_R/bcs_muscle_01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/bcs_muscle_01_H_R/bcs_muscle_01_R/bcs_muscle_01_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/index00_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/index00_R/index01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/index00_R/index01_R/index02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/index00_R/index01_R/index02_R/index03_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/index00_R/index01_R/index02_R/index03_R/index03_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/lwrm_muscle_01_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/lwrm_muscle_01_T_R/lwrm_muscle_01_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/lwrm_muscle_02_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/lwrm_muscle_02_T_R/lwrm_muscle_02_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/lwrm_muscle_03_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/lwrm_muscle_03_T_R/lwrm_muscle_03_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/lwrm_muscle_04_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/lwrm_muscle_04_T_R/lwrm_muscle_04_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/middle00_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/middle00_R/middle01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/middle00_R/middle01_R/middle02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/middle00_R/middle01_R/middle02_R/middle03_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/middle00_R/middle01_R/middle02_R/middle03_R/middle03_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/pinky00_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/pinky00_R/pinky01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/pinky00_R/pinky01_R/pinky02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/pinky00_R/pinky01_R/pinky02_R/pinky03_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/pinky00_R/pinky01_R/pinky02_R/pinky03_R/pinky03_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/ring00_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/ring00_R/ring01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/ring00_R/ring01_R/ring02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/ring00_R/ring01_R/ring02_R/ring03_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/ring00_R/ring01_R/ring02_R/ring03_R/ring03_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/thumb01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/thumb01_R/thumb02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/thumb01_R/thumb02_R/thumb03_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/hand_R/thumb01_R/thumb02_R/thumb03_R/thumb03_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/tcs_muscle_01_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lowerarm_R/tcs_muscle_01_T_R/tcs_muscle_01_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_01_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_01_H_R/lwrm_muscle_01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_01_H_R/lwrm_muscle_01_R/lwrm_muscle_01_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_02_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_02_H_R/lwrm_muscle_02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_02_H_R/lwrm_muscle_02_R/lwrm_muscle_02_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_03_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_03_H_R/lwrm_muscle_03_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_03_H_R/lwrm_muscle_03_R/lwrm_muscle_03_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_04_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_04_H_R/lwrm_muscle_04_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/lwrm_muscle_04_H_R/lwrm_muscle_04_R/lwrm_muscle_04_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/pct_muscle_01_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/pct_muscle_01_T_R/pct_muscle_01_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/rot_helper02_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/rot_helper02_R/bcs_muscle_01_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/rot_helper02_R/bcs_muscle_01_T_R/bcs_muscle_01_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/shld_muscle01_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/shld_muscle01_T_R/shld_muscle01_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/shld_muscle02_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/clavicle_R/upperarm_R/shld_muscle02_T_R/shld_muscle02_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/mask
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/mask/mask_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/nk_muscle_01_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/nk_muscle_01_T_L/nk_muscle_01_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/nk_muscle_01_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/nk_muscle_01_T_R/nk_muscle_01_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/nk_muscle_03_T
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/nk_muscle_03_T/nk_muscle_03_T_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/nk_muscle_04_T
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/head/nk_muscle_04_T/nk_muscle_04_T_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/nk_muscle_02_T_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/nk_muscle_02_T_L/nk_muscle_02_T_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/nk_muscle_02_T_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/neck/nk_muscle_02_T_R/nk_muscle_02_T_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_01_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_01_H_L/nk_muscle_01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_01_H_L/nk_muscle_01_L/nk_muscle_01_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_01_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_01_H_R/nk_muscle_01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_01_H_R/nk_muscle_01_R/nk_muscle_01_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_03_H
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_03_H/nk_muscle_03
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_03_H/nk_muscle_03/nk_muscle_03_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_04_H
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_04_H/nk_muscle_04
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/nk_muscle_04_H/nk_muscle_04/nk_muscle_04_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/pct_muscle_01_H_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/pct_muscle_01_H_L/pct_muscle_01_L
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/pct_muscle_01_H_L/pct_muscle_01_L/pct_muscle_01_L_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/pct_muscle_01_H_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/pct_muscle_01_H_R/pct_muscle_01_R
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/pct_muscle_01_H_R/pct_muscle_01_R/pct_muscle_01_R_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/spn_muscle_01_T
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spine01/spine02/spine03/spn_muscle_01_T/spn_muscle_01_T_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spn_muscle_01_H
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spn_muscle_01_H/spn_muscle_01
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/spn_muscle_01_H/spn_muscle_01/spn_muscle_01_end
+    m_Weight: 1
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L/lwrl_muscle_02_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L/lwrl_muscle_02_T_L/lwrl_muscle_02_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L/lwrl_muscle_03_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L/lwrl_muscle_03_T_L/lwrl_muscle_03_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L/lwrl_muscle_04_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L/lwrl_muscle_04_T_L/lwrl_muscle_04_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L/toes_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/foot_L/toes_L/toes_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/lgs_muscle_01_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/lgs_muscle_01_T_L/lgs_muscle_01_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/lwrl_muscle_01_H_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/lwrl_muscle_01_H_L/lwrl_muscle_01_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/lwrl_muscle_01_H_L/lwrl_muscle_01_L/lwrl_muscle_01_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/lwrl_muscle_03_H_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/lwrl_muscle_03_H_L/lwrl_muscle_03_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/lwrl_muscle_03_H_L/lwrl_muscle_03_L/lwrl_muscle_03_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/rot_helper04_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/rot_helper04_L/lwrl_muscle_01_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/calf_L/rot_helper04_L/lwrl_muscle_01_T_L/lwrl_muscle_01_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lgs_muscle_03_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lgs_muscle_03_T_L/lgs_muscle_03_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lgs_muscle_05_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lgs_muscle_05_T_L/lgs_muscle_05_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lwrl_muscle_02_H_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lwrl_muscle_02_H_L/lwrl_muscle_02_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lwrl_muscle_02_H_L/lwrl_muscle_02_L/lwrl_muscle_02_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lwrl_muscle_04_H_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lwrl_muscle_04_H_L/lwrl_muscle_04_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/lwrl_muscle_04_H_L/lwrl_muscle_04_L/lwrl_muscle_04_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/rot_helper01_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/rot_helper01_L/lgs_muscle_02_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/rot_helper01_L/lgs_muscle_02_T_L/lgs_muscle_02_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/rot_helper01_L/lgs_muscle_04_T_L
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_L/rot_helper01_L/lgs_muscle_04_T_L/lgs_muscle_04_T_L_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R/lwrl_muscle_02_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R/lwrl_muscle_02_T_R/lwrl_muscle_02_T_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R/lwrl_muscle_03_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R/lwrl_muscle_03_T_R/lwrl_muscle_03_T_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R/lwrl_muscle_04_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R/lwrl_muscle_04_T_R/lwrl_muscle_04_T_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R/toes_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/foot_R/toes_R/toes_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/lgs_muscle_01_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/lgs_muscle_01_T_R/lgs_muscle_01_T_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/lwrl_muscle_01_H_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/lwrl_muscle_01_H_R/lwrl_muscle_01_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/lwrl_muscle_01_H_R/lwrl_muscle_01_R/lwrl_muscle_01_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/lwrl_muscle_03_H_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/lwrl_muscle_03_H_R/lwrl_muscle_03_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/lwrl_muscle_03_H_R/lwrl_muscle_03_R/lwrl_muscle_03_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/rot_helper04_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/rot_helper04_R/lwrl_muscle_01_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/calf_R/rot_helper04_R/lwrl_muscle_01_T_R/lwrl_muscle_01_T_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lgs_muscle_03_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lgs_muscle_03_T_R/lgs_muscle_03_T_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lgs_muscle_05_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lgs_muscle_05_T_R/lgs_muscle_05_T_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lwrl_muscle_02_H_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lwrl_muscle_02_H_R/lwrl_muscle_02_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lwrl_muscle_02_H_R/lwrl_muscle_02_R/lwrl_muscle_02_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lwrl_muscle_04_H_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lwrl_muscle_04_H_R/lwrl_muscle_04_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/lwrl_muscle_04_H_R/lwrl_muscle_04_R/lwrl_muscle_04_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/rot_helper01_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/rot_helper01_R/lgs_muscle_02_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/rot_helper01_R/lgs_muscle_02_T_R/lgs_muscle_02_T_R_end
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/rot_helper01_R/lgs_muscle_04_T_R
+    m_Weight: 0
+  - m_Path: KonsRilaeSkeleton/root/pelvis/thigh_R/rot_helper01_R/lgs_muscle_04_T_R/lgs_muscle_04_T_R_end
+    m_Weight: 0
+  - m_Path: Plants
+    m_Weight: 1
+  - m_Path: skull
+    m_Weight: 1

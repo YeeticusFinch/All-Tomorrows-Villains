@@ -28,6 +28,8 @@ public class Player : NetworkBehaviour {
     [SerializeField]
     public GameObject infoText3;
 
+    public static GameObject localPlayer;
+
     //[SerializeField]
     public GameObject model;
 
@@ -88,7 +90,7 @@ public class Player : NetworkBehaviour {
     public GameObject[] playables;
 
     [SerializeField]
-    private Camera cam;
+    public Camera cam;
 
     [SerializeField]
     public Camera cam3;
@@ -115,6 +117,7 @@ public class Player : NetworkBehaviour {
             healthBarPlzWork2.enabled = false;
         } else
         {
+            localPlayer = this.gameObject;
             charId = GameManager.instance.charId;
             CmdLoadModel(charId);
             StartCoroutine(BroadcastCreatureData());
@@ -207,29 +210,46 @@ public class Player : NetworkBehaviour {
     }
 
     public bool grounded = false;
+    public bool onSlope = false;
+    public bool onStairs = false;
+    public bool onStairs2 = false;
     const float GROUND_THRESHOLD = 0.5f;
     public Vector3 groundContactPos;
+    public Vector3 slopeNormal;
 
     private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("GroundControl touching collider");
+        //Debug.Log("GroundControl touching collider");
         if (!grounded)
             foreach (ContactPoint c in collision.contacts)
+            {
                 if (Vector3.Dot(c.normal, Vector3.up) > GROUND_THRESHOLD)
                 {
                     grounded = true;
                     groundContactPos = c.point;
                 }
+                
+            }
+        if ((collision.contacts[0].normal - Vector3.up).magnitude > 0.001f && Vector3.Dot(collision.contacts[0].normal, Vector3.up) > GROUND_THRESHOLD)
+        {
+            onSlope = true;
+            onStairs = collision.collider.tag == "Stairs";
+            //onStairs2 = collision.collider.tag == "Stairs2";
+        }
+        else onSlope = false;
+        slopeNormal = collision.contacts[0].normal;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("GroundControl hit collider");
+        //Debug.Log("GroundControl hit collider");
+        if (collision.collider.tag == "Water")
+            CmdTakeDamage(HP, "force", 1000, null);
         if (!grounded)
         {
             foreach (ContactPoint c in collision.contacts)
             {
-                Debug.Log("c.normal enter = " + c.normal);
+                //Debug.Log("c.normal enter = " + c.normal);
                 if (Vector3.Dot(c.normal, Vector3.up) > GROUND_THRESHOLD)
                 {
                     grounded = true;
@@ -237,22 +257,32 @@ public class Player : NetworkBehaviour {
                 }
             }
         }
+        if ((collision.contacts[0].normal - Vector3.up).magnitude > 0.001f && Vector3.Dot(collision.contacts[0].normal, Vector3.up) > GROUND_THRESHOLD)
+        {
+            onSlope = true;
+            onStairs = collision.collider.tag == "Stairs";
+            //onStairs2 = collision.collider.tag == "Stairs2";
+        }
+        else onSlope = false;
+        slopeNormal = collision.contacts[0].normal;
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        Debug.Log("GroundControl left collider");
+        //Debug.Log("GroundControl left collider");
         grounded = false;
         if (grounded)
         {
-            Debug.Log("Still grounded reee");
+            //Debug.Log("Still grounded reee");
             foreach (ContactPoint c in collision.contacts)
             {
-                Debug.Log("c.normal exit = " + c.normal);
+                //Debug.Log("c.normal exit = " + c.normal);
                 if (Vector3.Dot(c.normal, Vector3.up) > GROUND_THRESHOLD)
                     grounded = false;
             }
         }
+        onSlope = false;
+        slopeNormal = Vector3.up;
     }
 
     public void loadModel()
@@ -337,6 +367,11 @@ public class Player : NetworkBehaviour {
             maxHP = chara.HP;
             health = maxHP;
         }
+    }
+
+    public PlayerShoot GetPlayerShoot()
+    {
+        return GetComponent<PlayerShoot>();
     }
 
     [Command]
@@ -505,13 +540,28 @@ public class Player : NetworkBehaviour {
 
         if (chara.camAttachTo == null) GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
+        /*
+        for (int i = 0; i < model.transform.childCount; i++)
+        {
+            GameObject temp = model.transform.GetChild(i).gameObject;
+            if (temp.GetComponent<Camera>() == null)
+            {
+                Rigidbody tempRB = temp.AddComponent<Rigidbody>();
+                if (temp.gameObject.GetComponent<Collider>() == null)
+                    temp.gameObject.AddComponent<SphereCollider>();
+                //tempRB.velocity += new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
+            }
+        }*/
+
         StartCoroutine(Respawn());
     }
 
     IEnumerator Respawn()
     {
         yield return new WaitForSeconds(GameManager.instance.matchSettings.respawnTime);
-
+         
+        //GameObject.Destroy(model);
+        //loadModel();
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         SetDefaults();
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
@@ -558,6 +608,21 @@ public class Player : NetworkBehaviour {
         GameManager.instance.isServer = isServer;
     }
 
+    public void LateUpdate()
+    {
+        if (chara != null && chara.spinWithCamera != null && chara.spinWithCamera.Length > 0)
+        {
+            foreach (GameObject e in chara.spinWithCamera)
+            {
+                //e.transform.localEulerAngles = (cam.transform.localEulerAngles - e.transform.localEulerAngles) * chara.spinWithCameraScalar;
+                e.transform.eulerAngles = cam.transform.eulerAngles;
+            }
+        }
+        if (isLocalPlayer && cam.isActiveAndEnabled && chara != null && chara.shrinkFirstPerson.Length > 0)
+            foreach (GameObject e in chara.shrinkFirstPerson)
+                e.transform.localScale = Vector3.zero;
+    }
+
     float newEulers = 0f;
     //float targetEulers;
     private int bloodied = -1;
@@ -577,14 +642,7 @@ public class Player : NetworkBehaviour {
             }
             //cam.transform.SetParent(chara.camAttachTo.transform);
         }
-        if (chara != null && chara.spinWithCamera != null && chara.spinWithCamera.Length > 0)
-        {
-            foreach(GameObject e in chara.spinWithCamera)
-            {
-                //e.transform.localEulerAngles = (cam.transform.localEulerAngles - e.transform.localEulerAngles) * chara.spinWithCameraScalar;
-                e.transform.eulerAngles = cam.transform.eulerAngles;
-            }
-        }
+        
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
@@ -645,6 +703,7 @@ public class Player : NetworkBehaviour {
         }
         if (isLocalPlayer)
         {
+
             //healthBar.GetComponent<bar>().setPos(health / maxHealth);
             Camera currCam = cam.enabled ? cam : cam3;
             float distOff = 0.2f * 60 / currCam.fieldOfView;
@@ -763,6 +822,8 @@ public class Player : NetworkBehaviour {
         while (chara == null)
             yield return new WaitForSeconds(1f);
         maxHP = chara.HP;
+        HP = maxHP;
+        yield return new WaitForSeconds(0.5f);
         HP = maxHP;
     }
 }

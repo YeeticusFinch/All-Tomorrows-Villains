@@ -1183,6 +1183,7 @@ MonoBehaviour:
     damage: 0
     damageType: Any
     description: Fires a random eye ray
+    cooldown: 0
   - name: Bite
     action: action
     num: 8
@@ -1191,6 +1192,7 @@ MonoBehaviour:
     damage: 21
     damageType: piercing
     description: Bites with your big swoletariat mouth
+    cooldown: 0
   - name: Gulag Ray
     action: action
     num: 19
@@ -1199,6 +1201,7 @@ MonoBehaviour:
     damage: 3
     damageType: cold
     description: Sends the target to gulag, where they suffer 3 cold damage per turn
+    cooldown: 0
   - name: Scorched Earth Ray
     action: action
     num: 19
@@ -1208,6 +1211,7 @@ MonoBehaviour:
     damageType: cold
     description: Affects a 30 foot radius, creatures within suffer 17 cold damage
       per round
+    cooldown: 0
   - name: Gun Ray
     action: action
     num: 10
@@ -1216,6 +1220,7 @@ MonoBehaviour:
     damage: 14
     damageType: piercing
     description: Shoots a bullet
+    cooldown: 0
   - name: Red Terror Ray
     action: action
     num: 19
@@ -1224,6 +1229,7 @@ MonoBehaviour:
     damage: 14
     damageType: necrotic
     description: Steels HP from target
+    cooldown: 0
   - name: Psychological Reform Ray
     action: action
     num: 10
@@ -1232,6 +1238,7 @@ MonoBehaviour:
     damage: 34
     damageType: bludgeoning
     description: Pull yourself forward and bodyslam all creatures in the way
+    cooldown: 0
   - name: Royal Ray
     action: action
     num: 19
@@ -1240,6 +1247,7 @@ MonoBehaviour:
     damage: 19
     damageType: psychic
     description: Summons the Russian Queen to make one attack
+    cooldown: 0
   - name: Vodka Ray
     action: action
     num: 19
@@ -1248,6 +1256,7 @@ MonoBehaviour:
     damage: 32
     damageType: bludgeoning
     description: Shoots a powerful jet of Vodka
+    cooldown: 0
   - name: Kazachok Ray
     action: action
     num: 19
@@ -1256,6 +1265,7 @@ MonoBehaviour:
     damage: 0
     damageType: 
     description: Forces target to dance the kazachok
+    cooldown: 0
   - name: Hammer and Sickle Ray
     action: action
     num: 10
@@ -1264,6 +1274,7 @@ MonoBehaviour:
     damage: 47
     damageType: bludgeoning
     description: Launches a hammer and sickle
+    cooldown: 0
   - name: Tsar Bomba Ray
     action: action
     num: 19
@@ -1272,10 +1283,13 @@ MonoBehaviour:
     damage: 180
     damageType: force
     description: All the power of the Tdst Bomba condensed into one ray
+    cooldown: 0
   abilities:
   - name: Communist Gaze
     action: free action
     description: Hold to make all damage split evenly across all creatures
+    cooldown: 0
+  laserNum: 0
 --- !u!114 &114375796716363728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1321,6 +1335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   title: Stalin Beholder
+  size: large
   AC: 13
   ACMagicBonus: 0
   HP: 322

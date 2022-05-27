@@ -2620,6 +2620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   title: Beholder Smooth
+  size: large
   AC: 18
   ACMagicBonus: 0
   HP: 180
@@ -2761,6 +2762,7 @@ MonoBehaviour:
     damage: 0
     damageType: Any
     description: Fires a random eye ray
+    cooldown: 0
   - name: Bite
     action: action
     num: 5
@@ -2769,6 +2771,7 @@ MonoBehaviour:
     damage: 14
     damageType: piercing
     description: Bites with your big mouth
+    cooldown: 0
   - name: Charm Ray
     action: action
     num: 16
@@ -2777,6 +2780,7 @@ MonoBehaviour:
     damage: 0
     damageType: 
     description: Charms target
+    cooldown: 0
   - name: Paralyzing Ray
     action: action
     num: 16
@@ -2785,6 +2789,7 @@ MonoBehaviour:
     damage: 0
     damageType: 
     description: Paralyzes target
+    cooldown: 0
   - name: Fear Ray
     action: action
     num: 16
@@ -2793,6 +2798,7 @@ MonoBehaviour:
     damage: 0
     damageType: 
     description: Frightens target
+    cooldown: 0
   - name: Slowing Ray
     action: action
     num: 16
@@ -2801,6 +2807,7 @@ MonoBehaviour:
     damage: 0
     damageType: 
     description: Slows target
+    cooldown: 0
   - name: Enervation Ray
     action: action
     num: 16
@@ -2809,6 +2816,7 @@ MonoBehaviour:
     damage: 36
     damageType: necrotic
     description: Withers the target
+    cooldown: 0
   - name: Telekinetic Ray
     action: action
     num: 16
@@ -2817,6 +2825,7 @@ MonoBehaviour:
     damage: 0
     damageType: 
     description: Telekinetically moves a target 30 feet in any direction
+    cooldown: 0
   - name: Sleep Ray
     action: action
     num: 16
@@ -2825,6 +2834,7 @@ MonoBehaviour:
     damage: 0
     damageType: 
     description: Puts the target to sleep
+    cooldown: 0
   - name: Petrification Ray
     action: action
     num: 16
@@ -2833,6 +2843,7 @@ MonoBehaviour:
     damage: 0
     damageType: 
     description: Turns the target to stone
+    cooldown: 0
   - name: Disintegration Ray
     action: action
     num: 16
@@ -2841,6 +2852,7 @@ MonoBehaviour:
     damage: 45
     damageType: force
     description: Disintegrates the target
+    cooldown: 0
   - name: Death Ray
     action: action
     num: 16
@@ -2849,10 +2861,13 @@ MonoBehaviour:
     damage: 55
     damageType: necrotic
     description: Kills the target
+    cooldown: 0
   abilities:
   - name: Antimagic Cone
     action: free action
     description: Hold for antimagic cone
+    cooldown: 0
+  laserNum: 0
 --- !u!114 &114376843557950344
 MonoBehaviour:
   m_ObjectHideFlags: 1

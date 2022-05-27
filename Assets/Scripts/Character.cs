@@ -19,6 +19,7 @@ public class Character : MonoBehaviour {
 
     public int id;
     public string title = "Monster";
+    public string size = "medium";
     public int AC = 9;
     public int ACMagicBonus = 0;
     public int HP = 10;
@@ -42,12 +43,14 @@ public class Character : MonoBehaviour {
     public Vector3 rotate;
     public Vector3 offset;
     //public GameObject[] canJumpFrom;
+    public ParticleSystem[] particles;
     public GameObject[] tintable;
     public GameObject[] primaryEmitters;
     public GameObject[] secondaryEmitters;
     public GameObject[] tertiaryEmitters;
     public GameObject[] hideFirstPerson;
     public GameObject[] hideThirdPerson;
+    public GameObject[] shrinkFirstPerson;
     public GameObject[] canJumpFrom;
     public GameObject camAttach;
     public GameObject camAttachTo;

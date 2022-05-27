@@ -51,8 +51,10 @@ public class PlayerShoot : NetworkBehaviour {
             infoText = GetComponent<Player>().infoText.GetComponent<TextMesh>();
             infoText3 = GetComponent<Player>().infoText3.GetComponent<TextMesh>();
             if (GetComponent<Player>().chara != null)
+            {
                 foreach (GameObject e in GetComponent<Player>().chara.hideFirstPerson)
                     e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            }
             //SetInfoText();
         }
     }
@@ -102,6 +104,7 @@ public class PlayerShoot : NetworkBehaviour {
                     if (GetComponent<Player>().chara != null)
                         foreach (GameObject e in GetComponent<Player>().chara.hideFirstPerson)
                             e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+                    
                     //GetComponent<Player>().crosshair.GetComponent<Sprite>().active = false;
                 } else if (camMode == 1)
                 {
@@ -112,6 +115,7 @@ public class PlayerShoot : NetworkBehaviour {
                     if (GetComponent<Player>().chara != null)
                         foreach (GameObject e in GetComponent<Player>().chara.hideFirstPerson)
                             e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+                    
                     //GameObject.Destroy(GetComponent<Player>().crosshair);
                 } else
                 {
@@ -122,6 +126,7 @@ public class PlayerShoot : NetworkBehaviour {
                     if (GetComponent<Player>().chara != null)
                         foreach (GameObject e in GetComponent<Player>().chara.hideFirstPerson)
                             e.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+                    
                     //GetComponent<Player>().crosshair.GetComponent<RectTransform>().SetPositionAndRotation(new Vector2(0, 0), GetComponent<Player>().crosshair.GetComponent<RectTransform>().rotation);
                 }
             }
@@ -223,22 +228,28 @@ public class PlayerShoot : NetworkBehaviour {
 
     public void SetInfoText()
     {
-        Creature.Attack a = creature.attacks[selectedWeapon];
-        float cooldownTime = a.cooldown;
-        if (a.action.ToLower() != "free action" && a.action.ToLower() != "special")
-            cooldownTime = Mathf.Max(a.cooldown, resetFireCooldown);
-        if (cooldownTime > 0)
-            infoText.color = Color.red;
+        if (creature == null || creature.attacks == null || selectedWeapon > creature.attacks.Length || selectedWeapon < 0 || creature.attacks.Length == 0)
+            return;
         else
-            infoText.color = Color.white;
-        cooldownTime = Mathf.Round(cooldownTime * 10) / 10f;
-        infoText.text = (cooldownTime > 0 ? cooldownTime.ToString() : /*GameManager.instance.getControlMapping("Fire1")*/"") + "\n" + a.name + "\n" + a.action + "\n" + (a.save != null && a.save.Length > 0 ? "DC " + a.num + " " + a.save + " save" : "+" + a.num + " to hit") + (a.damageType != null && a.damageType.Length > 0 ? "\n" + a.damage + " " + a.damageType : "") + (a.description != null && a.description.Length > 0 ? "\n" + a.description : "");
-        infoText3.color = infoText.color;
-        infoText3.text = infoText.text;
+        {
+            Creature.Attack a = creature.attacks[selectedWeapon];
+            float cooldownTime = a.cooldown;
+            if (a.action.ToLower() != "free action" && a.action.ToLower() != "special")
+                cooldownTime = Mathf.Max(a.cooldown, resetFireCooldown);
+            if (cooldownTime > 0)
+                infoText.color = Color.red;
+            else
+                infoText.color = Color.white;
+            cooldownTime = Mathf.Round(cooldownTime * 10) / 10f;
+            infoText.text = (cooldownTime > 0 ? cooldownTime.ToString() : /*GameManager.instance.getControlMapping("Fire1")*/"") + "\n" + a.name + "\n" + a.action + "\n" + (a.save != null && a.save.Length > 0 ? "DC " + a.num + " " + a.save + " save" : "+" + a.num + " to hit") + (a.damageType != null && a.damageType.Length > 0 ? "\n" + a.damage + " " + a.damageType : "") + (a.description != null && a.description.Length > 0 ? "\n" + a.description : "");
+            infoText3.color = infoText.color;
+            infoText3.text = infoText.text;
+        }
 
     }
 
     float resetFireCooldown;
+    public bool skipCooldown = false;
 
     IEnumerator ResetFire(float timesPerTurn)
     {
@@ -250,6 +261,11 @@ public class PlayerShoot : NetworkBehaviour {
             {
                 yield return new WaitForSeconds(0.1f);
                 resetFireCooldown -= 0.1f;
+                if (skipCooldown)
+                {
+                    skipCooldown = false;
+                    resetFireCooldown = 0.1f;
+                }
                 SetInfoText();
             }
         canShoot = true;

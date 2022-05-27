@@ -1,0 +1,1830 @@
+fileFormatVersion: 2
+guid: 4c018c76df2035842b870875c192d145
+timeCreated: 1653151083
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BezierCurve.000
+    100002: BezierCurve.001
+    100004: BezierCurve.002
+    100006: BezierCurve.003
+    100008: BezierCurve.004
+    100010: BezierCurve.005
+    100012: BezierCurve.006
+    100014: BezierCurve.007
+    100016: Cylinder
+    100018: Cylinder.001
+    100020: Cylinder.002
+    100022: Cylinder.003
+    100024: Cylinder.004
+    100026: Cylinder.005
+    100028: Cylinder.006
+    100030: Cylinder.007
+    100032: Floating Steps
+    100034: Floating Steps.001
+    100036: Floating Steps.002
+    100038: Floating Steps.003
+    100040: Floating Steps.004
+    100042: Floating Steps.005
+    100044: Floating Steps.006
+    100046: Floating Steps.007
+    100048: Floating Steps.008
+    100050: Floating Steps.009
+    100052: Floating Steps.010
+    100054: Floating Steps.011
+    100056: Floating Steps.012
+    100058: Floating Steps.013
+    100060: Floating Steps.014
+    100062: Floating Steps.015
+    100064: Floating Steps.016
+    100066: Floating Steps.017
+    100068: Floating Steps.018
+    100070: Floating Steps.019
+    100072: Floating Steps.020
+    100074: Floating Steps.021
+    100076: Floating Steps.022
+    100078: Floating Steps.023
+    100080: Floating Steps.024
+    100082: Floating Steps.025
+    100084: Floating Steps.026
+    100086: Floating Steps.027
+    100088: Floating Steps.028
+    100090: Floating Steps.029
+    100092: Floating Steps.030
+    100094: Floating Steps.031
+    100096: Floating Steps.032
+    100098: Floating Steps.033
+    100100: Floating Steps.034
+    100102: Floating Steps.035
+    100104: Floating Steps.036
+    100106: Floating Steps.037
+    100108: Floating Steps.038
+    100110: Floating Steps.039
+    100112: Floating Steps.040
+    100114: Floating Steps.041
+    100116: Floating Steps.042
+    100118: Floating Steps.043
+    100120: Floating Steps.044
+    100122: Floating Steps.045
+    100124: Floating Steps.046
+    100126: Floating Steps.047
+    100128: Floating Steps.048
+    100130: Floating Steps.049
+    100132: Floating Steps.050
+    100134: Floating Steps.051
+    100136: Floating Steps.052
+    100138: Floating Steps.053
+    100140: Floating Steps.054
+    100142: Floating Steps.055
+    100144: Floating Steps.056
+    100146: Floating Steps.057
+    100148: Floating Steps.058
+    100150: Floating Steps.059
+    100152: Floating Steps.060
+    100154: Floating Steps.061
+    100156: Floating Steps.062
+    100158: Floating Steps.063
+    100160: Floating Steps.064
+    100162: Floating Steps.065
+    100164: Floating Steps.066
+    100166: Floating Steps.067
+    100168: Floating Steps.068
+    100170: Floating Steps.069
+    100172: Floating Steps.070
+    100174: Floating Steps.071
+    100176: Floating Steps.072
+    100178: Floating Steps.073
+    100180: Floating Steps.074
+    100182: Floating Steps.075
+    100184: Floating Steps.076
+    100186: Floating Steps.077
+    100188: Floating Steps.078
+    100190: Floating Steps.079
+    100192: Floating Steps.080
+    100194: Floating Steps.081
+    100196: Floating Steps.082
+    100198: Floating Steps.083
+    100200: Floating Steps.084
+    100202: Floating Steps.085
+    100204: Floating Steps.086
+    100206: Floating Steps.087
+    100208: Floating Steps.088
+    100210: Floating Steps.089
+    100212: Floating Steps.090
+    100214: Floating Steps.091
+    100216: Floating Steps.092
+    100218: Floating Steps.093
+    100220: Floating Steps.094
+    100222: Floating Steps.095
+    100224: Floating Steps.096
+    100226: Floating Steps.097
+    100228: Floating Steps.098
+    100230: Floating Steps.099
+    100232: Floating Steps.100
+    100234: Floating Steps.101
+    100236: Floating Steps.102
+    100238: Floating Steps.103
+    100240: Floating Steps.104
+    100242: Floating Steps.105
+    100244: Floating Steps.106
+    100246: Floating Steps.107
+    100248: Floating Steps.108
+    100250: Floating Steps.109
+    100252: Floating Steps.110
+    100254: Floating Steps.111
+    100256: Floating Steps.112
+    100258: Floating Steps.113
+    100260: Floating Steps.114
+    100262: Floating Steps.115
+    100264: Floating Steps.116
+    100266: Floating Steps.117
+    100268: Floating Steps.118
+    100270: Floating Steps.119
+    100272: Floating Steps.120
+    100274: Floating Steps.121
+    100276: Floating Steps.122
+    100278: Floating Steps.123
+    100280: Floating Steps.124
+    100282: Floating Steps.125
+    100284: Floating Steps.126
+    100286: Floating Steps.127
+    100288: Floating Steps.128
+    100290: Floating Steps.129
+    100292: Floating Steps.130
+    100294: Floating Steps.131
+    100296: Floating Steps.132
+    100298: Floating Steps.133
+    100300: Floating Steps.134
+    100302: Floating Steps.135
+    100304: Floating Steps.136
+    100306: Floating Steps.137
+    100308: Floating Steps.138
+    100310: Floating Steps.139
+    100312: Floating Steps.140
+    100314: Floating Steps.141
+    100316: Floating Steps.142
+    100318: Floating Steps.143
+    100320: Floating Steps.144
+    100322: Floating Steps.145
+    100324: Floating Steps.146
+    100326: Floating Steps.147
+    100328: Floating Steps.148
+    100330: Floating Steps.149
+    100332: Floating Steps.150
+    100334: Floating Steps.151
+    100336: Floating Steps.152
+    100338: Floating Steps.153
+    100340: Floating Steps.154
+    100342: Floating Steps.155
+    100344: Floating Steps.156
+    100346: Floating Steps.157
+    100348: Floating Steps.158
+    100350: Floating Steps.159
+    100352: Floating Steps.160
+    100354: Floating Steps.161
+    100356: Floating Steps.162
+    100358: Floating Steps.163
+    100360: Floating Steps.164
+    100362: Floating Steps.165
+    100364: Floating Steps.166
+    100366: Floating Steps.167
+    100368: Floating Steps.168
+    100370: Floating Steps.169
+    100372: Floating Steps.170
+    100374: Floating Steps.171
+    100376: Floating Steps.172
+    100378: Floating Steps.173
+    100380: Floating Steps.174
+    100382: Floating Steps.175
+    100384: Floating Steps.176
+    100386: Floating Steps.177
+    100388: Floating Steps.178
+    100390: Floating Steps.179
+    100392: Floating Steps.180
+    100394: Floating Steps.181
+    100396: Floating Steps.182
+    100398: Floating Steps.183
+    100400: Floating Steps.184
+    100402: Floating Steps.185
+    100404: Floating Steps.186
+    100406: Floating Steps.187
+    100408: Floating Steps.188
+    100410: Floating Steps.189
+    100412: Floating Steps.190
+    100414: Floating Steps.191
+    100416: Floating Steps.192
+    100418: Floating Steps.193
+    100420: Floating Steps.194
+    100422: Floating Steps.195
+    100424: Floating Steps.196
+    100426: Floating Steps.197
+    100428: Floating Steps.198
+    100430: Floating Steps.199
+    100432: Floating Steps.200
+    100434: Floating Steps.201
+    100436: Floating Steps.202
+    100438: Floating Steps.203
+    100440: Floating Steps.204
+    100442: Floating Steps.205
+    100444: Floating Steps.206
+    100446: Floating Steps.207
+    100448: Floating Steps.208
+    100450: Floating Steps.209
+    100452: Floating Steps.210
+    100454: Floating Steps.211
+    100456: Floating Steps.212
+    100458: Floating Steps.213
+    100460: Floating Steps.214
+    100462: Floating Steps.215
+    100464: Floating Steps.216
+    100466: Floating Steps.217
+    100468: Floating Steps.218
+    100470: Floating Steps.219
+    100472: Floating Steps.220
+    100474: Floating Steps.221
+    100476: Floating Steps.222
+    100478: Floating Steps.223
+    100480: Floating Steps.224
+    100482: Floating Steps.225
+    100484: Floating Steps.226
+    100486: Floating Steps.227
+    100488: Floating Steps.228
+    100490: Floating Steps.229
+    100492: Floating Steps.230
+    100494: Floating Steps.231
+    100496: Floating Steps.232
+    100498: Floating Steps.233
+    100500: Floating Steps.234
+    100502: Floating Steps.235
+    100504: Floating Steps.236
+    100506: Floating Steps.237
+    100508: Floating Steps.238
+    100510: Floating Steps.239
+    100512: Floor
+    100514: Floor.001
+    100516: Floor.002
+    100518: Floor.003
+    100520: Floor.004
+    100522: Floor.005
+    100524: Floor.006
+    100526: Floor.007
+    100528: //RootNode
+    100530: Elevator Pannel
+    100532: Elevator Pannel.001
+    100534: Elevator Pannel.002
+    100536: Elevator Pannel.003
+    100538: Elevator Pannel.004
+    100540: Elevator Pannel.005
+    100542: Elevator Pannel.006
+    100544: Elevator Pannel.007
+    100546: Elevator Pannel.008
+    100548: Elevator Pannel.009
+    400000: BezierCurve.000
+    400002: BezierCurve.001
+    400004: BezierCurve.002
+    400006: BezierCurve.003
+    400008: BezierCurve.004
+    400010: BezierCurve.005
+    400012: BezierCurve.006
+    400014: BezierCurve.007
+    400016: Cylinder
+    400018: Cylinder.001
+    400020: Cylinder.002
+    400022: Cylinder.003
+    400024: Cylinder.004
+    400026: Cylinder.005
+    400028: Cylinder.006
+    400030: Cylinder.007
+    400032: Floating Steps
+    400034: Floating Steps.001
+    400036: Floating Steps.002
+    400038: Floating Steps.003
+    400040: Floating Steps.004
+    400042: Floating Steps.005
+    400044: Floating Steps.006
+    400046: Floating Steps.007
+    400048: Floating Steps.008
+    400050: Floating Steps.009
+    400052: Floating Steps.010
+    400054: Floating Steps.011
+    400056: Floating Steps.012
+    400058: Floating Steps.013
+    400060: Floating Steps.014
+    400062: Floating Steps.015
+    400064: Floating Steps.016
+    400066: Floating Steps.017
+    400068: Floating Steps.018
+    400070: Floating Steps.019
+    400072: Floating Steps.020
+    400074: Floating Steps.021
+    400076: Floating Steps.022
+    400078: Floating Steps.023
+    400080: Floating Steps.024
+    400082: Floating Steps.025
+    400084: Floating Steps.026
+    400086: Floating Steps.027
+    400088: Floating Steps.028
+    400090: Floating Steps.029
+    400092: Floating Steps.030
+    400094: Floating Steps.031
+    400096: Floating Steps.032
+    400098: Floating Steps.033
+    400100: Floating Steps.034
+    400102: Floating Steps.035
+    400104: Floating Steps.036
+    400106: Floating Steps.037
+    400108: Floating Steps.038
+    400110: Floating Steps.039
+    400112: Floating Steps.040
+    400114: Floating Steps.041
+    400116: Floating Steps.042
+    400118: Floating Steps.043
+    400120: Floating Steps.044
+    400122: Floating Steps.045
+    400124: Floating Steps.046
+    400126: Floating Steps.047
+    400128: Floating Steps.048
+    400130: Floating Steps.049
+    400132: Floating Steps.050
+    400134: Floating Steps.051
+    400136: Floating Steps.052
+    400138: Floating Steps.053
+    400140: Floating Steps.054
+    400142: Floating Steps.055
+    400144: Floating Steps.056
+    400146: Floating Steps.057
+    400148: Floating Steps.058
+    400150: Floating Steps.059
+    400152: Floating Steps.060
+    400154: Floating Steps.061
+    400156: Floating Steps.062
+    400158: Floating Steps.063
+    400160: Floating Steps.064
+    400162: Floating Steps.065
+    400164: Floating Steps.066
+    400166: Floating Steps.067
+    400168: Floating Steps.068
+    400170: Floating Steps.069
+    400172: Floating Steps.070
+    400174: Floating Steps.071
+    400176: Floating Steps.072
+    400178: Floating Steps.073
+    400180: Floating Steps.074
+    400182: Floating Steps.075
+    400184: Floating Steps.076
+    400186: Floating Steps.077
+    400188: Floating Steps.078
+    400190: Floating Steps.079
+    400192: Floating Steps.080
+    400194: Floating Steps.081
+    400196: Floating Steps.082
+    400198: Floating Steps.083
+    400200: Floating Steps.084
+    400202: Floating Steps.085
+    400204: Floating Steps.086
+    400206: Floating Steps.087
+    400208: Floating Steps.088
+    400210: Floating Steps.089
+    400212: Floating Steps.090
+    400214: Floating Steps.091
+    400216: Floating Steps.092
+    400218: Floating Steps.093
+    400220: Floating Steps.094
+    400222: Floating Steps.095
+    400224: Floating Steps.096
+    400226: Floating Steps.097
+    400228: Floating Steps.098
+    400230: Floating Steps.099
+    400232: Floating Steps.100
+    400234: Floating Steps.101
+    400236: Floating Steps.102
+    400238: Floating Steps.103
+    400240: Floating Steps.104
+    400242: Floating Steps.105
+    400244: Floating Steps.106
+    400246: Floating Steps.107
+    400248: Floating Steps.108
+    400250: Floating Steps.109
+    400252: Floating Steps.110
+    400254: Floating Steps.111
+    400256: Floating Steps.112
+    400258: Floating Steps.113
+    400260: Floating Steps.114
+    400262: Floating Steps.115
+    400264: Floating Steps.116
+    400266: Floating Steps.117
+    400268: Floating Steps.118
+    400270: Floating Steps.119
+    400272: Floating Steps.120
+    400274: Floating Steps.121
+    400276: Floating Steps.122
+    400278: Floating Steps.123
+    400280: Floating Steps.124
+    400282: Floating Steps.125
+    400284: Floating Steps.126
+    400286: Floating Steps.127
+    400288: Floating Steps.128
+    400290: Floating Steps.129
+    400292: Floating Steps.130
+    400294: Floating Steps.131
+    400296: Floating Steps.132
+    400298: Floating Steps.133
+    400300: Floating Steps.134
+    400302: Floating Steps.135
+    400304: Floating Steps.136
+    400306: Floating Steps.137
+    400308: Floating Steps.138
+    400310: Floating Steps.139
+    400312: Floating Steps.140
+    400314: Floating Steps.141
+    400316: Floating Steps.142
+    400318: Floating Steps.143
+    400320: Floating Steps.144
+    400322: Floating Steps.145
+    400324: Floating Steps.146
+    400326: Floating Steps.147
+    400328: Floating Steps.148
+    400330: Floating Steps.149
+    400332: Floating Steps.150
+    400334: Floating Steps.151
+    400336: Floating Steps.152
+    400338: Floating Steps.153
+    400340: Floating Steps.154
+    400342: Floating Steps.155
+    400344: Floating Steps.156
+    400346: Floating Steps.157
+    400348: Floating Steps.158
+    400350: Floating Steps.159
+    400352: Floating Steps.160
+    400354: Floating Steps.161
+    400356: Floating Steps.162
+    400358: Floating Steps.163
+    400360: Floating Steps.164
+    400362: Floating Steps.165
+    400364: Floating Steps.166
+    400366: Floating Steps.167
+    400368: Floating Steps.168
+    400370: Floating Steps.169
+    400372: Floating Steps.170
+    400374: Floating Steps.171
+    400376: Floating Steps.172
+    400378: Floating Steps.173
+    400380: Floating Steps.174
+    400382: Floating Steps.175
+    400384: Floating Steps.176
+    400386: Floating Steps.177
+    400388: Floating Steps.178
+    400390: Floating Steps.179
+    400392: Floating Steps.180
+    400394: Floating Steps.181
+    400396: Floating Steps.182
+    400398: Floating Steps.183
+    400400: Floating Steps.184
+    400402: Floating Steps.185
+    400404: Floating Steps.186
+    400406: Floating Steps.187
+    400408: Floating Steps.188
+    400410: Floating Steps.189
+    400412: Floating Steps.190
+    400414: Floating Steps.191
+    400416: Floating Steps.192
+    400418: Floating Steps.193
+    400420: Floating Steps.194
+    400422: Floating Steps.195
+    400424: Floating Steps.196
+    400426: Floating Steps.197
+    400428: Floating Steps.198
+    400430: Floating Steps.199
+    400432: Floating Steps.200
+    400434: Floating Steps.201
+    400436: Floating Steps.202
+    400438: Floating Steps.203
+    400440: Floating Steps.204
+    400442: Floating Steps.205
+    400444: Floating Steps.206
+    400446: Floating Steps.207
+    400448: Floating Steps.208
+    400450: Floating Steps.209
+    400452: Floating Steps.210
+    400454: Floating Steps.211
+    400456: Floating Steps.212
+    400458: Floating Steps.213
+    400460: Floating Steps.214
+    400462: Floating Steps.215
+    400464: Floating Steps.216
+    400466: Floating Steps.217
+    400468: Floating Steps.218
+    400470: Floating Steps.219
+    400472: Floating Steps.220
+    400474: Floating Steps.221
+    400476: Floating Steps.222
+    400478: Floating Steps.223
+    400480: Floating Steps.224
+    400482: Floating Steps.225
+    400484: Floating Steps.226
+    400486: Floating Steps.227
+    400488: Floating Steps.228
+    400490: Floating Steps.229
+    400492: Floating Steps.230
+    400494: Floating Steps.231
+    400496: Floating Steps.232
+    400498: Floating Steps.233
+    400500: Floating Steps.234
+    400502: Floating Steps.235
+    400504: Floating Steps.236
+    400506: Floating Steps.237
+    400508: Floating Steps.238
+    400510: Floating Steps.239
+    400512: Floor
+    400514: Floor.001
+    400516: Floor.002
+    400518: Floor.003
+    400520: Floor.004
+    400522: Floor.005
+    400524: Floor.006
+    400526: Floor.007
+    400528: //RootNode
+    400530: Elevator Pannel
+    400532: Elevator Pannel.001
+    400534: Elevator Pannel.002
+    400536: Elevator Pannel.003
+    400538: Elevator Pannel.004
+    400540: Elevator Pannel.005
+    400542: Elevator Pannel.006
+    400544: Elevator Pannel.007
+    400546: Elevator Pannel.008
+    400548: Elevator Pannel.009
+    2100000: Material.002
+    2100002: Lever Brass
+    2100004: Lever Handle
+    2100006: Steps
+    2100008: Material.001
+    2100010: Material.004
+    2100012: Material.005
+    2100014: Lever Brass.001
+    2100016: Lever Handle.001
+    2100018: Steps.001
+    2100020: Material.006
+    2100022: Material.007
+    2100024: Lever Brass.002
+    2100026: Lever Handle.002
+    2100028: Steps.002
+    2100030: Material.008
+    2100032: Material.009
+    2100034: Lever Brass.003
+    2100036: Lever Handle.003
+    2100038: Steps.003
+    2100040: Material.010
+    2100042: Material.011
+    2100044: Lever Brass.004
+    2100046: Lever Handle.004
+    2100048: Steps.004
+    2100050: Material.012
+    2100052: Material.013
+    2100054: Lever Brass.005
+    2100056: Lever Handle.005
+    2100058: Steps.005
+    2100060: Material.014
+    2100062: Material.015
+    2100064: Lever Brass.006
+    2100066: Lever Handle.006
+    2100068: Steps.006
+    2100070: Material.016
+    2100072: Material.017
+    2100074: Lever Brass.007
+    2100076: Lever Handle.007
+    2100078: Steps.007
+    2100080: Elevator Gold
+    2100082: Elevator Panel
+    2100084: Elevator Gold.001
+    2100086: Elevator Panel.001
+    2100088: Elevator Gold.002
+    2100090: Elevator Panel.002
+    2100092: Elevator Gold.003
+    2100094: Elevator Panel.003
+    2100096: Elevator Gold.004
+    2100098: Elevator Panel.004
+    2100100: Elevator Gold.005
+    2100102: Elevator Panel.005
+    2100104: Elevator Gold.006
+    2100106: Elevator Panel.006
+    2100108: Elevator Gold.007
+    2100110: Elevator Panel.007
+    2100112: Elevator Gold.008
+    2100114: Elevator Panel.008
+    2100116: Elevator Gold.009
+    2100118: Elevator Panel.009
+    2100120: Elevator Gold.010
+    2100122: Elevator Status Indicator.001
+    2100124: Elevator Status Indicator
+    2100126: Elevator Status Indicator.003
+    2100128: Elevator Status Indicator.004
+    2100130: Elevator Status Indicator.005
+    2100132: Elevator Status Indicator.006
+    2100134: Elevator Status Indicator.007
+    2100136: Elevator Status Indicator.008
+    2100138: Elevator Status Indicator.009
+    2100140: Elevator Status Indicator.002
+    2300000: BezierCurve.000
+    2300002: BezierCurve.001
+    2300004: BezierCurve.002
+    2300006: BezierCurve.003
+    2300008: BezierCurve.004
+    2300010: BezierCurve.005
+    2300012: BezierCurve.006
+    2300014: BezierCurve.007
+    2300016: Cylinder
+    2300018: Cylinder.001
+    2300020: Cylinder.002
+    2300022: Cylinder.003
+    2300024: Cylinder.004
+    2300026: Cylinder.005
+    2300028: Cylinder.006
+    2300030: Cylinder.007
+    2300032: Floating Steps
+    2300034: Floating Steps.001
+    2300036: Floating Steps.002
+    2300038: Floating Steps.003
+    2300040: Floating Steps.004
+    2300042: Floating Steps.005
+    2300044: Floating Steps.006
+    2300046: Floating Steps.007
+    2300048: Floating Steps.008
+    2300050: Floating Steps.009
+    2300052: Floating Steps.010
+    2300054: Floating Steps.011
+    2300056: Floating Steps.012
+    2300058: Floating Steps.013
+    2300060: Floating Steps.014
+    2300062: Floating Steps.015
+    2300064: Floating Steps.016
+    2300066: Floating Steps.017
+    2300068: Floating Steps.018
+    2300070: Floating Steps.019
+    2300072: Floating Steps.020
+    2300074: Floating Steps.021
+    2300076: Floating Steps.022
+    2300078: Floating Steps.023
+    2300080: Floating Steps.024
+    2300082: Floating Steps.025
+    2300084: Floating Steps.026
+    2300086: Floating Steps.027
+    2300088: Floating Steps.028
+    2300090: Floating Steps.029
+    2300092: Floating Steps.030
+    2300094: Floating Steps.031
+    2300096: Floating Steps.032
+    2300098: Floating Steps.033
+    2300100: Floating Steps.034
+    2300102: Floating Steps.035
+    2300104: Floating Steps.036
+    2300106: Floating Steps.037
+    2300108: Floating Steps.038
+    2300110: Floating Steps.039
+    2300112: Floating Steps.040
+    2300114: Floating Steps.041
+    2300116: Floating Steps.042
+    2300118: Floating Steps.043
+    2300120: Floating Steps.044
+    2300122: Floating Steps.045
+    2300124: Floating Steps.046
+    2300126: Floating Steps.047
+    2300128: Floating Steps.048
+    2300130: Floating Steps.049
+    2300132: Floating Steps.050
+    2300134: Floating Steps.051
+    2300136: Floating Steps.052
+    2300138: Floating Steps.053
+    2300140: Floating Steps.054
+    2300142: Floating Steps.055
+    2300144: Floating Steps.056
+    2300146: Floating Steps.057
+    2300148: Floating Steps.058
+    2300150: Floating Steps.059
+    2300152: Floating Steps.060
+    2300154: Floating Steps.061
+    2300156: Floating Steps.062
+    2300158: Floating Steps.063
+    2300160: Floating Steps.064
+    2300162: Floating Steps.065
+    2300164: Floating Steps.066
+    2300166: Floating Steps.067
+    2300168: Floating Steps.068
+    2300170: Floating Steps.069
+    2300172: Floating Steps.070
+    2300174: Floating Steps.071
+    2300176: Floating Steps.072
+    2300178: Floating Steps.073
+    2300180: Floating Steps.074
+    2300182: Floating Steps.075
+    2300184: Floating Steps.076
+    2300186: Floating Steps.077
+    2300188: Floating Steps.078
+    2300190: Floating Steps.079
+    2300192: Floating Steps.080
+    2300194: Floating Steps.081
+    2300196: Floating Steps.082
+    2300198: Floating Steps.083
+    2300200: Floating Steps.084
+    2300202: Floating Steps.085
+    2300204: Floating Steps.086
+    2300206: Floating Steps.087
+    2300208: Floating Steps.088
+    2300210: Floating Steps.089
+    2300212: Floating Steps.090
+    2300214: Floating Steps.091
+    2300216: Floating Steps.092
+    2300218: Floating Steps.093
+    2300220: Floating Steps.094
+    2300222: Floating Steps.095
+    2300224: Floating Steps.096
+    2300226: Floating Steps.097
+    2300228: Floating Steps.098
+    2300230: Floating Steps.099
+    2300232: Floating Steps.100
+    2300234: Floating Steps.101
+    2300236: Floating Steps.102
+    2300238: Floating Steps.103
+    2300240: Floating Steps.104
+    2300242: Floating Steps.105
+    2300244: Floating Steps.106
+    2300246: Floating Steps.107
+    2300248: Floating Steps.108
+    2300250: Floating Steps.109
+    2300252: Floating Steps.110
+    2300254: Floating Steps.111
+    2300256: Floating Steps.112
+    2300258: Floating Steps.113
+    2300260: Floating Steps.114
+    2300262: Floating Steps.115
+    2300264: Floating Steps.116
+    2300266: Floating Steps.117
+    2300268: Floating Steps.118
+    2300270: Floating Steps.119
+    2300272: Floating Steps.120
+    2300274: Floating Steps.121
+    2300276: Floating Steps.122
+    2300278: Floating Steps.123
+    2300280: Floating Steps.124
+    2300282: Floating Steps.125
+    2300284: Floating Steps.126
+    2300286: Floating Steps.127
+    2300288: Floating Steps.128
+    2300290: Floating Steps.129
+    2300292: Floating Steps.130
+    2300294: Floating Steps.131
+    2300296: Floating Steps.132
+    2300298: Floating Steps.133
+    2300300: Floating Steps.134
+    2300302: Floating Steps.135
+    2300304: Floating Steps.136
+    2300306: Floating Steps.137
+    2300308: Floating Steps.138
+    2300310: Floating Steps.139
+    2300312: Floating Steps.140
+    2300314: Floating Steps.141
+    2300316: Floating Steps.142
+    2300318: Floating Steps.143
+    2300320: Floating Steps.144
+    2300322: Floating Steps.145
+    2300324: Floating Steps.146
+    2300326: Floating Steps.147
+    2300328: Floating Steps.148
+    2300330: Floating Steps.149
+    2300332: Floating Steps.150
+    2300334: Floating Steps.151
+    2300336: Floating Steps.152
+    2300338: Floating Steps.153
+    2300340: Floating Steps.154
+    2300342: Floating Steps.155
+    2300344: Floating Steps.156
+    2300346: Floating Steps.157
+    2300348: Floating Steps.158
+    2300350: Floating Steps.159
+    2300352: Floating Steps.160
+    2300354: Floating Steps.161
+    2300356: Floating Steps.162
+    2300358: Floating Steps.163
+    2300360: Floating Steps.164
+    2300362: Floating Steps.165
+    2300364: Floating Steps.166
+    2300366: Floating Steps.167
+    2300368: Floating Steps.168
+    2300370: Floating Steps.169
+    2300372: Floating Steps.170
+    2300374: Floating Steps.171
+    2300376: Floating Steps.172
+    2300378: Floating Steps.173
+    2300380: Floating Steps.174
+    2300382: Floating Steps.175
+    2300384: Floating Steps.176
+    2300386: Floating Steps.177
+    2300388: Floating Steps.178
+    2300390: Floating Steps.179
+    2300392: Floating Steps.180
+    2300394: Floating Steps.181
+    2300396: Floating Steps.182
+    2300398: Floating Steps.183
+    2300400: Floating Steps.184
+    2300402: Floating Steps.185
+    2300404: Floating Steps.186
+    2300406: Floating Steps.187
+    2300408: Floating Steps.188
+    2300410: Floating Steps.189
+    2300412: Floating Steps.190
+    2300414: Floating Steps.191
+    2300416: Floating Steps.192
+    2300418: Floating Steps.193
+    2300420: Floating Steps.194
+    2300422: Floating Steps.195
+    2300424: Floating Steps.196
+    2300426: Floating Steps.197
+    2300428: Floating Steps.198
+    2300430: Floating Steps.199
+    2300432: Floating Steps.200
+    2300434: Floating Steps.201
+    2300436: Floating Steps.202
+    2300438: Floating Steps.203
+    2300440: Floating Steps.204
+    2300442: Floating Steps.205
+    2300444: Floating Steps.206
+    2300446: Floating Steps.207
+    2300448: Floating Steps.208
+    2300450: Floating Steps.209
+    2300452: Floating Steps.210
+    2300454: Floating Steps.211
+    2300456: Floating Steps.212
+    2300458: Floating Steps.213
+    2300460: Floating Steps.214
+    2300462: Floating Steps.215
+    2300464: Floating Steps.216
+    2300466: Floating Steps.217
+    2300468: Floating Steps.218
+    2300470: Floating Steps.219
+    2300472: Floating Steps.220
+    2300474: Floating Steps.221
+    2300476: Floating Steps.222
+    2300478: Floating Steps.223
+    2300480: Floating Steps.224
+    2300482: Floating Steps.225
+    2300484: Floating Steps.226
+    2300486: Floating Steps.227
+    2300488: Floating Steps.228
+    2300490: Floating Steps.229
+    2300492: Floating Steps.230
+    2300494: Floating Steps.231
+    2300496: Floating Steps.232
+    2300498: Floating Steps.233
+    2300500: Floating Steps.234
+    2300502: Floating Steps.235
+    2300504: Floating Steps.236
+    2300506: Floating Steps.237
+    2300508: Floating Steps.238
+    2300510: Floating Steps.239
+    2300512: Floor
+    2300514: Floor.001
+    2300516: Floor.002
+    2300518: Floor.003
+    2300520: Floor.004
+    2300522: Floor.005
+    2300524: Floor.006
+    2300526: Floor.007
+    2300528: Elevator Pannel
+    2300530: Elevator Pannel.001
+    2300532: Elevator Pannel.002
+    2300534: Elevator Pannel.003
+    2300536: Elevator Pannel.004
+    2300538: Elevator Pannel.005
+    2300540: Elevator Pannel.006
+    2300542: Elevator Pannel.007
+    2300544: Elevator Pannel.008
+    2300546: Elevator Pannel.009
+    3300000: BezierCurve.000
+    3300002: BezierCurve.001
+    3300004: BezierCurve.002
+    3300006: BezierCurve.003
+    3300008: BezierCurve.004
+    3300010: BezierCurve.005
+    3300012: BezierCurve.006
+    3300014: BezierCurve.007
+    3300016: Cylinder
+    3300018: Cylinder.001
+    3300020: Cylinder.002
+    3300022: Cylinder.003
+    3300024: Cylinder.004
+    3300026: Cylinder.005
+    3300028: Cylinder.006
+    3300030: Cylinder.007
+    3300032: Floating Steps
+    3300034: Floating Steps.001
+    3300036: Floating Steps.002
+    3300038: Floating Steps.003
+    3300040: Floating Steps.004
+    3300042: Floating Steps.005
+    3300044: Floating Steps.006
+    3300046: Floating Steps.007
+    3300048: Floating Steps.008
+    3300050: Floating Steps.009
+    3300052: Floating Steps.010
+    3300054: Floating Steps.011
+    3300056: Floating Steps.012
+    3300058: Floating Steps.013
+    3300060: Floating Steps.014
+    3300062: Floating Steps.015
+    3300064: Floating Steps.016
+    3300066: Floating Steps.017
+    3300068: Floating Steps.018
+    3300070: Floating Steps.019
+    3300072: Floating Steps.020
+    3300074: Floating Steps.021
+    3300076: Floating Steps.022
+    3300078: Floating Steps.023
+    3300080: Floating Steps.024
+    3300082: Floating Steps.025
+    3300084: Floating Steps.026
+    3300086: Floating Steps.027
+    3300088: Floating Steps.028
+    3300090: Floating Steps.029
+    3300092: Floating Steps.030
+    3300094: Floating Steps.031
+    3300096: Floating Steps.032
+    3300098: Floating Steps.033
+    3300100: Floating Steps.034
+    3300102: Floating Steps.035
+    3300104: Floating Steps.036
+    3300106: Floating Steps.037
+    3300108: Floating Steps.038
+    3300110: Floating Steps.039
+    3300112: Floating Steps.040
+    3300114: Floating Steps.041
+    3300116: Floating Steps.042
+    3300118: Floating Steps.043
+    3300120: Floating Steps.044
+    3300122: Floating Steps.045
+    3300124: Floating Steps.046
+    3300126: Floating Steps.047
+    3300128: Floating Steps.048
+    3300130: Floating Steps.049
+    3300132: Floating Steps.050
+    3300134: Floating Steps.051
+    3300136: Floating Steps.052
+    3300138: Floating Steps.053
+    3300140: Floating Steps.054
+    3300142: Floating Steps.055
+    3300144: Floating Steps.056
+    3300146: Floating Steps.057
+    3300148: Floating Steps.058
+    3300150: Floating Steps.059
+    3300152: Floating Steps.060
+    3300154: Floating Steps.061
+    3300156: Floating Steps.062
+    3300158: Floating Steps.063
+    3300160: Floating Steps.064
+    3300162: Floating Steps.065
+    3300164: Floating Steps.066
+    3300166: Floating Steps.067
+    3300168: Floating Steps.068
+    3300170: Floating Steps.069
+    3300172: Floating Steps.070
+    3300174: Floating Steps.071
+    3300176: Floating Steps.072
+    3300178: Floating Steps.073
+    3300180: Floating Steps.074
+    3300182: Floating Steps.075
+    3300184: Floating Steps.076
+    3300186: Floating Steps.077
+    3300188: Floating Steps.078
+    3300190: Floating Steps.079
+    3300192: Floating Steps.080
+    3300194: Floating Steps.081
+    3300196: Floating Steps.082
+    3300198: Floating Steps.083
+    3300200: Floating Steps.084
+    3300202: Floating Steps.085
+    3300204: Floating Steps.086
+    3300206: Floating Steps.087
+    3300208: Floating Steps.088
+    3300210: Floating Steps.089
+    3300212: Floating Steps.090
+    3300214: Floating Steps.091
+    3300216: Floating Steps.092
+    3300218: Floating Steps.093
+    3300220: Floating Steps.094
+    3300222: Floating Steps.095
+    3300224: Floating Steps.096
+    3300226: Floating Steps.097
+    3300228: Floating Steps.098
+    3300230: Floating Steps.099
+    3300232: Floating Steps.100
+    3300234: Floating Steps.101
+    3300236: Floating Steps.102
+    3300238: Floating Steps.103
+    3300240: Floating Steps.104
+    3300242: Floating Steps.105
+    3300244: Floating Steps.106
+    3300246: Floating Steps.107
+    3300248: Floating Steps.108
+    3300250: Floating Steps.109
+    3300252: Floating Steps.110
+    3300254: Floating Steps.111
+    3300256: Floating Steps.112
+    3300258: Floating Steps.113
+    3300260: Floating Steps.114
+    3300262: Floating Steps.115
+    3300264: Floating Steps.116
+    3300266: Floating Steps.117
+    3300268: Floating Steps.118
+    3300270: Floating Steps.119
+    3300272: Floating Steps.120
+    3300274: Floating Steps.121
+    3300276: Floating Steps.122
+    3300278: Floating Steps.123
+    3300280: Floating Steps.124
+    3300282: Floating Steps.125
+    3300284: Floating Steps.126
+    3300286: Floating Steps.127
+    3300288: Floating Steps.128
+    3300290: Floating Steps.129
+    3300292: Floating Steps.130
+    3300294: Floating Steps.131
+    3300296: Floating Steps.132
+    3300298: Floating Steps.133
+    3300300: Floating Steps.134
+    3300302: Floating Steps.135
+    3300304: Floating Steps.136
+    3300306: Floating Steps.137
+    3300308: Floating Steps.138
+    3300310: Floating Steps.139
+    3300312: Floating Steps.140
+    3300314: Floating Steps.141
+    3300316: Floating Steps.142
+    3300318: Floating Steps.143
+    3300320: Floating Steps.144
+    3300322: Floating Steps.145
+    3300324: Floating Steps.146
+    3300326: Floating Steps.147
+    3300328: Floating Steps.148
+    3300330: Floating Steps.149
+    3300332: Floating Steps.150
+    3300334: Floating Steps.151
+    3300336: Floating Steps.152
+    3300338: Floating Steps.153
+    3300340: Floating Steps.154
+    3300342: Floating Steps.155
+    3300344: Floating Steps.156
+    3300346: Floating Steps.157
+    3300348: Floating Steps.158
+    3300350: Floating Steps.159
+    3300352: Floating Steps.160
+    3300354: Floating Steps.161
+    3300356: Floating Steps.162
+    3300358: Floating Steps.163
+    3300360: Floating Steps.164
+    3300362: Floating Steps.165
+    3300364: Floating Steps.166
+    3300366: Floating Steps.167
+    3300368: Floating Steps.168
+    3300370: Floating Steps.169
+    3300372: Floating Steps.170
+    3300374: Floating Steps.171
+    3300376: Floating Steps.172
+    3300378: Floating Steps.173
+    3300380: Floating Steps.174
+    3300382: Floating Steps.175
+    3300384: Floating Steps.176
+    3300386: Floating Steps.177
+    3300388: Floating Steps.178
+    3300390: Floating Steps.179
+    3300392: Floating Steps.180
+    3300394: Floating Steps.181
+    3300396: Floating Steps.182
+    3300398: Floating Steps.183
+    3300400: Floating Steps.184
+    3300402: Floating Steps.185
+    3300404: Floating Steps.186
+    3300406: Floating Steps.187
+    3300408: Floating Steps.188
+    3300410: Floating Steps.189
+    3300412: Floating Steps.190
+    3300414: Floating Steps.191
+    3300416: Floating Steps.192
+    3300418: Floating Steps.193
+    3300420: Floating Steps.194
+    3300422: Floating Steps.195
+    3300424: Floating Steps.196
+    3300426: Floating Steps.197
+    3300428: Floating Steps.198
+    3300430: Floating Steps.199
+    3300432: Floating Steps.200
+    3300434: Floating Steps.201
+    3300436: Floating Steps.202
+    3300438: Floating Steps.203
+    3300440: Floating Steps.204
+    3300442: Floating Steps.205
+    3300444: Floating Steps.206
+    3300446: Floating Steps.207
+    3300448: Floating Steps.208
+    3300450: Floating Steps.209
+    3300452: Floating Steps.210
+    3300454: Floating Steps.211
+    3300456: Floating Steps.212
+    3300458: Floating Steps.213
+    3300460: Floating Steps.214
+    3300462: Floating Steps.215
+    3300464: Floating Steps.216
+    3300466: Floating Steps.217
+    3300468: Floating Steps.218
+    3300470: Floating Steps.219
+    3300472: Floating Steps.220
+    3300474: Floating Steps.221
+    3300476: Floating Steps.222
+    3300478: Floating Steps.223
+    3300480: Floating Steps.224
+    3300482: Floating Steps.225
+    3300484: Floating Steps.226
+    3300486: Floating Steps.227
+    3300488: Floating Steps.228
+    3300490: Floating Steps.229
+    3300492: Floating Steps.230
+    3300494: Floating Steps.231
+    3300496: Floating Steps.232
+    3300498: Floating Steps.233
+    3300500: Floating Steps.234
+    3300502: Floating Steps.235
+    3300504: Floating Steps.236
+    3300506: Floating Steps.237
+    3300508: Floating Steps.238
+    3300510: Floating Steps.239
+    3300512: Floor
+    3300514: Floor.001
+    3300516: Floor.002
+    3300518: Floor.003
+    3300520: Floor.004
+    3300522: Floor.005
+    3300524: Floor.006
+    3300526: Floor.007
+    3300528: Elevator Pannel
+    3300530: Elevator Pannel.001
+    3300532: Elevator Pannel.002
+    3300534: Elevator Pannel.003
+    3300536: Elevator Pannel.004
+    3300538: Elevator Pannel.005
+    3300540: Elevator Pannel.006
+    3300542: Elevator Pannel.007
+    3300544: Elevator Pannel.008
+    3300546: Elevator Pannel.009
+    4300000: Floor
+    4300002: Cylinder
+    4300004: Floating Steps
+    4300006: Floating Steps.001
+    4300008: Floating Steps.002
+    4300010: Floating Steps.003
+    4300012: Floating Steps.004
+    4300014: Floating Steps.005
+    4300016: Floating Steps.006
+    4300018: Floating Steps.007
+    4300020: Floating Steps.008
+    4300022: Floating Steps.009
+    4300024: Floating Steps.010
+    4300026: Floating Steps.011
+    4300028: Floating Steps.012
+    4300030: Floating Steps.013
+    4300032: Floating Steps.014
+    4300034: Floating Steps.015
+    4300036: Floating Steps.016
+    4300038: Floating Steps.017
+    4300040: Floating Steps.018
+    4300042: Floating Steps.019
+    4300044: Floating Steps.020
+    4300046: Floating Steps.021
+    4300048: Floating Steps.022
+    4300050: Floating Steps.023
+    4300052: Floating Steps.024
+    4300054: Floating Steps.025
+    4300056: Floating Steps.026
+    4300058: Floating Steps.027
+    4300060: Floating Steps.028
+    4300062: Floating Steps.029
+    4300064: BezierCurve.000
+    4300066: Floor.001
+    4300068: BezierCurve.001
+    4300070: Cylinder.001
+    4300072: Floating Steps.059
+    4300074: Floating Steps.058
+    4300076: Floating Steps.057
+    4300078: Floating Steps.056
+    4300080: Floating Steps.055
+    4300082: Floating Steps.054
+    4300084: Floating Steps.053
+    4300086: Floating Steps.052
+    4300088: Floating Steps.051
+    4300090: Floating Steps.050
+    4300092: Floating Steps.049
+    4300094: Floating Steps.048
+    4300096: Floating Steps.047
+    4300098: Floating Steps.046
+    4300100: Floating Steps.045
+    4300102: Floating Steps.044
+    4300104: Floating Steps.043
+    4300106: Floating Steps.042
+    4300108: Floating Steps.041
+    4300110: Floating Steps.040
+    4300112: Floating Steps.039
+    4300114: Floating Steps.038
+    4300116: Floating Steps.037
+    4300118: Floating Steps.036
+    4300120: Floating Steps.035
+    4300122: Floating Steps.034
+    4300124: Floating Steps.033
+    4300126: Floating Steps.032
+    4300128: Floating Steps.031
+    4300130: Floating Steps.030
+    4300132: Floor.002
+    4300134: BezierCurve.002
+    4300136: Cylinder.002
+    4300138: Floating Steps.089
+    4300140: Floating Steps.088
+    4300142: Floating Steps.087
+    4300144: Floating Steps.086
+    4300146: Floating Steps.085
+    4300148: Floating Steps.084
+    4300150: Floating Steps.083
+    4300152: Floating Steps.082
+    4300154: Floating Steps.081
+    4300156: Floating Steps.080
+    4300158: Floating Steps.079
+    4300160: Floating Steps.078
+    4300162: Floating Steps.077
+    4300164: Floating Steps.076
+    4300166: Floating Steps.075
+    4300168: Floating Steps.074
+    4300170: Floating Steps.073
+    4300172: Floating Steps.072
+    4300174: Floating Steps.071
+    4300176: Floating Steps.070
+    4300178: Floating Steps.069
+    4300180: Floating Steps.068
+    4300182: Floating Steps.067
+    4300184: Floating Steps.066
+    4300186: Floating Steps.065
+    4300188: Floating Steps.064
+    4300190: Floating Steps.063
+    4300192: Floating Steps.062
+    4300194: Floating Steps.061
+    4300196: Floating Steps.060
+    4300198: Floor.003
+    4300200: BezierCurve.003
+    4300202: Cylinder.003
+    4300204: Floating Steps.090
+    4300206: Floating Steps.091
+    4300208: Floating Steps.092
+    4300210: Floating Steps.093
+    4300212: Floating Steps.094
+    4300214: Floating Steps.095
+    4300216: Floating Steps.096
+    4300218: Floating Steps.097
+    4300220: Floating Steps.098
+    4300222: Floating Steps.099
+    4300224: Floating Steps.100
+    4300226: Floating Steps.101
+    4300228: Floating Steps.102
+    4300230: Floating Steps.103
+    4300232: Floating Steps.104
+    4300234: Floating Steps.105
+    4300236: Floating Steps.106
+    4300238: Floating Steps.107
+    4300240: Floating Steps.108
+    4300242: Floating Steps.109
+    4300244: Floating Steps.110
+    4300246: Floating Steps.111
+    4300248: Floating Steps.112
+    4300250: Floating Steps.113
+    4300252: Floating Steps.114
+    4300254: Floating Steps.115
+    4300256: Floating Steps.116
+    4300258: Floating Steps.117
+    4300260: Floating Steps.118
+    4300262: Floating Steps.119
+    4300264: Floor.004
+    4300266: BezierCurve.004
+    4300268: Cylinder.004
+    4300270: Floating Steps.149
+    4300272: Floating Steps.148
+    4300274: Floating Steps.147
+    4300276: Floating Steps.146
+    4300278: Floating Steps.145
+    4300280: Floating Steps.144
+    4300282: Floating Steps.143
+    4300284: Floating Steps.142
+    4300286: Floating Steps.141
+    4300288: Floating Steps.140
+    4300290: Floating Steps.139
+    4300292: Floating Steps.138
+    4300294: Floating Steps.137
+    4300296: Floating Steps.136
+    4300298: Floating Steps.135
+    4300300: Floating Steps.134
+    4300302: Floating Steps.133
+    4300304: Floating Steps.132
+    4300306: Floating Steps.131
+    4300308: Floating Steps.130
+    4300310: Floating Steps.129
+    4300312: Floating Steps.128
+    4300314: Floating Steps.127
+    4300316: Floating Steps.126
+    4300318: Floating Steps.125
+    4300320: Floating Steps.124
+    4300322: Floating Steps.123
+    4300324: Floating Steps.122
+    4300326: Floating Steps.121
+    4300328: Floating Steps.120
+    4300330: Floor.005
+    4300332: BezierCurve.005
+    4300334: Cylinder.005
+    4300336: Floating Steps.150
+    4300338: Floating Steps.151
+    4300340: Floating Steps.152
+    4300342: Floating Steps.153
+    4300344: Floating Steps.154
+    4300346: Floating Steps.155
+    4300348: Floating Steps.156
+    4300350: Floating Steps.157
+    4300352: Floating Steps.158
+    4300354: Floating Steps.159
+    4300356: Floating Steps.160
+    4300358: Floating Steps.161
+    4300360: Floating Steps.162
+    4300362: Floating Steps.163
+    4300364: Floating Steps.164
+    4300366: Floating Steps.165
+    4300368: Floating Steps.166
+    4300370: Floating Steps.167
+    4300372: Floating Steps.168
+    4300374: Floating Steps.169
+    4300376: Floating Steps.170
+    4300378: Floating Steps.171
+    4300380: Floating Steps.172
+    4300382: Floating Steps.173
+    4300384: Floating Steps.174
+    4300386: Floating Steps.175
+    4300388: Floating Steps.176
+    4300390: Floating Steps.177
+    4300392: Floating Steps.178
+    4300394: Floating Steps.179
+    4300396: Floor.006
+    4300398: BezierCurve.006
+    4300400: Cylinder.006
+    4300402: Floating Steps.209
+    4300404: Floating Steps.208
+    4300406: Floating Steps.207
+    4300408: Floating Steps.206
+    4300410: Floating Steps.205
+    4300412: Floating Steps.204
+    4300414: Floating Steps.203
+    4300416: Floating Steps.202
+    4300418: Floating Steps.201
+    4300420: Floating Steps.200
+    4300422: Floating Steps.199
+    4300424: Floating Steps.198
+    4300426: Floating Steps.197
+    4300428: Floating Steps.196
+    4300430: Floating Steps.195
+    4300432: Floating Steps.194
+    4300434: Floating Steps.193
+    4300436: Floating Steps.192
+    4300438: Floating Steps.191
+    4300440: Floating Steps.190
+    4300442: Floating Steps.189
+    4300444: Floating Steps.188
+    4300446: Floating Steps.187
+    4300448: Floating Steps.186
+    4300450: Floating Steps.185
+    4300452: Floating Steps.184
+    4300454: Floating Steps.183
+    4300456: Floating Steps.182
+    4300458: Floating Steps.181
+    4300460: Floating Steps.180
+    4300462: Floor.007
+    4300464: BezierCurve.007
+    4300466: Cylinder.007
+    4300468: Floating Steps.210
+    4300470: Floating Steps.211
+    4300472: Floating Steps.212
+    4300474: Floating Steps.213
+    4300476: Floating Steps.214
+    4300478: Floating Steps.215
+    4300480: Floating Steps.216
+    4300482: Floating Steps.217
+    4300484: Floating Steps.218
+    4300486: Floating Steps.219
+    4300488: Floating Steps.220
+    4300490: Floating Steps.221
+    4300492: Floating Steps.222
+    4300494: Floating Steps.223
+    4300496: Floating Steps.224
+    4300498: Floating Steps.225
+    4300500: Floating Steps.226
+    4300502: Floating Steps.227
+    4300504: Floating Steps.228
+    4300506: Floating Steps.229
+    4300508: Floating Steps.230
+    4300510: Floating Steps.231
+    4300512: Floating Steps.232
+    4300514: Floating Steps.233
+    4300516: Floating Steps.234
+    4300518: Floating Steps.235
+    4300520: Floating Steps.236
+    4300522: Floating Steps.237
+    4300524: Floating Steps.238
+    4300526: Floating Steps.239
+    4300528: Elevator Pannel
+    4300530: Elevator Pannel.001
+    4300532: Elevator Pannel.002
+    4300534: Elevator Pannel.003
+    4300536: Elevator Pannel.004
+    4300538: Elevator Pannel.005
+    4300540: Elevator Pannel.006
+    4300542: Elevator Pannel.007
+    4300544: Elevator Pannel.008
+    4300546: Elevator Pannel.009
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.001
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.002
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.003
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.004
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.005
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.006
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.007
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.008
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Gold.009
+    second: {fileID: 2100000, guid: f37aeda155044e542aca2528d3603990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.001
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.002
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.003
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.004
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.005
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.006
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.007
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.008
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator Panel.009
+    second: {fileID: 2100000, guid: 734de578e3c52fa42a64ae92fc8f658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Brass
+    second: {fileID: 2100000, guid: 91e447b23e84a4b49b2540a26ecb4631, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Brass.001
+    second: {fileID: 2100000, guid: fa9fc1e0983eb194bab0958ca3df3e19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Brass.002
+    second: {fileID: 2100000, guid: b9fe3c3054572e3428c313f4b4316b82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Brass.003
+    second: {fileID: 2100000, guid: 968e9d08aaed89c4286a3d46bbde1659, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Brass.004
+    second: {fileID: 2100000, guid: a3aefba6e5268654caeb624ff363d837, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Brass.005
+    second: {fileID: 2100000, guid: a77a3304851a4fc47a67418bd0258f37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Brass.006
+    second: {fileID: 2100000, guid: 09a64cba36da1ac4db9d38a28f63a019, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Brass.007
+    second: {fileID: 2100000, guid: 8b52d729fc28d134eb592a5b05845f0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Handle
+    second: {fileID: 2100000, guid: 1c64f58c59e02d7409091a70f9892ab2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Handle.001
+    second: {fileID: 2100000, guid: f118fece2f8fc4648a811db3b22aa67f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Handle.002
+    second: {fileID: 2100000, guid: e3b92a45b00004f409e2e801d999881e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Handle.003
+    second: {fileID: 2100000, guid: 2bbd625fa41d0204784bc7c7ed6dd0ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Handle.004
+    second: {fileID: 2100000, guid: 546f3e38eebb3ff409537b7905f1aa99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Handle.005
+    second: {fileID: 2100000, guid: 5cb10a056fd1e3f429367d708b444f51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Handle.006
+    second: {fileID: 2100000, guid: 34acddefa74095041b5c06a927d6df68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever Handle.007
+    second: {fileID: 2100000, guid: 51086e56aae1fdb42b493974f7cc65fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 9fb07d7c3951d3242b0ef41c054c75e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 4f509b9d8d0c68f4fa0661ee2f9810db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 6d071893601749e4c9b4cd345f8bf759, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 7fc4a00729a8ff746925be596157981e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 5a5789ca9487cf343986d94c39cad16d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: e52a01fd38ab82647ab646b197f2a168, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: fc90d94c72b1df24db2fbf81653f233d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: cf407126483a65f4ba9c0cf63f9eea42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: 19ef4f23626aa3344b50a4ad22781e90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: 973811e4220a4264294571d89fc5788d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: dcf63d7cb9c414d4789a30eff323bbf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 7003e1518f70aa443968b1da41df06e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: b1c486bf0885274438a5534ea6b07243, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: 4e37b0c39ff1e524e96ef6dfd9acb8c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.016
+    second: {fileID: 2100000, guid: dda85bee88bdb73438fc837b7e05c578, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.017
+    second: {fileID: 2100000, guid: e993c0ba1a2a58c4f8c63e6bb195125e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps
+    second: {fileID: 2100000, guid: a07511be739b85f40b269bbc72934468, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps.001
+    second: {fileID: 2100000, guid: 961777668b57a574d874c79c86a864d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps.002
+    second: {fileID: 2100000, guid: 095991a8ff9f1df4ab718825f9343232, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps.003
+    second: {fileID: 2100000, guid: 27926ee7ebebb674f8b61169ad72d8d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps.004
+    second: {fileID: 2100000, guid: 0a5c9b0b267c98041bab00dc32dd3139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps.005
+    second: {fileID: 2100000, guid: 657275a15c3d85240a5e9d4396cef96c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps.006
+    second: {fileID: 2100000, guid: 47257251826171c4d8ae04dfc9650ce6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steps.007
+    second: {fileID: 2100000, guid: e0a2d9bd199cafc4cabb76c182573978, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.4
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

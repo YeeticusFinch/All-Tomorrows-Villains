@@ -98,6 +98,21 @@ public class GameManager : MonoBehaviour {
             charId = sceneCamera.GetComponent<SceneCameraRotate>().charId;
     }
 
+    public void otherHitStuff(RaycastHit hit, float dmg, string dmgType, int num, string save, GameObject sender)
+    {
+        if(hit.collider.gameObject.tag == "Lever")
+        {
+            ShipFloor floor = ShipFloor.floorMap[ShipFloor.leverMap[hit.collider.gameObject]].GetComponent<ShipFloor>();
+            if (floor != null)
+            {
+                floor.toggleSteps();
+            }
+        } else if (hit.collider.gameObject.tag == "Elevator")
+        {
+            sender.GetComponent<Player>().chara.creature.elevatorSelect(hit.collider.gameObject.GetComponent<Elevator>().floorNum);
+        }
+    }
+
     #region Player tracking
 
     private const string PLAYER_ID_PREFIX = "Player ";

@@ -12,13 +12,16 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -331,6 +334,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Creatures\KonsRilae.cs" />
     <Compile Include="Assets\_MK\MKGlow\Components\Legacy\CameraDataLegacy.cs" />
     <Compile Include="Assets\_MK\MKGlow\Components\Legacy\MKGlow.cs" />
     <Compile Include="Assets\_MK\MKGlow\Components\Legacy\SettingsLegacy.cs" />
@@ -388,6 +392,7 @@
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Creatures\Beholder.cs" />
     <Compile Include="Assets\Scripts\Creatures\Carl.cs" />
+    <Compile Include="Assets\Scripts\Creatures\CarlWatch.cs" />
     <Compile Include="Assets\Scripts\Creatures\Creature.cs" />
     <Compile Include="Assets\Scripts\Creatures\Elizabeth.cs" />
     <Compile Include="Assets\Scripts\Creatures\harpy.cs" />
@@ -396,6 +401,7 @@
     <Compile Include="Assets\Scripts\Creatures\TestSphere.cs" />
     <Compile Include="Assets\Scripts\Creatures\Tolivunt.cs" />
     <Compile Include="Assets\Scripts\Effects.cs" />
+    <Compile Include="Assets\Scripts\Elevator.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GroundControl.cs" />
     <Compile Include="Assets\Scripts\MatchSettings.cs" />
@@ -407,10 +413,12 @@
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\SceneCameraRotate.cs" />
     <Compile Include="Assets\Scripts\selecter.cs" />
+    <Compile Include="Assets\Scripts\ShipFloor.cs" />
     <Compile Include="Assets\Scripts\SoundLib.cs" />
     <Compile Include="Assets\Scripts\Tentacle.cs" />
     <Compile Include="Assets\Scripts\Tentacle3D.cs" />
     <Compile Include="Assets\Scripts\TubeRenderer.cs" />
+    <Compile Include="Assets\Scripts\WingOfAeonsAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FlexibleCelShader\Shaders\CelNoOutline.shader" />
@@ -419,7 +427,125 @@
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
     <None Include="Assets\LeanTween\License.txt" />
     <None Include="Assets\LeanTween\ReadMe.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\7NationA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\7NationArmy.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\7NationB.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\ACruelAngelsThesis.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\AllStar.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\BangA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\BangB.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\BangC.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Beasters.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Believer.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\BohemianRapsody.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\BrassKnob.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Butterfly.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Cantina.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CelloConcerto.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Changes.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CharolofBells.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Cohen.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CohenA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CohenB.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CohenC.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Control.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CrabA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CrabB.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CrabC.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CrabRave.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CrazyTrain.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Criminal.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CriticalRole.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CruelAngelsMeme.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CrystalA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\CrystalB.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\DanceMonkey.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\DanishChristmas.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\DearSociety.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Despacito.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\DoctorWhoTheme.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Dragonborn.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Entertainer.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\EvilMorty.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Fade.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\FeedTheMachine.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Firstep.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\ForWhomtheBellTolls.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Fortuna.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\GhostFight.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Giorno.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\GoodbyeMoonmen.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\GourmetA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\GourmetB.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\GreatWar.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\HappyBirthday.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\HeatWaves.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Heathens.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\HyattA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\HyattB.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\HyattC.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\IAmTheDoctor.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\ICantDecide.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\IWasMadeToLoveYou.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\ImagineCommunism.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Insanity.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\JazzInParis.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\KissofDeath.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\LifeIsAHighway.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\LovetheWayYouLie.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\MapleLeafRag.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\MarbleMachine.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Mario.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Memelovania.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\MoonageDaydream.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Natural.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\OldTownRoad.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Outofblack.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\OverwatchTheme.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Pigstep.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\ReysTheme.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\RickandMorty.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\RussianCrab.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Secunda.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Senorita.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Sherlock.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SolarPower.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SonatainC3rdMovement.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SpaceOddity.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SpookyScarySkeletons.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\StairwaytoHeaven.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\StrangerThingsTitleScreen.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SuperGirl.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Swan.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SweetChildofMine.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SweetDreams.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SweetDreamsKahoot.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\SweetbutPsycho.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\TakeOnMe.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Teeth.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\TeethA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\TeethB.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\TheFollowingTheme.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\TheOtherSideofParadise.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\ThomastheDankEngine.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Thunderstruck.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Traitor.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Tubbo.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\USSRAnthem.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Ward.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Waterloo.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\WidePutin.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\WinterWonderland.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\YMCA.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\Zenzenzense.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\clair.txt" />
+    <None Include="Assets\Scripts\Creatures\carl_watch_data\theDay.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="Assets\_MK\MKGlow\Shaders\Effect\MKGlowSM20.shader" />
     <None Include="Assets\_MK\MKGlow\Shaders\Effect\MKGlowSM25.shader" />

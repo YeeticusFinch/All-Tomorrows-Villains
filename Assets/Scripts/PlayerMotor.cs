@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour {
@@ -38,7 +39,7 @@ public class PlayerMotor : MonoBehaviour {
 
     public void Move(Vector3 vel)
     {
-        vel.y += rb.velocity.y;
+        //vel.y += rb.velocity.y;
         velocity = vel;
     }
 
@@ -59,6 +60,30 @@ public class PlayerMotor : MonoBehaviour {
         //if (rollTarget > 0)
         //    Debug.Log("rollTarget = " + rollTarget);
     }
+
+    public void Jump(Vector3 f)
+    {
+        int n = 5;
+        int delay = 10;
+        Vector3 step = (f.normalized*2000+0.1f*f) / n;
+        if (!isJumping)
+            StartCoroutine(ForceInstallments(step, n, delay));
+        //force = f;
+        //rollTarget = -Mathf.Clamp(Vector3.Dot(f, cam.transform.right) / 20f, -90f, 90f);
+        //if (rollTarget > 0)
+        //    Debug.Log("rollTarget = " + rollTarget);
+    }
+
+    public Vector3 getVelocity()
+    {
+        return new Vector3(rb.velocity.x, Mathf.Max(0, rb.velocity.y), rb.velocity.z);
+    }
+
+    public Vector3 getHorizontalVelocity()
+    {
+        return new Vector3(rb.velocity.x, 0, rb.velocity.z);
+    }
+
     public Vector3 getThruster()
     {
         return force;
@@ -81,7 +106,7 @@ public class PlayerMotor : MonoBehaviour {
             GetComponent<Player>().CmdRotate(GetComponent<Player>().model.transform.eulerAngles);
         fi++;
         fi %= 10000;
-    }    
+    }   
 
     void PerformMovement()
     {
@@ -98,16 +123,19 @@ public class PlayerMotor : MonoBehaviour {
         if (velocity != Vector3.zero)
         {
             //rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-            rb.velocity += MinV(velocity - rb.velocity, 0.2f*(velocity - rb.velocity).normalized);
+            //if (Mathf.Abs(velocity.y) < 0.1f )
+            //    rb.velocity += CarlMath.compMult(MinV(velocity - rb.velocity, 0.2f * (velocity - rb.velocity).normalized), 1, 0, 1);
+            //else
+                rb.velocity += MinV(velocity + rb.velocity.y * Vector3.up - rb.velocity, 0.2f*(velocity + rb.velocity.y * Vector3.up - rb.velocity).normalized);
             //rb.velocity = velocity;
             //Debug.Log("Velocity = " + rb.velocity + " Target Velocity = " + velocity);
             velocity = MaxV(velocity - 0.1f * velocity.normalized, Vector3.zero);
             if (velocity.magnitude < 0.1f)
                 velocity = Vector3.zero;
         }
-        if (force != Vector3.zero)
+        if (force + jumpForce != Vector3.zero)
         {
-            rb.AddForce(force*Time.fixedDeltaTime, ForceMode.Acceleration);
+            rb.AddForce((force+jumpForce)*Time.fixedDeltaTime, ForceMode.Acceleration);
             force = MaxV(force - 0.1f * force.normalized, Vector3.zero);
         }
     }
@@ -193,5 +221,29 @@ public class PlayerMotor : MonoBehaviour {
         if (Mathf.Abs(acceleration.y) > 0.001)
             return false;
         return true;
+    }
+
+    public bool isJumping = false;
+    public Vector3 jumpForce = Vector3.zero;
+
+    IEnumerator ForceInstallments(Vector3 step, int n, int delay)
+    {
+        if (!isJumping)
+        {
+            isJumping = true;
+            jumpForce = Vector3.zero;
+            for (int i = 0; i < n; i++)
+            {
+                jumpForce += step;
+                yield return new WaitForSecondsRealtime(delay/1000f);
+            }
+            for (int i = 0; i < n; i++)
+            {
+                jumpForce -= step;
+                yield return new WaitForSecondsRealtime(delay / 1000f);
+            }
+            jumpForce = Vector3.zero;
+            isJumping = false;
+        }
     }
 }

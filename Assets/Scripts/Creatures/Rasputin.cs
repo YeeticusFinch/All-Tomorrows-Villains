@@ -46,8 +46,11 @@ public class Rasputin : Creature {
         }
     }
 
+    ParticleSystem[] particles;
+
     private void Start()
     {
+        particles = GetComponent<Character>().particles;
         anim = GetComponent<Animator>();
     }
 
@@ -102,6 +105,10 @@ public class Rasputin : Creature {
             else if (Mathf.Abs(anim.GetCurrentAnimatorStateInfo(0).normalizedTime - (int)anim.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.1f) < 0.1f)
                 flapped = false;
         }
+        if (particles[0].isPlaying)
+            for (int i = 0; i < particles.Length; i++)
+                if (particles[i].isPlaying)
+                    particles[i].Stop();
     }
 
     public override void specialAnim(float speed)
@@ -109,6 +116,10 @@ public class Rasputin : Creature {
         anim.SetBool("isKazachoking", true);
         if (!anim.GetBool("isPunching") && !anim.GetBool("isShooting")) {
             anim.Play("Kazachok");
+            if (particles[0].isPlaying)
+                for (int i = 0; i < particles.Length; i++)
+                    if (particles[i].isPlaying)
+                        particles[i].Stop();
         }
     }
 
@@ -120,6 +131,10 @@ public class Rasputin : Creature {
             anim.Play("Idle");
         anim.SetBool("isFlying", false);
         anim.SetBool("isWalking", false);
+        if (particles[0].isPlaying)
+            for (int i = 0; i < particles.Length; i++)
+                if (particles[i].isPlaying)
+                    particles[i].Stop();
     }
     public override void flyAnim(float speed)
     {
@@ -130,6 +145,10 @@ public class Rasputin : Creature {
         if (!anim.GetBool("isPunching") && !anim.GetBool("isShooting") && !anim.GetBool("isKazachoking"))
         {
             anim.Play("Fly");
+            if (!particles[0].isPlaying)
+                for (int i = 0; i < particles.Length; i++)
+                    if (!particles[i].isPlaying)
+                        particles[i].Play();
             //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime
             /*if (GameManager.instance != null && !flapped && Mathf.Abs(anim.GetCurrentAnimatorStateInfo(0).normalizedTime - (int)anim.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.3f) < 0.1f)
             {

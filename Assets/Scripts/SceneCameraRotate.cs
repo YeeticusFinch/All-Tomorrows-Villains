@@ -42,6 +42,9 @@ public class SceneCameraRotate : MonoBehaviour {
     public float[] shit = new float[9];
 
     public int charId = 0;
+
+    int[] hidden = new int[] { 10 };
+
     int[][] selArr = new int[][] { 
         new int[] { 0 }, 
         new int[] { 1, 2, 3 },
@@ -50,16 +53,17 @@ public class SceneCameraRotate : MonoBehaviour {
         new int[] { 8 },
         new int[] { 9, 10 },
         new int[] { 11 },
+        new int[] { 12 },
     };
 
     float[] scalers = new float[]
     {
-        1.8f, 0.8f, 0.8f, 0.8f, 1.7f, 1.7f, 1.3f, 1.7f, 1.8f, 2, 2, 1.4f
+        1.8f, 0.8f, 0.8f, 0.8f, 1.7f, 1.7f, 1.3f, 1.7f, 1.8f, 2, 2, 1.4f, 1.8f,
     };
 
     float[] translaters = new float[]
     {
-        0, 0, 0, 0, -0.7f, -0.7f, -1.3f, -0.7f, -1.3f, -1.3f, -1.3f, -1.4f
+        0, 0, 0, 0, -0.7f, -0.7f, -1.3f, -0.7f, -1.3f, -1.3f, -1.3f, -1.4f, -1.3f,
     };
     /*
     float[][] scalers = new float[][] {
@@ -94,12 +98,28 @@ public class SceneCameraRotate : MonoBehaviour {
         updateText();
     }
 	
+    bool Contains(int[] a, int b)
+    {
+        foreach (int e in a)
+            if (e == b) return true;
+        return false;
+    }
 
     void updateChar()
     {
-        ii = CarlMath.modClamp(ii, selArr.Length);
-        jj = CarlMath.modClamp(jj, selArr[ii].Length);
-        charId = selArr[ii][jj];
+        int iii = 0;
+        do {
+            ii = CarlMath.modClamp(ii, selArr.Length);
+            jj = CarlMath.modClamp(jj, selArr[ii].Length);
+            charId = selArr[ii][jj];
+            if (Contains(hidden, charId))
+            {
+                jj++;
+                iii++;
+                if (iii >= 10)
+                    ii++;
+            }
+        } while (Contains(hidden, charId));
         GameObject.Destroy(tempModel);
         tempModel = Instantiate(playables[charId], charDisplay.transform.position, charDisplay.transform.rotation);
         tempModel.transform.SetParent(charDisplay.transform);

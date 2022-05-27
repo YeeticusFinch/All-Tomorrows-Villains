@@ -8,6 +8,11 @@ TagManager:
   - PauseMenu
   - Button
   - Head
+  - Stairs
+  - Water
+  - Lever
+  - Stairs2
+  - Elevator
   layers:
   - Default
   - TransparentFX

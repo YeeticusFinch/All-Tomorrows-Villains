@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private LayerMask jumpMask;
 
+    public Vector3 slopeMoveDirection;
+
     void Start () {
         motor = GetComponent<PlayerMotor>();
 	}
@@ -75,14 +77,14 @@ public class PlayerController : MonoBehaviour {
             if (speed == flySpeed * (Input.GetButton("Sprint") ? 2 : 1))
             {
                 Vector3 movDir = ((Quaternion.AngleAxis(-motor.roll, motor.cam.transform.forward) * motor.cam.transform.right) * xMov + motor.cam.transform.up * yMov + motor.cam.transform.forward * zMov).normalized;
-                //float tempSpeed = Mathf.Min((movDir*speed - motor.rb.velocity).magnitude, speed);
+                //float tempSpeed = Mathf.Min((movDir*speed - motor.getVelocity()).magnitude, speed);
                 //velocity += movDir * tempSpeed;
-                velocity += CarlMath.MinV(movDir * speed - motor.rb.velocity, speed * (movDir * speed - motor.rb.velocity).normalized);
+                velocity += CarlMath.MinV(movDir * speed - motor.getVelocity(), speed * (movDir * speed - motor.getVelocity()).normalized);
                 //creature.flyAnim((Input.GetButton("Sprint") ? 2 : 1) * zMov / Mathf.Abs(zMov));
             }
             else
             {
-                float tempSpeed = Mathf.Min(speed - motor.rb.velocity.magnitude, speed*4);
+                float tempSpeed = Mathf.Min(speed - motor.getHorizontalVelocity().magnitude, speed*4);
                 velocity += (transform.right * xMov + transform.forward * zMov).normalized * tempSpeed;
                 //Debug.Log("Walking vel = " + velocity);
                 //velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
@@ -141,20 +143,30 @@ public class PlayerController : MonoBehaviour {
             //if (maxSpeed)
             //    velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
             //velocity.y = jumpForce*10000000*3.15f;
-            motor.ApplyThruster(Vector3.up*jumpForce*1000);
+            motor.Jump(Vector3.up*jumpForce*1000);
         } /*else if ((Input.GetButton("Jump") || Input.GetButton("Crouch")) && flySpeed > 0)
         {
             maxSpeed = true;
             velocity += (Input.GetButton("Crouch") ? -1 : 1) * motor.cam.transform.up.normalized * flySpeed;
             velocity /= 1 + Mathf.Max(0, (motor.rb.velocity + velocity).magnitude - speed) / speed;
         }*/
-        if (motor.getThruster().magnitude > 0 && !(Input.GetButton("Jump") && grounded))
+        if (motor.getThruster().magnitude > 0 && !(Input.GetButton("Jump") && grounded) && !motor.isJumping)
         {
             motor.ApplyThruster(Vector3.zero);
         }
         //velocity *= Input.GetButton("Sprint") ? 2 : 1;
         //motor.ApplyThruster(velocity*100);
-        if (grounded) motor.Move(velocity);
+
+
+        if (grounded && !GetComponent<Player>().onSlope) motor.Move(velocity);
+        else if (grounded && GetComponent<Player>().onSlope)
+        {
+            //Debug.Log("ON-SLOPE " + Random.Range(-10000000, 10000000));
+            //if (GetComponent<Player>().onStairs)
+            //    Debug.Log("ON-STAIRCASE " + Random.Range(-10000000, 10000000));
+            slopeMoveDirection = Vector3.ProjectOnPlane(velocity, GetComponent<Player>().slopeNormal);
+            motor.Move(slopeMoveDirection + (GetComponent<Player>().onStairs && slopeMoveDirection.y > 0 ? Vector3.up*slopeMoveDirection.y : Vector3.zero));
+        }
         else
         {
             //Debug.Log("not grounded");

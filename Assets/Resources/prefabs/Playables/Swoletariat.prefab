@@ -62274,7 +62274,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948016532959180}
-  m_LocalRotation: {x: -0.1232655, y: 0.84582037, z: -0.5165957, w: -0.050222617}
+  m_LocalRotation: {x: -0.12326551, y: 0.8458205, z: -0.5165958, w: -0.050222624}
   m_LocalPosition: {x: 0.0004729042, y: 0.000014030363, z: 0.0016250722}
   m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 0.99999994}
   m_Children:
@@ -66849,7 +66849,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1544490581214916}
-  m_LocalRotation: {x: -0.29494536, y: -0.61439633, z: 0.6658679, w: -0.30355301}
+  m_LocalRotation: {x: -0.29494533, y: -0.6143963, z: 0.66586787, w: -0.303553}
   m_LocalPosition: {x: 0.0023895819, y: 0.000516084, z: 0.0150608905}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_Children:
@@ -67673,7 +67673,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1540349560782192}
-  m_LocalRotation: {x: -0.29494536, y: -0.61439633, z: 0.6658679, w: -0.30355301}
+  m_LocalRotation: {x: -0.29494533, y: -0.6143963, z: 0.66586787, w: -0.303553}
   m_LocalPosition: {x: 0.0023895819, y: 0.000516084, z: 0.0150608905}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_Children:
@@ -81011,6 +81011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11
   title: Swoletariat Lenin
+  size: huge
   AC: 16
   ACMagicBonus: 0
   HP: 104

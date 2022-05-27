@@ -1,0 +1,1719 @@
+fileFormatVersion: 2
+guid: 79cec26c9b4a29747989970728063797
+timeCreated: 1652628352
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: $$$DUMMY.Group31939
+    100002: Ballista
+    100004: BezierCurve.000
+    100006: BezierCurve.001
+    100008: BezierCurve.002
+    100010: BezierCurve.003
+    100012: BezierCurve.004
+    100014: BezierCurve.005
+    100016: BezierCurve.006
+    100018: BezierCurve.007
+    100020: BezierCurve.008
+    100022: BezierCurve.009
+    100024: BezierCurve.010
+    100026: BezierCurve.011
+    100028: BezierCurve.012
+    100030: BezierCurve.013
+    100032: BezierCurve.014
+    100034: BezierCurve.015
+    100036: BezierCurve.016
+    100038: BezierCurve.024
+    100040: BezierCurve.026
+    100042: BezierCurve.027
+    100044: Boom
+    100046: Cabin
+    100048: Cabin.001
+    100050: Cabin.002
+    100052: Chandelier
+    100054: Chandelier.001
+    100056: Circle
+    100058: Circle.001
+    100060: Circle.002
+    100062: Circle.003
+    100064: Circle.004
+    100066: Circle.005
+    100068: Circle.006
+    100070: Circle.007
+    100072: Compass Flame
+    100074: Compass Glass Sphere
+    100076: Compass Liquid
+    100078: Cube
+    100080: Cube.001
+    100082: Cube.002
+    100084: Cube.003
+    100086: Cube.005
+    100088: Cube.006
+    100090: Cube.007
+    100092: Cylinder.000
+    100094: Cylinder.001
+    100096: Cylinder.002
+    100098: Cylinder.003
+    100100: Cylinder.004
+    100102: Cylinder.005
+    100104: Cylinder.006
+    100106: Cylinder.010
+    100108: Cylinder.011
+    100110: Cylinder01.001
+    100112: Cylinder01.003
+    100114: Group31763
+    100116: Hull
+    100118: Hull Rails
+    100120: Plane
+    100122: Plane.001
+    100124: Plane.003
+    100126: Plane.004
+    100128: Plane.005
+    100130: Plane.006
+    100132: Plane.008
+    100134: Plane.009
+    100136: Plane.010
+    100138: Reference.000
+    100140: Shield
+    100142: Shield.001
+    100144: Shield.003
+    100146: Shield.004
+    100148: sub16.004
+    100150: TwistedTorus.000
+    100152: TwistedTorus.001
+    100154: //RootNode
+    100156: Field
+    100158: Plane.002
+    100160: BezierCurve.017
+    100162: Cube.004
+    100164: Windows Interio
+    100166: Plane.007
+    100168: Bottles
+    100170: Shelves
+    100172: Shelves.001
+    100174: Flag
+    100176: Sails
+    100178: ArmChair_01.002
+    100180: Circle.009
+    100182: Circle.010
+    100184: Cube.009
+    100186: Rockingchair_01
+    100188: Sofa_01
+    100190: Stool
+    100192: Icosphere.007
+    100194: Name Plaques
+    400000: $$$DUMMY.Group31939
+    400002: Ballista
+    400004: BezierCurve.000
+    400006: BezierCurve.001
+    400008: BezierCurve.002
+    400010: BezierCurve.003
+    400012: BezierCurve.004
+    400014: BezierCurve.005
+    400016: BezierCurve.006
+    400018: BezierCurve.007
+    400020: BezierCurve.008
+    400022: BezierCurve.009
+    400024: BezierCurve.010
+    400026: BezierCurve.011
+    400028: BezierCurve.012
+    400030: BezierCurve.013
+    400032: BezierCurve.014
+    400034: BezierCurve.015
+    400036: BezierCurve.016
+    400038: BezierCurve.024
+    400040: BezierCurve.026
+    400042: BezierCurve.027
+    400044: Boom
+    400046: Cabin
+    400048: Cabin.001
+    400050: Cabin.002
+    400052: Chandelier
+    400054: Chandelier.001
+    400056: Circle
+    400058: Circle.001
+    400060: Circle.002
+    400062: Circle.003
+    400064: Circle.004
+    400066: Circle.005
+    400068: Circle.006
+    400070: Circle.007
+    400072: Compass Flame
+    400074: Compass Glass Sphere
+    400076: Compass Liquid
+    400078: Cube
+    400080: Cube.001
+    400082: Cube.002
+    400084: Cube.003
+    400086: Cube.005
+    400088: Cube.006
+    400090: Cube.007
+    400092: Cylinder.000
+    400094: Cylinder.001
+    400096: Cylinder.002
+    400098: Cylinder.003
+    400100: Cylinder.004
+    400102: Cylinder.005
+    400104: Cylinder.006
+    400106: Cylinder.010
+    400108: Cylinder.011
+    400110: Cylinder01.001
+    400112: Cylinder01.003
+    400114: Group31763
+    400116: Hull
+    400118: Hull Rails
+    400120: Plane
+    400122: Plane.001
+    400124: Plane.003
+    400126: Plane.004
+    400128: Plane.005
+    400130: Plane.006
+    400132: Plane.008
+    400134: Plane.009
+    400136: Plane.010
+    400138: Reference.000
+    400140: Shield
+    400142: Shield.001
+    400144: Shield.003
+    400146: Shield.004
+    400148: sub16.004
+    400150: TwistedTorus.000
+    400152: TwistedTorus.001
+    400154: //RootNode
+    400156: Field
+    400158: Plane.002
+    400160: BezierCurve.017
+    400162: Cube.004
+    400164: Windows Interio
+    400166: Plane.007
+    400168: Bottles
+    400170: Shelves
+    400172: Shelves.001
+    400174: Flag
+    400176: Sails
+    400178: ArmChair_01.002
+    400180: Circle.009
+    400182: Circle.010
+    400184: Cube.009
+    400186: Rockingchair_01
+    400188: Sofa_01
+    400190: Stool
+    400192: Icosphere.007
+    400194: Name Plaques
+    2100000: owl gold
+    2100002: Owl Eyes
+    2100004: Material.036
+    2100006: Material.035
+    2100008: Material.034
+    2100010: Material.033
+    2100012: Material.012
+    2100014: Material.008
+    2100016: Chandelier Gold
+    2100018: Chandelier Glass
+    2100020: Chandelier Emission
+    2100022: Coat of Arms
+    2100024: Coat of Arms Metal
+    2100026: DashboardMahogany2
+    2100028: Assembly Flag
+    2100030: Material.063
+    2100032: Map Back
+    2100034: Map
+    2100036: Compass Flame Outer
+    2100038: Compass Flame Inner
+    2100040: glass ball holder
+    2100042: glass ball
+    2100044: Material.042
+    2100046: GlassBallHolderWood
+    2100048: Material.045
+    2100050: Front Mast
+    2100052: Back Mast
+    2100054: Material.071
+    2100056: horizontalMast
+    2100058: No Name
+    2100060: Material.041
+    2100062: DashboardMahogany2.001
+    2100064: mahoganyPlanks
+    2100066: mahoganyPlankFloor
+    2100068: mahogany 2
+    2100070: Mahogany
+    2100072: carpet
+    2100074: Top Mast
+    2100076: Mahogany 2 Rails
+    2100078: Mahogany.001
+    2100080: Material.048
+    2100082: Material.049
+    2100084: Material.046
+    2100086: Mahogany2StairsBig
+    2100088: Red Carpet
+    2100090: Mahogany2StairsSmall
+    2100092: red carpet
+    2100094: Material.047
+    2100096: Material.026
+    2100098: Material.025
+    2100100: Material.024
+    2100102: Material.023
+    2100104: Material.022
+    2100106: Material.021
+    2100108: Material.020
+    2100110: Material.019
+    2100112: Material.018
+    2100114: Material.017
+    2100116: Bronze Head
+    2100118: Bronze Head Horn Tips
+    2100120: Material.072
+    2100122: rope
+    2100124: Material.070
+    2100126: Material.014
+    2100128: mast
+    2100130: mahogany stairs.001
+    2100132: red carpet.001
+    2100134: Material.064
+    2100136: mahogany stairs
+    2100138: red carpet.002
+    2100140: Material.065
+    2100142: LeversBronze
+    2100144: LeversWood
+    2100146: Empire Flat
+    2100148: Banner.001
+    2100150: Baner Bar
+    2100152: Banner
+    2100154: Banner Bar
+    2100156: Material.106
+    2100158: Material.108
+    2100160: Material.107
+    2100162: Rope
+    2100164: Rope.002
+    2100166: Material.121
+    2100168: Rope.001
+    2100170: DialsBronzeCopper
+    2100172: DialsWhite
+    2100174: DialsRed
+    2100176: Assembly Plaque Bronze
+    2100178: Assembly Plaque
+    2100180: Small Levers Bronze
+    2100182: Small Levers Wood
+    2100184: WheelBronze.001
+    2100186: wheel mahogany2.001
+    2100188: wheel logo.001
+    2100190: steering wheel.001
+    2100192: WheelBronze
+    2100194: wheel mahogany2
+    2100196: steering wheel
+    2100198: Handbreak Bronze
+    2100200: Handbreak Wood
+    2100202: Handbreak Secondary
+    2100204: Coat of Arms.001
+    2100206: Coat of Arms Metal.001
+    2100208: Coat of Arms.003
+    2100210: Coat of Arms Metal.003
+    2100212: Coat of Arms.004
+    2100214: Coat of Arms Metal.004
+    2100216: Window Frame
+    2100218: Window Pane
+    2100220: Window Edges
+    2100222: lamp Bronze
+    2100224: lamp Glow
+    2100226: lamp Bronze.003
+    2100228: lamp Glow.003
+    2100230: Chandelier Gold.001
+    2100232: Chandelier Glass.001
+    2100234: Chandelier Emission.001
+    2100236: Material.001
+    2100238: mahoganyPlanks.001
+    2100240: Material.013
+    2100242: Material.009
+    2100244: Empire Flat.001
+    2100246: Assembly Flag.001
+    2100248: Material.050
+    2100250: Material.044
+    2100252: Material.043
+    2100254: Material.039
+    2100256: rope.001
+    2100258: Material.038
+    2100260: Material.037
+    2100262: Material.122
+    2100264: Material.124
+    2100266: Material.126
+    2100268: Material.127
+    2100270: Window Frame.001
+    2100272: Window Pane.001
+    2100274: Window Edges.001
+    2100276: Window Frame.002
+    2100278: Window Pane.002
+    2100280: Window Edges.002
+    2100282: Material.002
+    2100284: Material.000
+    2100286: Material.004
+    2100288: Vase
+    2100290: Tolivunts Boner
+    2100292: Ikithon's Foot
+    2100294: Red Liquor
+    2100296: Bottle Green
+    2100298: Material.125
+    2100300: Armchair_01
+    2100302: Teleport Circle Gold
+    2100304: Teleport Circle
+    2100306: Doors
+    2100308: Door frames
+    2100310: Coffee Table
+    2100312: Coffee Table Leg
+    2100314: Rockingchair_01
+    2100316: Sofa_01
+    2100318: Stool
+    2100320: Doorhandle
+    2100322: Door Plaques
+    2100324: Door text
+    2300000: Ballista
+    2300002: BezierCurve.000
+    2300004: BezierCurve.001
+    2300006: BezierCurve.002
+    2300008: BezierCurve.003
+    2300010: BezierCurve.004
+    2300012: BezierCurve.005
+    2300014: BezierCurve.006
+    2300016: BezierCurve.007
+    2300018: BezierCurve.008
+    2300020: BezierCurve.009
+    2300022: BezierCurve.010
+    2300024: BezierCurve.011
+    2300026: BezierCurve.012
+    2300028: BezierCurve.013
+    2300030: BezierCurve.014
+    2300032: BezierCurve.015
+    2300034: BezierCurve.016
+    2300036: BezierCurve.024
+    2300038: BezierCurve.026
+    2300040: BezierCurve.027
+    2300042: Boom
+    2300044: Cabin
+    2300046: Cabin.001
+    2300048: Cabin.002
+    2300050: Chandelier
+    2300052: Chandelier.001
+    2300054: Circle
+    2300056: Circle.001
+    2300058: Circle.002
+    2300060: Circle.003
+    2300062: Circle.004
+    2300064: Circle.005
+    2300066: Circle.006
+    2300068: Circle.007
+    2300070: Compass Flame
+    2300072: Compass Glass Sphere
+    2300074: Compass Liquid
+    2300076: Cube
+    2300078: Cube.001
+    2300080: Cube.002
+    2300082: Cube.003
+    2300084: Cube.005
+    2300086: Cube.006
+    2300088: Cube.007
+    2300090: Cylinder.000
+    2300092: Cylinder.001
+    2300094: Cylinder.002
+    2300096: Cylinder.003
+    2300098: Cylinder.004
+    2300100: Cylinder.005
+    2300102: Cylinder.006
+    2300104: Cylinder.010
+    2300106: Cylinder.011
+    2300108: Cylinder01.001
+    2300110: Cylinder01.003
+    2300112: Group31763
+    2300114: Hull
+    2300116: Hull Rails
+    2300118: Plane
+    2300120: Plane.001
+    2300122: Plane.003
+    2300124: Plane.004
+    2300126: Plane.005
+    2300128: Plane.006
+    2300130: Plane.008
+    2300132: Plane.009
+    2300134: Plane.010
+    2300136: Reference.000
+    2300138: Shield
+    2300140: Shield.001
+    2300142: Shield.003
+    2300144: Shield.004
+    2300146: sub16.004
+    2300148: TwistedTorus.000
+    2300150: TwistedTorus.001
+    2300152: Plane.002
+    2300154: BezierCurve.017
+    2300156: Cube.004
+    2300158: Windows Interio
+    2300160: Plane.007
+    2300162: Bottles
+    2300164: Shelves
+    2300166: Shelves.001
+    2300168: Flag
+    2300170: Sails
+    2300172: ArmChair_01.002
+    2300174: Circle.009
+    2300176: Circle.010
+    2300178: Cube.009
+    2300180: Rockingchair_01
+    2300182: Sofa_01
+    2300184: Stool
+    2300186: Icosphere.007
+    2300188: Name Plaques
+    3300000: Ballista
+    3300002: BezierCurve.000
+    3300004: BezierCurve.001
+    3300006: BezierCurve.002
+    3300008: BezierCurve.003
+    3300010: BezierCurve.004
+    3300012: BezierCurve.005
+    3300014: BezierCurve.006
+    3300016: BezierCurve.007
+    3300018: BezierCurve.008
+    3300020: BezierCurve.009
+    3300022: BezierCurve.010
+    3300024: BezierCurve.011
+    3300026: BezierCurve.012
+    3300028: BezierCurve.013
+    3300030: BezierCurve.014
+    3300032: BezierCurve.015
+    3300034: BezierCurve.016
+    3300036: BezierCurve.024
+    3300038: BezierCurve.026
+    3300040: BezierCurve.027
+    3300042: Boom
+    3300044: Cabin
+    3300046: Cabin.001
+    3300048: Cabin.002
+    3300050: Chandelier
+    3300052: Chandelier.001
+    3300054: Circle
+    3300056: Circle.001
+    3300058: Circle.002
+    3300060: Circle.003
+    3300062: Circle.004
+    3300064: Circle.005
+    3300066: Circle.006
+    3300068: Circle.007
+    3300070: Compass Flame
+    3300072: Compass Glass Sphere
+    3300074: Compass Liquid
+    3300076: Cube
+    3300078: Cube.001
+    3300080: Cube.002
+    3300082: Cube.003
+    3300084: Cube.005
+    3300086: Cube.006
+    3300088: Cube.007
+    3300090: Cylinder.000
+    3300092: Cylinder.001
+    3300094: Cylinder.002
+    3300096: Cylinder.003
+    3300098: Cylinder.004
+    3300100: Cylinder.005
+    3300102: Cylinder.006
+    3300104: Cylinder.010
+    3300106: Cylinder.011
+    3300108: Cylinder01.001
+    3300110: Cylinder01.003
+    3300112: Group31763
+    3300114: Hull
+    3300116: Hull Rails
+    3300118: Plane
+    3300120: Plane.001
+    3300122: Plane.003
+    3300124: Plane.004
+    3300126: Plane.005
+    3300128: Plane.006
+    3300130: Plane.008
+    3300132: Plane.009
+    3300134: Plane.010
+    3300136: Reference.000
+    3300138: Shield
+    3300140: Shield.001
+    3300142: Shield.003
+    3300144: Shield.004
+    3300146: sub16.004
+    3300148: TwistedTorus.000
+    3300150: TwistedTorus.001
+    3300152: Plane.002
+    3300154: BezierCurve.017
+    3300156: Cube.004
+    3300158: Windows Interio
+    3300160: Plane.007
+    3300162: Bottles
+    3300164: Shelves
+    3300166: Shelves.001
+    3300168: Flag
+    3300170: Sails
+    3300172: ArmChair_01.002
+    3300174: Circle.009
+    3300176: Circle.010
+    3300178: Cube.009
+    3300180: Rockingchair_01
+    3300182: Sofa_01
+    3300184: Stool
+    3300186: Icosphere.007
+    3300188: Name Plaques
+    4300000: sub16.004
+    4300002: BezierCurve.016
+    4300004: BezierCurve.014
+    4300006: BezierCurve.013
+    4300008: BezierCurve.012
+    4300010: BezierCurve.010
+    4300012: Circle.006
+    4300014: Chandelier
+    4300016: Shield
+    4300018: TwistedTorus.000
+    4300020: Plane
+    4300022: Cube.007
+    4300024: Cube.006
+    4300026: Compass Flame
+    4300028: Cube.005
+    4300030: Compass Glass Sphere
+    4300032: Compass Liquid
+    4300034: Cylinder.003
+    4300036: BezierCurve.007
+    4300038: Cube.001
+    4300040: Cube
+    4300042: Plane.005
+    4300044: Boom
+    4300046: Circle.003
+    4300048: Circle.001
+    4300050: TwistedTorus.001
+    4300052: Circle
+    4300054: Cabin
+    4300056: Cabin.001
+    4300058: Plane.004
+    4300060: Hull
+    4300062: Circle.002
+    4300064: BezierCurve.009
+    4300066: Circle.004
+    4300068: BezierCurve.001
+    4300070: BezierCurve.002
+    4300072: BezierCurve.003
+    4300074: BezierCurve.004
+    4300076: Ballista
+    4300078: Cylinder.001
+    4300080: Cylinder.002
+    4300082: Group31763
+    4300084: Plane.008
+    4300086: Plane.009
+    4300088: Cube.003
+    4300090: BezierCurve.006
+    4300092: BezierCurve.005
+    4300094: BezierCurve.008
+    4300096: BezierCurve.000
+    4300098: Cylinder.006
+    4300100: Plane.001
+    4300102: Plane.003
+    4300104: Plane.006
+    4300106: BezierCurve.024
+    4300108: Reference.000
+    4300110: BezierCurve.027
+    4300112: BezierCurve.026
+    4300114: BezierCurve.015
+    4300116: BezierCurve.011
+    4300118: Cylinder.011
+    4300120: Cube.002
+    4300122: Cylinder.010
+    4300124: Cylinder.004
+    4300126: Cylinder.005
+    4300128: Cylinder.000
+    4300130: Shield.001
+    4300132: Shield.003
+    4300134: Shield.004
+    4300136: Plane.010
+    4300138: Cylinder01.001
+    4300140: Cylinder01.003
+    4300142: Chandelier.001
+    4300144: Circle.005
+    4300146: Hull Rails
+    4300148: Cabin.002
+    4300150: Circle.007
+    4300152: Plane.002
+    4300154: BezierCurve.017
+    4300156: Cube.004
+    4300158: Windows Interio
+    4300160: Plane.007
+    4300162: Shelves
+    4300164: Shelves.001
+    4300166: Bottles
+    4300168: Flag
+    4300170: Sails
+    4300172: ArmChair_01.002
+    4300174: Circle.009
+    4300176: Circle.010
+    4300178: Cube.009
+    4300180: Rockingchair_01
+    4300182: Sofa_01
+    4300184: Stool
+    4300186: Icosphere.007
+    4300188: Name Plaques
+    7400000: Plane.001|Flapping
+    7400002: Plane.001|Key.001Action
+    7400004: Plane.001|KeyAction
+    7400006: Plane.009|Flapping
+    7400008: Plane.009|Key.001Action
+    7400010: Plane.009|KeyAction
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Plane.001
+    13700002: Plane.009
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Armchair_01
+    second: {fileID: 2100000, guid: 393fd4e5d11d714409e6d36d3905ea3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Assembly Flag
+    second: {fileID: 2100000, guid: f2136ec4068147e449aa4c02e6c39165, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Assembly Flag.001
+    second: {fileID: 2100000, guid: ef4cca81132cb5d42a15435e3f9d37a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Assembly Plaque
+    second: {fileID: 2100000, guid: 5f513e94fa523e34aaeb0c179875beb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Assembly Plaque Bronze
+    second: {fileID: 2100000, guid: 83e4be110fc30ed4a8fc33f3633dfc87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Back Mast
+    second: {fileID: 2100000, guid: 2f886a8aa19a0204eb01d8d95c6c8c48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baner Bar
+    second: {fileID: 2100000, guid: c10abcf784a660249a0a426eb3508539, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banner
+    second: {fileID: 2100000, guid: ddc633818e2c8a541bd62f3ac8121af5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banner Bar
+    second: {fileID: 2100000, guid: 29144bddcd67426498bce55235246986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banner.001
+    second: {fileID: 2100000, guid: dce22a4651c220d469d0107f82b017ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle Green
+    second: {fileID: 2100000, guid: 5bd5d4c40c3f1a04c9f703185d721e4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bronze Head
+    second: {fileID: 2100000, guid: 7ca0fec1a97e30044b099e1414c0c61c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bronze Head Horn Tips
+    second: {fileID: 2100000, guid: c462abe3cb37c3646b651cb545a06abb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chandelier Emission
+    second: {fileID: 2100000, guid: bc38a2eb8fa8d2442a31b3c0443e9437, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chandelier Emission.001
+    second: {fileID: 2100000, guid: 8d8c463147f8ed442ab5b95b1dece4bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chandelier Glass
+    second: {fileID: 2100000, guid: 64fd5d404a98b3c41aa006cd9ccd6f8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chandelier Glass.001
+    second: {fileID: 2100000, guid: f03f07ebbf6612945aef19de400502d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chandelier Gold
+    second: {fileID: 2100000, guid: 2ff3fe2d1b0bcb64fa9328b4e4a1e360, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chandelier Gold.001
+    second: {fileID: 2100000, guid: 6d2f60e2179a772448a983502680abf1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat of Arms
+    second: {fileID: 2100000, guid: 5fbd8f9da9dde1749bde53f353f5e421, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat of Arms Metal
+    second: {fileID: 2100000, guid: b7ba3575abb24ce49aec8ea691e5c56a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat of Arms Metal.001
+    second: {fileID: 2100000, guid: e2d30d1b2fc182d458b6aedbedbd9f4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat of Arms Metal.003
+    second: {fileID: 2100000, guid: d5d546c60e2a2cf45b6671c34c7ea79d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat of Arms Metal.004
+    second: {fileID: 2100000, guid: a8d3a72723f1ec64e92fcc32a3ea07ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat of Arms.001
+    second: {fileID: 2100000, guid: a438925ae33ba6d48b26748db14e1ba6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat of Arms.003
+    second: {fileID: 2100000, guid: 277479f1cd777ac479775acdd0d39e56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat of Arms.004
+    second: {fileID: 2100000, guid: 1f735c16ef9b5c44bac4c56fe1477de6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coffee Table
+    second: {fileID: 2100000, guid: 4c2eeebf69335954590e45531e74af6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coffee Table Leg
+    second: {fileID: 2100000, guid: 81cb919f9568f7e44b700a21839a14cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Compass Flame Inner
+    second: {fileID: 2100000, guid: e2fe0e87a6326f3459ab84cd124004c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Compass Flame Outer
+    second: {fileID: 2100000, guid: a3351f451ec287c429db771ba0a4e2e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DashboardMahogany2
+    second: {fileID: 2100000, guid: ee5e9ff9525fa1a47a8099a3f94e406f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DashboardMahogany2.001
+    second: {fileID: 2100000, guid: c9f8a29910e098b46a88b084383e099c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DialsBronzeCopper
+    second: {fileID: 2100000, guid: 4992ee71543fa164497129eba0985b03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DialsRed
+    second: {fileID: 2100000, guid: d8c83d946a981ed44acc5e49e5fbc906, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DialsWhite
+    second: {fileID: 2100000, guid: 468af104f8126fe4284ddfff6ad6c6ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door Plaques
+    second: {fileID: 2100000, guid: d9b2744524ce62343a2b81b414db8ca1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door frames
+    second: {fileID: 2100000, guid: 8309826647164e346a1a7ce13b0d4224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door text
+    second: {fileID: 2100000, guid: d500e983766c54642903a73ab9d6c2d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Doorhandle
+    second: {fileID: 2100000, guid: 833bd27bad6d5d248a3ab08efcac7cf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Doors
+    second: {fileID: 2100000, guid: d619a1a1843812345ae7f77b7764b206, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Empire Flat
+    second: {fileID: 2100000, guid: 10094707253fc1e4ba00e75ddb7ac766, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Empire Flat.001
+    second: {fileID: 2100000, guid: 2ca7eb3ff3601f441b6c4675b483973c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Front Mast
+    second: {fileID: 2100000, guid: 6e0f32af1ba695b4eaf3ac73648f9778, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassBallHolderWood
+    second: {fileID: 2100000, guid: b564ba80bebd67a4aa8f83c46e192d70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handbreak Bronze
+    second: {fileID: 2100000, guid: d1ca34cb5cc857347a8fcab7dfa545e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handbreak Secondary
+    second: {fileID: 2100000, guid: 344987aa954279742bd295e31cdd1333, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handbreak Wood
+    second: {fileID: 2100000, guid: 9d6dfff6209af414c88d86d1e2558bf2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ikithon's Foot
+    second: {fileID: 2100000, guid: 75b3dedf521a1d04db3566287ce04a76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LeversBronze
+    second: {fileID: 2100000, guid: 6d065c56ca3bbef4eb5f4eff8af71bbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LeversWood
+    second: {fileID: 2100000, guid: 1f01cd2f4dfcf61479a85efcb112635e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mahogany
+    second: {fileID: 2100000, guid: aa7416b247d0cf44da65f24ab9279fdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mahogany 2 Rails
+    second: {fileID: 2100000, guid: 53e05990e15dcce498302b7dae0c222c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mahogany.001
+    second: {fileID: 2100000, guid: 786c8ce084dd95243b72432e0e292b71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mahogany2StairsBig
+    second: {fileID: 2100000, guid: 7f06703e095fc764d91588d7033e2e6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mahogany2StairsSmall
+    second: {fileID: 2100000, guid: bdadc25b97299f040a220fda88747186, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map
+    second: {fileID: 2100000, guid: 73aceb42772b5a34285d8aef9ea36ebd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map Back
+    second: {fileID: 2100000, guid: 13770094ed9d1a4439483e34497f94eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.000
+    second: {fileID: 2100000, guid: ce46ca8c58bf04548b0e5144ace13c3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: adb58fe1b70946b4582459d47b317fd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 220f6e77edc62b641af8c1034c9cbba5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 9164e57cc2e59e6429ddabd8b2b6c710, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 14fd49f3cfbebd84880690b51f9e3f24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: b5c49875dd059a346a00ff91d9204aee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 031a29a3ab415b644ab0f7504e80cb7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: 316871663b9176b47a2fe30ddc6f9ad4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.017
+    second: {fileID: 2100000, guid: c4a17d7cca84bdc4abcb693304d265ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.018
+    second: {fileID: 2100000, guid: c9cc35ceea380e44b9bac9606b58bebf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.019
+    second: {fileID: 2100000, guid: 3021f489247727d4aa64d68c825d7527, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.020
+    second: {fileID: 2100000, guid: fc33ccf740a3bfb4885495627a1c5241, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.021
+    second: {fileID: 2100000, guid: a182efbbf2f90df49a5e52d202e5dd93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.022
+    second: {fileID: 2100000, guid: 90d85df8bc21f8e498c6553118feda99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.023
+    second: {fileID: 2100000, guid: aebd5225950c2e442960248c47f129b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.024
+    second: {fileID: 2100000, guid: 867b13d54daab0f4697e62e89e55362f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.025
+    second: {fileID: 2100000, guid: 9340291cb82d32a44b8b92cff2f84944, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.026
+    second: {fileID: 2100000, guid: 01ca576f9adda55448f2968212d538f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.033
+    second: {fileID: 2100000, guid: 47f83ab17e5b0c246a8c271dc93edf56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.034
+    second: {fileID: 2100000, guid: c81b44dfd09e8d74eb41e972e4eb23cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.035
+    second: {fileID: 2100000, guid: d7a1f0c7a0692d34eab6684189ebb514, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.036
+    second: {fileID: 2100000, guid: adbfcc8021eb96847a38f96734fc2d75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.037
+    second: {fileID: 2100000, guid: 75c2470be68c25c4b9929c31700b83fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.038
+    second: {fileID: 2100000, guid: 9f57a2005e2783c44a038d89e7cd3caa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.039
+    second: {fileID: 2100000, guid: 5cf482fc5512a274ab9630a662d9ec70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.041
+    second: {fileID: 2100000, guid: f369d01efd5ce074cbd8144b8259b1e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.042
+    second: {fileID: 2100000, guid: f7081a21d296c2b42b94065ff93acddb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.043
+    second: {fileID: 2100000, guid: b1e5273125f506b4bbfba04be61a8083, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.044
+    second: {fileID: 2100000, guid: de90a4d55c84fb1439b62dc0b6e079df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.045
+    second: {fileID: 2100000, guid: b87683104c4dd1043b1ab426ace93959, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.046
+    second: {fileID: 2100000, guid: 9598f98b6eaf5c749bd2f90f8e824a37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.047
+    second: {fileID: 2100000, guid: 00bad33d25220ac4eb3f44bd1fa7680f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.048
+    second: {fileID: 2100000, guid: cbc8ca6b90598e64184709d9e9cf1726, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.049
+    second: {fileID: 2100000, guid: ce69637d34af8db448a6358f809d49ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.050
+    second: {fileID: 2100000, guid: 35da114459f03ca42bfb92fcda1653b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.063
+    second: {fileID: 2100000, guid: bf94d8c66f23ba9449130ab902b80d7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.064
+    second: {fileID: 2100000, guid: c009acd6bb13d6945bbeeaec0fa66d9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.065
+    second: {fileID: 2100000, guid: f96e6b5a0999534428d6a3507218d3f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.070
+    second: {fileID: 2100000, guid: e6b269c4aae70e342b21b620e4ec9d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.071
+    second: {fileID: 2100000, guid: c7343d90ef6cfdb4a9d98e6d7e51c0ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.072
+    second: {fileID: 2100000, guid: 22655c0f29d968a42bb51621653f37e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.106
+    second: {fileID: 2100000, guid: 4a723fd34cb8091418244e3a89bdaad7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.107
+    second: {fileID: 2100000, guid: 24017a7e0f3361c469ef4a17a4d18234, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.108
+    second: {fileID: 2100000, guid: bcbe74d76c9b6d441a88a3c1b5cd7bc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.121
+    second: {fileID: 2100000, guid: e9131cdd601b6e14aa9047b437d8e4ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.122
+    second: {fileID: 2100000, guid: daca94d75be538e4faf2e38f3bc0ac2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.124
+    second: {fileID: 2100000, guid: 28c0d974542c8ca4a8acb4f6348960dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.125
+    second: {fileID: 2100000, guid: a54fc649ad4df9144ac1dcc626efecf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.126
+    second: {fileID: 2100000, guid: c8fb7dea41fd2ba40a7b734fcc5fe2ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.127
+    second: {fileID: 2100000, guid: 8d07719331b60554a98d02cef4c21c0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: e98c7350169c7404dbdbe1f29cc82f4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Owl Eyes
+    second: {fileID: 2100000, guid: 9c7f83ce85f62e045a0f58ee5d8d0c3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red Carpet
+    second: {fileID: 2100000, guid: 0db235016b43c8b45a9396acd0659d9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red Liquor
+    second: {fileID: 2100000, guid: cc63c8621a7fd444ea487ed371ad0fe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rockingchair_01
+    second: {fileID: 2100000, guid: 4367ec59dea14cf4497f71f9a0f4d966, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rope
+    second: {fileID: 2100000, guid: ff3f85d5b13f5514792e1c798034511c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rope.001
+    second: {fileID: 2100000, guid: 3f38943ea3664794fb94b65059327d50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rope.002
+    second: {fileID: 2100000, guid: 9bfce3b442836bc45967b49187a4f37f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Small Levers Bronze
+    second: {fileID: 2100000, guid: 8b063af8a5d38ad448d41dc0ffbd126b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Small Levers Wood
+    second: {fileID: 2100000, guid: c6d7ba7c3ec072d499955d1ad2d2bcdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sofa_01
+    second: {fileID: 2100000, guid: 3a5318cdd84722e4d93fd97e881ab84a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stool
+    second: {fileID: 2100000, guid: 8a7e7cf7c567089418564e10012ca0c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Teleport Circle
+    second: {fileID: 2100000, guid: 03190d0ae6aef854fab3f279a2c03348, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Teleport Circle Gold
+    second: {fileID: 2100000, guid: 4b7b5028f0832754ab63ea734d441344, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tolivunts Boner
+    second: {fileID: 2100000, guid: eb44c1249cbd7874da0da0fc73cd07f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top Mast
+    second: {fileID: 2100000, guid: 087ac0278ac019a45a7114864b9f32db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vase
+    second: {fileID: 2100000, guid: ee95bdfc22fc4a443b936efcfbc4fa99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelBronze
+    second: {fileID: 2100000, guid: 686e2f5b1712dd4458b3402e1ca7a673, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelBronze.001
+    second: {fileID: 2100000, guid: 2e5af129e9740f04cbd186e72050ff4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Edges
+    second: {fileID: 2100000, guid: 563609386c63ac645aba74beb6bb6279, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Edges.001
+    second: {fileID: 2100000, guid: 3339c342164cada40ad04337b9e36c25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Edges.002
+    second: {fileID: 2100000, guid: 563609386c63ac645aba74beb6bb6279, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Frame
+    second: {fileID: 2100000, guid: f0a63c31f331b914d83492eb2fe9f7d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Frame.001
+    second: {fileID: 2100000, guid: 50f4ed9fa1346ed44ba07e70f9293d97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Frame.002
+    second: {fileID: 2100000, guid: f0a63c31f331b914d83492eb2fe9f7d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Pane
+    second: {fileID: 2100000, guid: c71d420c72d72c0478e6599ed7ce3460, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Pane.001
+    second: {fileID: 2100000, guid: 1a22bea04676335438848f06412a10ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Pane.002
+    second: {fileID: 2100000, guid: c71d420c72d72c0478e6599ed7ce3460, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carpet
+    second: {fileID: 2100000, guid: ffd3a81baf0f437408edce3430124d2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass ball
+    second: {fileID: 2100000, guid: 0e811036b62979e4b9d605b5886325eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass ball holder
+    second: {fileID: 2100000, guid: 26a5792b30f46184499bb885b79d086b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: horizontalMast
+    second: {fileID: 2100000, guid: e37edd914c701f640bfd66d3df586b69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamp Bronze
+    second: {fileID: 2100000, guid: 8688a18917a43f44f9a0a4fae4eaa74e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamp Bronze.003
+    second: {fileID: 2100000, guid: 3b7d8c15bc17bc94cb612788fa79ef87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamp Glow
+    second: {fileID: 2100000, guid: 70cf40e0250f6e14a9253281e0162e77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamp Glow.003
+    second: {fileID: 2100000, guid: 8476a589febd0f945a71d45e732cbf74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mahogany 2
+    second: {fileID: 2100000, guid: 23d939865e9cb9c4bb8b3494a3a34169, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mahogany stairs
+    second: {fileID: 2100000, guid: 84cc08f49e9c8b44eba1f2eb9fa7a22d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mahogany stairs.001
+    second: {fileID: 2100000, guid: 7ac0bce3525a9674f9571469d50ec83b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mahoganyPlankFloor
+    second: {fileID: 2100000, guid: bbccbf5069238c7439074432b1ea9a41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mahoganyPlanks
+    second: {fileID: 2100000, guid: 44e30277ce24c914097446ceebb199e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mahoganyPlanks.001
+    second: {fileID: 2100000, guid: 6f69588621c4c274a8afbbe0f5fa9300, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mast
+    second: {fileID: 2100000, guid: 25e53ec54f58bf349857830ca0589ac5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: owl gold
+    second: {fileID: 2100000, guid: 78f69f5578d9d474ea70e2399b46e3ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red carpet
+    second: {fileID: 2100000, guid: a41c36b118f9028409c83d53bc57214b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red carpet.001
+    second: {fileID: 2100000, guid: ff2ab84e860362b48a183b3e1771c5f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red carpet.002
+    second: {fileID: 2100000, guid: f92e21c831b4c3040afc9c47090e7e50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rope
+    second: {fileID: 2100000, guid: c319182f0c22e034592ee714859f9e66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rope.001
+    second: {fileID: 2100000, guid: aa315e32862189a498b0865e64b8abed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: steering wheel
+    second: {fileID: 2100000, guid: 9b0b515dfc6c38746b1a7e656d4b4875, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: steering wheel.001
+    second: {fileID: 2100000, guid: bf1a3dee67bd2ce45bd21e14060723a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheel logo.001
+    second: {fileID: 2100000, guid: db1e5a74e6e66e54981af1665833a415, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheel mahogany2
+    second: {fileID: 2100000, guid: 86b35a66627f4af41ad6ed693e607f2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheel mahogany2.001
+    second: {fileID: 2100000, guid: f81c09b2c8b6db84391730dc75208a47, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Plane.001|Flapping
+      takeName: Plane.001|Flapping
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Plane.001|Key.001Action
+      takeName: Plane.001|Key.001Action
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Plane.001|KeyAction
+      takeName: Plane.001|KeyAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Plane.009|Flapping
+      takeName: Plane.009|Flapping
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Plane.009|Key.001Action
+      takeName: Plane.009|Key.001Action
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Plane.009|KeyAction
+      takeName: Plane.009|KeyAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.4
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
